@@ -12,7 +12,7 @@
 
 <br />
 <div align="center">
- ![a](https://user-images.githubusercontent.com/93917949/167726003-11040ae7-19a7-47c1-972f-0e3a9a058b99.png)
+ <img src ="https://user-images.githubusercontent.com/93917949/167726003-11040ae7-19a7-47c1-972f-0e3a9a058b99.png">
   <h3 align="center">Chopper Charlie</h3>
 </div>
 
