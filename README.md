@@ -12,7 +12,7 @@
 
 <br />
 <div align="center">
- <img src ="https://user-images.githubusercontent.com/93663409/167728251-4478e12e-65a0-4400-ae03-ae8ae37fc683.png">
+ <img src ="https://user-images.githubusercontent.com/93663409/167729612-59cd2227-5284-492d-a33e-6d0fced3155a.png">
   <h3 align="center">Chopper Charlie</h3>
 </div>
 
