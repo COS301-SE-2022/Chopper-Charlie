@@ -14,7 +14,7 @@
 <div align="center">
 
  <img src ="https://user-images.githubusercontent.com/93663409/167729612-59cd2227-5284-492d-a33e-6d0fced3155a.png">
-  <h3 align="center">Chopper Charlie</h3>
+  <h2 align="center">Chopper Charlie</h2>
 </div>
 
 
