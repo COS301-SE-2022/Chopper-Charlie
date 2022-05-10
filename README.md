@@ -12,13 +12,9 @@
 
 <br />
 <div align="center">
-<<<<<<< HEAD
- <img src ="https://user-images.githubusercontent.com/93663409/167728251-4478e12e-65a0-4400-ae03-ae8ae37fc683.png">
-  <h2 align="center">Chopper Charlie</h2>
-=======
+
  <img src ="https://user-images.githubusercontent.com/93663409/167729612-59cd2227-5284-492d-a33e-6d0fced3155a.png">
   <h3 align="center">Chopper Charlie</h3>
->>>>>>> ff7bf3fede2efe96274cfe3877c833643feed753
 </div>
 
 
