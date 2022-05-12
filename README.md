@@ -1,6 +1,7 @@
-# Chopper-Charlie
-
-
+<div align="center">
+ <h1 align="center"> Bitcoders -Chopper Charlie</h1> <br>
+<img src ="https://user-images.githubusercontent.com/93663409/167729612-59cd2227-5284-492d-a33e-6d0fced3155a.png">
+</div>
 <div id="top"></div>
 
 
@@ -9,32 +10,54 @@
 [![pull requests](https://img.shields.io/github/issues-pr-closed/COS301-SE-2022/Chopper-Charlie?color=blue&style=flat-square)](https://github.com/COS301-SE-2022/Chopper-Charlie/pulls?q=is%3Apr+is%3Aclosed)
 
 
-
 <br />
-<div align="center">
-
- <img src ="https://user-images.githubusercontent.com/93663409/167729612-59cd2227-5284-492d-a33e-6d0fced3155a.png">
-  <h2 align="center">Chopper Charlie</h2>
-</div>
 
 
-
-<details>
+ <details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-     
+      <a href="#ProjectDescription">Project Description</a>
+      <a href="#Documentation">Documentation</a>
+     <a href="#RecordedDemos">Recorded Demos</a>
+     <a href="#PMT">Project Management Tool</a>
+     <a href="#Team">Team</a>
+   
   </ol>
 </details>
 
-
-
-## About The Project
+<a  name="ProjectDescription"/><h1>Project Description </h1></a>
 Chopper Charlie is a real-time image analysis platform for images taken by a drone camera. The user will be able to modify the platform according to their needs for this platform. The main uses for this platform will be the recognition and counting of cars, as well as in agricultural terms,for example, the recognition and counting of trees in a fruit orchard. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+<br />
+
+<a  name="Documentation"/><h1> Documentation </h1></a>
+
+<ul>
+ <li><a href="insert link">SRS </a></li>
+  
+</ul>
+<br />
+
+<a name="RecordedDemos"/><h1>Recorded Demo Videos 📹</h1></a>
+<!--- -[Demo 1](insert link) -->
+
+<br />
+
+<a name="PMT"/><h1>Project Management Tool</h1></a>
+- ![GitHub](https://github.com/COS301-SE-2022/Chopper-Charlie/projects/1) <br>
+<br/>
 
 
+<a  name="Team"/><h1> The Team </h1></a>
+| **Member** | **Professional Profile** | **Short Description**
+| :-----------: | :-----------: | :-----------: |
+<br/> Tariq Carrim <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](insert link) <br/>|<p/> add description here<p>
+<br/> Unaizah Mahomed <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](insert link) <br/>|<p/> add description here<p>
+<br/> Yaasir Barmania <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](insert link) <br/>|<p/> add description here<p>
+<br/> Mumtaz Malik <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](insert link) <br/>|<p/> add description here<p>
+<br/> Hamza Allimia <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](insert link) <br/>|<p/> add description here<p>
+ 
 
 
