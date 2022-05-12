@@ -1,5 +1,5 @@
 <div align="center">
- <h1 align="center"> Bitcoders -Chopper Charlie</h1> <br>
+ <h1 align="center"> Bitcoders - Chopper Charlie</h1> <br>
 <img src ="https://user-images.githubusercontent.com/93663409/167729612-59cd2227-5284-492d-a33e-6d0fced3155a.png">
 </div>
 <div id="top"></div>
@@ -17,12 +17,12 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#ProjectDescription">Project Description</a>
-      <a href="#Documentation">Documentation</a>
-     <a href="#RecordedDemos">Recorded Demos</a>
-     <a href="#PMT">Project Management Tool</a>
-     <a href="#Team">Team</a>
-   
+     <a href="#ProjectDescription">Project Description</a><br>
+     <a href="#Documentation">Documentation</a><br>
+     <a href="#RecordedDemos">Recorded Demos</a><br>
+     <a href="#PMT">Project Management Tool</a><br>
+     <a href="#Team">Team</a><br>
+   </li>
   </ol>
 </details>
 
@@ -53,11 +53,11 @@ Chopper Charlie is a real-time image analysis platform for images taken by a dro
 <a  name="Team"/><h1> The Team </h1></a>
 | **Member** | **Professional Profile** | **Short Description**
 | :-----------: | :-----------: | :-----------: |
-<br/> Tariq Carrim <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](insert link) <br/>|<p/> add description here<p>
-<br/> Unaizah Mahomed <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](insert link) <br/>|<p/> add description here<p>
-<br/> Yaasir Barmania <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](insert link) <br/>|<p/> add description here<p>
-<br/> Mumtaz Malik <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](insert link) <br/>|<p/> add description here<p>
-<br/> Hamza Allimia <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](insert link) <br/>|<p/> add description here<p>
+<br/> Tariq Carrim <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](https://github.com/TCarrim88) <br/>|<p/> add description here<p>
+<br/> Unaizah Mahomed <br/><img src= "">  | [LinkedIn](https://www.linkedin.com/in/unaizah-mahomed-a5684216b)<br/> [GitHub](https://github.com/unaizahhhhh) <br/>|<p/> add description here<p>
+<br/> Yaasir Barmania <br/><img src= "">  | [LinkedIn](https://www.linkedin.com/in/yaasir-barmania-859838239)<br/> [GitHub](https://github.com/Yaasir25) <br/>|<p/> I am a final year BSc Computer Science student at the University Of Pretoria. <p>
+<br/> Mumtaz Malik <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](https://github.com/MumtazMalik01) <br/>|<p/> add description here<p>
+<br/> Hamza Allimia <br/><img src= "">  | [LinkedIn]( insert link)<br/> [GitHub](https://github.com/hamza-torres) <br/>|<p/> add description here<p>
  
 
 
