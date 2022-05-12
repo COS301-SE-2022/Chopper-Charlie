@@ -3,11 +3,11 @@ import './App.css';
 function App() {
   return (
     <div>
-      <video width="750" height="500" controls >
+      <video  controls >
         <source src="https://choppercharlie.blob.core.windows.net/media/Cars.mp4" type="video/mp4"/>
       </video>
-
-        <img src="https://choppercharlie.blob.core.windows.net/media/newlolnew.png" />
+          <br></br>
+        <img src="https://choppercharlie.blob.core.windows.net/media/alotofcars.jpg" />
     </div>
   );
 }
