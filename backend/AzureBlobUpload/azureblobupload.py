@@ -8,4 +8,4 @@ blob = BlobClient.from_connection_string(conn_str= Connection_String, container_
 with open("unaizah.png", "rb") as data:
     blob.upload_blob(data)
     
-    #upload
+    
