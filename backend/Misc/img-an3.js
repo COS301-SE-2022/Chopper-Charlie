@@ -46,3 +46,6 @@ function computerVision() {
         throw (err);
       })
 };
+
+
+computerVision();
