@@ -32,7 +32,17 @@ function computerVision() {
             function formatTags(tags) {
                 return tags.map(tag => (`${tag.name} (${tag.confidence.toFixed(2)})`)).join(', ');
             }
-        
+            console.log();
+            console.log('-------------------------------------------------');
+            console.log('End of quickstart.');
         }
-    ])
-}
+
+        function () {
+            return new Promise((resolve) => {
+              resolve();
+            })
+        }
+    ](err) => {
+        throw (err);
+      })
+};
