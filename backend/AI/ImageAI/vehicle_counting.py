@@ -7,7 +7,7 @@ vehicles_folder_count = 0
 
 
 
-img = cv2.imread("ImageAI/carss.jpg")
+img = cv2.imread("backend/AI/ImageAI/carss.jpg")
 
 vehicle_boxes = vd.detect_vehicles(img)
 vehicle_count = len(vehicle_boxes)
