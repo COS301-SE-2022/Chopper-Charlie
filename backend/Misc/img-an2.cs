@@ -49,6 +49,8 @@ namespace ComputerVisionQuickStart
             Console.WriteLine($"Analyzing the image {Path.GetFileName(imageUrl)}...");
             Console.WriteLine();
 
+            ImageAnalysis results = await client.AnalyzeImageAsync(imageUrl, visualFeatures: features);
+
         }
     }
 }
