@@ -20,4 +20,8 @@ public class ImageAnalysis {
     AnalyzeRemoteImage(compVisClient);
     }
 
+    public static ComputerVisionClient Authenticate(String subscriptionKey, String endpoint){
+        return ComputerVisionManager.authenticate(subscriptionKey).withEndpoint(endpoint);
+    }
+
 }
