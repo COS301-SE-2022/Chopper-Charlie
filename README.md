@@ -43,7 +43,7 @@ Chopper Charlie is a real-time image analysis platform for images taken by a dro
 <br />
 
 <a name="RecordedDemos"/><h1>Recorded Demo Videos 📹</h1></a>
-<!--- -[Demo 1](insert link) -->
+ -[Demo 1](https://drive.google.com/drive/u/6/my-drive)
 
 <br />
 
