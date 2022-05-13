@@ -7,4 +7,9 @@ from array import array
 import os
 from PIL import Image
 import sys
-import time
+import 
+
+subscription_key = "Subscription key"
+endpoint = "COMPUTER_VISION ENDPOINT HERE"
+
+computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
