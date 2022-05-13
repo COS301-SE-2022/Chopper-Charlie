@@ -7,7 +7,7 @@ function App() {
         <source src="https://choppercharlie.blob.core.windows.net/media/Cars.mp4" type="video/mp4"/>
       </video>
 
-    //a
+    //
         <img src="https://choppercharlie.blob.core.windows.net/media/newlolnew.png" />
     </div>
   );
