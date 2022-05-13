@@ -51,6 +51,12 @@ namespace ComputerVisionQuickStart
 
             ImageAnalysis results = await client.AnalyzeImageAsync(imageUrl, visualFeatures: features);
 
+            Console.WriteLine("Tags:");
+            foreach (var tag in results.Tags)
+            {
+                Console.WriteLine($"{tag.Name} {tag.Confidence}");
+            }
+            Console.WriteLine();
         }
     }
 }
