@@ -32,5 +32,20 @@ public class ImageAnalysis {
         featuresToExtractFromRemoteImage.add(VisualFeatureTypes.TAGS);
 
         System.out.println("\n\nAnalyzing an image from a URL ...");
+
+        try {
+        ImageAnalysis analysis = compVisClient.computerVision().analyzeImage().withUrl(pathToRemoteImage)
+                .withVisualFeatures(featuresToExtractFromRemoteImage).execute();
+
+
+        System.out.println("\nTags: ");
+        for (ImageTag tag : analysis.tags()) {
+            System.out.printf("\'%s\' with confidence %f\n", tag.name(), tag.confidence());
+        }
+    }
+
+    catch (Exception e) {
+        System.out.println(e.getMessage());
+        e.printStackTrace();
     }
 }
