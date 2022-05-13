@@ -55,7 +55,7 @@ Chopper Charlie is a real-time image analysis platform for images taken by a dro
 <a  name="Team"/><h1> The Team </h1></a>
 | **Member** | **Professional Profile** | **Short Description**
 | :-----------: | :-----------: | :-----------: |
-<br/> Tariq Carrim <br/><img src= "">  | [LinkedIn](https://www.linkedin.com/in/tariq-carrim-b6a6b023a)<br/> [GitHub](https://github.com/TCarrim88) <br/>|<p/> I am a 3rd year computer science student who loves learning about A.I.<p>
+<br/> Tariq Carrim <br/><img src= "">  | [LinkedIn](https://www.linkedin.com/in/tariq-carrim-b6a6b023a)<br/> [GitHub](https://github.com/TCarrim88) <br/>|<p/> I am a third year computer science student who is ambitious and enjoys Software Development<p>
 <br/>Unaizah Mahomed <br/><img src= "">  | [LinkedIn](https://www.linkedin.com/in/unaizah-mahomed-a5684216b)<br/> [GitHub](https://github.com/unaizahhhhh) <br/>|<p/> I am an aspiring Software Engineer in my final year of Computer Science at the University of Pretoria<p>
 <br/> Yaasir Barmania <br/><img src= "">  | [LinkedIn](https://www.linkedin.com/in/yaasir-barmania-859838239)<br/> [GitHub](https://github.com/Yaasir25) <br/>|<p/> I am a final year BSc Computer Science student at the University Of Pretoria. <p>
 <br/> Mumtaz Malik <br/><img src= "">  | [LinkedIn](https://www.linkedin.com/in/mumtaz-malik-3554aa23a)<br/> [GitHub](https://github.com/MumtazMalik01) <br/>|<p/>I am a third year BSc Computer Science student who enjoys learning new things. <p>
