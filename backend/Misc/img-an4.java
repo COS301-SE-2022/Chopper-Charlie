@@ -24,4 +24,13 @@ public class ImageAnalysis {
         return ComputerVisionManager.authenticate(subscriptionKey).withEndpoint(endpoint);
     }
 
+
+    public static void AnalyzeRemoteImage(ComputerVisionClient compVisClient) {
+        String pathToRemoteImage = "";
+
+        List<VisualFeatureTypes> featuresToExtractFromRemoteImage = new ArrayList<>();
+        featuresToExtractFromRemoteImage.add(VisualFeatureTypes.TAGS);
+
+        System.out.println("\n\nAnalyzing an image from a URL ...");
+    }
 }
