@@ -25,6 +25,9 @@ function computerVision() {
 
             const tagsURL = '';
 
+            console.log('Analyzing tags in image...', tagsURL.split('/').pop());
+            const tags = (await computerVisionClient.analyzeImage(tagsURL, { visualFeatures: ['Tags'] })).tags;
+            console.log(`Tags: ${formatTags(tags)}`);
         }
     ])
 }
