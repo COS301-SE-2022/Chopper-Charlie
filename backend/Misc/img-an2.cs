@@ -24,5 +24,13 @@ namespace ComputerVisionQuickStart
             // Analyze an image to get features and other properties.
             AnalyzeImageUrl(client, ANALYZE_URL_IMAGE).Wait();
         }
+
+        public static ComputerVisionClient Authenticate(string endpoint, string key)
+        {
+            ComputerVisionClient client =
+              new ComputerVisionClient(new ApiKeyServiceClientCredentials(key))
+              { Endpoint = endpoint };
+            return client;
+        }
     }
 }
