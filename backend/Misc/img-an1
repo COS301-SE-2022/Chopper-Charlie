@@ -13,3 +13,6 @@ subscription_key = "Subscription key"
 endpoint = "COMPUTER_VISION ENDPOINT HERE"
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
+
+images_folder = os.path.join (os.path.dirname(os.path.abspath(__file__)), "images")
+remote_image_url = "/cognitive-services-sample-data-files/master/ComputerVision/Images/landmark.jpg"
