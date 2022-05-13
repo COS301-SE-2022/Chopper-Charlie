@@ -28,6 +28,11 @@ function computerVision() {
             console.log('Analyzing tags in image...', tagsURL.split('/').pop());
             const tags = (await computerVisionClient.analyzeImage(tagsURL, { visualFeatures: ['Tags'] })).tags;
             console.log(`Tags: ${formatTags(tags)}`);
+            
+            function formatTags(tags) {
+                return tags.map(tag => (`${tag.name} (${tag.confidence.toFixed(2)})`)).join(', ');
+            }
+        
         }
     ])
 }
