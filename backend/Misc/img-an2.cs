@@ -32,5 +32,23 @@ namespace ComputerVisionQuickStart
               { Endpoint = endpoint };
             return client;
         }
+
+        public static async Task AnalyzeImageUrl(ComputerVisionClient client, string imageUrl)
+        {
+            Console.WriteLine("----------------------------------------------------------");
+            Console.WriteLine("ANALYZE IMAGE - URL");
+            Console.WriteLine();
+
+            // Creating a list that defines the features to be extracted from the image. 
+
+            List<VisualFeatureTypes?> features = new List<VisualFeatureTypes?>()
+            {
+                VisualFeatureTypes.Tags
+            };
+
+            Console.WriteLine($"Analyzing the image {Path.GetFileName(imageUrl)}...");
+            Console.WriteLine();
+
+        }
     }
 }
