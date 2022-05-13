@@ -14,3 +14,17 @@ const endpoint = 'PASTE_YOUR_COMPUTER_VISION_ENDPOINT_HERE';
 
 const computerVisionClient = new ComputerVisionClient(
   new ApiKeyCredentials({ inHeader: { 'Ocp-Apim-Subscription-Key': key } }), endpoint);
+
+
+function computerVision() {
+    async.series([
+        async function () {
+            console.log('-------------------------------------------------');
+            console.log('DETECT TAGS');
+            console.log();
+
+            const tagsURL = '';
+
+        }
+    ])
+}
