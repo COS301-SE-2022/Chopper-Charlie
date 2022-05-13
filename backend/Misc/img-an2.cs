@@ -8,3 +8,21 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Threading;
 using System.Linq;
+
+namespace ComputerVisionQuickStart
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Azure Cognitive Services Computer Vision C# VERSION");
+            Console.WriteLine();
+
+            // Create a client
+            ComputerVisionClient client = Authenticate(endpoint, subscriptionKey);
+
+            // Analyze an image to get features and other properties.
+            AnalyzeImageUrl(client, ANALYZE_URL_IMAGE).Wait();
+        }
+    }
+}
