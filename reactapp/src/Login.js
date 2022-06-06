@@ -38,7 +38,7 @@ function Login(){
       <div className='center'>
       <div className='auth'>
         <img src={require('./logo.png')} width="75%" height="75%" alt="Logo"/> 
-        <h1>Login</h1>
+        <h2>Login</h2>
         {error && <div className='auth__error'>{error}</div>}
         <form onSubmit={login} name='login_form'>
           <input 
@@ -68,6 +68,7 @@ function Login(){
         
       
       </div>
+      <center><img id='AB'  src={require('./AB.png')} width="20%" height="30%" alt="Logo"/></center> 
     </div>
    // </center>
    //to do : add something to the forgot password link
