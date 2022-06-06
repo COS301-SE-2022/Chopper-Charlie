@@ -20,11 +20,12 @@ function Profile() {
         </div>
         <div className='Vd'>
           <h2>Videos </h2>
-          <div className='Vid'>
-            
-          </div>
+          <div className='Vid'></div><div className='Vid'></div>
         </div>
-        <div className='img'>Images</div>
+        <div className='imga'>
+        <h2>Images</h2>
+        <div className='theImage'></div>
+        </div>
       </div>
 
 

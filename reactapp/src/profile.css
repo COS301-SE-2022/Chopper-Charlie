@@ -37,8 +37,8 @@
  
 
   .Lv{
-    width: 300px;
-    height: 200px;
+    width: 250px;
+    height: 150px;
     font-size: 17px;
     border: 1px solid #575758;
     border-radius: 15px;
@@ -52,16 +52,34 @@
 
 
   .Vid{
-    width: 300px;
-    height: 200px;
+    width: 150px;
+    float:left;
+    height: 100px;
     font-size: 17px;
     border: 1px solid #575758;
     border-radius: 15px;
     background-color: #222225;
     text-align: center;
     padding-top: 15%;
+    margin-right: 15px;
+    margin-bottom: 15px;
 
   }
+
+.theImage {
+  width: 150px;
+  float:left;
+  height: 100px;
+  font-size: 17px;
+  border: 1px solid #575758;
+  border-radius: 15px;
+  background-color: #222225;
+  text-align: center;
+  padding-top: 15%;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  
+}
 
 #pp{
   padding-top: 5%;
