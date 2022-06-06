@@ -34,9 +34,11 @@ function Login(){
   }
 
   return(
-    <center><div className='center'>
+   // <center>
+      <div className='center'>
       <div className='auth'>
-        <h1>Log in</h1>
+        <img src={require('./logo.png')} width="75%" height="75%" alt="Logo"/> 
+        <h2>Login</h2>
         {error && <div className='auth__error'>{error}</div>}
         <form onSubmit={login} name='login_form'>
           <input 
@@ -47,21 +49,29 @@ function Login(){
             onChange={e => setEmail(e.target.value)}/>
 
           <input 
+            id='pass'
             type='password'
             value={password}
             required
             placeholder='Enter your password'
             onChange={e => setPassword(e.target.value)}/>
+            <Link id='link' to='/forgot'>Forgot password</Link>
 
-          <button type='submit'>Login</button>
+          <button id="login" type='submit'>Login</button>
+          <a href="/register"> <button type='button' id='reg'>Register</button></a>
+          
+          
         </form>
-        <p>
-          Don't have and account? 
-          <Link to='/register'>Create one here</Link>
-        </p>
+
+        
+        
+        
+      
       </div>
+      <center><img id='AB'  src={require('./AB.png')} width="20%" height="30%" alt="Logo"/></center> 
     </div>
-    </center>
+   // </center>
+   //to do : add something to the forgot password link
   )
 }
 
