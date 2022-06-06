@@ -1,5 +1,5 @@
 import {useState} from 'react'
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './forms.css'
 import {signInWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {auth} from './firebase'
@@ -49,15 +49,20 @@ function Login(){
             onChange={e => setEmail(e.target.value)}/>
 
           <input 
+            id='pass'
             type='password'
             value={password}
             required
             placeholder='Enter your password'
             onChange={e => setPassword(e.target.value)}/>
+            <Link id='link' to='/forgot'>Forgot password</Link>
 
           <button id="login" type='submit'>Login</button>
           <a href="/register"> <button type='button' id='reg'>Register</button></a>
+          
+          
         </form>
+
         
         
         
@@ -65,6 +70,7 @@ function Login(){
       </div>
     </div>
    // </center>
+   //to do : add something to the forgot password link
   )
 }
 
