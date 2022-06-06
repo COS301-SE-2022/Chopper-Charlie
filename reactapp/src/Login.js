@@ -68,7 +68,7 @@ function Login(){
         
       
       </div>
-      <center><img id='AB'  src={require('./AB.png')} width="20%" height="30%" alt="Logo"/></center> 
+      <center><img id='AB'  src={require('./AB.png')} width="10%" height="15%" alt="Logo"/></center> 
     </div>
    // </center>
    //to do : add something to the forgot password link

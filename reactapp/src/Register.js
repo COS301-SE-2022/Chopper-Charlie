@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import './forms.css'
 import {auth} from './firebase'
-import {useNavigate, Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {useAuthValue} from './AuthContext'
 
@@ -48,7 +48,8 @@ function Register() {
   return (
     <center><div className='center'>
       <div className='auth'>
-        <h1>Register</h1>
+      <img src={require('./logo.png')} width="75%" height="75%" alt="Logo"/> 
+        <h2>Register</h2>
         {error && <div className='auth__error'>{error}</div>}
         <form onSubmit={register} name='registration_form'>
           <input 
@@ -73,13 +74,13 @@ function Register() {
             onChange={e => setConfirmPassword(e.target.value)}/>
 
           <button type='submit'>Register</button>
+          <a href="/login"> <button type='button' id='reg'>Login</button></a>
         </form>
         <span>
-          Already have an account?  
-          <Link to='/login'>login</Link>
         </span>
       </div>
     </div>
+    <center><img id='AB'  src={require('./AB.png')} width="10%" height="15%" alt="Logo"/></center> 
     </center>
   )
   

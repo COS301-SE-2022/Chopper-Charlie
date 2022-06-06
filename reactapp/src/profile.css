@@ -1,9 +1,19 @@
 .profile{
+ 
+  
     width: 90%;
-    max-width: 400px;
-    border: 1px solid #dcdcdc;
+    max-width: 300px;
     padding: 20px;
     text-align: center;
+    position: relative;
+    float: right;
+    width: 40%;
+    margin:auto; 
+    height: 100vh;
+    background-color: rgb(34, 34, 37);
+    border: 3px solid #000000;
+    border-radius: 15px;
+
   }
   
   .profile p {
