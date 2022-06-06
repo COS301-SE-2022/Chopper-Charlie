@@ -37,7 +37,7 @@ function Login(){
    // <center>
       <div className='center'>
       <div className='auth'>
-        <img src="/reactapp/src/logo.png" alt="Logo"/> 
+        <img src={require('./logo.png')} alt="Logo"/> 
         <h1>Login</h1>
         {error && <div className='auth__error'>{error}</div>}
         <form onSubmit={login} name='login_form'>
