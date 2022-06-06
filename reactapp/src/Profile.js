@@ -6,6 +6,7 @@ import { auth } from './firebase'
 
 //change
 function Profile() {
+  
   const {currentUser} = useAuthValue()
 
   return (
@@ -14,7 +15,7 @@ function Profile() {
 
          
         <div className='profile'>
-        <img src={require('./logo.png')} width="40%" height="15%" alt="Logo"/>
+        <img src={require('./logo.png')} width="45%" height="15%" alt="Logo"/>
                
           <h1>    </h1>
           
@@ -28,13 +29,17 @@ function Profile() {
           </p>
           <div>
            <button type='button' id='home'>Home</button>
-           
            <button type='button' id='home'>Analytics</button>
            <button type='button' id='home'>Settings</button>
            </div>
+           <div></div>
           <hr/>
 
-          <span onClick={() => signOut(auth)}>Sign Out</span>
+          <span onClick={() => signOut(auth)}>Logout</span>
+         
+
+        <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="70%" height="70%" alt="Logo"/></div>
+
         </div>
 
 
