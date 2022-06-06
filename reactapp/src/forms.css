@@ -1,11 +1,33 @@
+
+body {
+  background-color: #000000; /* For browsers that do not support gradients */
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+
 .auth{
-    width: 90%;
-    max-width: 400px;
-    border: 1px solid #dcdcdc;
+    width: 40%;
+    margin:auto; 
+    margin-top: 10%;
+    max-width: 300px;
+    background-color: rgb(34, 34, 37);
+    border: 3px solid #000000;
     padding: 20px;
     text-align: center;
+    border-radius: 15px;
+
   }
-  
+
+ /* .loginDiv{
+    margin:auto;  
+    width: 382px;  
+    overflow: hidden;  
+    padding: 80px;  
+    background: #1aa2c8;  
+    border-radius: 15px ; 
+  }
+  */
   .auth form{
     display: flex;
     flex-direction: column;
@@ -25,8 +47,42 @@
     margin-bottom: 20px;
   }
   
-  .auth form > input, button{
+  .auth form > input {
     height: 40px;
-    font-size: 16px;
+    background-color: rgb(34, 34, 37);
+    border: 0.5px solid #575758;
+    font-size: 13px;
     padding: 0 10px;
+    border-radius: 20px;
   }
+
+  .auth form > button{
+    height: 40px;
+    background-color: rgb(181, 159, 241);
+    font-size: 14px;
+    padding: 0 10px;
+    border-radius: 20px;
+    border: 0.5px solid #575758;
+  }
+
+  #login{
+    height: 40px;
+    width: 125px;
+    background-color: rgb(181, 159, 241);
+    font-size: 14px;
+    padding: 0 10px;
+    border-radius: 20px;
+    border: 0.5px solid #575758;
+  }
+  
+#reg{
+  height: 40px;
+  background-color: rgb(34, 34, 37);
+  color: rgb(181, 159, 241);;
+  font-size: 14px;
+  padding: 0 10px;
+  border-radius: 20px;
+  border: 0.5px solid #575758;
+  width: 125px;
+  
+}

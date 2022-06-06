@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import './forms.css'
 import {signInWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {auth} from './firebase'
@@ -34,9 +34,11 @@ function Login(){
   }
 
   return(
-    <center><div className='center'>
+   // <center>
+      <div className='center'>
       <div className='auth'>
-        <h1>Log in</h1>
+        <img src="/reactapp/src/logo.png" alt="Logo"/> 
+        <h1>Login</h1>
         {error && <div className='auth__error'>{error}</div>}
         <form onSubmit={login} name='login_form'>
           <input 
@@ -53,15 +55,16 @@ function Login(){
             placeholder='Enter your password'
             onChange={e => setPassword(e.target.value)}/>
 
-          <button type='submit'>Login</button>
+          <button id="login" type='submit'>Login</button>
+          <a href="/register"> <button type='button' id='reg'>Register</button></a>
         </form>
-        <p>
-          Don't have and account? 
-          <Link to='/register'>Create one here</Link>
-        </p>
+        
+        
+        
+      
       </div>
     </div>
-    </center>
+   // </center>
   )
 }
 
