@@ -18,7 +18,7 @@ function Profile() {
                
           <h1>    </h1>
           
-          <img id='pp'  src={require('./j.png')} width="26%" height="12%" alt="profile"/>
+          <img id='pp'  src={require('./j.png')} width="27%" height="12%" alt="profile"/>
           <p><strong> </strong>{currentUser?.email}</p>
 
           <hr/>
@@ -33,7 +33,7 @@ function Profile() {
            <button type='button' id='home'>Settings</button>
            </div>
           <hr/>
-          
+
           <span onClick={() => signOut(auth)}>Sign Out</span>
         </div>
 
