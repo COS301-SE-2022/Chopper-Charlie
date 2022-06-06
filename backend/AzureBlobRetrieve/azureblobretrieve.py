@@ -4,7 +4,7 @@ Connection_String = "DefaultEndpointsProtocol=https;AccountName=choppercharlie;A
 Containers_Name = "media"
 blob = BlobClient.from_connection_string(conn_str=Connection_String, container_name=Containers_Name, blob_name=blobname)
 
-with open("AzureBlobRetrieve/"+blobname, "wb") as my_blob:
+with open("backend/AzureBlobRetrieve/"+blobname, "wb") as my_blob:
     stream = blob.download_blob()
     data = stream.readall()
     my_blob.write(data)
