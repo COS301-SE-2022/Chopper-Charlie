@@ -13,9 +13,26 @@ function Profile() {
    
       <div className='center'>
 
+     <div className='Content'>
+        <div className='Lv'>
+        <img src={require('./play.png')} width="30%" height="40%" alt="Logo"/>
+        <h4>Watch Live Stream</h4>
+        </div>
+        <div className='Vd'>
+          <h2>Videos </h2>
+          <div className='Vid'>
+            
+          </div>
+        </div>
+        <div className='img'>Images</div>
+      </div>
+
+
+
+
          
         <div className='profile'>
-        <img src={require('./logo.png')} width="45%" height="15%" alt="Logo"/>
+        <img src={require('./logo.png')} width="40%" height="10%" alt="Logo"/>
                
           <h1>    </h1>
           
@@ -32,18 +49,26 @@ function Profile() {
            <button type='button' id='home'>Analytics</button>
            <button type='button' id='home'>Settings</button>
            </div>
-           <div></div>
+           
           <hr/>
 
           <span onClick={() => signOut(auth)}>Logout</span>
          
 
-        <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="70%" height="70%" alt="Logo"/></div>
+        <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="50%" height="50%" alt="Logo"/></div>
 
         </div>
 
 
+
+
+
+
       </div>
+      
+
+
+
      
   )
 }
