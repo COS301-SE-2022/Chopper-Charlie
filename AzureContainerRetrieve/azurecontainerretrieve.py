@@ -6,7 +6,7 @@ def list_blobs_in_container(Containers_Name):
     try:
         # Instantiate a BlobServiceClient using a connection string
         blob_service_client = BlobServiceClient.from_connection_string(Connection_String)
-
+        mylist = []
         # Instantiate a ContainerClient
         container_client = blob_service_client.get_container_client(Containers_Name)
 
@@ -14,9 +14,14 @@ def list_blobs_in_container(Containers_Name):
         # [START list_blobs_in_container]
         blobs_list = container_client.list_blobs()
         for blob in blobs_list:
-            print(blob.name + '\n')
+            #print(blob.name + '\n')
+            mylist.append(blob.name)
+        print(mylist)
+        return mylist
     except:
-        print('Error!')
+        errlist = ["Error"]
+        print(errlist)
+        return errlist
 
 # Call Function with parameter
 list_blobs_in_container("media")
