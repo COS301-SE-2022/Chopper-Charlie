@@ -17,8 +17,11 @@
   }
   
   .profile p {
-    text-align: left;
+    text-align: center;
+    color: #dfdbf7;
+    font-size: 14px;
   }
+  
   
   .profile > span{
     color: blue;
@@ -26,3 +29,17 @@
     cursor: pointer;
   }
 
+#pp{
+  padding-top: 14%;
+}
+
+#home{
+    height: 40px;
+    margin: auto;
+    margin-top: 3%;
+    width: 100%;
+    background-color: rgb(181, 159, 241);
+    font-size: 14px;
+    border-radius: 20px;
+    border: 0.5px solid #575758;
+}
