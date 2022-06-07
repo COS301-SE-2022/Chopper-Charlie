@@ -37,7 +37,7 @@ function Profile() {
           <div className='Vid'><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/><p2>Upload</p2></div>
           <div className='Vid'><DeleteIcon sx={{ fontSize: 50 }}/><br/><p2>Delete</p2></div>
           <div className='Vid'><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/><p2>Download</p2></div>
-          <div className='Vid'><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/><p2>View</p2></div>
+          <div className='Vid'><PlayCircleRoundedIcon sx={{ fontSize: 50 }}/><br/><p2>View</p2></div>
          </div>
           {/* <div className='Vid'></div><div className='Vid'></div>
         </div>
