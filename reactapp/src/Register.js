@@ -46,7 +46,8 @@ function Register() {
   }
 
   return (
-    <center><div className='center'>
+    // <center>
+      <div className='center'>
       <div className='auth'>
       <img src={require('./logo.png')} width="75%" height="75%" alt="Logo"/> 
         <h2>Register</h2>
@@ -76,14 +77,19 @@ function Register() {
           <button type='submit'>Register</button>
           <a href="/login"> <button type='button' id='reg'>Login</button></a>
         </form>
-        <span>
-        </span>
+       
       </div>
+      <img id='AB'  src={require('./AB.png')} width="10%" height="15%" alt="Logo"/>
     </div>
-    <center><img id='AB'  src={require('./AB.png')} width="10%" height="15%" alt="Logo"/></center> 
-    </center>
+    
+     
   )
   
 }
+
+
+
+
+
 
 export default Register
