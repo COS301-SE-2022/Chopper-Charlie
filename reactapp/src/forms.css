@@ -116,5 +116,13 @@ body {
 
 #AB{
   align-self: center;
-  padding-top: 1px;
+  position: relative;
+  /* bottom: 0%; */
+  left: 45%;
+  padding-top: 10%;
+}
+
+.center {
+  position: relative;
+  top: 80px;
 }
