@@ -20,7 +20,7 @@ function Profile() {
         </div> */}
         <div className='Vd'>
           <h1>Media </h1>
-          <div className='Vid'></div>
+          <div className='Vid'><p1>Download</p1></div>
           <div className='Vid'></div>
           <div className='Vid'></div>
           <div className='Vid'></div>

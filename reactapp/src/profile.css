@@ -17,10 +17,18 @@
 
   }
   
-  .profile p {
+  .profile p1 {
     text-align: center;
     color: #dfdbf7;
     font-size: 14px;
+  }
+
+
+  .profile p2{
+    text-align: center;
+    color: #dfdbf7;
+    font-size: 17px;
+
   }
   
   
