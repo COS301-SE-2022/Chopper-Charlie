@@ -56,7 +56,7 @@ function Profile() {
           <div>
            <button type='button' id='home'><HomeRoundedIcon/>Home</button>
            <button type='button' id='home'><AnalyticsRoundedIcon/>Analytics</button>
-           <button type='button' id='home'>Settings</button>
+           <button type='button' id='home'><SettingsRoundedIcon/>Settings</button>
            </div>
            
           <hr/>
