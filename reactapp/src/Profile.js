@@ -54,7 +54,7 @@ function Profile() {
             {`${currentUser?.emailVerified}`}
           </p1>
           <div>
-           <button type='button' id='home'>Home</button>
+           <button type='button' id='home'><HomeRoundedIcon/>Home</button>
            <button type='button' id='home'>Analytics</button>
            <button type='button' id='home'>Settings</button>
            </div>
