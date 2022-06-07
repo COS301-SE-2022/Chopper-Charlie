@@ -5,6 +5,7 @@ import { auth } from './firebase'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import AnalyticsRoundedIcon from '@mui/icons-material/AnalyticsRounded';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 
 //change
 function Profile() {
@@ -61,7 +62,7 @@ function Profile() {
            
           <hr/>
 
-          <span onClick={() => signOut(auth)}>Logout</span>
+          <span onClick={() => signOut(auth)}><LogoutRoundedIcon/>Logout</span>
          
 
         <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="50%" height="50%" alt="Logo"/></div>
