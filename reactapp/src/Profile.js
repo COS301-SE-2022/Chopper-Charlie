@@ -18,8 +18,9 @@ function Profile() {
         <img src={require('./play.png')} width="30%" height="40%" alt="Logo"/>
         <h4>Watch Live Stream</h4>
         </div> */}
+        <h1>Media </h1>
         <div className='Vd'>
-          <h1>Media </h1>
+          
           <div className='Vid'>Upload</div>
           <div className='Vid'>Delete</div>
           <div className='Vid'>Download</div>
