@@ -2,7 +2,9 @@ import './profile.css'
 import {useAuthValue} from './AuthContext'
 import { signOut } from 'firebase/auth' 
 import { auth } from './firebase'
-
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
+import AnalyticsRoundedIcon from '@mui/icons-material/AnalyticsRounded';
 
 //change
 function Profile() {
