@@ -85,7 +85,7 @@ body {
   #login{
     height: 40px;
     margin: auto;
-    width: 60%;
+    width: 30%;
     background-color: rgb(181, 159, 241);
     font-size: 14px;
     padding: 0 10px;
@@ -101,7 +101,7 @@ body {
   padding: 0 10px;
   border-radius: 20px;
   border: 0.5px solid #575758;
-  width: 60%;
+  width: 30%;
   
 }
 
@@ -117,12 +117,20 @@ body {
 #AB{
   align-self: center;
   position: relative;
-  /* bottom: 0%; */
+  bottom: 0;
   left: 45%;
-  padding-top: 10%;
+  padding-top: 11vw;
 }
 
 .center {
   position: relative;
-  top: 80px;
+  top: 5vw;
+}
+
+
+.btn {
+  /* width:10%; */
+  /* display: flex; */
+  /* justify-content: center; */
+  
 }
