@@ -20,16 +20,11 @@
   .profile p1 {
     text-align: center;
     color: #dfdbf7;
-    font-size: 14px;
+    font-size: 15px;
   }
 
 
-  .profile p2{
-    text-align: center;
-    color: #dfdbf7;
-    font-size: 17px;
-
-  }
+  
   
   
   .profile > span{
@@ -64,17 +59,18 @@
     width: 150px;
     margin: auto;
     float: left;
-    height: 70px;
-    font-size: 17px;
+    height: 150px;
+    font-size: 20px;
     border: 1px solid #575758;
     border-radius: 15px;
     background-color: #222225;
-    text-align: center;
-    padding-top: 15%;
     display: flex;  
     flex-wrap: wrap;
     margin-right: 15px;
     margin-left: 15px;
+    color: #c2aff5;
+    
+  
     /*
     margin-bottom: 10px; */
    
@@ -112,7 +108,7 @@
     text-align: left;
     padding-left: 20%;
     width: 100%;
-    background-color: rgb(181, 159, 241);
+    background-color: #b59ff1;
     font-size: 14px;
     border-radius: 20px;
     border: 0.5px solid #575758;
