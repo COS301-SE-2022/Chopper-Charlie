@@ -32,6 +32,7 @@
 
   }
   
+
   
   .profile > span{
     color: #dfdbf7;
@@ -41,7 +42,8 @@
 
  
   .Content{
-    float: Left;
+    float: center;
+    position: relative;
     padding-top: 3%;
     text-align: center;
   } 
@@ -61,6 +63,7 @@
 
 .Vd{
   text-align: left;
+
 }
 
 
@@ -72,12 +75,12 @@
   color: #b59ff1;
   float: left;
   height: 150px;
-  font-size: 17px;
+  font-size: 25px;
   border: 1px solid #575758;
   margin-bottom: 10%;
   border-radius: 15px;
   background-color: #222225;
-  padding-top: 4%;
+  
   display: flex;  
   flex-wrap: wrap;
   margin-right: 20px;
@@ -87,6 +90,13 @@
   
 
 
+}
+
+.tx{
+  text-align: center;
+  float: center;
+  margin: auto;
+  
 }
 
 

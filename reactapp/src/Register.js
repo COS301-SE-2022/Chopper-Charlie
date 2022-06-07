@@ -74,8 +74,12 @@ function Register() {
             placeholder='Confirm password'
             onChange={e => setConfirmPassword(e.target.value)}/>
 
-          <button type='submit'>Register</button>
-          <a href="/login"> <button type='button' id='reg'>Login</button></a>
+        
+<div class="btn">
+          <button id='login' type='submit'>Register</button>
+          <a href="/login"><button type='button' id='reg'>Login</button></a>
+</div>
+
         </form>
        
       </div>
