@@ -4,8 +4,9 @@
     max-width: 250px;
     padding: 20px;
     text-align: center;
-    position: relative;
+    position: fixed;
     float: right;
+    right: 0%;
     width: 30%;
     margin:auto; 
     height: 100vh;
@@ -53,16 +54,23 @@
 
   .Vid{
     width: 150px;
-    float:left;
-    height: 100px;
+    margin: auto;
+    float: left;
+    height: 70px;
     font-size: 17px;
     border: 1px solid #575758;
     border-radius: 15px;
     background-color: #222225;
     text-align: center;
     padding-top: 15%;
+    display: flex;  
+    flex-wrap: wrap;
     margin-right: 15px;
-    margin-bottom: 10px;
+    margin-left: 15px;
+    /*
+    margin-bottom: 10px; */
+   
+
 
   }
 
@@ -103,6 +111,6 @@
 }
 
 .sub_div {
-  position: absolute;
   bottom: 0px;
+  margin-bottom: 2%;
 }

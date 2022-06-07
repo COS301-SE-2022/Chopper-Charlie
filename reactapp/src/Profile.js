@@ -14,18 +14,23 @@ function Profile() {
       <div className='center'>
 
      <div className='Content'>
-        <div className='Lv'>
+        {/* <div className='Lv'>
         <img src={require('./play.png')} width="30%" height="40%" alt="Logo"/>
         <h4>Watch Live Stream</h4>
-        </div>
+        </div> */}
         <div className='Vd'>
-          <h2>Videos </h2>
-          <div className='Vid'></div><div className='Vid'></div>
+          <h1>Media </h1>
+          <div className='Vid'></div>
+          <div className='Vid'></div>
+          <div className='Vid'></div>
+          <div className='Vid'></div>
+         </div>
+          {/* <div className='Vid'></div><div className='Vid'></div>
         </div>
         <div className='imga'>
         <h2>Images</h2>
         <div className='theImage'></div>
-        </div>
+        </div> */}
       </div>
 
 
