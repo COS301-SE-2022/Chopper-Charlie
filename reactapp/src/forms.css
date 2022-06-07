@@ -117,12 +117,12 @@ body {
 #AB{
   align-self: center;
   position: relative;
-  /* bottom: 0%; */
+  bottom: 0;
   left: 45%;
-  padding-top: 10%;
+  padding-top: 11vw;
 }
 
 .center {
   position: relative;
-  top: 80px;
+  top: 5vw;
 }

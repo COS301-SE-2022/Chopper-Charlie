@@ -62,9 +62,6 @@ function Login(){
           
           
         </form>
-
-        
-        
         
       
       </div>
