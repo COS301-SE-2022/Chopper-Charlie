@@ -20,14 +20,15 @@
   .profile p1 {
     text-align: center;
     color: #dfdbf7;
-    font-size: 14px;
+    font-size: 15px;
   }
 
 
   .profile p2{
     text-align: center;
-    color: #dfdbf7;
+    color: #b59ff1;
     font-size: 17px;
+
 
   }
   
@@ -42,6 +43,7 @@
   .Content{
     float: Left;
     padding-top: 3%;
+    text-align: center;
   } 
  
 
@@ -57,23 +59,29 @@
   
   }
 
-
+.Vd{
+  text-align: left;
+}
 
 
   .Vid{
-    width: 150px;
+    text-align: center;
+    text-indent: 65px;
+    position: relative;
+    width: 200px;
+    color: #b59ff1;
     margin: auto;
     float: left;
-    height: 70px;
+    height: 150px;
     font-size: 17px;
     border: 1px solid #575758;
+    margin-bottom: 10%;
     border-radius: 15px;
     background-color: #222225;
-    text-align: center;
-    padding-top: 15%;
+    padding-top: 4%;
     display: flex;  
     flex-wrap: wrap;
-    margin-right: 15px;
+    margin-right: 20px;
     margin-left: 15px;
     /*
     margin-bottom: 10px; */
@@ -112,7 +120,7 @@
     text-align: left;
     padding-left: 20%;
     width: 100%;
-    background-color: rgb(181, 159, 241);
+    background-color: #b59ff1;
     font-size: 14px;
     border-radius: 20px;
     border: 0.5px solid #575758;
