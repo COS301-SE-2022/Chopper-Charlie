@@ -27,10 +27,6 @@ function Test() {
 		fetch("/lol/"+str)
 		}
 
-		let textInput = React.createRef();
-    
-	
-
 
 	return (
 		
@@ -45,7 +41,7 @@ function Test() {
 			 ) : (
 				 data.mydata.map((thedata, i)=>(
 					 
-					<center><br></br><div><button id="button"  ref={textInput} value = {thedata} type="button" onClick={()=>genData(thedata)}   style={{height: "50px", width: "200px"}} key={i}  >{thedata}</button></div></center>
+					<center><br></br><div><button   type="button" onClick={()=>genData(thedata)}   style={{height: "50px", width: "200px"}} key={i}  >{thedata}</button></div></center>
 					
 				 ))
 			 )
