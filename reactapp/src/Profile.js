@@ -6,6 +6,14 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import AnalyticsRoundedIcon from '@mui/icons-material/AnalyticsRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+
+
+
+
+
+
+
 
 //change
 function Profile() {
@@ -37,19 +45,21 @@ function Profile() {
         </div> */}
       </div>
 
-
-
-
          
         <div className='profile'>
-        <img src={require('./logo.png')} width="40%" height="10%" alt="Logo"/>
+
+        <img src={require('./logo.png')} width="60%" height="9%" alt="Logo"/>
                
           <h1>    </h1>
           
-          <img id='pp'  src={require('./j.png')} width="27%" height="12%" alt="profile"/>
+          <br/><br/><br/><br/>
+          <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
+          {/* <img id='pp'  src={require('./j.png')} width="27%" height="12%" alt="profile"/> */}
+          <br/>
           <p1><strong> </strong>{currentUser?.email}</p1>
-
+          <br/><br/>
           <hr/>
+          <br/>
           <p1>
             <strong>Email verified: </strong>
             {`${currentUser?.emailVerified}`}
@@ -60,11 +70,14 @@ function Profile() {
            <button type='button' id='home'><SettingsRoundedIcon/>Settings</button>
            </div>
            
+           <br/><br/>
           <hr/>
 
+
+          <br/><br/>
           <span onClick={() => signOut(auth)}><LogoutRoundedIcon/>Logout</span>
          
-
+          {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
         <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="50%" height="50%" alt="Logo"/></div>
 
         </div>
