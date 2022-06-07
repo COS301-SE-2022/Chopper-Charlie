@@ -13,7 +13,7 @@
     background-color: #222225;
     border: 3px solid #000000;
     border-radius: 15px;
-    
+    top: 0%;
 
   }
   
@@ -66,11 +66,10 @@
 
 .Vid{
   text-align: center;
-  text-indent: 65px;
-  position: relative;
-  width: 200px;
-  color: #b59ff1;
   margin: auto;
+  position: relative;
+  width: 180px;
+  color: #b59ff1;
   float: left;
   height: 150px;
   font-size: 17px;
@@ -131,4 +130,8 @@
   position: absolute;
   bottom: 35px;
   left: 0;
+}
+
+.Content{
+  text-align: center;
 }

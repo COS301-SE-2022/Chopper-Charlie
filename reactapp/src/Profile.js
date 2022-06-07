@@ -34,10 +34,10 @@ function Profile() {
         
         <div className='Vd'>
         <h1>Media </h1>
-          <div className='Vid'><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/><p2>Upload</p2></div>
-          <div className='Vid'><DeleteIcon sx={{ fontSize: 50 }}/><br/><p2>Delete</p2></div>
-          <div className='Vid'><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/><p2>Download</p2></div>
-          <div className='Vid'><PlayCircleRoundedIcon sx={{ fontSize: 50 }}/><br/><p2>View</p2></div>
+          <div className='Vid'><p2><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/>Upload</p2></div>
+          <div className='Vid'><p2><DeleteIcon sx={{ fontSize: 50 }}/><br/>Delete</p2></div>
+          <div className='Vid'><p2><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/>Download</p2></div>
+          <div className='Vid'><p2><PlayCircleRoundedIcon sx={{ fontSize: 50 }}/><br/>View</p2></div>
          </div>
           {/* <div className='Vid'></div><div className='Vid'></div>
         </div>
@@ -50,16 +50,16 @@ function Profile() {
          
         <div className='profile'>
 
-        <img src={require('./logo.png')} width="60%" height="9%" alt="Logo"/>
+        <img src={require('./logo.png')} width="60%" height="13%" alt="Logo"/>
                
           <h1>    </h1>
           
-          <br/><br/><br/><br/>
+          <br/><br/>
           <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
           {/* <img id='pp'  src={require('./j.png')} width="27%" height="12%" alt="profile"/> */}
           <br/>
           <p1><strong> </strong>{currentUser?.email}</p1>
-          <br/><br/>
+          <br/>
           <hr/>
           <br/>
           <p1>
@@ -72,15 +72,15 @@ function Profile() {
            <button type='button' id='home'><SettingsRoundedIcon/>Settings</button>
            </div>
            
-           <br/><br/>
+           <br/>
           <hr/>
 
 
-          <br/><br/>
+          
           <span onClick={() => signOut(auth)}><LogoutRoundedIcon/>Logout</span>
          
-          {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
-        <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="50%" height="50%" alt="Logo"/></div>
+          
+        <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="50%" height="50%" alt="Logo"/></div> 
 
         </div>
 
