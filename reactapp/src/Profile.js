@@ -7,8 +7,10 @@ import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import AnalyticsRoundedIcon from '@mui/icons-material/AnalyticsRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
-
-
+import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
+import DeleteIcon from '@mui/icons-material/Delete';
+import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
+import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 
 
 
@@ -32,7 +34,7 @@ function Profile() {
         
         <div className='Vd'>
         <h1>Media </h1>
-          <div className='Vid'><p2>Upload</p2></div>
+          <div className='Vid'><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/><p2>Upload</p2></div>
           <div className='Vid'><p2>Delete</p2></div>
           <div className='Vid'><p2>Download</p2></div>
           <div className='Vid'>View</div>

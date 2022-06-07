@@ -64,31 +64,32 @@
 }
 
 
-  .Vid{
-    text-align: center;
-    text-indent: 65px;
-    position: relative;
-    width: 200px;
-    color: #b59ff1;
-    margin: auto;
-    float: left;
-    height: 150px;
-    font-size: 17px;
-    border: 1px solid #575758;
-    margin-bottom: 10%;
-    border-radius: 15px;
-    background-color: #222225;
-    padding-top: 4%;
-    display: flex;  
-    flex-wrap: wrap;
-    margin-right: 20px;
-    margin-left: 15px;
-    /*
-    margin-bottom: 10px; */
-   
+.Vid{
+  text-align: center;
+  text-indent: 65px;
+  position: relative;
+  width: 200px;
+  color: #b59ff1;
+  margin: auto;
+  float: left;
+  height: 150px;
+  font-size: 17px;
+  border: 1px solid #575758;
+  margin-bottom: 10%;
+  border-radius: 15px;
+  background-color: #222225;
+  padding-top: 4%;
+  display: flex;  
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 15px;
+  /*
+  margin-bottom: 10px; */
+  
 
 
-  }
+}
+
 
 .theImage {
   width: 150px;
