@@ -20,10 +20,10 @@ function Profile() {
         </div> */}
         <div className='Vd'>
           <h1>Media </h1>
-          <div className='Vid'><p1>Upload</p1></div>
+          <div className='Vid'>Upload</div>
           <div className='Vid'>Delete</div>
           <div className='Vid'>Download</div>
-          <div className='Vid'></div>
+          <div className='Vid'>View</div>
          </div>
           {/* <div className='Vid'></div><div className='Vid'></div>
         </div>
@@ -43,13 +43,13 @@ function Profile() {
           <h1>    </h1>
           
           <img id='pp'  src={require('./j.png')} width="27%" height="12%" alt="profile"/>
-          <p><strong> </strong>{currentUser?.email}</p>
+          <p1><strong> </strong>{currentUser?.email}</p1>
 
           <hr/>
-          <p>
+          <p1>
             <strong>Email verified: </strong>
             {`${currentUser?.emailVerified}`}
-          </p>
+          </p1>
           <div>
            <button type='button' id='home'>Home</button>
            <button type='button' id='home'>Analytics</button>
