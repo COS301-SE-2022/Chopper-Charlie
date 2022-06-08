@@ -14,31 +14,33 @@ def blob_upload(Containers_Name):
        
         root = tkinter.Tk()
         root.withdraw()
-
-        file_path = filedialog.askopenfilename()
-        Blob_Name = (file_path)
-        Temp = Containers_Name.replace('@', '')
-        Temp = Temp.replace('.', '')
-        Temp = Temp.replace('_', '')
-        path1 = Path(Blob_Name)
-        path1 = path1.parent
-        print(path1)
+        try:
+            file_path = filedialog.askopenfilename()
         
+            Blob_Name = (file_path)
+            Temp = Containers_Name.replace('@', '')
+            Temp = Temp.replace('.', '')
+            Temp = Temp.replace('_', '')
+            path1 = Path(Blob_Name)
+            path1 = path1.parent
+            print(path1)
+            
 
-        path = os.path.basename(os.path.normpath(Blob_Name))
-        print(path)
-        os.chdir(path1)
-        print(os.getcwd())
-        blob = BlobClient.from_connection_string(conn_str= Connection_String, container_name= Temp, blob_name= path)
-        
+            path = os.path.basename(os.path.normpath(Blob_Name))
+            print(path)
+            os.chdir(path1)
+            print(os.getcwd())
+            blob = BlobClient.from_connection_string(conn_str= Connection_String, container_name= Temp, blob_name= path)
+            
 
-        with open(path, "rb") as data:
-            blob.upload_blob(data)
-        
-        os.chdir(thetemp)
-        root.destroy()
+            with open(path, "rb") as data:
+                blob.upload_blob(data)
+            
+            os.chdir(thetemp)
+            root.destroy()
     
-        
+        except:
+            root.destroy()
 
 #Input Image Name And Container Name (ALSO MAKE SURE IMAGE IS IN CHOPPER CHARLIE DIRECTORY!)        
 #blob_upload("media")
