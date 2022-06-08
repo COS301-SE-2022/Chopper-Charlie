@@ -12,6 +12,8 @@ import PrivateRoute from './PrivateRoute'
 import {Navigate} from 'react-router-dom'
 import Download from './Download';
 import Delete from './Delete';
+import Upload from './Upload'; //added by mumi
+
 
 function App() {
 
@@ -46,6 +48,7 @@ function App() {
           <Route path='/verify-email' element={<VerifyEmail/>} /> 
           <Route path='/download' element={<Download/>} />
           <Route path='/delete' element={<Delete/>} /> 
+          <Route path='/upload' element={<Upload/>} />    {/*    added by mumi */}
  
         </Routes>  
       </AuthProvider>
