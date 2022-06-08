@@ -11,6 +11,7 @@ from AzureContainerCreate.azurecreatecontainer import create_container
 from AzureBlobRetrieve.azureblobretrieve import blob_retrieve
 from AzureContainerRetrieve.azurecontainerretrieve import list_blobs_in_container
 from AzureBlobDelete.azureblobdelete import delete_blob
+from AzureBlobUpload.azureblobupload import blob_upload
 app = Flask(__name__)
 
 # Route for seeing a data
@@ -35,6 +36,14 @@ def create_thecontainer(index_noo):
 def blob_deletion(index_clo,index_cloo):
 
 		return delete_blob(index_clo,index_cloo)
+
+@app.route("/ub/<index_ubloo>")
+def b_upload(index_ubloo):
+	blob_upload(index_ubloo)
+	return "True"
+
+
+	
 # Running app
 if __name__ == '__main__':
 	app.run(debug=True)
