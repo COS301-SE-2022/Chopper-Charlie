@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
 import './forms.css'
-import {signInWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
+import {signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail} from 'firebase/auth'
 import {auth} from './firebase'
 import {useNavigate} from 'react-router-dom'
 import {useAuthValue} from './AuthContext'
@@ -33,6 +33,15 @@ function Login(){
     .catch(err => setError(err.message))
   }
 
+const SendEmail= e => {
+  sendPasswordResetEmail(auth, email)
+  .then(() => {
+    alert("Email has been sent, reset password with link")
+  })
+}
+
+
+
   return(
    // <center>
       <div className='center'>
@@ -55,7 +64,10 @@ function Login(){
             required
             placeholder='Enter your password'
             onChange={e => setPassword(e.target.value)}/>
-            <Link id='link' to='/forgot'>Forgot password</Link>
+
+
+
+            <p  type='button' id='link' onClick={SendEmail}>Forgot password</p>
 
           
           <div class="btn">
