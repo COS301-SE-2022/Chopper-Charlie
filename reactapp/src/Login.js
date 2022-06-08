@@ -57,18 +57,19 @@ function Login(){
             onChange={e => setPassword(e.target.value)}/>
             <Link id='link' to='/forgot'>Forgot password</Link>
 
-          <button id="login" type='submit'>Login</button>
-          <a href="/register"> <button type='button' id='reg'>Register</button></a>
+          
+          <div class="btn">
+            <a  href="/register"><button type='button' id='reg'>Register</button></a>
+            <button id="login" type='submit'>Login</button>
+          </div>
+
           
           
         </form>
-
-        
-        
         
       
       </div>
-      <center><img id='AB'  src={require('./AB.png')} width="20%" height="30%" alt="Logo"/></center> 
+      <img id='AB'  src={require('./AB.png')} width="10%" height="9%" alt="Logo"/> 
     </div>
    // </center>
    //to do : add something to the forgot password link

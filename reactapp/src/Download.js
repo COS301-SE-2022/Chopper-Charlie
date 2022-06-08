@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import {useAuthValue} from './AuthContext'
 
-function Test() {
-	
-	// usestate for setting a javascript
+
+function Download() {
+	const {currentUser} = useAuthValue()
 	// object for storing and using data
 	const [data, setdata] = useState({
 		
@@ -10,10 +11,11 @@ function Test() {
 	
 
 	// Using useEffect for single rendering
-	useEffect(() => {
+	
 		// Using fetch to fetch the api from
 		// flask server it will be redirected to proxy
-		fetch("/mydatapage").then((res) =>
+		
+		fetch("/mydatapage/"+currentUser?.email).then((res) =>
 			res.json().then((data) => {
 				// Setting a data from api
 				setdata(data);
@@ -21,20 +23,22 @@ function Test() {
 
 			})
 		);
-	}, []);
+		
+		
+	
 
 	function genData(str){
-		fetch("/lol/"+str)
+		fetch("/lol/"+str+"/"+currentUser?.email)
 		}
 
 
 	return (
 		
-
-
+		
     
-		 <div>
-
+		 <div   >    
+ 
+<div><a   href="/"><button type='button' id='reg'>Back</button></a></div>
 	
 			 {(typeof data.mydata === 'undefined')?(
 				 <p>Loading...</p>
@@ -52,4 +56,4 @@ function Test() {
 	);
 }
 
-export default Test;
+export default Download;

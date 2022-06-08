@@ -8,23 +8,28 @@ import inspect
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir) 
-
+from AzureContainerCreate.azurecreatecontainer import create_container
 from AzureBlobRetrieve.azureblobretrieve import blob_retrieve
 from AzureContainerRetrieve.azurecontainerretrieve import list_blobs_in_container
 app = Flask(__name__)
 
 # Route for seeing a data
-@app.route('/mydatapage')
-def Show_Containers_Blobs():
+@app.route('/mydatapage/<index_boo>')
+def Show_Containers_Blobs(index_boo):
 
 	# Returning an api for showing in reactjs
 
-	return {"mydata":list_blobs_in_container("media")}
+	return {"mydata":list_blobs_in_container(index_boo)}
 
-@app.route("/lol/<index_no>")
-def download_blobs(index_no):
+@app.route("/lol/<index_no>/<index_glo>")
+def download_blobs(index_no,index_glo):
+		return blob_retrieve(index_no,index_glo)
 
-		return blob_retrieve(index_no,"media")
+
+@app.route("/cc/<index_noo>")
+def create_thecontainer(index_noo):
+
+		return create_container(index_noo)
 
 	
 # Running app

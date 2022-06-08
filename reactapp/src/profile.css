@@ -1,17 +1,147 @@
 .profile{
+ 
     width: 90%;
-    max-width: 400px;
-    border: 1px solid #dcdcdc;
+    max-width: 250px;
     padding: 20px;
     text-align: center;
+    position: fixed;
+    float: right;
+    right: 0%;
+    width: 30%;
+    margin:auto; 
+    height: 100vh;
+    background-color: #222225;
+    border: 3px solid #000000;
+    border-radius: 15px;
+    top: 0%;
+
   }
   
-  .profile p {
-    text-align: left;
+  .profile p1 {
+    text-align: center;
+    color: #dfdbf7;
+    font-size: 15px;
   }
+
+
+  .profile p2{
+    text-align: center;
+    color: #b59ff1;
+    font-size: 17px;
+
+
+  }
+  
+
   
   .profile > span{
-    color: blue;
+    color: #dfdbf7;
     margin-top: 30px;
     cursor: pointer;
   }
+
+ 
+  .Content{
+    float: center;
+    position: relative;
+    padding-top: 3%;
+    text-align: center;
+  } 
+ 
+
+  .Lv{
+    width: 250px;
+    height: 150px;
+    font-size: 17px;
+    border: 1px solid #575758;
+    border-radius: 15px;
+    background-color: #222225;
+    text-align: center;
+    padding-top: 15%;
+  
+  }
+
+.Vd{
+  text-align: left;
+
+}
+
+
+.Vid{
+  text-align: center;
+  margin: auto;
+  position: relative;
+  width: 180px;
+  color: #b59ff1;
+  float: left;
+  height: 150px;
+  font-size: 25px;
+  border: 1px solid #575758;
+  margin-bottom: 10%;
+  border-radius: 15px;
+  background-color: #222225;
+  
+  display: flex;  
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 15px;
+  /*
+  margin-bottom: 10px; */
+  
+
+
+}
+
+.tx{
+  text-align: center;
+  float: center;
+  margin: auto;
+  
+}
+
+
+.theImage {
+  width: 150px;
+  float:left;
+  height: 100px;
+  font-size: 17px;
+  border: 1px solid #575758;
+  border-radius: 15px;
+  background-color: #222225;
+  text-align: center;
+  padding-top: 10%;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  
+}
+
+#pp{
+  padding-top: 5%;
+}
+
+.Content{
+  padding-left: 5%;
+}
+
+#home{
+    height: 30px;
+    margin: auto;
+    margin-top: 3%;
+    text-align: left;
+    padding-left: 20%;
+    width: 100%;
+    background-color: #b59ff1;
+    font-size: 14px;
+    border-radius: 20px;
+    border: 0.5px solid #575758;
+}
+
+.sub_div {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+}
+
+.Content{
+  text-align: center;
+}

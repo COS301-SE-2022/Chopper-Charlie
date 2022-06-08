@@ -41,6 +41,11 @@ function VerifyEmail() {
     return () => clearInterval(interval);
   }, [timeActive, time, setTimeActive])
 
+  useEffect(() => {
+      fetch("/cc/"+currentUser?.email)
+      
+  },)
+
   const resendEmailVerification = () => {
     sendEmailVerification(auth.currentUser)
     .then(() => {
@@ -49,6 +54,8 @@ function VerifyEmail() {
       alert(err.message)
     })
   }
+  
+    
 
   return (
     <div className='center'>

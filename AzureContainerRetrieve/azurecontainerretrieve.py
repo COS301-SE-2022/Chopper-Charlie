@@ -4,11 +4,15 @@ Connection_String = "DefaultEndpointsProtocol=https;AccountName=choppercharlie;A
 
 def list_blobs_in_container(Containers_Name):
     try:
+        Temp = Containers_Name.replace('@', '')
+        Temp = Temp.replace('.', '')
+        Temp = Temp.replace('_', '')
+        print(Temp)
         # Instantiate a BlobServiceClient using a connection string
         blob_service_client = BlobServiceClient.from_connection_string(Connection_String)
         mylist = []
         # Instantiate a ContainerClient
-        container_client = blob_service_client.get_container_client(Containers_Name)
+        container_client = blob_service_client.get_container_client(Temp)
 
 
         # [START list_blobs_in_container]
@@ -19,9 +23,9 @@ def list_blobs_in_container(Containers_Name):
         print(mylist)
         return mylist
     except:
-        errlist = ["Error"]
+        errlist = ["Loading..."]
         print(errlist)
         return errlist
 
 # Call Function with parameter
-#list_blobs_in_container("media")
+#list_blobs_in_container("tariqcarrim@gmail.com")

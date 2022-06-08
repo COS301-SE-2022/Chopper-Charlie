@@ -4,7 +4,10 @@ Connection_String = "DefaultEndpointsProtocol=https;AccountName=choppercharlie;A
 
 def blob_retrieve(Blob_Name, Containers_Name):
     try:
-        blob = BlobClient.from_connection_string(conn_str=Connection_String, container_name=Containers_Name, blob_name=Blob_Name)
+        Temp = Containers_Name.replace('@', '')
+        Temp = Temp.replace('.', '')
+        Temp = Temp.replace('_', '')
+        blob = BlobClient.from_connection_string(conn_str=Connection_String, container_name=Temp, blob_name=Blob_Name)
 
         with open("AzureBlobRetrieve/"+Blob_Name, "wb") as my_blob:
             stream = blob.download_blob()
