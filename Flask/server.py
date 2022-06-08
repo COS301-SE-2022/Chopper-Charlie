@@ -24,7 +24,8 @@ def Show_Containers_Blobs(index_boo):
 
 @app.route("/lol/<index_no>/<index_glo>")
 def download_blobs(index_no,index_glo):
-		return blob_retrieve(index_no,index_glo)
+	blob_retrieve(index_no,index_glo)
+	return "True" 
 
 
 @app.route("/cc/<index_noo>")

@@ -8,9 +8,9 @@ from pathlib import Path
 Connection_String = "DefaultEndpointsProtocol=https;AccountName=choppercharlie;AccountKey=Bcrvc/ix8TmB/hoEE2fmp44iHAqEWeiZ1fr7Fml9Z0+Q7RI8NvX2kbqzeufPKHRY54hk+wFgE/+a+AStzl2qTw==;EndpointSuffix=core.windows.net"
 
 def blob_upload(Containers_Name):
-    try:
+    
         thetemp = os.getcwd()
-        
+       # root.mainloop()
        
         root = tkinter.Tk()
         root.withdraw()
@@ -34,9 +34,10 @@ def blob_upload(Containers_Name):
 
         with open(path, "rb") as data:
             blob.upload_blob(data)
+        
         os.chdir(thetemp)
-    except:
-        print('Error! Try Renaming The Image or Video')
+        root.destroy()
+    
         
 
 #Input Image Name And Container Name (ALSO MAKE SURE IMAGE IS IN CHOPPER CHARLIE DIRECTORY!)        
