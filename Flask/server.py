@@ -1,5 +1,4 @@
 # Import flask and datetime module for showing date and time
-from crypt import methods
 from flask import Flask, request
 import os
 import sys
@@ -11,6 +10,7 @@ sys.path.insert(0, parentdir)
 from AzureContainerCreate.azurecreatecontainer import create_container
 from AzureBlobRetrieve.azureblobretrieve import blob_retrieve
 from AzureContainerRetrieve.azurecontainerretrieve import list_blobs_in_container
+from AzureBlobDelete.azureblobdelete import delete_blob
 app = Flask(__name__)
 
 # Route for seeing a data
@@ -31,7 +31,10 @@ def create_thecontainer(index_noo):
 
 		return create_container(index_noo)
 
-	
+@app.route("/db/<index_clo>/<index_cloo>")
+def blob_deletion(index_clo,index_cloo):
+
+		return delete_blob(index_clo,index_cloo)
 # Running app
 if __name__ == '__main__':
 	app.run(debug=True)

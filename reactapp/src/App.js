@@ -11,6 +11,7 @@ import {onAuthStateChanged} from 'firebase/auth'
 import PrivateRoute from './PrivateRoute'
 import {Navigate} from 'react-router-dom'
 import Download from './Download';
+import Delete from './Delete';
 
 function App() {
 
@@ -43,7 +44,9 @@ function App() {
             : <Navigate to='/' replace/>
           } />
           <Route path='/verify-email' element={<VerifyEmail/>} /> 
-          <Route path='/download' element={<Download/>} /> 
+          <Route path='/download' element={<Download/>} />
+          <Route path='/delete' element={<Delete/>} /> 
+ 
         </Routes>  
       </AuthProvider>
   </Router>
