@@ -8,7 +8,7 @@
 [![Closed issues](https://img.shields.io/github/issues/COS301-SE-2022/Chopper-Charlie?color=green&style=flat-square)](https://github.com/COS301-SE-2022/Chopper-Charlie/issues?q=is%3Aissue+is%3Aclosed)
 [![open issues](https://img.shields.io/github/issues-closed/COS301-SE-2022/Chopper-Charlie?color=red&style=flat-square)](https://github.com/COS301-SE-2022/Chopper-Charlie/issues)
 [![pull requests](https://img.shields.io/github/issues-pr-closed/COS301-SE-2022/Chopper-Charlie?color=blue&style=flat-square)](https://github.com/COS301-SE-2022/Chopper-Charlie/pulls?q=is%3Apr+is%3Aclosed)
-
+[![Coverage Status](https://coveralls.io/repos/github/COS301-SE-2022/Chopper-Charlie/badge.svg?branch=master)](https://coveralls.io/github/COS301-SE-2022/Chopper-Charlie?branch=master)
 [![codecov](https://codecov.io/gh/COS301-SE-2022/Chopper-Charlie/branch/master/graph/badge.svg?token=VD7TWMV5I1)](https://codecov.io/gh/COS301-SE-2022/Chopper-Charlie)
 <br />
 
