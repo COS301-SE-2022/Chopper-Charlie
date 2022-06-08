@@ -9,7 +9,7 @@
 [![open issues](https://img.shields.io/github/issues-closed/COS301-SE-2022/Chopper-Charlie?color=red&style=flat-square)](https://github.com/COS301-SE-2022/Chopper-Charlie/issues)
 [![pull requests](https://img.shields.io/github/issues-pr-closed/COS301-SE-2022/Chopper-Charlie?color=blue&style=flat-square)](https://github.com/COS301-SE-2022/Chopper-Charlie/pulls?q=is%3Apr+is%3Aclosed)
 
-
+[![codecov](https://codecov.io/gh/COS301-SE-2022/Chopper-Charlie/branch/master/graph/badge.svg?token=VD7TWMV5I1)](https://codecov.io/gh/COS301-SE-2022/Chopper-Charlie)
 <br />
 
 
@@ -69,9 +69,10 @@ Chopper Charlie is a real-time image analysis platform for images taken by a dro
 
  
  <a  name="GitStructure"/><h1> Git Structure </h1></a>
- <p>master<p/>
-  <p>----develop<p/>
-  <p>-------backend-develop<p/>
-  <p>-------frontend-develop<p/>
-            
+  
+  - master
+    - develop
+        - name-develop
+    - mobile-develop
+        - name-mobile-develop    
             
