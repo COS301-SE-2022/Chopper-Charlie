@@ -17,4 +17,4 @@ def blob_retrieve(Blob_Name, Containers_Name):
         print('Error!')
 
 #Input Image Name And Container Name
-blob_retrieve("Test88.jpg","media")
+#blob_retrieve("Test88.jpg","media")
