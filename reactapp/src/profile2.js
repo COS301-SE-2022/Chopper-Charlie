@@ -131,6 +131,12 @@ export default function profile2() {
         anchor="right"
       >
         <Toolbar />
+        <ListItem button>
+          <ListItemIcon>
+            <AccountCircleIcon />
+          </ListItemIcon>
+          <ListItemText primary="Profile" />
+        </ListItem>
         <Divider />
 
         <List>
