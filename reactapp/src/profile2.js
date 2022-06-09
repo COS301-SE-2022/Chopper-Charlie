@@ -133,7 +133,12 @@ export default function profile2() {
         <Divider />
 
         <List>
-          
+        <ListItem button>
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
         </List>
 
       </Drawer>
