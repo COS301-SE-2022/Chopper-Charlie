@@ -188,10 +188,6 @@ export default function profile2() {
       2022-05-22
     </Typography>
   </CardContent>
-  <CardActions>
-    <Button size="small">Watch</Button>
-    <Button size="small" >Analyse</Button>
-  </CardActions>
 </Card>
 
       </Drawer>
