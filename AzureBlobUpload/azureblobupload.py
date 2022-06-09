@@ -1,3 +1,4 @@
+from tkinter import messagebox
 from azure.storage.blob import BlobClient
 import tkinter
 from tkinter import filedialog
@@ -36,6 +37,7 @@ def blob_upload(Containers_Name):
             with open(path, "rb") as data:
                 blob.upload_blob(data)
             
+            messagebox.showinfo("Success","Successfully uploaded media")  #added now
             os.chdir(thetemp)
             root.destroy()
     

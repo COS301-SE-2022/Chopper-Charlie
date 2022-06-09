@@ -200,6 +200,25 @@
 }
 
 
+
+#analyse{
+  width: 55px;
+  border-radius: 15px;
+  color: rgb(80, 187, 101);
+  border: 0.5px solid #575758;
+  height: 25px;
+  margin: auto;
+  background-color: #575758;
+  font-size: 14px;
+  border-radius: 20px;
+  margin-right: 0%;
+}
+
+
+
+
+
+
 .Vids{
   text-align: center;
   margin: auto;
@@ -228,7 +247,7 @@
 #back{
   height: 40px;
   background-color: rgb(34, 34, 37);
-  color: rgb(181, 159, 241);;
+  color: #b59ff1;
   font-size: 14px;
   padding: 0 10px;
   border-radius: 20px;
@@ -236,3 +255,81 @@
   width: 80px;
   
 }
+
+.upp{
+  text-align: center;
+  margin: auto;
+  position: relative;
+  width: 40%;
+  color: #ffffff;
+  float: left;
+  height: 10%;
+  font-size: 17px;
+  border: 1px solid #b59ff1;
+  margin-bottom: 10%;
+  border-radius: 15px;
+  background-color: #222225;
+  
+  display: flex;  
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 15px;
+  padding-left: 30px;
+
+
+
+}
+
+
+#up{
+  width: 100px;
+  border-radius: 15px;
+  color: rgb(0, 0, 0);
+  border: 0.5px solid #b59ff1;
+  height: 35px;
+  margin: auto;
+  background-color: #575758;
+  font-size: 14px;
+  border-radius: 20px;
+  margin-right: 10px;
+
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  top: 200%;
+  left: 700%;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid rgb(219, 192, 246);
+  border-radius: 150%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #a285f0 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

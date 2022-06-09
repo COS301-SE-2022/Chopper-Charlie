@@ -46,10 +46,16 @@ function Delete() {
 
 
 
-			<h1>Media </h1>
+			<h1>Delete Media </h1>
 	
 			 {(typeof data.mydata === 'undefined')?(
-				 <p>Loading...</p>
+				//  <p>Loading...</p>
+				<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+
+
+
+
 			 ) : (
 				 data.mydata.map((thedata, i)=>(
 					<center>

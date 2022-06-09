@@ -1,6 +1,8 @@
+import { Alert } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
 import {useAuthValue} from './AuthContext'
-
+import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
+import './profile.css'
 
 
 
@@ -16,6 +18,8 @@ function Upload() {
 
 	function genData(){
 		fetch("/ub/"+currentUser?.email)
+
+		
 		}
 
 		
@@ -27,10 +31,20 @@ function Upload() {
 	return (
 		
 		
-		 <div >    
-            
-			<button id="up" type='button'       onClick={()=>genData()} >Upload</button>
+		 <div > 
 
+		<div><a   href="/"><button type='button' id='back'>Back</button></a></div>
+
+		<h1>Upload Media </h1>
+
+
+
+		<div className="upp">
+
+
+            <p> Select file to upload : </p>
+			<button id="up" type='button' onClick={()=>genData()} >Upload <CloudUploadRoundedIcon sx={{ fontSize: 14 }}/>   </button>
+			</div>
 
 		</div>
 	);

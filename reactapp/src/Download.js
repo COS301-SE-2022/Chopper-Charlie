@@ -42,10 +42,11 @@ function Download() {
  
 <div><a   href="/"><button type='button' id='back'>Back</button></a></div>
 
-<h1>Media </h1>
+<h1>Download Media </h1>
 	
 			 {(typeof data.mydata === 'undefined')?(
-				 <p>Loading...</p>
+				//  <p>Loading...</p>
+				<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 			 ) : (
 				 data.mydata.map((thedata, i)=>(
 					 

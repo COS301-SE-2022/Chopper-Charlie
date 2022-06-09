@@ -11,7 +11,7 @@ import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
-
+import AnalyticsIcon from '@mui/icons-material/Analytics';
 
 
 
@@ -37,7 +37,7 @@ function Profile() {
         <center><a  href="/upload"><div className='Vid'><div className='tx'><p2><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/>Upload</p2></div></div></a></center>  
         <center><a  href="/delete"><div className='Vid'><div className='tx'><p2><DeleteIcon sx={{ fontSize: 50 }}/><br/>Delete</p2></div></div></a></center> 
         <center> <a  href="/download"><div className='Vid'><div className='tx'><p2><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/>Download</p2></div></div></a></center>
-        <center><a  href="/analyse"><div className='Vid'><div className='tx'><p2><PlayCircleRoundedIcon sx={{ fontSize: 50 }}/><br/>Analyse</p2></div></div></a></center>    
+        <center><a  href="/analyse"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse</p2></div></div></a></center>    
 
          </div>
           {/* <div className='Vid'></div><div className='Vid'></div>
