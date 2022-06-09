@@ -181,12 +181,7 @@ export default function profile2() {
     image="https://wallpaperaccess.com/full/154009.jpg"
   />
   <CardContent>
-    <Typography gutterBottom variant="h5" component="div">
-      DRONE-FOOTAGE-2
-    </Typography>
-    <Typography variant="body2" color="text.secondary">
-      2022-05-22
-    </Typography>
+
   </CardContent>
 </Card>
 
