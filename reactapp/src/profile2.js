@@ -20,6 +20,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 
+
 const drawerWidth = 240;
 
 
@@ -33,6 +34,11 @@ export default function profile2() {
         position="fixed"
         sx={{ width: `calc(100% - ${drawerWidth}px)`, mr: `${drawerWidth}px` }}
       >
+        <Toolbar>
+          <Typography variant="h6" noWrap component="div">
+            Chopper Charlie
+          </Typography>
+        </Toolbar>
       </AppBar>
       <Box
         component="main"
