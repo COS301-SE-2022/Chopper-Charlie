@@ -129,6 +129,8 @@ export default function profile2() {
         variant="permanent"
         anchor="right"
       >
+        <Toolbar />
+        <Divider />
 
       </Drawer>
     </Box>
