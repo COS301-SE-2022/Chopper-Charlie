@@ -46,6 +46,22 @@ export default function profile2() {
       >
         <Toolbar />
 
+
+        <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        component="img"
+        alt="green iguana"
+        height="140"
+        image="https://wallpaperaccess.com/full/154009.jpg"
+      />
+      <CardContent>
+
+      </CardContent>
+      <CardActions>
+
+      </CardActions>
+    </Card>
+
       </Box>
       <Drawer
         sx={{
