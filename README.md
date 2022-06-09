@@ -61,11 +61,6 @@ Chopper Charlie is a real-time image analysis platform for images taken by a dro
 <br/> Mumtaz Malik <br/><img src= "">  | [LinkedIn](https://www.linkedin.com/in/mumtaz-malik-3554aa23a)<br/> [GitHub](https://github.com/MumtazMalik01) <br/>|<p/>I am a third year BSc Computer Science student who enjoys learning new things. <p>
 <br/> Hamza Allimia <br/><img src= "">  | [LinkedIn](https://www.linkedin.com/in/hamza-allimia-18b934239/?original_referer=)<br/> [GitHub](https://github.com/hamza-torres) <br/>|<p/> I am a computer science student who is in their third year who is always up for new experiences.<p>
  
- ![github stats](https://github-readme-stats.vercel.app/api?username=TCarrim88&theme=react)<br></br>
- ![github stats](https://github-readme-stats.vercel.app/api?username=unaizahhhhh&theme=react)<br></br>
- ![github stats](https://github-readme-stats.vercel.app/api?username=Yaasir25&theme=react)<br></br>
- ![github stats](https://github-readme-stats.vercel.app/api?username=MumtazMalik01&theme=react)<br></br>
- ![github stats](https://github-readme-stats.vercel.app/api?username=hamza-torres&theme=react)<br></br>
 
  
  <a  name="GitStructure"/><h1> Git Structure </h1></a>
