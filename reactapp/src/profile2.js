@@ -158,7 +158,12 @@ export default function profile2() {
 
         <Divider />
         <List>
-          
+        <ListItem button>
+          <ListItemIcon>
+            <LogoutIcon />
+          </ListItemIcon>
+          <ListItemText primary="Logout" />
+        </ListItem>
         </List>
 
       </Drawer>
