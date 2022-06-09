@@ -13,6 +13,7 @@ import {Navigate} from 'react-router-dom'
 import Download from './Download';
 import Delete from './Delete';
 import Upload from './Upload'; //added by mumi
+import Analyse from './Analyse';
 
 
 function App() {
@@ -49,7 +50,8 @@ function App() {
           <Route path='/download' element={<Download/>} />
           <Route path='/delete' element={<Delete/>} /> 
           <Route path='/upload' element={<Upload/>} />    {/*    added by mumi */}
- 
+          <Route path='/analyse' element={<Analyse/>} /> 
+
         </Routes>  
       </AuthProvider>
   </Router>

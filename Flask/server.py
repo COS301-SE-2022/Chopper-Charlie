@@ -12,6 +12,8 @@ from AzureBlobRetrieve.azureblobretrieve import blob_retrieve
 from AzureContainerRetrieve.azurecontainerretrieve import list_blobs_in_container
 from AzureBlobDelete.azureblobdelete import delete_blob
 from AzureBlobUpload.azureblobupload import blob_upload
+from ImageAI.vehicle_counting import blob_retrievee
+from ImageAI.vehicle_detector import VehicleDetector
 app = Flask(__name__)
 
 # Route for seeing a data
@@ -43,8 +45,12 @@ def b_upload(index_ubloo):
 	blob_upload(index_ubloo)
 	return "True"
 
+@app.route("/ai/<index_sno>/<index_snoo>")
+def ai_image(index_sno,index_snoo):
+	blob_retrievee(index_sno,index_snoo)
+	return "True"
 
-	
+
 # Running app
 if __name__ == '__main__':
 	app.run(debug=True)
