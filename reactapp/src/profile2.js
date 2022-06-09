@@ -130,6 +130,15 @@ export default function profile2() {
         variant="permanent"
         anchor="right"
       >
+                <Card sx={{ maxWidth: 345 }}>
+  <CardMedia
+    component="img"
+    alt="green iguana"
+    height="140"
+    image="/logo.png"
+  />
+
+</Card>
         <Toolbar />
         <ListItem button>
           <ListItemIcon>
