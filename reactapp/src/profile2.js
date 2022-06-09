@@ -118,22 +118,7 @@ export default function profile2() {
 
       </Box>
       <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
-        }}
-        variant="permanent"
-        anchor="right"
-      >
-        <Toolbar />
-        <img src={require('./logo.png')} alt="Logo"/>
-        <Divider />
-        <Divider />
-
+      
       </Drawer>
     </Box>
   );
