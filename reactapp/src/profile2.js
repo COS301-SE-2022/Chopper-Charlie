@@ -178,7 +178,7 @@ export default function profile2() {
     component="img"
     alt="green iguana"
     height="140"
-    image="https://wallpaperaccess.com/full/154009.jpg"
+    image="https://zenprospect-production.s3.amazonaws.com/uploads/pictures/61f39f34a1bdb10001658261/picture"
   />
   </Card>
 
