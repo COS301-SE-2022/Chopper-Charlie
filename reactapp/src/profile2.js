@@ -134,7 +134,7 @@ export default function profile2() {
         <Divider />
 
         <List>
-          {['Home', 'Analytics', 'Settings'].map((text, index) => (
+          {['Home'].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
