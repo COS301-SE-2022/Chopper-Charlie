@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Initialize DJI SDK Manager
+         //Initialize DJI SDK Manager
         mHandler = new Handler(Looper.getMainLooper());
 
     }
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
      * Checks if there is any missing permissions, and
      * requests runtime permission if needed.
      */
+    
     private void checkAndRequestPermissions() {
         // Check for permissions
         for (String eachPermission : REQUIRED_PERMISSION_LIST) {
