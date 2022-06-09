@@ -9,4 +9,5 @@ public class MApplication extends Application{
         Helper.install(MApplication.this);
     }
     //this helps the drone connect but is still not working 100%
+    //need to connect to drone
 }
