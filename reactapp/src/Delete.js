@@ -4,7 +4,7 @@ import './profile.css'
 import DeleteIcon from '@mui/icons-material/Delete';
 import { color } from "@mui/system";
 
-
+//i hope it worked
 
 function Delete() {
 	const {currentUser} = useAuthValue()
