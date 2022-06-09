@@ -132,19 +132,6 @@ export default function profile2() {
         <Toolbar />
         <img src={require('./logo.png')} alt="Logo"/>
         <Divider />
-
-        <List>
-          {['Home'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <HomeRoundedIcon /> : <AnalyticsRoundedIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
         <Divider />
 
       </Drawer>
