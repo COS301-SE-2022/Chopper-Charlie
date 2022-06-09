@@ -146,18 +146,7 @@ export default function profile2() {
           ))}
         </List>
         <Divider />
-        <List>
-          {['Logout'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <LogoutRoundedIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+
       </Drawer>
     </Box>
   );
