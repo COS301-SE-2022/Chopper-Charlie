@@ -132,6 +132,10 @@ export default function profile2() {
         <Toolbar />
         <Divider />
 
+        <List>
+          
+        </List>
+
       </Drawer>
     </Box>
   );
