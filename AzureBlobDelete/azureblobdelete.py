@@ -12,4 +12,3 @@ def delete_blob(Blob_Name,Containers_Name):
     blob_client = container_client.get_blob_client(Blob_Name)
     blob_client.delete_blob()
 #delete_blob("Test88.jpg","media")
-#
