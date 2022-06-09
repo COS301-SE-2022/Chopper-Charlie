@@ -31,7 +31,7 @@ function Register() {
     if(validatePassword()) {
       // Create a new user with email and password using firebase
       // Create a new user with email and password using firebase
-      // Create a new user with email and password using firebase
+     
       
      
         createUserWithEmailAndPassword(auth, email, password)
