@@ -180,10 +180,7 @@ export default function profile2() {
     height="140"
     image="https://wallpaperaccess.com/full/154009.jpg"
   />
-  <CardContent>
-
-  </CardContent>
-</Card>
+  </Card>
 
       </Drawer>
     </Box>
