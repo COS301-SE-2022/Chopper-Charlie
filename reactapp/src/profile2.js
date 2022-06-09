@@ -146,6 +146,14 @@ export default function profile2() {
           </ListItemIcon>
           <ListItemText primary="Analytics" />
         </ListItem>
+
+        <ListItem button>
+          <ListItemIcon>
+            <SettingsIcon />
+          </ListItemIcon>
+          <ListItemText primary="Settings" />
+        </ListItem>
+
         </List>
 
       </Drawer>
