@@ -145,3 +145,94 @@
 .Content{
   text-align: center;
 }
+
+
+.mediadiv{
+  text-align: center;
+  margin: auto;
+  position: relative;
+  width: 180px;
+  color: #b59ff1;
+  float: left;
+  height: 120px;
+  font-size: 25px;
+  border: 1px solid #575758;
+  margin-bottom: 10%;
+  border-radius: 15px;
+  background-color: #222225;
+  display: flex;  
+  flex-wrap: wrap;
+  margin: 10px;
+  
+
+}
+
+.formatBut {
+  
+  text-align: center;
+  align-content: center;
+}
+
+#del{
+  width: 55px;
+  border-radius: 15px;
+  color: rgb(231, 107, 107);
+  border: 0.5px solid #575758;
+  height: 25px;
+  margin: auto;
+  background-color: #575758;
+  font-size: 14px;
+  border-radius: 20px;
+  margin-right: 0%;
+}
+
+#down{
+  width: 55px;
+  border-radius: 15px;
+  color: rgb(216, 230, 246);
+  border: 0.5px solid #575758;
+  height: 25px;
+  margin: auto;
+  background-color: #575758;
+  font-size: 14px;
+  border-radius: 20px;
+  margin-right: 0%;
+}
+
+
+.Vids{
+  text-align: center;
+  margin: auto;
+  position: relative;
+  width: 180px;
+  color: #ffffff;
+  float: left;
+  height: 150px;
+  font-size: 17px;
+  border: 1px solid #575758;
+  margin-bottom: 10%;
+  border-radius: 15px;
+  background-color: #222225;
+  
+  display: flex;  
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 15px;
+  /*
+  margin-bottom: 10px; */
+  
+
+
+}
+
+#back{
+  height: 40px;
+  background-color: rgb(34, 34, 37);
+  color: rgb(181, 159, 241);;
+  font-size: 14px;
+  padding: 0 10px;
+  border-radius: 20px;
+  border: 0.5px solid #575758;
+  width: 80px;
+  
+}
