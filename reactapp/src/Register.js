@@ -30,6 +30,7 @@ function Register() {
     setError('')
     if(validatePassword()) {
       // Create a new user with email and password using firebase
+      // Create a new user with email and password using firebase
     
       
      
