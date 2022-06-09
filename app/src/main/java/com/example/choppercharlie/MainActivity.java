@@ -75,10 +75,6 @@ public class MainActivity extends AppCompatActivity {
      * Checks if there is any missing permissions, and
      * requests runtime permission if needed.
      */
-     /**
-     * Checks if there is any missing permissions, and
-     * requests runtime permission if needed.
-     */
     private void checkAndRequestPermissions() {
         // Check for permissions
         for (String eachPermission : REQUIRED_PERMISSION_LIST) {
