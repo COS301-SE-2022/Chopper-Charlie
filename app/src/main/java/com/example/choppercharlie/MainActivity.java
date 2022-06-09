@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Initialize DJI SDK Manager
-         //Initialize DJI SDK Manager
         mHandler = new Handler(Looper.getMainLooper());
 
     }
