@@ -43,6 +43,7 @@ export default function profile2() {
 
 
     <Box sx={{ display: 'flex' }}>
+
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -60,6 +61,12 @@ export default function profile2() {
       >
         <Toolbar />
 
+
+        <Paper sx={{ width: 320, maxWidth: '100%' }}>
+      <MenuList>
+
+      </MenuList>
+    </Paper>
 
         <Card sx={{ maxWidth: 345 }}>
       <CardMedia
