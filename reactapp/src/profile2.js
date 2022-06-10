@@ -279,5 +279,10 @@ const itemData = [
     rows: 2,
     cols: 2,
     featured: true,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
+    title: 'Basketball',
+    author: '@tjdragotta',
   }
 ];
