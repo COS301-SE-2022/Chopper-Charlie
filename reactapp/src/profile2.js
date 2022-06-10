@@ -73,6 +73,15 @@ export default function profile2() {
             ⌘X
           </Typography>
         </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <ContentCopy fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Copy</ListItemText>
+          <Typography variant="body2" color="text.secondary">
+            ⌘C
+          </Typography>
+        </MenuItem>
       </MenuList>
     </Paper>
 
