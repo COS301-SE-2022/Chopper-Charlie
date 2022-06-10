@@ -284,5 +284,10 @@ const itemData = [
     img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
     title: 'Basketball',
     author: '@tjdragotta',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
+    title: 'Fern',
+    author: '@katie_wasserman',
   }
 ];
