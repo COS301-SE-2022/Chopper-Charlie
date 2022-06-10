@@ -82,6 +82,13 @@ export default function profile2() {
             ⌘C
           </Typography>
         </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemIcon>
+            <Cloud fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Web Clipboard</ListItemText>
+        </MenuItem>
       </MenuList>
     </Paper>
 
