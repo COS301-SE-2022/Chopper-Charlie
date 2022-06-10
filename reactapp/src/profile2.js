@@ -271,5 +271,13 @@ const itemData = [
     title: 'Hats',
     author: '@hjrc33',
     cols: 2,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
+    title: 'Honey',
+    author: '@arwinneil',
+    rows: 2,
+    cols: 2,
+    featured: true,
   }
 ];
