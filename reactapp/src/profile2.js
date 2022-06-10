@@ -20,7 +20,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import MenuList from '@mui/material/MenuList';
 import MenuItem from '@mui/material/MenuItem';
@@ -70,12 +69,7 @@ export default function profile2() {
         </Typography>
       </MenuItem>
       <Divider />
-      <MenuItem>
-        <ListItemIcon>
-          <Cloud fontSize="small" />
-        </ListItemIcon>
-        <ListItemText>Web Clipboard</ListItemText>
-      </MenuItem>
+
     </MenuList>
   </Paper>
 
