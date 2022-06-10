@@ -1,5 +1,11 @@
 import os
+import sys
 import cv2
+from pathlib import Path
+path = os.path.abspath(__file__)
+path1 = Path(path)
+path1 = path1.parent.parent
+sys.path.insert(0, path1)
 from ImageAI.vehicle_detector import VehicleDetector
 from pathlib import Path
 from azure.storage.blob import BlobClient
@@ -7,19 +13,18 @@ from azure.storage.blob import BlobClient
 Connection_String = "DefaultEndpointsProtocol=https;AccountName=choppercharlie;AccountKey=Bcrvc/ix8TmB/hoEE2fmp44iHAqEWeiZ1fr7Fml9Z0+Q7RI8NvX2kbqzeufPKHRY54hk+wFgE/+a+AStzl2qTw==;EndpointSuffix=core.windows.net"
 
 def blob_retrievee(Blob_Name, Containers_Name):
-    try:
+    
         Temp = Containers_Name.replace('@', '')
         Temp = Temp.replace('.', '')
         Temp = Temp.replace('_', '')
         blob = BlobClient.from_connection_string(conn_str=Connection_String, container_name=Temp, blob_name=Blob_Name)
 
-        with open("ImageAI/"+Blob_Name, "wb") as my_blob:
+        with open("backend/ImageAI/"+Blob_Name, "wb") as my_blob:
             stream = blob.download_blob()
             data = stream.readall()
             my_blob.write(data)
-        imageai("ImageAI/"+Blob_Name)
-    except:
-        print('Error!')
+        imageai("backend/ImageAI/"+Blob_Name)
+    
 
 def imageai(img_name):
     path1 = os.getcwd()
