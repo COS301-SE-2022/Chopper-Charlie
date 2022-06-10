@@ -265,5 +265,11 @@ const itemData = [
     title: 'Coffee',
     author: '@nolanissac',
     cols: 2,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
+    title: 'Hats',
+    author: '@hjrc33',
+    cols: 2,
   }
 ];
