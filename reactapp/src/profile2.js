@@ -249,5 +249,10 @@ const itemData = [
     rows: 2,
     cols: 2,
     featured: true,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+    title: 'Burger',
+    author: '@rollelflex_graphy726',
   }
 ];
