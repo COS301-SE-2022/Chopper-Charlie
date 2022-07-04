@@ -33,6 +33,23 @@
   }
   
 
+  .profile p3{
+    text-align: left;
+    color: #333237;
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 2%;
+    
+  
+   
+  }
+
+  #icon{
+position: relative;
+color: #333237;
+padding-right: 5%;
+  }
+
   
   .profile > span{
     color: #dfdbf7;
@@ -71,10 +88,10 @@
   text-align: center;
   margin: auto;
   position: relative;
-  width: 180px;
+  width: 160px;
   color: #b59ff1;
   float: left;
-  height: 150px;
+  height: 130px;
   font-size: 25px;
   border: 1px solid #575758;
   margin-bottom: 10%;
@@ -116,7 +133,7 @@
 }
 
 #pp{
-  padding-top: 5%;
+  padding-top: 4%;
 }
 
 .Content{
@@ -124,17 +141,20 @@
 }
 
 #home{
-    height: 30px;
-    margin: auto;
-    margin-top: 3%;
+    height: 32px;
+    margin: 2%;
     text-align: left;
-    padding-left: 20%;
+    padding-left: 10%;
     width: 100%;
-    background-color: #b59ff1;
+    background-color: #e3ddf6;
     font-size: 14px;
     border-radius: 20px;
     border: 0.5px solid #575758;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
+
 
 .sub_div {
   position: absolute;
@@ -185,6 +205,16 @@
   border-radius: 20px;
   margin-right: 0%;
 }
+
+
+.logout{
+  color:#e3ddf6;
+  background-color: #222225;
+  border: none;
+  cursor: pointer;
+
+}
+
 
 #down{
   width: 55px;

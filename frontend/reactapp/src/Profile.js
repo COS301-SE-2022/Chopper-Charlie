@@ -63,14 +63,15 @@ function Profile() {
           <br/>
           <hr/>
           <br/>
-          <p1>
+          {/* <p1>
             <strong>Email verified: </strong>
             {`${currentUser?.emailVerified}`}
-          </p1>
+          </p1> */}
           <div>
-           <button type='button' id='home'><HomeRoundedIcon/>Home</button>
-           <button type='button' id='home'><AnalyticsRoundedIcon/>Analytics</button>
-           <button type='button' id='home'><SettingsRoundedIcon/>Settings</button>
+           <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
+           
+           <button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button>
+           <button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button>
            </div>
            
            <br/>
@@ -79,7 +80,7 @@ function Profile() {
 
           
           
-          <a href = "/login"><button type = "button" onClick={() => signOut(auth)}  ><LogoutRoundedIcon/  >Logout</button></a>
+          <a href = "/login"><button type = "button" className='logout' onClick={() => signOut(auth)}  ><LogoutRoundedIcon/  >Logout</button></a>
          
           
         <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="50%" height="50%" alt="Logo"/></div> 
