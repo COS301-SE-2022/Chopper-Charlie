@@ -33,11 +33,14 @@ function Profile() {
         </div> */}
         
         <div className='Vd'>
-        <h1>Media </h1>
-        <center><a  href="/upload"><div className='Vid'><div className='tx'><p2><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/>Upload</p2></div></div></a></center>  
-        <center><a  href="/delete"><div className='Vid'><div className='tx'><p2><DeleteIcon sx={{ fontSize: 50 }}/><br/>Delete</p2></div></div></a></center> 
-        <center> <a  href="/download"><div className='Vid'><div className='tx'><p2><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/>Download</p2></div></div></a></center>
-        <center><a  href="/analyse"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse</p2></div></div></a></center>    
+        <h1>Pipelines </h1>
+        <div className="upp">
+          <p1>Pipeline-1 </p1>
+          </div>
+
+
+
+
 
          </div>
           {/* <div className='Vid'></div><div className='Vid'></div>
@@ -70,7 +73,7 @@ function Profile() {
           <div>
            <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
            
-           <a  href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button></a>
+           <button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button>
            <button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button>
            </div>
            
