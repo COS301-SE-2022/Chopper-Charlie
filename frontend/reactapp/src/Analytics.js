@@ -12,6 +12,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
+import { Alert, Hidden } from '@mui/material';
+
 
 
 
@@ -21,6 +23,18 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 function Profile() {
   
   const {currentUser} = useAuthValue()
+  var pNo=1;
+  const warning= w => {
+    var t = window.confirm("Are you sure you want to delete the pipeline?");       
+    if(t == true)    
+    {    
+           
+        document.getElementById(pNo).style.visibility="hidden";
+    }    
+       
+
+}
+
 
   return (
    
@@ -34,8 +48,12 @@ function Profile() {
         
         <div className='Vd'>
         <h1>Pipelines </h1>
-        <div className="upp">
-          <p1>Pipeline-1 </p1>
+         <div className="pipelines" id={pNo}>  {/* can delete using id number */}
+          <p1>Pipeline - {pNo} </p1>
+          <div id='options'>Count Objects</div>
+          <button onClick={warning} id='delete'>Delete</button>
+          <p id="demo"></p>
+          <button id='edit'>Edit</button> 
           </div>
 
 
@@ -43,13 +61,16 @@ function Profile() {
 
 
          </div>
+        
           {/* <div className='Vid'></div><div className='Vid'></div>
         </div>
         <div className='imga'>
         <h2>Images</h2>
         <div className='theImage'></div>
         </div> */}
+       <div id='add'>+</div>
       </div>
+     
 
          
         <div className='profile'>
