@@ -70,7 +70,7 @@ function Profile() {
           <div>
            <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
            
-           <a  href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button></a>
+           <a id='pagelinks' href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button></a>
            <button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button>
            </div>
            
