@@ -1,6 +1,6 @@
 import './profile.css'
 import {useAuthValue} from './AuthContext'
-import { signOut } from 'firebase/auth' 
+import { signOut,sendPasswordResetEmail } from 'firebase/auth' 
 import { auth } from './firebase'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
@@ -13,8 +13,11 @@ import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import { Alert, Hidden } from '@mui/material';
+import { padding } from '@mui/system';
 
-
+import { purple } from '@mui/material/colors';
+import Switch from '@mui/material/Switch';
+import { alpha, styled } from '@mui/material/styles';
 
 
 
@@ -23,17 +26,29 @@ import { Alert, Hidden } from '@mui/material';
 function Profile() {
   
   const {currentUser} = useAuthValue()
-  var pNo=1;
-  const warning= w => {
-    var t = window.confirm("Are you sure you want to delete the pipeline?");       
-    if(t == true)    
-    {    
-           
-        document.getElementById(pNo).style.visibility="hidden";
-    }    
-       
 
-}
+  const SendEmail= e => {
+    sendPasswordResetEmail(auth, currentUser?.email)
+    .then(() => {
+      alert("An email has been sent to, Change your password with link")
+    })
+  }
+
+  const GreenSwitch = styled(Switch)(({ theme }) => ({
+    '& .MuiSwitch-switchBase.Mui-checked': {
+      color: purple[200],
+      '&:hover': {
+        backgroundColor: alpha(purple[200], theme.palette.action.hoverOpacity),
+      },
+    },
+    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+      backgroundColor: purple[200],
+    },
+  }));
+  
+  const label = { inputProps: { 'aria-label': 'Switch demo' } };
+
+
 
 
   return (
@@ -41,34 +56,28 @@ function Profile() {
       <div className='center'>
 
      <div className='Content'>
-        {/* <div className='Lv'>
-        <img src={require('./play.png')} width="30%" height="40%" alt="Logo"/>
-        <h4>Watch Live Stream</h4>
-        </div> */}
         
-        <div className='Vd'>
-        <h1>Pipelines </h1>
-         <div className="pipelines" id={pNo}>  {/* can delete using id number */}
-          <p1>Pipeline - {pNo} </p1>
-          <div id='options'>Count Objects</div>
-          <button onClick={warning} id='delete'>Delete</button>
-          <p id="demo"></p>
-          <button id='edit'>Edit</button> 
-          </div>
+        
+        <div className='set'>
+        <h1>Settings </h1>
+        <div id='settings'>
+            
+        <AccountCircleRoundedIcon sx={{ fontSize: 70 ,padding:5}}/>
+        <p1><strong> </strong>{currentUser?.email}</p1>
+         <br></br>
+        <button id="changepass" type='button'  onClick={SendEmail}>Change password</button> <br></br>
+        <br></br>
+        <p4>Push notifications </p4>  <Switch {...label} defaultChecked color="secondary" />
 
 
 
-
+        </div>
 
          </div>
+
+
         
-          {/* <div className='Vid'></div><div className='Vid'></div>
-        </div>
-        <div className='imga'>
-        <h2>Images</h2>
-        <div className='theImage'></div>
-        </div> */}
-       <div id='add'>+</div>
+         
       </div>
      
 

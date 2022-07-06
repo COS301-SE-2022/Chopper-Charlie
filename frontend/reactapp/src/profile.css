@@ -146,7 +146,7 @@ padding-right: 5%;
     text-align: left;
     padding-left: 10%;
     width: 100%;
-    background-color: #e3ddf6;
+    background-color: #e7e3f6;
     font-size: 14px;
     border-radius: 20px;
     border: 0.5px solid #575758;
@@ -441,7 +441,7 @@ cursor: pointer;
   width: 50px;
   height: 50px;
   font-size: 40px;
-  background-color: #e4e0f7;
+  background-color: #e7e3f6;
   color: #000000;
   border-radius: 15px;
   position:absolute;
@@ -449,4 +449,43 @@ cursor: pointer;
   margin-left: 23%;
   cursor: pointer;
 
+}
+
+#settings{
+  width: 300px;
+  background-color: #222225;
+  border-radius: 20px;
+  height: 70vh;
+  margin-left: 70%;
+  text-align: center;
+  position: relative;
+  top: -10px;
+
+}
+
+.set{
+  text-align: left;
+  position: absolute;
+  top: 2%;
+}
+
+#changepass{
+  height: 40px;
+  font-size: 13px;
+  background-color: rgb(34, 34, 37);
+  color: rgb(181, 159, 241);;
+  font-size: 14px;
+  margin-top: 3%;
+  border-radius: 20px;
+  border: 0.5px solid #575758;
+  width: 50%;
+  cursor: pointer;
+  
+}
+
+#settings p4{
+  color: #575758;
+  font-size: 14px;
+  margin-left: -20%;
+ 
 }
