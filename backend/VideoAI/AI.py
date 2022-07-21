@@ -2,7 +2,7 @@ import cv2
 
 cap = cv2.VideoCapture('https://choppercharlie.blob.core.windows.net/media/parking.mp4')
 
-car_cascade = cv2.CascadeClassifier('VideoAI/cars.xml')
+car_cascade = cv2.CascadeClassifier('backend/VideoAI/cars.xml')
 
 while True:
     ret, frames = cap.read()
