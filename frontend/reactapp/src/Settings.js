@@ -1,6 +1,6 @@
 import './profile.css'
 import {useAuthValue} from './AuthContext'
-import { signOut } from 'firebase/auth' 
+import { signOut,sendPasswordResetEmail } from 'firebase/auth' 
 import { auth } from './firebase'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
@@ -12,7 +12,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
+import { Alert, Hidden } from '@mui/material';
+import { padding } from '@mui/system';
 
+import { purple } from '@mui/material/colors';
+import Switch from '@mui/material/Switch';
+import { alpha, styled } from '@mui/material/styles';
 
 
 
@@ -22,31 +27,59 @@ function Profile() {
   
   const {currentUser} = useAuthValue()
 
+  const SendEmail= e => {
+    sendPasswordResetEmail(auth, currentUser?.email)
+    .then(() => {
+      alert("An email has been sent to, Change your password with link")
+    })
+  }
+
+  const GreenSwitch = styled(Switch)(({ theme }) => ({
+    '& .MuiSwitch-switchBase.Mui-checked': {
+      color: purple[200],
+      '&:hover': {
+        backgroundColor: alpha(purple[200], theme.palette.action.hoverOpacity),
+      },
+    },
+    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+      backgroundColor: purple[200],
+    },
+  }));
+  
+  const label = { inputProps: { 'aria-label': 'Switch demo' } };
+
+
+
+
   return (
    
       <div className='center'>
 
      <div className='Content'>
-        {/* <div className='Lv'>
-        <img src={require('./play.png')} width="30%" height="40%" alt="Logo"/>
-        <h4>Watch Live Stream</h4>
-        </div> */}
         
-        <div className='Vd'>
-        <h1>Media </h1>
-        <center><a  href="/upload"><div className='Vid'><div className='tx'><p2><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/>Upload</p2></div></div></a></center>  
-        <center><a  href="/delete"><div className='Vid'><div className='tx'><p2><DeleteIcon sx={{ fontSize: 50 }}/><br/>Delete</p2></div></div></a></center> 
-        <center> <a  href="/download"><div className='Vid'><div className='tx'><p2><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/>Download</p2></div></div></a></center>
-        <center><a  href="/analyse"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse</p2></div></div></a></center>    
+        
+        <div className='set'>
+        <h1>Settings </h1>
+        <div id='settings'>
+            
+        <AccountCircleRoundedIcon sx={{ fontSize: 70 ,padding:5}}/>
+        <p1><strong> </strong>{currentUser?.email}</p1>
+         <br></br>
+        <button id="changepass" type='button'  onClick={SendEmail}>Change password</button> <br></br>
+        <br></br>
+        <p4>Push notifications </p4>  <Switch {...label} defaultChecked color="secondary" />
+
+
+
+        </div>
 
          </div>
-          {/* <div className='Vid'></div><div className='Vid'></div>
-        </div>
-        <div className='imga'>
-        <h2>Images</h2>
-        <div className='theImage'></div>
-        </div> */}
+
+
+        
+         
       </div>
+     
 
          
         <div className='profile'>
@@ -68,10 +101,10 @@ function Profile() {
             {`${currentUser?.emailVerified}`}
           </p1> */}
           <div>
-           <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
+          <a id='pagelinks' href="\"><button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button></a>
            
            <a id='pagelinks' href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button></a>
-           <button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button>
+           <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
            </div>
            
            <br/>

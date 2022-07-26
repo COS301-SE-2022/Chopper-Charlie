@@ -12,6 +12,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
+import { Alert, Hidden } from '@mui/material';
+
 
 
 
@@ -21,6 +23,18 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 function Profile() {
   
   const {currentUser} = useAuthValue()
+  var pNo=1;
+  const warning= w => {
+    var t = window.confirm("Are you sure you want to delete the pipeline?");       
+    if(t == true)    
+    {    
+           
+        document.getElementById(pNo).style.visibility="hidden";
+    }    
+       
+
+}
+
 
   return (
    
@@ -33,20 +47,30 @@ function Profile() {
         </div> */}
         
         <div className='Vd'>
-        <h1>Media </h1>
-        <center><a  href="/upload"><div className='Vid'><div className='tx'><p2><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/>Upload</p2></div></div></a></center>  
-        <center><a  href="/delete"><div className='Vid'><div className='tx'><p2><DeleteIcon sx={{ fontSize: 50 }}/><br/>Delete</p2></div></div></a></center> 
-        <center> <a  href="/download"><div className='Vid'><div className='tx'><p2><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/>Download</p2></div></div></a></center>
-        <center><a  href="/analyse"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse</p2></div></div></a></center>    
+        <h1>Pipelines </h1>
+         <div className="pipelines" id={pNo}>  {/* can delete using id number */}
+          <p1>Pipeline - {pNo} </p1>
+          <div id='options'>Count Objects</div>
+          <button onClick={warning} id='delete'>Delete</button>
+          <p id="demo"></p>
+          <button id='edit'>Edit</button> 
+          </div>
+
+
+
+
 
          </div>
+        
           {/* <div className='Vid'></div><div className='Vid'></div>
         </div>
         <div className='imga'>
         <h2>Images</h2>
         <div className='theImage'></div>
         </div> */}
+       <div id='add'>+</div>
       </div>
+     
 
          
         <div className='profile'>
@@ -68,10 +92,10 @@ function Profile() {
             {`${currentUser?.emailVerified}`}
           </p1> */}
           <div>
-           <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
+          <a id='pagelinks' href="\"><button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button></a>
            
            <a id='pagelinks' href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button></a>
-           <button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button>
+           <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
            </div>
            
            <br/>
