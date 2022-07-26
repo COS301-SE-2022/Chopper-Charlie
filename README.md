@@ -52,7 +52,7 @@ Chopper Charlie is a real-time image analysis platform for images taken by a dro
 <br />
 
 <a name="PMT"/><h1>Project Management Tool</h1></a>
-- ![GitHub](https://github.com/COS301-SE-2022/Chopper-Charlie/projects/1) <br>
+- ![GitHub Project Board](https://github.com/COS301-SE-2022/Chopper-Charlie/projects/1) <br>
 <br/>
 
 
