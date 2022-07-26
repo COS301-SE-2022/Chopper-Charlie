@@ -5,7 +5,7 @@ class VehicleDetector:
 
     def __init__(self):
 
-        net = cv2.dnn.readNet("ImageAI/yolov4.weights", "ImageAI/yolov4.cfg")
+        net = cv2.dnn.readNet("backend/ImageAI/yolov4.weights", "backend/ImageAI/yolov4.cfg")
         self.model = cv2.dnn_DetectionModel(net)
         self.model.setInputParams(size=(832, 832), scale=1 / 255)
         self.classes_allowed = [2, 3, 5, 6, 7]
