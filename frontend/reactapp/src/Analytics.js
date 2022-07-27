@@ -75,7 +75,7 @@ function Profile() {
          
         <div className='profile'>
 
-        <img src={require('./logo.png')} width="60%" height="13%" alt="Logo"/>
+        <img src={require('./logo.png')} width="235px%" height="115px%" alt="Logo"/>
                
           <h1>    </h1>
           
