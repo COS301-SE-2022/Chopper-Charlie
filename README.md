@@ -37,22 +37,26 @@ Chopper Charlie is a real-time image analysis platform for images taken by a dro
 <a  name="Documentation"/><h1> Documentation </h1></a>
 
 <ul>
- <li><a href="https://drive.google.com/file/d/1btHsL2_eYNxmccubo_DoVrPat2G_B65B/view?usp=sharing">SRS </a></li>
- <li><a href="https://drive.google.com/file/d/1vEDgxy4A5LqzNuti0lxxHEudqBiPVnyZ/view?usp=sharing">SRS Demo 2 </a></li>
- <li><a href="https://drive.google.com/file/d/1WuY-iCNzSnFCN0Czp1eqNVIh366qkEeI/view?usp=sharing">Architectural Requirements Demo 2 </a></li>
- <li><a href="https://drive.google.com/file/d/1ZpCEof5IUNmCRqjSDXorDEF3iq0u70Eo/view?usp=sharing">Coding Standards Demo 2 </a></li>
+ <li><a href="https://drive.google.com/file/d/1btHsL2_eYNxmccubo_DoVrPat2G_B65B/view?usp=sharing">SRS Document Demo 1</a></li>
+ <li><a href="https://drive.google.com/file/d/1vEDgxy4A5LqzNuti0lxxHEudqBiPVnyZ/view?usp=sharing">SRS Document Demo 2 </a></li>
+ <li><a href="https://drive.google.com/file/d/1F_tDUhzK0g6jIJpAHJ8XjWKJ2Fv6Ww3q/view?usp=sharing">SRS Document Demo 3 </a></li>
+ <li><a href="https://drive.google.com/file/d/1WuY-iCNzSnFCN0Czp1eqNVIh366qkEeI/view?usp=sharing">Architectural Requirements Document Demo 2 </a></li>
+ <li><a href="https://drive.google.com/file/d/1r7Ettiz5Zl6hicZJKhmllbHbYrSC3qxC/view?usp=sharing">Architectural Requirements Document Demo 3 </a></li>
+ <li><a href="https://drive.google.com/file/d/1ZpCEof5IUNmCRqjSDXorDEF3iq0u70Eo/view?usp=sharing">Coding Standards Document Demo 2 </a></li>
+ <li><a href="https://drive.google.com/file/d/1JsSjYIfLNwrfJL_yFpabyu1rwihgHzLG/view?usp=sharing">Coding Standards Document Demo 3 </a></li>
+ 
   
 </ul>
 <br />
 
 <a name="RecordedDemos"/><h1>Recorded Demo Videos 📹</h1></a>
- -[Demo 1](https://drive.google.com/file/d/1if_SMDn4avnJKiql4TbIAmkhOkzWNKaB/view?usp=sharing)
+ -[Demo 1](https://drive.google.com/file/d/1if_SMDn4avnJKiql4TbIAmkhOkzWNKaB/view?usp=sharing)</br>
  -[Demo 2](https://drive.google.com/file/d/16qauaXrH9pqy3dNYp_GABfI6HH0VYW3Q/view?usp=sharing)
 
 <br />
 
 <a name="PMT"/><h1>Project Management Tool</h1></a>
-- ![GitHub](https://github.com/COS301-SE-2022/Chopper-Charlie/projects/1) <br>
+- ![GitHub Project Board](https://github.com/COS301-SE-2022/Chopper-Charlie/projects/1) <br>
 <br/>
 
 
