@@ -50,6 +50,11 @@ def ai_image(index_sno,index_snoo):
 	blob_retrievee(index_sno,index_snoo)
 	return "True"
 
+@app.route("/ai/video/<index_sno>/<index_snoo>")
+def ai_video(index_sno,index_snoo):
+	blob_retrievee(index_sno,index_snoo)
+	return "True"
+
 
 # Running app
 if __name__ == '__main__':
