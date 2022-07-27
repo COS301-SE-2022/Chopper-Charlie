@@ -83,6 +83,12 @@ padding-right: 5%;
 
 }
 
+.AM{
+ 
+  Display: block;
+}
+
+
 
 .Vid{
   text-align: center;
@@ -273,6 +279,34 @@ padding-right: 5%;
 
 
 }
+
+
+.imgs{
+  text-align: center;
+  margin: left;
+  position: relative;
+  width: 180px;
+  color: #ffffff;
+  float: left;
+  height: 150px;
+  font-size: 17px;
+  border: 1px solid #575758;
+  margin-bottom: 10%;
+  border-radius: 15px;
+  background-color: #222225;
+  
+  display: flex;  
+  flex-wrap: wrap;
+  margin-left: -100px;
+  margin-left: 15px;
+  /*
+  margin-bottom: 10px; */
+  
+
+
+}
+
+
 
 #back{
   height: 40px;

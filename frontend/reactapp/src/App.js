@@ -16,6 +16,7 @@ import Upload from './Upload'; //added by mumi
 import Analyse from './Analyse';
 import Analytics from './Analytics'; //added by mumi
 import Settings from './Settings'; //added by mumi
+import AnalyseVideo from './AnalyseVideo'; //added by mumi
 
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
           <Route path='/analyse' element={<Analyse/>} /> 
           <Route path='/analytics' element={<Analytics/>} />    {/*    added by mumi */}
           <Route path='/settings' element={<Settings/>} />    {/*    added by mumi */}
+          <Route path='/analysevideo' element={<AnalyseVideo/>} /> 
         </Routes>  
       </AuthProvider>
   </Router>
