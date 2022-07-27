@@ -332,7 +332,7 @@ padding-right: 5%;
   border: 1px solid #b59ff1;
   margin-bottom: 10%;
   border-radius: 15px;
-  background-color: #222225;
+  background-color: rgb(34, 34, 37);
   
   display: flex;  
   flex-wrap: wrap;
@@ -523,3 +523,59 @@ cursor: pointer;
   margin-left: -20%;
  
 }
+
+.Pipelineform{
+  text-align: left;
+  margin: left;
+  position: relative;
+  width: 60%;
+  color: #ffffff;
+  float: left;
+  height: 70px;
+  font-size: 17px;
+  border: 1px solid #b59ff1;
+  margin-bottom: 2px;
+  border-radius: 15px;
+  background-color: #222225;  
+  flex-wrap: wrap;
+  margin-right: 400px;
+  margin-left: 15px;
+  padding-left: 10px;
+  padding-top: 5px;
+
+}
+
+#pps{
+  text-align: center;
+  display: inline-block;
+  position:relative;
+  width: 600px;
+  color: #ffffff;
+  height: 40px;
+  font-size: 17px;
+  border:#e3ddf6;
+  margin-bottom: 1px;
+  border-radius: 5px;
+  background-color: #222225;
+  display: flex;  
+  flex-wrap: wrap;
+  margin-right: 500px;
+  margin-left: 15px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+ 
+}
+
+#ppsdel{
+  height: 20px;
+  position: absolute;
+  background-color: rgb(34, 34, 37);
+  color: rgb(181, 159, 241);;
+  font-size: 12px;
+  border-radius: 20px;
+  border: 0.5px solid #575758;
+  width: 20px;
+  cursor: pointer;
+  
+  }

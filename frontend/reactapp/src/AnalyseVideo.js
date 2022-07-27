@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import {useAuthValue} from './AuthContext'
 import './profile.css'
 import AnalyticsIcon from '@mui/icons-material/Analytics';
+import { grey } from "@mui/material/colors";
 
 
 
@@ -37,6 +38,51 @@ function AnalyseVideo() {
 	function genData(str){
 		fetch("/ai/video/"+str+"/"+currentUser?.email)
 		}
+	
+	function pipeline(){
+		var select = document.getElementById('vehicle');
+		var value = select.options[select.selectedIndex].value;
+		// var t = window.confirm(value);
+
+		var ol = document.querySelector('#outline').checked;
+        var countt= document.querySelector('#cnt').checked;
+
+		if (ol===true){
+			var outline="y"
+			var t3="<div id='options'>Track Objects</div>";
+		}
+		else{
+			var outline="n"
+			var t3="";
+			
+		}
+
+		if (countt===true){
+			var cntt="y"
+			var t4=" <div id='options'>Count Objects</div>";
+		}
+		else{
+			var box="n"
+			var t4="";
+		}
+
+		var t = window.confirm(value+"   "+ol+"  " +countt);
+		
+		var t1="<div id='pps'><p1>Pipeline- 1</p1>";
+		var t2="<div id='options'>"+value+"</div>";
+		var t5="<button id='delete'>Delete</button><p id='demo'></p> </div>";
+
+
+		// var a="<div className='pps'><h1>Pipelines </h1><div className=\"pps\">  <p1>Pipeline 1 </p1><div id='options'>Count Objects</div><button onClick={warning} id='ppsdel'>Delete</button><p id=\"demo\"></p> </div>";
+
+		// var mydiv=document.getElementById('pp');
+		// mydiv.innerHTML+= "<br></br>"+ t1+t2+t3+t4+t5;
+		document.getElementById('pp').insertAdjacentHTML('afterend', '<br></br>'+ t1+t2+t3+t4+t5);
+
+
+
+	
+	}	
 
 
 	return (
@@ -46,6 +92,51 @@ function AnalyseVideo() {
 		 <div   >    
  
 <div><a   href="/"><button type='button' id='back'>Back</button></a></div>
+<h1>Pipelines</h1>
+<div className='Pipelineform'>
+    <p> Analyse :  <span></span>  <span></span> 
+	<select id="vehicle">
+        <option value="car">Cars</option>
+        <option value="bus">Buses</option>
+        <option value="truck">Trucks</option>
+        <option value="motorbike">Motorbikes</option>
+    
+      </select>
+
+	  
+		<span></span>
+		<span></span>
+		<input type="checkbox" id="outline" name="outline" value="y"></input>
+		<label for="outline"> Object Outline</label>
+		<input type="checkbox" id="cnt" name="count" value="y"></input>
+		<label for="count"> Count Objects</label> <span></span>
+		<button onClick={pipeline}>Create</button>
+	
+	  </p> 
+
+	
+        
+         
+		  
+		 
+
+
+	
+</div>
+ <div id="pp"></div> 
+
+{/* <div className="pps" >  
+          <p1>Pipeline- 1 </p1>
+		  <div id='options'>Car</div>
+          <div id='options'>Count Objects</div>
+		  <div id='options'>Track Objects</div>
+          <button id='delete'>Delete</button>
+          <p id="demo"></p> 
+          </div> */}
+
+
+
+
 
 <h1>Analyse Video </h1>
 	
@@ -79,6 +170,7 @@ function AnalyseVideo() {
 						</center> 
 
          			</div>
+					
 					
 
 
