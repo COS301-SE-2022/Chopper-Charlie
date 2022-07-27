@@ -15,3 +15,4 @@ def blob_retrieveee(Blob_Name, Containers_Name, type, box, count):
             data = stream.readall()
             my_blob.write(data)
         thisfunct(Blob_Name,Blob_Name, type,box,count)
+        #
