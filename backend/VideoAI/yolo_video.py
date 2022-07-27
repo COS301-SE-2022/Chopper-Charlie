@@ -7,25 +7,16 @@ import cv2
 from input_retrieval import *
 
 
+	
 
-val = input("What vehicle would you like to count? (car/bus/truck/train/motorbike)")
-print(val)
-
-#All these classes will be counted as 'vehicles'
-# list_of_vehicles = ["bicycle","car","motorbike","bus","truck", "train"]
-if (val=="car"):
-	list_of_vehicles = ["car"]
-if (val=="bus"):
-	list_of_vehicles = ["bus"]	
-if	(val=="truck"):
-	list_of_vehicles = ["truck"]	
-if	(val=="motorbike"):
-	list_of_vehicles = ["motorbike"]	
+	#All these classes will be counted as 'vehicles'
+#list_of_vehicles = ["bicycle","car","motorbike","bus","truck", "train"]
+	
+	# list_of_vehicles = [type]
+		
 
 
-yn = input("Would you like an object outline? (y/n)")
 
-a=input("Would you like it to be counted? (y/n)")
 
 
 
@@ -35,7 +26,7 @@ inputWidth, inputHeight = 416, 416
 
 #Parse command line arguments and extract the values required
 LABELS, weightsPath, configPath, inputVideoPath, outputVideoPath,\
-	preDefinedConfidence, preDefinedThreshold, USE_GPU= parseCommandLineArguments()
+	preDefinedConfidence, preDefinedThreshold, list_of_vehicles, yn, a, USE_GPU= parseCommandLineArguments()
 
 # Initialize a list of colors to represent each possible class label
 np.random.seed(42)
@@ -48,7 +39,7 @@ def displayVehicleCount(frame, vehicle_count):
 	if (a=="y"):
 		cv2.putText(
 			frame, #Image
-			'Detected '+val+'s:' + str(vehicle_count), #Label
+			'Detected '+list_of_vehicles+'s:' + str(vehicle_count), #Label
 			(20, 20), #Position
 			cv2.FONT_HERSHEY_SIMPLEX, #Font
 			0.8, #Size
@@ -274,7 +265,7 @@ while True:
 				# and and left corner of the bounding box
 				x = int(centerX - (width / 2))
 				y = int(centerY - (height / 2))
-                            
+							
 				#Printing the info of the detection
 				#print('\nName:\t', LABELS[classID],
 					#'\t|\tBOX:\t', x,y)
@@ -306,7 +297,7 @@ while True:
 	# Display Vehicle Count if a vehicle has passed the line 
 	displayVehicleCount(frame, vehicle_count)
 
-    # write the output frame to disk
+	# write the output frame to disk
 	writer.write(frame)
 
 	cv2.imshow('Frame', frame)
@@ -322,3 +313,4 @@ while True:
 print("[INFO] cleaning up...")
 writer.release()
 videoStream.release()
+os.remove(inputVideoPath)

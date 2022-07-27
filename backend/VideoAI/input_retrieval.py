@@ -1,5 +1,6 @@
 import argparse
 import os
+import string
 
 # PURPOSE: Parsing the command line input and extracting the user entered values
 # PARAMETERS: N/A
@@ -24,8 +25,15 @@ def parseCommandLineArguments():
 		help="minimum probability to filter weak detections")
 	ap.add_argument("-t", "--threshold", type=float, default=0.3,
 		help="threshold when applying non-maxima suppression")
+	ap.add_argument("-l", "--list_of_vehicles", required=False,
+		help="type of vevicle")
+	ap.add_argument("-yn", "--yn", required=False,
+		help="Boxes")
+	ap.add_argument("-a", "--a", required=False,
+		help="counting")
 	ap.add_argument("-u", "--use-gpu", type=bool, default=False,
-	help="boolean indicating if CUDA GPU should be used")
+		help="boolean indicating if CUDA GPU should be used")
+	
 
 	args = vars(ap.parse_args())
 
@@ -41,6 +49,10 @@ def parseCommandLineArguments():
 	outputVideoPath = args["output"]
 	confidence = args["confidence"]
 	threshold = args["threshold"]
+	list_of_vehicles = args["list_of_vehicles"]
+	yn = args["yn"]  #boxes
+	a = args["a"] #counting
 	USE_GPU = args["use_gpu"]
 
-	return LABELS, weightsPath, configPath, inputVideoPath, outputVideoPath, confidence, threshold, USE_GPU
+
+	return LABELS, weightsPath,  configPath, inputVideoPath, outputVideoPath, confidence, threshold, list_of_vehicles,yn, a, USE_GPU
