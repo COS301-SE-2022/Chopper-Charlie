@@ -14,3 +14,4 @@ def thisfunct(inpt,outpt,type, box, count):
 			outpt+ " --yolo yolo-coco --list_of_vehicles " + type + " --yn " +box + " --a " + count + " --use-gpu 1"
 		print("Running command:\n" + cmd)
 		subprocess.run(cmd, shell=True)
+	os.chdir(lol)
