@@ -12,6 +12,10 @@ function Analyse() {
 	const [data, setdata] = useState({
 		
 	});
+
+
+
+	
 	
 
 	// Using useEffect for single rendering
@@ -34,9 +38,30 @@ function Analyse() {
 		} */
 	
 
+
+		
+
 	function genData(str){
 		fetch("/ai/"+str+"/"+currentUser?.email)
 		}
+	
+	
+	var pNo=1;
+	const warning= w => {
+		var t = window.confirm("Are you sure you want to delete the pipeline?");       
+		if(t == true)    
+		{    
+				 
+			document.getElementById(pNo).style.visibility="hidden";
+		}    
+			 
+	  
+	  }	
+
+
+
+
+
 
 
 	return (
@@ -47,7 +72,13 @@ function Analyse() {
  
 <div><a   href="/"><button type='button' id='back'>Back</button></a></div>
 
+
 <h1>Analyse Media </h1>
+
+
+
+		  
+
 	
 			 {(typeof data.mydata === 'undefined')?(
 				//  <p>Loading...</p>
@@ -60,11 +91,11 @@ function Analyse() {
 
 
 
-					<div className='Vd'>
+					<div className='AM'>
         
       					  <center>
 			
-					<div className='Vids'>
+					<div className='imgs'>
 					<div className='tx'>
 						<p2>{thedata}<br/>
 						<hr/>

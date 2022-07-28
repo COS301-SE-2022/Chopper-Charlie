@@ -34,10 +34,11 @@ function Profile() {
         
         <div className='Vd'>
         <h1>Media </h1>
-        <center><a  href="/upload"><div className='Vid'><div className='tx'><p2><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/>Upload</p2></div></div></a></center>  
+        <center><a  href="/upload" id="uplink"><div className='Vid'><div className='tx'><p2><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/>Upload</p2></div></div></a></center>  
         <center><a  href="/delete"><div className='Vid'><div className='tx'><p2><DeleteIcon sx={{ fontSize: 50 }}/><br/>Delete</p2></div></div></a></center> 
         <center> <a  href="/download"><div className='Vid'><div className='tx'><p2><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/>Download</p2></div></div></a></center>
-        <center><a  href="/analyse"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse</p2></div></div></a></center>    
+        {/* <center><a  href="/analyse"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse Image</p2></div></div></a></center>     */}
+        <center><a  href="/analysevideo"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse Media</p2></div></div></a></center>    
 
          </div>
           {/* <div className='Vid'></div><div className='Vid'></div>
@@ -51,7 +52,7 @@ function Profile() {
          
         <div className='profile'>
 
-        <img src={require('./logo.png')} width="60%" height="13%" alt="Logo"/>
+        <img src={require('./logo.png')} width="235px" height="115px" alt="Logo"/>
                
           <h1>    </h1>
           
@@ -59,18 +60,20 @@ function Profile() {
           <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
           {/* <img id='pp'  src={require('./j.png')} width="27%" height="12%" alt="profile"/> */}
           <br/>
-          <p1><strong> </strong>{currentUser?.email}</p1>
+          <p1 id="user-id"><strong> </strong>{currentUser?.email}</p1>
           <br/>
           <hr/>
           <br/>
-          <p1>
+          {/* <p1>
             <strong>Email verified: </strong>
             {`${currentUser?.emailVerified}`}
-          </p1>
+          </p1> */}
           <div>
-           <button type='button' id='home'><HomeRoundedIcon/>Home</button>
-           <button type='button' id='home'><AnalyticsRoundedIcon/>Analytics</button>
-           <button type='button' id='home'><SettingsRoundedIcon/>Settings</button>
+           <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
+           
+           {/* <a id='pagelinks' href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button></a> */}
+           <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
+           
            </div>
            
            <br/>
@@ -79,7 +82,7 @@ function Profile() {
 
           
           
-          <a href = "/login"><button type = "button" onClick={() => signOut(auth)}  ><LogoutRoundedIcon/  >Logout</button></a>
+          <a href = "/login"><button type = "button" className='logout' onClick={() => signOut(auth)}  ><LogoutRoundedIcon/  >Logout</button></a>
          
           
         <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="50%" height="50%" alt="Logo"/></div> 

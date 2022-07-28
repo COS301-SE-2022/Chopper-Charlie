@@ -55,6 +55,7 @@ const SendEmail= e => {
             value={email}
             required
             placeholder="Enter your email"
+            id="username"
             onChange={e => setEmail(e.target.value)}/>
 
           <input 
@@ -84,7 +85,7 @@ const SendEmail= e => {
       <img id='AB'  src={require('./AB.png')} width="10%" height="9%" alt="Logo"/> 
     </div>
    // </center>
-   //to do : add something to the forgot password link
+
   )
 }
 

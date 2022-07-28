@@ -70,7 +70,7 @@ function Delete() {
 						<hr/>
 						<img src={require('./play.png')} width="90px" height="60px" alt="Logo"/> <br/>
 
-						<button id="del"  type="button" onClick={()=>genData(thedata)}  key={i}  ><DeleteIcon sx={{ fontSize: 20}}/></button>
+						<button id="del" name={thedata} type="button" onClick={()=>genData(thedata)}  key={i}  ><DeleteIcon sx={{ fontSize: 20}}/></button>
 						</p2>
 						</div>
 						</div>

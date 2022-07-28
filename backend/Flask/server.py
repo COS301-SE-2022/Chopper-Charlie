@@ -4,6 +4,7 @@ import os
 import sys
 import inspect
 
+
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir) 
@@ -14,6 +15,8 @@ from AzureBlobDelete.azureblobdelete import delete_blob
 from AzureBlobUpload.azureblobupload import blob_upload
 from ImageAI.vehicle_counting import blob_retrievee
 from ImageAI.vehicle_detector import VehicleDetector
+from VideoAI.inputVideos.downdel import blob_retrieveee
+
 app = Flask(__name__)
 
 # Route for seeing a data
@@ -48,6 +51,11 @@ def b_upload(index_ubloo):
 @app.route("/ai/<index_sno>/<index_snoo>")
 def ai_image(index_sno,index_snoo):
 	blob_retrievee(index_sno,index_snoo)
+	return "True"
+
+@app.route("/ai/video/<index_snot>/<index_snoot>/<index_snooot>/<index_snoooot>/<index_snooooot>")
+def ai_video(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot):
+	blob_retrieveee(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot)
 	return "True"
 
 
