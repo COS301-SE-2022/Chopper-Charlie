@@ -190,7 +190,7 @@ function AnalyseVideo() {
           <p id="demo"></p> 
           </div> <button id='delete' onClick={del}><DeleteIcon id='icon'/></button>
 		  <button id='delete' onClick={del}><DeleteIcon id='icon'/></button>
-		  
+		  <button id='delete' onClick={del}>clear</button>ff
 
 
 
