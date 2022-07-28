@@ -82,3 +82,6 @@ class testPage(BasePage):
             if track:
                 trck = self.driver.find_element("id", "outline")
                 trck.click()
+            if count:
+                count = self.driver.find_element("id", "cnt")
+                count.click()
