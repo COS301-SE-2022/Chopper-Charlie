@@ -25,3 +25,5 @@ class ChopperTests(unittest.TestCase):
     def test_Delete(self):
         print('Testing Delete..\n')
         fname = "image-testing.png"
+        delete = page.testPage(self.driver)
+        assert delete.delete_file(fname)
