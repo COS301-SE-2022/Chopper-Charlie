@@ -53,9 +53,9 @@ def ai_image(index_sno,index_snoo):
 	blob_retrievee(index_sno,index_snoo)
 	return "True"
 
-@app.route("/ai/video/<index_snot>/<index_snoot>")
-def ai_video(index_snot,index_snoot):
-	blob_retrieveee(index_snot,index_snoot,"car","y","y")
+@app.route("/ai/video/<index_snot>/<index_snoot>/<index_snooot>/<index_snoooot>/<index_snooooot>")
+def ai_video(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot):
+	blob_retrieveee(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot)
 	return "True"
 
 
