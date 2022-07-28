@@ -43,3 +43,6 @@ class testPage(BasePage):
 
     
     def delete_page(self):
+
+    
+    def download_page(self):
