@@ -13,7 +13,7 @@ import { applyActionCode } from "firebase/auth";
 function AnalyseVideo() {
 	const {currentUser} = useAuthValue()
 	// object for storing and using data
-	
+	// object for storing and using data
 	
 	
 	const [data, setdata] = useState({
