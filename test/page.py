@@ -94,3 +94,7 @@ class testPage(BasePage):
         createPipeline(False, True, 'car')
         createPipeline(True, False, 'motorbike')
         time.sleep(3)
+        if "Pipeline- 1" in self.driver.page_source:
+            return True
+        else:
+            return False 
