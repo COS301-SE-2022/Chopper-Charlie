@@ -92,3 +92,4 @@ class testPage(BasePage):
         createPipeline(True, True, 'truck')
         createPipeline(True, False, 'bus')
         createPipeline(False, True, 'car')
+        createPipeline(True, False, 'motorbike')
