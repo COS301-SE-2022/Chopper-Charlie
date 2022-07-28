@@ -55,6 +55,7 @@ const SendEmail= e => {
             value={email}
             required
             placeholder="Enter your email"
+            id="username"
             onChange={e => setEmail(e.target.value)}/>
 
           <input 

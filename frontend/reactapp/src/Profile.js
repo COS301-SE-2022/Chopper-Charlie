@@ -60,7 +60,7 @@ function Profile() {
           <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
           {/* <img id='pp'  src={require('./j.png')} width="27%" height="12%" alt="profile"/> */}
           <br/>
-          <p1><strong> </strong>{currentUser?.email}</p1>
+          <p1 id="user-id"><strong> </strong>{currentUser?.email}</p1>
           <br/>
           <hr/>
           <br/>
