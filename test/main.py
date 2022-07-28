@@ -37,3 +37,6 @@ class ChopperTests(unittest.TestCase):
         print('Testing Login..\n')
         loginPage = page.testPage(self.driver)
         assert loginPage.is_login()
+
+    def tearDown(self):
+        self.driver.close()
