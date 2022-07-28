@@ -16,3 +16,7 @@ class ChopperTests(unittest.TestCase):
         analysisPage = page.testPage(self.driver)
         analysisPage.analyse_File()
         assert True 
+
+    def test_Download(self):
+        print('Testing Download..\n')
+        downPage = page.testPage(self.driver)
