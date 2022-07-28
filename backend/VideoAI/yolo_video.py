@@ -301,8 +301,13 @@ while True:
 	writer.write(frame)
 
 	cv2.imshow('Frame', frame)
-	if cv2.waitKey(1) & 0xFF == ord('q'):
-		break	
+	if (inputVideoPath.endswith(".mp4")):
+		if cv2.waitKey(1) & 0xFF == ord('q'):
+			break	
+	else:
+		if cv2.waitKey(0) & 0xFF == ord('q'):
+			break	
+
 	
 	# Updating with the current frame detections
 	previous_frame_detections.pop(0) #Removing the first frame from the list
