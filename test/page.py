@@ -38,3 +38,5 @@ class testPage(BasePage):
             return True
         else:
             return False   
+
+    def upload_page(self):
