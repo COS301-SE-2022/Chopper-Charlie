@@ -34,35 +34,36 @@ function AnalyseVideo() {
 		genData1(str)
 		} */
 	
+		var value;
+		var outline;
+		var cntt;
 
-	function genData(str){
-		fetch("/ai/video/"+str+"/"+currentUser?.email)
-		}
+		
 	
-	function pipeline(){
+	function pipeline(str){
 		var select = document.getElementById('vehicle');
-		var value = select.options[select.selectedIndex].value;
+		value = select.options[select.selectedIndex].value;
 		// var t = window.confirm(value);
 
 		var ol = document.querySelector('#outline').checked;
         var countt= document.querySelector('#cnt').checked;
 
 		if (ol===true){
-			var outline="y"
+			outline="y"
 			var t3="<div id='options'>Track Objects</div>";
 		}
 		else{
-			var outline="n"
+			outline="n"
 			var t3="";
 			
 		}
 
 		if (countt===true){
-			var cntt="y"
+			cntt="y"
 			var t4=" <div id='options'>Count Objects</div>";
 		}
 		else{
-			var box="n"
+			cntt="n"
 			var t4="";
 		}
 
@@ -78,11 +79,12 @@ function AnalyseVideo() {
 		// var mydiv=document.getElementById('pp');
 		// mydiv.innerHTML+= "<br></br>"+ t1+t2+t3+t4+t5;
 		document.getElementById('pp').insertAdjacentHTML('afterend', '<br></br>'+ t1+t2+t3+t4+t5);
-
-
+		fetch("/ai/video/"+str+"/"+currentUser?.email+"/"+value+"/"+outline+"/"+cntt)
 
 	
+	
 	}	
+	
 
 
 	return (
@@ -110,7 +112,6 @@ function AnalyseVideo() {
 		<label for="outline"> Object Outline</label>
 		<input type="checkbox" id="cnt" name="count" value="y"></input>
 		<label for="count"> Count Objects</label> <span></span>
-		<button onClick={pipeline}>Create</button>
 	
 	  </p> 
 
@@ -161,7 +162,7 @@ function AnalyseVideo() {
 						<hr/>
 						<img src={require('./play.png')} width="90px" height="60px" alt="Logo"/> <br/>
 
-						<button id="analyse"  type="button" onClick={()=>genData(thedata)}  key={i}  ><AnalyticsIcon sx={{ fontSize: 20}}/></button>
+						<button id="analyse"  type="button" onClick={()=>pipeline(thedata)}  key={i}  ><AnalyticsIcon sx={{ fontSize: 20}}/></button>
 						
 						</p2>
 						</div>
