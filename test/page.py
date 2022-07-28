@@ -18,3 +18,5 @@ class testPage(BasePage):
         password = self.driver.find_element("id", "pass")
         password.send_keys("12345678")
         lgnbtn = self.driver.find_element("id", "login")
+        lgnbtn.click()
+        time.sleep(2)
