@@ -14,3 +14,5 @@ class ChopperTests(unittest.TestCase):
     def test_Analysis(self):
         print('Testing Pipeline Creation..\n')
         analysisPage = page.testPage(self.driver)
+        analysisPage.analyse_File()
+        assert True 
