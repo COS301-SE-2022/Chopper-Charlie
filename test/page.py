@@ -33,3 +33,8 @@ class testPage(BasePage):
         self.click_login()
         logout = self.driver.find_element(By.CLASS_NAME, "logout")
         logout.click()
+        time.sleep(1)
+        if "Login" in self.driver.page_source:
+            return True
+        else:
+            return False   
