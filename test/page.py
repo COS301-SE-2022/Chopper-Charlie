@@ -85,3 +85,5 @@ class testPage(BasePage):
             if count:
                 count = self.driver.find_element("id", "cnt")
                 count.click()
+            veh = Select(self.driver.find_element("id", "vehicle"))
+            veh.select_by_value(type)
