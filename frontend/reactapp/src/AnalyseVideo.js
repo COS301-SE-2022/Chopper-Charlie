@@ -4,7 +4,7 @@ import {useAuthValue} from './AuthContext'
 import './profile.css'
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { grey } from "@mui/material/colors";
+
 import { applyActionCode } from "firebase/auth";
 
 
