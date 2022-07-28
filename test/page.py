@@ -98,3 +98,13 @@ class testPage(BasePage):
             return True
         else:
             return False 
+
+        # anbtn = self.driver.find_element("id", "analyse")
+        # time.sleep(4)
+        # anbtn.click()
+        # time.sleep(3)
+        # promtAlert = self.driver.switchTo().alert()
+        # # self.driver.switchTo().alert().accept()
+        # time.sleep(2)
+        # promtAlert.accept()
+        # time.sleep(4)
