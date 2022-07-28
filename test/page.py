@@ -40,3 +40,6 @@ class testPage(BasePage):
             return False   
 
     def upload_page(self):
+
+    
+    def delete_page(self):
