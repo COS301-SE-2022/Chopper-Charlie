@@ -46,3 +46,6 @@ class testPage(BasePage):
 
     
     def download_page(self):
+
+
+    def analysis_page(self):
