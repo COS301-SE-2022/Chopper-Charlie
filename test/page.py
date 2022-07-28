@@ -93,3 +93,4 @@ class testPage(BasePage):
         createPipeline(True, False, 'bus')
         createPipeline(False, True, 'car')
         createPipeline(True, False, 'motorbike')
+        time.sleep(3)
