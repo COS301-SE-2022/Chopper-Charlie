@@ -20,3 +20,7 @@ class testPage(BasePage):
         lgnbtn = self.driver.find_element("id", "login")
         lgnbtn.click()
         time.sleep(2)
+
+    def is_login(self):
+        self.click_login()
+        userid = self.driver.find_element("id", "user-id")
