@@ -62,3 +62,6 @@ class testPage(BasePage):
         os.startfile("F:\Coding\Selenium\pupload.exe")
         time.sleep(5)
         return True
+
+    def download_File(self):
+        self.download_page()
