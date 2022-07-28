@@ -194,7 +194,7 @@ function AnalyseVideo() {
 
 
 
-<h1>Analyse Video </h1>
+<h1>Analyse Media </h1>
 	
 			 {(typeof data.mydata === 'undefined')?(
 				//  <p>Loading...</p>
