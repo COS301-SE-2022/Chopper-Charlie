@@ -28,3 +28,6 @@ class testPage(BasePage):
             return True
         else:
             return False
+
+    def click_logout(self):
+        self.click_login()
