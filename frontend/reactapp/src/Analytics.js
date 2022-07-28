@@ -36,7 +36,7 @@ function Profile() {
 }
 
 {/* can delete using id number */}
-  
+  {/* can delete using id number */}
   return (
    
       <div className='center'>
