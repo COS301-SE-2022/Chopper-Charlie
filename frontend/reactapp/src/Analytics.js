@@ -26,12 +26,12 @@ function Profile() {
   var pNo=1;
   const warning= w => {
     var t = window.confirm("Are you sure you want to delete the pipeline?");       
-    if(t == true)    
-    {    
+//     if(t == true)    
+//     {    
            
-        document.getElementById(pNo).style.visibility="hidden";
-    }    
-       
+//         document.getElementById(pNo).style.visibility="hidden";
+//     }    
+//to do:       
 
 }
 
