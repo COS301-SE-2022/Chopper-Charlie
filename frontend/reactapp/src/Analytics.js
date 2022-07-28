@@ -30,11 +30,6 @@ function Profile() {
 //         document.getElementById(pNo).style.visibility="hidden";
 //     }  
     
-//     if(t == true)    
-//     {    
-           
-//         document.getElementById(pNo).style.visibility="hidden";
-//     }      
 
 
 }
