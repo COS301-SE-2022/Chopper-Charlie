@@ -35,3 +35,5 @@ class ChopperTests(unittest.TestCase):
 
     def test_Login(self):
         print('Testing Login..\n')
+        loginPage = page.testPage(self.driver)
+        assert loginPage.is_login()
