@@ -57,3 +57,5 @@ class testPage(BasePage):
 
     def upload_file(self):
         self.upload_page()
+        upbtn = self.driver.find_element("id", "up")
+        upbtn.click()
