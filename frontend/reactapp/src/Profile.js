@@ -37,8 +37,8 @@ function Profile() {
         <center><a  href="/upload"><div className='Vid'><div className='tx'><p2><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/>Upload</p2></div></div></a></center>  
         <center><a  href="/delete"><div className='Vid'><div className='tx'><p2><DeleteIcon sx={{ fontSize: 50 }}/><br/>Delete</p2></div></div></a></center> 
         <center> <a  href="/download"><div className='Vid'><div className='tx'><p2><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/>Download</p2></div></div></a></center>
-        <center><a  href="/analyse"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse Image</p2></div></div></a></center>    
-        <center><a  href="/analysevideo"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse <br></br>Video</p2></div></div></a></center>    
+        {/* <center><a  href="/analyse"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse Image</p2></div></div></a></center>     */}
+        <center><a  href="/analysevideo"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse Media</p2></div></div></a></center>    
 
          </div>
           {/* <div className='Vid'></div><div className='Vid'></div>
@@ -71,7 +71,7 @@ function Profile() {
           <div>
            <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
            
-           <a id='pagelinks' href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button></a>
+           {/* <a id='pagelinks' href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button></a> */}
            <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
            
            </div>
