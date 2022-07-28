@@ -90,3 +90,4 @@ class testPage(BasePage):
             create = self.driver.find_element(By.XPATH, '//button[text()=" Create"]')
             create.click()
         createPipeline(True, True, 'truck')
+        createPipeline(True, False, 'bus')
