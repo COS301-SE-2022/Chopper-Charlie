@@ -48,6 +48,7 @@ class testPage(BasePage):
         self.driver.get("http://localhost:3000/delete")
     
     def download_page(self):
-
+        self.click_login()
+        self.driver.get("http://localhost:3000/download")
 
     def analysis_page(self):
