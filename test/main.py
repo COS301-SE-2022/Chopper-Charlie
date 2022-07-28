@@ -10,3 +10,7 @@ class ChopperTests(unittest.TestCase):
     def test_Upload(self):
         updatePage = page.testPage(self.driver)
         assert updatePage.upload_file()
+
+    def test_Analysis(self):
+        print('Testing Pipeline Creation..\n')
+        analysisPage = page.testPage(self.driver)
