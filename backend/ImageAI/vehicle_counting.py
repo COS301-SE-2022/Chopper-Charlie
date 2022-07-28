@@ -25,7 +25,7 @@ def blob_retrievee(Blob_Name, Containers_Name):
             my_blob.write(data)
         imageai("backend/ImageAI/"+Blob_Name)
     
-#
+
 def imageai(img_name):
     path1 = os.getcwd()
  
