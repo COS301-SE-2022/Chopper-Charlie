@@ -21,3 +21,7 @@ class ChopperTests(unittest.TestCase):
         print('Testing Download..\n')
         downPage = page.testPage(self.driver)
         assert downPage.download_File()
+
+    def test_Delete(self):
+        print('Testing Delete..\n')
+        fname = "image-testing.png"
