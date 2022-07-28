@@ -459,22 +459,23 @@ padding-right: 5%;
 }
 
 #delete{
-height: 60%;
-position: absolute;
-  right: 15%;
-background-color: rgb(34, 34, 37);
-color: rgb(181, 159, 241);;
+height: 26px;
+width: 60px;
+position:relative;
+margin-left: 570px;
+margin-top: -1400px;
+background-color: #b59ff1;
+color: #b59ff1;
 font-size: 12px;
 border-radius: 20px;
 border: 0.5px solid #575758;
-width: 10%;
 cursor: pointer;
-
+visibility: hidden;
 }
 
 #add{
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 100px;
   font-size: 40px;
   background-color: #e7e3f6;
   color: #000000;
@@ -565,6 +566,7 @@ cursor: pointer;
   margin-top: 10px;
   padding-top: 10px;
   padding-left: 10px;
+  visibility: hidden;
  
 }
 
