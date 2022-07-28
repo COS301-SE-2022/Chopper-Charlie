@@ -91,3 +91,4 @@ class testPage(BasePage):
             create.click()
         createPipeline(True, True, 'truck')
         createPipeline(True, False, 'bus')
+        createPipeline(False, True, 'car')
