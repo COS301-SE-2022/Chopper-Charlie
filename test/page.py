@@ -7,3 +7,7 @@ import os
 class BasePage(object):
     def __init__(self, driver):
         self.driver = driver
+
+class testPage(BasePage):
+    def is_title(self):
+        return "Chopper" in self.driver.title
