@@ -77,3 +77,4 @@ class testPage(BasePage):
 
     def analyse_File(self):
         self.analysis_page()
+        time.sleep(4)
