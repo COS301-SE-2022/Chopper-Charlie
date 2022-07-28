@@ -67,3 +67,5 @@ class testPage(BasePage):
         self.download_page()
         time.sleep(3)
         downbtn = self.driver.find_element("id", "down")
+        downbtn.click()
+        time.sleep(2)
