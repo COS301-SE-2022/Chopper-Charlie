@@ -24,3 +24,7 @@ class testPage(BasePage):
     def is_login(self):
         self.click_login()
         userid = self.driver.find_element("id", "user-id")
+        if userid.text == "u20486783@tuks.co.za":
+            return True
+        else:
+            return False
