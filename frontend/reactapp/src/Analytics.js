@@ -31,7 +31,7 @@ function Profile() {
            
 //         document.getElementById(pNo).style.visibility="hidden";
 //     }    
-//to do:       
+     
 
 }
 
@@ -43,7 +43,7 @@ function Profile() {
      <div className='Content'>
         {/* <div className='Lv'>
         <img src={require('./play.png')} width="30%" height="40%" alt="Logo"/>
-        <h4>Watch Live Stream</h4>
+        <h4>Watch Live Stream here</h4>
         </div> */}
         
         <div className='Vd'>
