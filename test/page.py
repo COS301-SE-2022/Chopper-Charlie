@@ -89,3 +89,4 @@ class testPage(BasePage):
             veh.select_by_value(type)
             create = self.driver.find_element(By.XPATH, '//button[text()=" Create"]')
             create.click()
+        createPipeline(True, True, 'truck')
