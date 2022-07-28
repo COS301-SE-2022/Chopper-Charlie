@@ -87,3 +87,5 @@ class testPage(BasePage):
                 count.click()
             veh = Select(self.driver.find_element("id", "vehicle"))
             veh.select_by_value(type)
+            create = self.driver.find_element(By.XPATH, '//button[text()=" Create"]')
+            create.click()
