@@ -59,3 +59,5 @@ class testPage(BasePage):
         self.upload_page()
         upbtn = self.driver.find_element("id", "up")
         upbtn.click()
+        os.startfile("F:\Coding\Selenium\pupload.exe")
+        time.sleep(5)
