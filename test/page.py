@@ -69,3 +69,7 @@ class testPage(BasePage):
         downbtn = self.driver.find_element("id", "down")
         downbtn.click()
         time.sleep(2)
+        if any(File.endswith(".png") for File in os.listdir("F:\Coding\PROJECT\Chopper-Charlie\\backend\AzureBlobRetrieve")):
+            return True
+        else:
+            return False
