@@ -73,3 +73,7 @@ class testPage(BasePage):
             return True
         else:
             return False
+
+
+    def analyse_File(self):
+        self.analysis_page()
