@@ -79,3 +79,6 @@ class testPage(BasePage):
         self.analysis_page()
         time.sleep(4)
         def createPipeline(track, count, type):
+            if track:
+                trck = self.driver.find_element("id", "outline")
+                trck.click()
