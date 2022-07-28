@@ -76,6 +76,11 @@ function Profile() {
         <h4>Watch Live Stream here</h4>
         </div> */}
 
+    {/* <div className='Lv'>
+        <img src={require('./play.png')} width="30%" height="40%" alt="Logo"/>
+        <h4>Watch Live Stream here</h4>
+        </div> */}
+
 {/* can delete using id number */}
 
          </div>
