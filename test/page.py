@@ -31,3 +31,5 @@ class testPage(BasePage):
 
     def click_logout(self):
         self.click_login()
+        logout = self.driver.find_element(By.CLASS_NAME, "logout")
+        logout.click()
