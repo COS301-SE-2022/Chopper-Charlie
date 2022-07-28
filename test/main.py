@@ -27,3 +27,6 @@ class ChopperTests(unittest.TestCase):
         fname = "image-testing.png"
         delete = page.testPage(self.driver)
         assert delete.delete_file(fname)
+
+    def test_Logout(self):
+        print('Testing Logout..\n')
