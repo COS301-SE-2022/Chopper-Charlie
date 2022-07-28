@@ -11,3 +11,8 @@ class BasePage(object):
 class testPage(BasePage):
     def is_title(self):
         return "Chopper" in self.driver.title
+
+    def click_login(self):
+        username = self.driver.find_element("id", "username")
+        username.send_keys("u20486783@tuks.co.za")
+        password = self.driver.find_element("id", "pass")
