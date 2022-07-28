@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import {useAuthValue} from './AuthContext'
 import './profile.css'
 import AnalyticsIcon from '@mui/icons-material/Analytics';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { grey } from "@mui/material/colors";
 import { applyActionCode } from "firebase/auth";
 
@@ -39,55 +40,56 @@ function AnalyseVideo() {
 		var outline;
 		var cntt;
 		
-
+		function del(){
+			document.getElementById('pps').style.visibility='hidden';
+			document.getElementById('delete').style.visibility='hidden';
+		}
 
 
 		function selected(){
-			
+			var t = window.confirm("lol");
 		}
 
 
 		function pipelineui(){
+		var select = document.getElementById('vehicle');
+		value = select.options[select.selectedIndex].value;
+		// var t = window.confirm(value);
+
+		var ol = document.querySelector('#outline').checked;
+        var countt= document.querySelector('#cnt').checked;
+		var t0= "<p1>Pipeline     </p1>"
+
+		var t1="<div id='options'>"+value+"</div>";
+		if (ol===true){
+			outline="y"
+			var t2="<div id='options'>Track Objects</div>";
+		}
+		else{
+			outline="n"
+			var t2="";
 			
-			var select = document.getElementById('vehicle');
-			value = select.options[select.selectedIndex].value;
-			// var t = window.confirm(value);
-	
-			var ol = document.querySelector('#outline').checked;
-			var countt= document.querySelector('#cnt').checked;
-	
-			if (ol===true){
-				// outline="y"
-				var t3="<div id='options'>Track Objects</div>";
-			}
-			else{
-				// outline="n"
-				var t3="";
-				
-			}
-	
-			if (countt===true){
-				// cntt="y"
-				var t4=" <div id='options'>Count Objects</div>";
-			}
-			else{
-				// cntt="n"
-				var t4="";
-			}
-	
-			// var t = window.confirm(value+"   "+ol+"  " +countt);
-			
-			var t1="<div id='pps'><p1>Pipeline- 1</p1>";
-			var t2="<div id='options'>"+value+"</div>";
-			var t5="<button id='delete'>Delete</button><p id='demo'></p><button id='edit' onClick={selected}>Select</button></div>";
-	
-	
-			// var a="<div className='pps'><h1>Pipelines </h1><div className=\"pps\">  <p1>Pipeline 1 </p1><div id='options'>Count Objects</div><button onClick={warning} id='ppsdel'>Delete</button><p id=\"demo\"></p> </div>";
-	
-			// var mydiv=document.getElementById('pp');
-			// mydiv.innerHTML+= "<br></br>"+ t1+t2+t3+t4+t5;
-			
-			document.getElementById('pp').insertAdjacentHTML('afterend', '<br></br>'+ t1+t2+t3+t4+t5);	
+		}
+
+		if (countt===true){
+			cntt="y"
+			var t3=" <div id='options'>Count Objects</div>";
+		}
+		else{
+			cntt="n"
+			var t3="";
+		}
+
+
+			document.getElementById('pps').innerHTML=t0+t1+t2+t3;
+			var a = document.getElementById('pps');
+			a.style.visibility='visible';
+			document.getElementById('delete').style.visibility='visible';
+
+
+
+
+
 		}
 
 		
@@ -119,7 +121,7 @@ function AnalyseVideo() {
 			var t4="";
 		}
 
-		var t = window.confirm(value+"   "+ol+"  " +countt);
+		// var t = window.confirm(value+"   "+ol+"  " +countt);
 		
 		var t1="<div id='pps'><p1>Pipeline- 1</p1>";
 		var t2="<div id='options'>"+value+"</div>";
@@ -165,7 +167,7 @@ function AnalyseVideo() {
 		<label for="outline"> Track Object</label>
 		<input type="checkbox" id="cnt" name="count" value="y"></input>
 		<label for="count"> Count Objects</label> <span></span>
-		<button onClick={pipelineui}> Create</button>
+		<button onClick={pipelineui}>Save</button>
 	
 	  </p> 
 
@@ -180,14 +182,13 @@ function AnalyseVideo() {
 </div>
  <div id="pp"></div> 
 
-{/* <div className="pps" >  
-          <p1>Pipeline- 1 </p1>
-		  <div id='options'>Car</div>
+ <div id="pps" >  
+		  {/* <div id='options'>Car</div>
           <div id='options'>Count Objects</div>
-		  <div id='options'>Track Objects</div>
-          <button id='delete'>Delete</button>
+		  <div id='options'>Track Objects</div> */}
+          
           <p id="demo"></p> 
-          </div> */}
+          </div> <button id='delete' onClick={del}><DeleteIcon id='icon'/></button>
 
 
 
