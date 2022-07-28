@@ -18,8 +18,6 @@ import { Alert, Hidden } from '@mui/material';
 
 
 
-
-//change
 function Profile() {
   
   const {currentUser} = useAuthValue()
