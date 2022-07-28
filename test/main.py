@@ -20,3 +20,4 @@ class ChopperTests(unittest.TestCase):
     def test_Download(self):
         print('Testing Download..\n')
         downPage = page.testPage(self.driver)
+        assert downPage.download_File()
