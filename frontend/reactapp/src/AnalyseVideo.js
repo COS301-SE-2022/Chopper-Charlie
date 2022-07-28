@@ -187,9 +187,8 @@ function AnalyseVideo() {
           <div id='options'>Count Objects</div>
 		  <div id='options'>Track Objects</div> */}
           
-          <p id="demo"></p> 
+          {/* <p id="demo"></p>  */}
           </div> <button id='delete' onClick={del}><DeleteIcon id='icon'/></button>
-		  <button id='delete' onClick={del}>clear</button>
 
 
 
