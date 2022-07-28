@@ -61,3 +61,4 @@ class testPage(BasePage):
         upbtn.click()
         os.startfile("F:\Coding\Selenium\pupload.exe")
         time.sleep(5)
+        return True
