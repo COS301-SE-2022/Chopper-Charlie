@@ -30,3 +30,5 @@ class ChopperTests(unittest.TestCase):
 
     def test_Logout(self):
         print('Testing Logout..\n')
+        profile = page.testPage(self.driver)
+        assert profile.click_logout()
