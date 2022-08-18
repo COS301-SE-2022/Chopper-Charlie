@@ -3,6 +3,7 @@ import {useAuthValue} from './AuthContext'
 import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 import './profile.css'
 
+	 
 
 function Download() {
 	const {currentUser} = useAuthValue()
@@ -10,6 +11,9 @@ function Download() {
 	const [data, setdata] = useState({
 		
 	});
+
+	
+
 	
 
 	// Using useEffect for single rendering
@@ -26,8 +30,20 @@ function Download() {
 			})
 		);
 		
+	const myuserstring = () => currentUser?.email;
+
+	//myuserstring = myuserstring.replace(/@/g,"");
+	//console.log(myuserstring);
+	//myuserstring = myuserstring.replace(".","");
+
+
+	 
+
+	 
 		
-	
+	 
+		
+	 
 
 	function genData(str){
 		fetch("/lol/"+str+"/"+currentUser?.email)
@@ -61,7 +77,7 @@ function Download() {
 					<div className='tx'>
 						<p2>{thedata}<br/>
 						<hr/>
-						<img src={require('./play.png')} width="90px" height="60px" alt="Logo"/> <br/>
+						<img src={('https://choppercharlie.blob.core.windows.net/'+myuserstring+'/'+thedata)} width="90px" height="60px" alt="Logo"/> <br/>
 
 						<button id="down"  type="button" onClick={()=>genData(thedata)}  key={i}  ><CloudDownloadRoundedIcon sx={{ fontSize: 20}}/></button>
 						</p2>
