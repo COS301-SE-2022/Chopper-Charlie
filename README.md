@@ -1,6 +1,3 @@
-# Chopper-Charlie
-Chopper Charlie is a real-time image analysis platform for images taken by a drone camera. The user will be able to modify the platform according to their needs for this platform. The main uses for this platform will be the recognition and counting of cars, as well as in agricultural terms,for example, the recognition and counting of trees in a fruit orchard.
-
 <div align="center">
  <h1 align="center"> Bitcoders - Chopper Charlie</h1> <br>
 <img src ="https://user-images.githubusercontent.com/93663409/167729612-59cd2227-5284-492d-a33e-6d0fced3155a.png">
