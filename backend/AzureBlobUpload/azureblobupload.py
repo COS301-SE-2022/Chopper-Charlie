@@ -35,7 +35,7 @@ def blob_upload(Containers_Name):
             
 
             with open(path, "rb") as data:
-                blob.upload_blob(data)
+                blob.upload_blob(data, content_type='image')
             
             messagebox.showinfo("Success","Successfully uploaded media")  #added now
             os.chdir(thetemp)

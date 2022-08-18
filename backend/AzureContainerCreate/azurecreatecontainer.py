@@ -9,6 +9,6 @@ def create_container(Containers_Name):
     Temp = Temp.replace('.', '')
     Temp = Temp.replace('_', '')
     container_client = ContainerClient.from_connection_string(conn_str=Connection_String, container_name=Temp)
-    container_client.create_container()
+    container_client.create_container(public_access = "blob")
 
 #create_container("test_lol@gmail.com")
