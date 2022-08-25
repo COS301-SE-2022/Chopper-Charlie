@@ -27,14 +27,14 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [timeActive, setTimeActive] = useState(false)
 
-useEffect(() => {
-  fetch("/mydatapage/<index_boo>").then(response => {
-    if(response.status == 200){
-      return response.json()
-    }
-  }).then(data => setState(data))
-  .then(error => console.log(error))
-})
+// useEffect(() => {
+//   fetch("/mydatapage/<index_boo>").then(response => {
+//     if(response.status == 200){
+//       return response.json()
+//     }
+//   }).then(data => setState(data))
+//   .then(error => console.log(error))
+// })
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
