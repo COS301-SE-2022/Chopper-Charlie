@@ -42,9 +42,11 @@ function App() {
     })
   }, [])
 
-  return (
+   //<Deploy prop={state}/>
+  
+   return (
     <Router>
-      <Deploy prop={state}/>
+      
       <AuthProvider value={{currentUser, timeActive, setTimeActive}}>
         <Routes>
           <Route exact path='/' element={
