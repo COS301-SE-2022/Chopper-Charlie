@@ -22,7 +22,7 @@ import {Deploy} from './Component/Deploy/Deploy'
 
 function App() {
 
-  const [state, setState] = useState({})
+  //const [state, setState] = useState({})
   
   const [currentUser, setCurrentUser] = useState(null)
   const [timeActive, setTimeActive] = useState(false)
