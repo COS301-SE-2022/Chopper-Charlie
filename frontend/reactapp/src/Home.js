@@ -100,8 +100,15 @@ function Profile() {
 	 
 <div id="MediaBlock">
 <p4><img id="preview" src={require('./temp.png')} width="100%" height="50%" alt="Logo"  />
-{thedata}</p4>  
-<p5>dd/mm/yyyy</p5>
+&nbsp;&nbsp; {thedata} <br></br>
+&nbsp;&nbsp;&nbsp;<p5>dd/mm/yyyy</p5>
+<br></br>
+<hr></hr>
+&nbsp;
+<button id="DownloadButton"><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button>&nbsp;
+<button id="AnalyseButton">Analyse</button>&nbsp;
+<button id="DeleteButton">Delete</button>
+</p4> 
 </div>
 	 
 
