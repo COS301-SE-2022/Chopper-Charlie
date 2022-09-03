@@ -82,17 +82,25 @@ function Profile() {
 	
    
       <div className='center'>
-    <h1>Media</h1>
+   
+    <div id="HomeContent">
+	 <div id="Searchbar"><h1>Search bar thingy will be here</h1></div>
+<div id="MediaBlock">trghrthg</div>
+<div id="MediaBlock">trghrthg</div>
+<div id="MediaBlock">trghrthg</div>
+<div id="MediaBlock">trghrthg</div>
+<div id="MediaBlock">trghrthg</div>
+<div id="MediaBlock">trghrthg</div>
+<div id="MediaBlock">trghrthg</div>
 
 
 
 
 
-     <div className='Content'>
-       
-      </div>
 
-         
+    
+
+	 </div>  
         <div className='profile'>
 
         <img src={require('./logo.png')} width="80%" height="20%" alt="Logo"/>
