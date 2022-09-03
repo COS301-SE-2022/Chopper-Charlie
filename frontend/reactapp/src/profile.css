@@ -10,7 +10,7 @@
     width: 30%;
     margin:auto; 
     height: 100vh;
-    background-color: #222225;
+    background-color: #1C1B1F;
     border: 3px solid #000000;
     border-radius: 15px;
     top: 0%;
@@ -35,7 +35,6 @@
 
   .profile p3{
     text-align: left;
-    color: #333237;
     font-size: 15px;
     font-weight: bold;
     padding-top: 2%;
@@ -44,12 +43,21 @@
    
   }
 
+
+
+  a:link { text-decoration: none; }
+
   #icon{
 position: relative;
 color: #333237;
 padding-right: 5%;
   }
 
+  #iconlo{
+    position: relative;
+    color: #ffffff;
+    padding-right: 5%;
+      }
   
   .profile > span{
     color: #dfdbf7;
@@ -150,6 +158,7 @@ padding-right: 5%;
     height: 32px;
     margin: 2%;
     text-align: left;
+    color: #333237;;
     padding-left: 10%;
     width: 100%;
     background-color: #e7e3f6;
@@ -159,8 +168,24 @@ padding-right: 5%;
     cursor: pointer;
     display: flex;
     align-items: center;
+    font-family:"Roboto", Arial, Helvetica, sans-serif;
 }
 
+#homelogout{
+  height: 32px;
+  color: #e3ddf6;
+  margin: 2%;
+  text-align: left;
+  padding-left: 10%;
+  width: 100%;
+  background-color: #C44A4A;
+  font-size: 14px;
+  border-radius: 20px;
+  border: 0.5px solid #575758;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
 
 .sub_div {
   position: absolute;
@@ -582,3 +607,4 @@ visibility: hidden;
   cursor: pointer;
   
   }
+

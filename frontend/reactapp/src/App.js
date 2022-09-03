@@ -17,6 +17,7 @@ import Analyse from './Analyse';
 import Analytics from './Analytics'; //added by mumi
 import Settings from './Settings'; //added by mumi
 import AnalyseVideo from './AnalyseVideo'; //added by mumi
+import Home from './Home'; //added by mumi
 
 import {Deploy} from './Component/Deploy/Deploy'
 
@@ -72,6 +73,7 @@ function App() {
           <Route path='/analytics' element={<Analytics/>} />    {/*    added by mumi */}
           <Route path='/settings' element={<Settings/>} />    {/*    added by mumi */}
           <Route path='/analysevideo' element={<AnalyseVideo/>} /> 
+          <Route path='/Home' element={<Home/>} />    {/*    added by mumi */}
         </Routes>  
       </AuthProvider>
   </Router>
