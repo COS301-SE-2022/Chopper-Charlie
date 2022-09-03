@@ -615,13 +615,13 @@ width: 75%;
 
 #MediaBlock{
   
-  text-align: center;
+  text-align: left;
   margin: auto;
   position: relative;
   width: 25%;
   color: #ffffff;
   float: left;
-  height: 270px;
+  height: 330px;
   border: 1px solid #37373a;
   margin-bottom: 5%;
   border-radius: 8px;
@@ -636,9 +636,52 @@ width: 75%;
 #preview{
  border-top-left-radius: 8px;
  border-top-right-radius: 8px;
+
 }
 
 #MediaBlock p4{
   font-weight: bold;
+  font-size: 20px;
   font-family:"Roboto", Arial, Helvetica, sans-serif;
+
+
+}
+
+#MediaBlock p5{
+  font-family:"Roboto", Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  font-size: 12px;
+}
+
+#DownloadButton {
+  width:30%;
+  height: 20%;
+  border-radius: 8px;
+  border: #FF7E37;
+  background-color: #FF7E37;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+}
+
+#AnalyseButton {
+  width:30%;
+  height: 20%;
+  border-radius: 8px;
+  border: #51B9D4;
+  background-color: #51B9D4;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+}
+
+#DeleteButton {
+  width:30%;
+  height: 20%;
+  border-radius: 8px;
+  border: #FE4838;
+  background-color: #FE4838;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
 }
