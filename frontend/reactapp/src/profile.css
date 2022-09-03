@@ -690,5 +690,30 @@ width: 75%;
 }
 
 #Searchbar{
-
+margin-top: 3%;
+margin-left: 3%;
+width: 60%;
+height: 50px;
+background-color:#1F1F21; ;
+border-radius: 25px;
 }
+
+#search{
+  color: #e3ddf6;
+  background-color:#000000;
+  border-radius: 25px;
+  border-color:#333237;
+  margin-left: 3%;
+  margin-top: 1.5%;
+  width: 35%;
+  height: 50%;
+  cursor: text;
+}
+
+#searchicon{
+ 
+}
+
+
+/* ////////////////////// */
+
