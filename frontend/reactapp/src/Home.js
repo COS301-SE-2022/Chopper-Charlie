@@ -14,7 +14,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
-
+import SearchIcon from '@mui/icons-material/Search';
 
 
 
@@ -75,7 +75,9 @@ function Profile() {
 
 		<div >    
 
-		<div id="Searchbar"><h1>Search bar thingy will be here</h1></div>
+		<div id="Searchbar">
+		<input id="search" type="text" placeholder="Search.." name="search"></input><SearchIcon id="searchicon"/>
+			</div>
 
 		 {(typeof data.mydata === 'undefined')?(
 			<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
