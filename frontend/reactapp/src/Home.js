@@ -105,9 +105,9 @@ function Profile() {
 <br></br>
 <hr></hr>
 &nbsp;
-<button id="DownloadButton"><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button>&nbsp;
-<button id="AnalyseButton">Analyse</button>&nbsp;
-<button id="DeleteButton">Delete</button>
+<button id="DownloadButton"><CloudDownloadRoundedIcon sx={{ fontSize: 24 }}/><br></br>Download</button>&nbsp;
+<button id="AnalyseButton"><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
+<button id="DeleteButton"><DeleteIcon sx={{ fontSize: 25 }}/><br></br>Delete</button>
 </p4> 
 </div>
 	 
