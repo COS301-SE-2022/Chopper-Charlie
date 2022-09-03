@@ -73,7 +73,20 @@ function Profile() {
 	return (
 
 
+		<div >    
 
+		<div id="Searchbar"><h1>Search bar thingy will be here</h1></div>
+
+		 {(typeof data.mydata === 'undefined')?(
+			<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+
+
+
+
+		 ) : (
+			 data.mydata.map((thedata, i)=>(
+				
 
 
 
@@ -84,21 +97,15 @@ function Profile() {
       <div className='center'>
    
     <div id="HomeContent">
-	 <div id="Searchbar"><h1>Search bar thingy will be here</h1></div>
-<div id="MediaBlock">trghrthg</div>
-<div id="MediaBlock">trghrthg</div>
-<div id="MediaBlock">trghrthg</div>
-<div id="MediaBlock">trghrthg</div>
-<div id="MediaBlock">trghrthg</div>
-<div id="MediaBlock">trghrthg</div>
-<div id="MediaBlock">trghrthg</div>
+	 
+<div id="MediaBlock">
+<p4><img id="preview" src={require('./temp.png')} width="100%" height="50%" alt="Logo"  />
+{thedata}</p4>  
+<p5>dd/mm/yyyy</p5>
+</div>
+	 
 
 
-
-
-
-
-    
 
 	 </div>  
         <div className='profile'>
@@ -127,7 +134,7 @@ function Profile() {
            <br/>
           <hr/>
 
-
+		  <br/>
                     
           <a href="/login" ><button type='button' id='homelogout'  onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo'/><p3>Logout</p3></button></a>
          
@@ -145,9 +152,13 @@ function Profile() {
       
 
 
+	  ))
+	  )
+	  }
+		 
 
-     
-  )
+ </div>
+);
 }
 
 export default Profile
