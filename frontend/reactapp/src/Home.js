@@ -95,11 +95,11 @@ function Profile() {
          
         <div className='profile'>
 
-        <img src={require('./logo.png')} width="235px" height="115px" alt="Logo"/>
+        <img src={require('./logo.png')} width="80%" height="20%" alt="Logo"/>
                
           <h1>    </h1>
           
-          <br/><br/>
+          
           <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
           
           <br/>
@@ -124,7 +124,7 @@ function Profile() {
           <a href="/login" ><button type='button' id='homelogout'  onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo'/><p3>Logout</p3></button></a>
          
           
-        <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="50%" height="50%" alt="Logo"/></div> 
+        <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="35%" height="40%" alt="Logo"/></div> 
 
         </div>
 
