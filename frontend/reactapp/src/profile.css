@@ -608,3 +608,28 @@ visibility: hidden;
   
   }
 
+#HomeContent {
+position: relative;
+width: 75%;
+}
+
+#MediaBlock{
+  
+  text-align: center;
+  margin: auto;
+  position: relative;
+  width: 20%;
+  color: #ffffff;
+  float: left;
+  height: 150px;
+  font-size: 17px;
+  border: 1px solid #37373a;
+  margin-bottom: 10%;
+  border-radius: 15px;
+  background-color: #1F1F21;
+  display: flex;  
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 15px;
+  
+}
