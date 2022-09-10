@@ -74,8 +74,9 @@ function Profile() {
 		<div >    
 
 		<div id="Searchbar">
-		<input id="search" type="text" placeholder="Search.." name="search"></input><SearchIcon id="searchicon"/>
-			</div>
+			<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }}/></button>
+			<button id='uploadButton'>Upload</button>
+		 </div>
 
 		 {(typeof data.mydata === 'undefined')?(
 			<div class="lds-ring"><div></div><div></div><div></div><div></div></div>

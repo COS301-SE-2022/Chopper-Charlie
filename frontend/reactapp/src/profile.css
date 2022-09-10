@@ -168,7 +168,7 @@ padding-right: 5%;
     cursor: pointer;
     display: flex;
     align-items: center;
-    font-family:"Roboto", Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif
 }
 
 #homelogout{
@@ -643,13 +643,13 @@ width: 75%;
 #MediaBlock p4{
   font-weight: bold;
   font-size: 20px;
-  font-family:"Roboto", Arial, Helvetica, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
 
 
 }
 
 #MediaBlock p5{
-  font-family:"Roboto", Arial, Helvetica, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   font-weight:normal;
   font-size: 12px;
 }
@@ -690,29 +690,19 @@ width: 75%;
   margin-left: 3%;
 }
 
-#Searchbar{
+ #Searchbar{
 margin-top: 3%;
 margin-left: 3%;
-width: 60%;
+width: 65%;
 height: 50px;
 background-color:#1F1F21; ;
-border-radius: 25px;
-}
+border-radius: 25px 0 0 25px;
+ }
 
-#search{
-  color: #e3ddf6;
-  background-color:#000000;
-  border-radius: 25px;
-  border-color:#333237;
-  margin-left: 3%;
-  margin-top: 1.5%;
-  width: 35%;
-  height: 50%;
-  cursor: text;
-}
+
 
 #HomeContent h2{
-font-family:"Roboto", Arial, Helvetica, sans-serif; 
+font-family:Arial, Helvetica, sans-serif; 
 font-size: 50px;
 font-weight: normal;
 padding-left: 5%;
@@ -723,4 +713,50 @@ padding-left: 5%;
 }
 
 /* ////////////////////// */
+
+#searchhh{
+  color: #e3ddf6;
+  background-color:#000000;
+  border-radius: 25px 0 0 25px;
+  border-color: #000000;
+  margin-left: 3%;
+  margin-top: 0.8%;
+  width: 35%;
+  height: 30px;
+  cursor: text;
+}
+
+
+#searchbuttonn{
+  color: #e3ddf6;
+  background-color:#000000;
+  border-radius:  0 25px 25px 0 ;
+  border-color: #353336;
+  margin-top: 0.8%;
+  width: 5%;
+  height: 35px;
+  cursor: text;
+}
+
+#uploadButton{
+  background-color: #4EDBAC;
+  border-radius:  5px ;
+  color: #ffffff;
+  height: 45px;
+  font-size: 18px;
+  width: 85px;
+  border-color:#1F1F21 ;
+  float: right;
+  margin-top: 0.2%;
+
+}
+
+#vehicle{
+  background-color: #1F1F21;
+  border-radius: 5px;
+  width: 15%;
+  color: #ffffff;
+
+}
+
 
