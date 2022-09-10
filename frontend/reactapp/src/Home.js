@@ -131,7 +131,7 @@ function Profile() {
           <div>
            <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
            
-           <a id='pagelinks' href="/analytics"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p3>Pipelines</p3></button></a>
+           <a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p3>Pipelines</p3></button></a>
            <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
            
            </div>
