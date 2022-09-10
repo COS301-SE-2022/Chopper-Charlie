@@ -5,16 +5,14 @@ import { auth } from './firebase'
 import React, { useState } from "react";
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
-import AnalyticsRoundedIcon from '@mui/icons-material/AnalyticsRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
-import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import SearchIcon from '@mui/icons-material/Search';
+
 
 
 
@@ -27,25 +25,25 @@ function Profile() {
 		
 	});
 
-	let str = currentUser?.email;
+	// let str = currentUser?.email;
 
-	function replace (){
-		var string = "";
-		var chart = "";
-		for(let i=0; i < str.length; i++){  //fixed spelling from 'str.lenght'
-			if (str.charAt(i) === "@"||str.charAt(i) === "." ) {
-				chart = "";
-				string = string + chart;
-			}
-			else {
-				chart = str.charAt(i);
-				string = string + chart;
-			}
-		}
-		console.log(string);
-		return string
+	// function replace (){
+	// 	var string = "";
+	// 	var chart = "";
+	// 	for(let i=0; i < str.length; i++){  //fixed spelling from 'str.lenght'
+	// 		if (str.charAt(i) === "@"||str.charAt(i) === "." ) {
+	// 			chart = "";
+	// 			string = string + chart;
+	// 		}
+	// 		else {
+	// 			chart = str.charAt(i);
+	// 			string = string + chart;
+	// 		}
+	// 	}
+	// 	console.log(string);
+	// 	return string
 		
-	}
+	// }
 	
 
 	// Using useEffect for single rendering
@@ -65,9 +63,9 @@ function Profile() {
 		
 	
 
-	function genData(str){
-		fetch("/db/"+str+"/"+currentUser?.email)
-		}
+	// function genData(str){
+	// 	fetch("/db/"+str+"/"+currentUser?.email)
+	// 	}
 
 
 	return (
@@ -81,8 +79,6 @@ function Profile() {
 
 		 {(typeof data.mydata === 'undefined')?(
 			<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-
-
 
 
 
