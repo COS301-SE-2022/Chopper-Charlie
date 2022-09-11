@@ -165,15 +165,25 @@ function Profile() {
         <option value="motorbike">Motorbikes</option>
     
       </select>
-
+	
 	  
 		<span></span>
 		<span></span>
-		<input type="checkbox" id="outline" name="outline" value="y"></input>
-		<label for="outline"> Track Object</label>
-		<input type="checkbox" id="cnt" name="count" value="y"></input>
+		 {/* // */}
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+		 <label for="outline"> Track Object</label>&nbsp;&nbsp;
+		
+		 <label class="switch"><input type="checkbox" id="outline"  value="y" ></input><span class="slider round"></span></label>
+		{/* // */}
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		{/* <input type="checkbox" id="outline" name="outline" value="y"></input> */}
 		<label for="count"> Count Objects</label> <span></span>
-		<button onClick={pipelineui}>Save</button>
+		{/* <input type="checkbox" id="cnt" name="count" value="y"></input> */}
+		<label class="switch"><input type="checkbox" id="cnt" value="y"></input><span class="slider round"></span></label>
+
+		
+		<button  id='CreateButton'  onClick={pipelineui}>Create</button>
 	
 	  </p> 
 
