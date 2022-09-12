@@ -99,7 +99,7 @@ function Profile() {
 	 
 <div id="MediaBlock">
 <p4><img id="preview" src={require('./temp.png')} width="340px" height="220px" alt="Logo"  />
-{thedata} <br></br>
+&nbsp;{thedata} <br></br>
 &nbsp;&nbsp;&nbsp;<p5>dd/mm/yyyy</p5>
 <br></br>
 <hr></hr>
@@ -128,16 +128,16 @@ function Profile() {
           <br/>
           <hr/>
           <br/>
-        
+		  
           <div>
            <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
            
            <a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p3>Pipelines</p3></button></a>
            <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
-           
+		   <br/>
+		  
            </div>
            
-           <br/>
           <hr/>
 
 		  <br/>
