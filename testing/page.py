@@ -40,6 +40,11 @@ class testPage(BasePage):
             return False   
 
 
+    def upload_page(self):
+        self.click_login()
+        self.driver.get("http://localhost:3000/upload")
+
+
 
 
 
