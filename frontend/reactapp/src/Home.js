@@ -17,6 +17,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 
 
+
 //change
 function Profile() {
     const {currentUser} = useAuthValue()
@@ -63,9 +64,32 @@ function Profile() {
 		
 	
 
-	// function genData(str){
-	// 	fetch("/db/"+str+"/"+currentUser?.email)
-	// 	}
+	 function delData(str){
+
+		
+		if (window.confirm("Are you sure you want to delete media?") === true) {
+			fetch("/db/"+str+"/"+currentUser?.email);
+		} 
+	 	
+	 	}
+
+
+		 function downData(str){
+			fetch("/lol/"+str+"/"+currentUser?.email)
+			
+	
+			}
+
+	
+			function upData(){
+				fetch("/ub/"+currentUser?.email)
+		
+				
+				}
+
+
+
+
 
 
 	return (
@@ -75,7 +99,7 @@ function Profile() {
 
 		<div id="Searchbar">
 			<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }}/></button>
-			<button id='uploadButton'>Upload</button>
+			<button id='uploadButton' onClick={()=>upData()}   >Upload</button>
 		 </div>
 
 		 {(typeof data.mydata === 'undefined')?(
@@ -105,9 +129,9 @@ function Profile() {
 <br></br>
 <hr></hr>
 &nbsp;
-<div id='ButtonDiv'><button id="DownloadButton"><CloudDownloadRoundedIcon sx={{ fontSize: 24 }}/><br></br>Download</button>&nbsp;
-<button id="AnalyseButton"><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
-<button id="DeleteButton"><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button></div>
+<div id='ButtonDiv'><button id="DownloadButton"  onClick={()=>downData(thedata)}   ><CloudDownloadRoundedIcon sx={{ fontSize: 24 }}/><br></br>Download</button>&nbsp;
+<button id="AnalyseButton"  ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
+<button id="DeleteButton"  onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button></div>
 </p4> 
 </div>
 	 
