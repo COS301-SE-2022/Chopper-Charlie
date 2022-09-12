@@ -19,10 +19,23 @@ import Settings from './Settings'; //added by mumi
 import AnalyseVideo from './AnalyseVideo'; //added by mumi
 import Home from './Home'; //added by mumi
 
+import {Deploy} from './Component/Deploy/Deploy'
+
 function App() {
 
+  //const [state, setState] = useState({})
+  
   const [currentUser, setCurrentUser] = useState(null)
   const [timeActive, setTimeActive] = useState(false)
+
+// useEffect(() => {
+//   fetch("/mydatapage/<index_boo>").then(response => {
+//     if(response.status == 200){
+//       return response.json()
+//     }
+//   }).then(data => setState(data))
+//   .then(error => console.log(error))
+// })
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -30,8 +43,11 @@ function App() {
     })
   }, [])
 
-  return (
+   //<Deploy prop={state}/>
+  
+   return (
     <Router>
+      
       <AuthProvider value={{currentUser, timeActive, setTimeActive}}>
         <Routes>
           <Route exact path='/' element={
@@ -61,6 +77,7 @@ function App() {
         </Routes>  
       </AuthProvider>
   </Router>
+ 
   );
 }
 
