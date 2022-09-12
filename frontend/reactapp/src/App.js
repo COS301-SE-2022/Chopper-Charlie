@@ -13,7 +13,6 @@ import {Navigate} from 'react-router-dom'
 import Download from './Download';
 import Delete from './Delete';
 import Upload from './Upload'; //added by mumi
-import Analyse from './Analyse';
 import Pipeline from './Pipeline'; //added by mumi
 import Settings from './Settings'; //added by mumi
 import AnalyseVideo from './AnalyseVideo'; //added by mumi
@@ -53,7 +52,6 @@ function App() {
           <Route path='/download' element={<Download/>} />
           <Route path='/delete' element={<Delete/>} /> 
           <Route path='/upload' element={<Upload/>} />    {/*    added by mumi */}
-          <Route path='/analyse' element={<Analyse/>} /> 
           <Route path='/pipeline' element={<Pipeline/>} />    {/*    added by mumi */}
           <Route path='/settings' element={<Settings/>} />    {/*    added by mumi */}
           <Route path='/analysevideo' element={<AnalyseVideo/>} /> 

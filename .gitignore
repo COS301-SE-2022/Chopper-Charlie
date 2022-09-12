@@ -1,0 +1,8 @@
+backend/AzureBlobDelete/__pycache__/azureblobdelete.cpython-310.pyc
+backend/AzureBlobRetrieve/__pycache__/azureblobretrieve.cpython-310.pyc
+backend/AzureBlobUpload/__pycache__/azureblobupload.cpython-310.pyc
+backend/AzureContainerCreate/__pycache__/azurecreatecontainer.cpython-310.pyc
+backend/AzureContainerRetrieve/__pycache__/azurecontainerretrieve.cpython-310.pyc
+backend/VideoAI/__pycache__/input_retrieval.cpython-310.pyc
+backend/VideoAI/__pycache__/runDetections.cpython-310.pyc
+backend/VideoAI/inputVideos/__pycache__/downdel.cpython-310.pyc
