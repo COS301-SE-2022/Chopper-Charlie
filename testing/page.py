@@ -52,6 +52,11 @@ class testPage(BasePage):
         self.click_login()
         self.driver.get("http://localhost:3000/download")
 
+    def analysis_page(self):
+        self.click_login()
+        self.driver.get("http://localhost:3000/analysevideo")
+
+
 
 
 
