@@ -100,7 +100,7 @@ class testPage(BasePage):
         if "Pipeline- 1" in self.driver.page_source:
             return True
         else:
-            return False 
+            
 
         # anbtn = self.driver.find_element("id", "analyse")
         # time.sleep(4)
