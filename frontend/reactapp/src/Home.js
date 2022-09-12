@@ -98,8 +98,8 @@ function Profile() {
     <div id="HomeContent">
 	 
 <div id="MediaBlock">
-<p4><img id="preview" src={require('./temp.png')} width="100%" height="50%" alt="Logo"  />
-&nbsp;&nbsp; {thedata} <br></br>
+<p4><img id="preview" src={require('./temp.png')} width="340px" height="220px" alt="Logo"  />
+{thedata} <br></br>
 &nbsp;&nbsp;&nbsp;<p5>dd/mm/yyyy</p5>
 <br></br>
 <hr></hr>
@@ -116,11 +116,11 @@ function Profile() {
 	 </div>  
         <div className='profile'>
 
-        <img src={require('./logo.png')} width="80%" height="20%" alt="Logo"/>
+        <img src={require('./logo.png')} width="80%" height="17%" alt="Logo"/>
                
           <h1>    </h1>
           
-          
+          <br/><br/>
           <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
           
           <br/>

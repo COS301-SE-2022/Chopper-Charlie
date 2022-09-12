@@ -618,10 +618,10 @@ width: 75%;
   text-align: left;
   margin: auto;
   position: relative;
-  width: 27%;
+  width: 340px;
   color: #ffffff;
   float: left;
-  height: 333px;
+  height: 365px;
   border: 1px solid #37373a;
   margin-bottom: 5%;
   border-radius: 8px;
@@ -671,7 +671,7 @@ width: 75%;
   cursor: pointer;
   font-size: 10px;
   color: #e7e3f6;
-  margin-left: 3%;
+  margin-left: 3.5%;
 }
 
 #AnalyseButton {
@@ -683,7 +683,7 @@ width: 75%;
   cursor: pointer;
   font-size: 10px;
   color: #e7e3f6;
-  margin-left: 3%;
+  margin-left: 3.5%;
 }
 
 #DeleteButton {
@@ -695,7 +695,7 @@ width: 75%;
   cursor: pointer;
   font-size: 10px;
   color: #e7e3f6;
-  margin-left: 3%;
+  margin-left: 3.5%;
 }
 
  #Searchbar{
@@ -757,6 +757,7 @@ padding-left: 5%;
   float: right;
   margin-top: 0.2%;
   cursor: pointer;
+  margin-right: 10px;
 
 }
 
