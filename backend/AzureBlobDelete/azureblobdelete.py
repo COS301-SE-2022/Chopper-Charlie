@@ -16,4 +16,3 @@ def delete_blob(Blob_Name,Containers_Name):
     blob_client.delete_blob()
     messagebox.showinfo("Success","Successfully Deleted media")  #added now
 
-#
