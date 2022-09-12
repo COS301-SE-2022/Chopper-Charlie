@@ -25,25 +25,25 @@ function Profile() {
 		
 	});
 
-	// let str = currentUser?.email;
+	let str = currentUser?.email;
 
-	// function replace (){
-	// 	var string = "";
-	// 	var chart = "";
-	// 	for(let i=0; i < str.length; i++){  //fixed spelling from 'str.lenght'
-	// 		if (str.charAt(i) === "@"||str.charAt(i) === "." ) {
-	// 			chart = "";
-	// 			string = string + chart;
-	// 		}
-	// 		else {
-	// 			chart = str.charAt(i);
-	// 			string = string + chart;
-	// 		}
-	// 	}
-	// 	console.log(string);
-	// 	return string
+	function replace (){
+		var string = "";
+		var chart = "";
+		for(let i=0; i < str.length; i++){  //fixed spelling from 'str.lenght'
+			if (str.charAt(i) === "@"||str.charAt(i) === "." ) {
+				chart = "";
+				string = string + chart;
+			}
+			else {
+				chart = str.charAt(i);
+				string = string + chart;
+			}
+		}
+		console.log(string);
+		return string
 		
-	// }
+	}
 	
 
 	// Using useEffect for single rendering
@@ -98,7 +98,8 @@ function Profile() {
     <div id="HomeContent">
 	 
 <div id="MediaBlock">
-<p4><img id="preview" src={require('./temp.png')} width="340px" height="220px" alt="Logo"  />
+{/* <p4><img id="preview" src={require('./temp.png')} width="240px" height="220px" alt="Logo"  /> */}
+<p4><img id="preview" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="240px" height="220px" alt="img" />
 &nbsp;{thedata} <br></br>
 &nbsp;&nbsp;&nbsp;<p5>dd/mm/yyyy</p5>
 <br></br>
