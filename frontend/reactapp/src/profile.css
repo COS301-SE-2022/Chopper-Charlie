@@ -618,10 +618,10 @@ width: 75%;
   text-align: left;
   margin: auto;
   position: relative;
-  width: 340px;
+  width: 240px;
   color: #ffffff;
   float: left;
-  height: 365px;
+  height: 350px;
   border: 1px solid #37373a;
   margin-bottom: 5%;
   border-radius: 8px;
@@ -850,4 +850,18 @@ border:none;
 
 .Pipelineform p{
   color:#CAC4D0 ;
+
+  /* width: 70px;
+
+
+
+
+ */
+ 
+ 
 }
+
+/* ///////////////////////////////////// */
+
+
+/* ///////////////////////////////////// */
