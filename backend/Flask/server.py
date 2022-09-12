@@ -13,65 +13,47 @@ from AzureBlobRetrieve.azureblobretrieve import blob_retrieve
 from AzureContainerRetrieve.azurecontainerretrieve import list_blobs_in_container
 from AzureBlobDelete.azureblobdelete import delete_blob
 from AzureBlobUpload.azureblobupload import blob_upload
-from ImageAI.vehicle_counting import blob_retrievee
-from ImageAI.vehicle_detector import VehicleDetector
+#from ImageAI.vehicle_counting import blob_retrievee
+#from ImageAI.vehicle_detector import VehicleDetector
 from VideoAI.inputVideos.downdel import blob_retrieveee
 
-from flask.helpers import send_from_directory
-from flask_cors import CORS, cross_origin
+app = Flask(__name__)
 
-app = Flask(__name__, static_folder='../../frontend/reactapp/build', static_url_path='')
-CORS(app)
 # Route for seeing a data
 @app.route('/mydatapage/<index_boo>')
-@cross_origin()
 def Show_Containers_Blobs(index_boo):
+
 	# Returning an api for showing in reactjs
+
 	return {"mydata":list_blobs_in_container(index_boo)}
 
-
-@app.route('/')
-@cross_origin()
-def serve():
-	# Returning an api for showing in reactjs
-	return send_from_directory(app.static_folder, 'index.html')
-
-
-
-
 @app.route("/lol/<index_no>/<index_glo>")
-@cross_origin()
 def download_blobs(index_no,index_glo):
 	blob_retrieve(index_no,index_glo)
 	return "True" 
 
 
 @app.route("/cc/<index_noo>")
-@cross_origin()
 def create_thecontainer(index_noo):
 
 		return create_container(index_noo)
 
 @app.route("/db/<index_clo>/<index_cloo>")
-@cross_origin()
 def blob_deletion(index_clo,index_cloo):
 
 		return delete_blob(index_clo,index_cloo)
 
 @app.route("/ub/<index_ubloo>")
-@cross_origin()
 def b_upload(index_ubloo):
 	blob_upload(index_ubloo)
 	return "True"
 
-@app.route("/ai/<index_sno>/<index_snoo>")
-@cross_origin()
-def ai_image(index_sno,index_snoo):
-	blob_retrievee(index_sno,index_snoo)
-	return "True"
+# @app.route("/ai/<index_sno>/<index_snoo>")
+# def ai_image(index_sno,index_snoo):
+# 	blob_retrievee(index_sno,index_snoo)
+# 	return "True"
 
 @app.route("/ai/video/<index_snot>/<index_snoot>/<index_snooot>/<index_snoooot>/<index_snooooot>")
-@cross_origin()
 def ai_video(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot):
 	blob_retrieveee(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot)
 	return "True"
