@@ -56,21 +56,8 @@ class testPage(BasePage):
         self.click_login()
         self.driver.get("http://localhost:3000/analysevideo")
 
-
-
-
-
-
-            
-
     
-    def upload_file(self):
-        self.upload_page()
-        upbtn = self.driver.find_element("id", "up")
-        upbtn.click()
-        os.startfile("F:\Coding\Selenium\pupload.exe")
-        time.sleep(5)
-        return True
+    
 
     def download_File(self):
         self.download_page()
