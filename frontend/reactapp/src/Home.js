@@ -12,8 +12,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import SearchIcon from '@mui/icons-material/Search';
-
-
+import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
+import GridViewIcon from '@mui/icons-material/GridView';
 
 
 
@@ -99,6 +99,10 @@ function Profile() {
 
 		<div id="Searchbar">
 			<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }}/></button>
+			
+			
+			<button id="viewList"><ViewListOutlinedIcon id="listOption" /></button>
+			<button id="view"><GridViewIcon id="listOption" /></button>
 			<button id='uploadButton' onClick={()=>upData()}   >Upload</button>
 		 </div>
 

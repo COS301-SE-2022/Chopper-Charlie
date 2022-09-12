@@ -749,6 +749,7 @@ padding-left: 5%;
 }
 
 #uploadButton{
+  float: right;
   background-color: #4EDBAC;
   border-radius:  5px ;
   color: #ffffff;
@@ -756,7 +757,7 @@ padding-left: 5%;
   font-size: 18px;
   width: 85px;
   border-color:#1F1F21 ;
-  float: right;
+ 
   margin-top: 0.2%;
   cursor: pointer;
   margin-right: 10px;
@@ -863,7 +864,23 @@ border:none;
  
 }
 
-/* ///////////////////////////////////// */
+#listOption{
+  font-size: 25px;
+  color:azure;
+}
 
+#view{
+  background-color: #222225;
+  border-color: #1F1F21;
+  border-radius: 100%;
+  margin-left: 5px;
+  margin-top: 3px;
+}
 
-/* ///////////////////////////////////// */
+#viewList{
+  background-color: #222225;
+  border-color: #1F1F21;
+  border-radius: 100%;
+  margin-left: 32%;
+  margin-top:3px;
+}
