@@ -39,22 +39,13 @@ class testPage(BasePage):
         else:
             return False   
 
-    def upload_page(self):
-        self.click_login()
-        self.driver.get("http://localhost:3000/upload")
-    
-    def delete_page(self):
-        self.click_login()
-        self.driver.get("http://localhost:3000/delete")
-    
-    def download_page(self):
-        self.click_login()
-        self.driver.get("http://localhost:3000/download")
 
-    def analysis_page(self):
-        self.click_login()
-        self.driver.get("http://localhost:3000/analysevideo")
 
+
+
+            
+
+    
     def upload_file(self):
         self.upload_page()
         upbtn = self.driver.find_element("id", "up")
