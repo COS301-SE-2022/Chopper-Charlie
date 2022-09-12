@@ -115,7 +115,7 @@ function Download() {
 						<hr/>
 						<img src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)} width="90px" height="60px" alt="Logo"/> <br/>
 
-						<button id="down"  type="button" onClick={()=>genData(thedata)}  key={i}  ><CloudDownloadRoundedIcon sx={{ fontSize: 20}}/></button>
+						<a download href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="down"  type="button" onClick={()=>genData(thedata)}  key={i}  ><CloudDownloadRoundedIcon sx={{ fontSize: 20}}/></button></a>
 						</p2>
 						</div>
 						</div>
