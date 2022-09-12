@@ -14,7 +14,7 @@ import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import { Alert, Hidden } from '@mui/material';
 import { padding } from '@mui/system';
-
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { purple } from '@mui/material/colors';
 import Switch from '@mui/material/Switch';
 import { alpha, styled } from '@mui/material/styles';
@@ -34,19 +34,7 @@ function Profile() {
     })
   }
 
-  const GreenSwitch = styled(Switch)(({ theme }) => ({
-    '& .MuiSwitch-switchBase.Mui-checked': {
-      color: purple[200],
-      '&:hover': {
-        backgroundColor: alpha(purple[200], theme.palette.action.hoverOpacity),
-      },
-    },
-    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
-      backgroundColor: purple[200],
-    },
-  }));
-  
-  const label = { inputProps: { 'aria-label': 'Switch demo' } };
+ 
 
 
 
@@ -55,25 +43,22 @@ function Profile() {
    
       <div className='center'>
 
-     <div className='Content'>
+<div id="HomeContent">
         
+<h2>Settings</h2>
+     <hr></hr>
         
-        <div className='set'>
-        <h1>Settings </h1>
+         
+      
         <div id='settings'>
             
         <AccountCircleRoundedIcon sx={{ fontSize: 70 ,padding:5}}/>
         <p1><strong> </strong>{currentUser?.email}</p1>
-         <br></br>
         <button id="changepass" type='button'  onClick={SendEmail}>Change password</button> <br></br>
-        <br></br>
-        <p4>Push notifications </p4>  <Switch {...label} defaultChecked color="secondary" />
-
-
-
+       
         </div>
 
-         </div>
+        
 
 
         
@@ -82,44 +67,41 @@ function Profile() {
      
 
          
-        <div className='profile'>
-
-        <img src={require('./logo.png')} width="235px%" height="115px%" alt="Logo"/>
-               
-          <h1>    </h1>
-          
-          <br/><br/>
-          <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
-          {/* <img id='pp'  src={require('./j.png')} width="27%" height="12%" alt="profile"/> */}
-          <br/>
-          <p1><strong> </strong>{currentUser?.email}</p1>
-          <br/>
-          <hr/>
-          <br/>
-          {/* <p1>
-            <strong>Email verified: </strong>
-            {`${currentUser?.emailVerified}`}
-          </p1> */}
-          <div>
-          <a id='pagelinks' href="\"><button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button></a>
            
-           <a id='pagelinks' href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button></a>
-           <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
-           </div>
-           
-           <br/>
-          <hr/>
+      <div className='profile'>
 
+<img src={require('./logo.png')} width="80%" height="20%" alt="Logo"/>
+       
+  <h1>    </h1>
+  
+  
+  <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
+  
+  <br/>
+  <p1 id="user-id"><strong> </strong>{currentUser?.email}</p1>
+  <br/>
+  <hr/>
+  <br/>
 
-          
-          
-          <a href = "/login"><button type = "button" className='logout' onClick={() => signOut(auth)}  ><LogoutRoundedIcon/  >Logout</button></a>
-         
-          
-        <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="50%" height="50%" alt="Logo"/></div> 
+  <div>
+   <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
+   
+   <a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p3>Pipelines</p3></button></a>
+   <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
+   
+   </div>
+   
+   <br/>
+  <hr/>
 
-        </div>
+<br/>
+            
+  <a href="/login" ><button type='button' id='homelogout'  onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo'/><p3>Logout</p3></button></a>
+ 
+  
+<div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="35%" height="40%" alt="Logo"/></div> 
 
+</div>
 
 
 
