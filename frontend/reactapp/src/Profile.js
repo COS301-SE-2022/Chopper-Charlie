@@ -39,7 +39,7 @@ function Profile() {
         <center> <a  href="/download"><div className='Vid'><div className='tx'><p2><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/>Download</p2></div></div></a></center>
         {/* <center><a  href="/analyse"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse Image</p2></div></div></a></center>     */}
         <center><a  href="/analysevideo"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse Media</p2></div></div></a></center>    
-
+        
          </div>
           {/* <div className='Vid'></div><div className='Vid'></div>
         </div>

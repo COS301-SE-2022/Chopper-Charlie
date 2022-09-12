@@ -10,7 +10,7 @@
     width: 30%;
     margin:auto; 
     height: 100vh;
-    background-color: #222225;
+    background-color: #1F1F21;
     border: 3px solid #000000;
     border-radius: 15px;
     top: 0%;
@@ -35,14 +35,17 @@
 
   .profile p3{
     text-align: left;
-    color: #333237;
     font-size: 15px;
-    font-weight: bold;
+    /* font-weight: bold; */
     padding-top: 2%;
     
   
    
   }
+
+
+
+  a:link { text-decoration: none; }
 
   #icon{
 position: relative;
@@ -50,6 +53,11 @@ color: #333237;
 padding-right: 5%;
   }
 
+  #iconlo{
+    position: relative;
+    color: #ffffff;
+    padding-right: 5%;
+      }
   
   .profile > span{
     color: #dfdbf7;
@@ -150,6 +158,7 @@ padding-right: 5%;
     height: 32px;
     margin: 2%;
     text-align: left;
+    color: #333237;;
     padding-left: 10%;
     width: 100%;
     background-color: #e7e3f6;
@@ -159,8 +168,24 @@ padding-right: 5%;
     cursor: pointer;
     display: flex;
     align-items: center;
+    font-family:Arial, Helvetica, sans-serif
 }
 
+#homelogout{
+  height: 32px;
+  color: #e3ddf6;
+  margin: 2%;
+  text-align: left;
+  padding-left: 10%;
+  width: 100%;
+  background-color: #C44A4A;
+  font-size: 14px;
+  border-radius: 20px;
+  border: 0.5px solid #575758;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
 
 .sub_div {
   position: absolute;
@@ -530,19 +555,19 @@ visibility: hidden;
   text-align: left;
   margin: left;
   position: relative;
-  width: 60%;
+  width: 85%;
   color: #ffffff;
   float: left;
   height: 70px;
   font-size: 17px;
-  border: 1px solid #b59ff1;
   margin-bottom: 2px;
   border-radius: 15px;
   background-color: #222225;  
   flex-wrap: wrap;
+  margin-top: 5%;
   margin-right: 400px;
-  margin-left: 15px;
-  padding-left: 10px;
+  margin-left: 40px;
+  padding-left: 5%;
   padding-top: 5px;
 
 }
@@ -551,7 +576,7 @@ visibility: hidden;
   text-align: center;
   display: inline-block;
   position:relative;
-  width: 600px;
+  width: 75%;
   color: #ffffff;
   height: 40px;
   font-size: 17px;
@@ -562,7 +587,7 @@ visibility: hidden;
   display: flex;  
   flex-wrap: wrap;
   margin-right: 500px;
-  margin-left: 15px;
+  margin-left: 50px;
   margin-top: 10px;
   padding-top: 10px;
   padding-left: 10px;
@@ -582,3 +607,261 @@ visibility: hidden;
   cursor: pointer;
   
   }
+
+#HomeContent {
+position: relative;
+width: 75%;
+}
+
+#MediaBlock{
+  
+  text-align: left;
+  margin: auto;
+  position: relative;
+  width: 240px;
+  color: #ffffff;
+  float: left;
+  height: 350px;
+  border: 1px solid #37373a;
+  margin-bottom: 5%;
+  border-radius: 8px;
+  background-color: #1F1F21;
+  display: flex;  
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 20px;
+  
+}
+
+#preview{
+ border-top-left-radius: 8px;
+ border-top-right-radius: 8px;
+
+}
+
+#MediaBlock p4{
+  font-weight: bold;
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif;
+
+
+}
+
+#MediaBlock p5{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  font-size: 12px;
+}
+
+
+
+#ButtonDiv{
+  height:80% ;
+  margin-top: -20px;
+  margin-left: 3%;
+
+}
+
+#DownloadButton {
+  width:27%;
+  height: 18%;
+  border-radius: 8px;
+  border: #FF7E37;
+  background-color: #FF7E37;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  margin-left: 3.5%;
+}
+
+#AnalyseButton {
+  width:27%;
+  height: 18%;
+  border-radius: 8px;
+  border: #51B9D4;
+  background-color: #51B9D4;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  margin-left: 3.5%;
+}
+
+#DeleteButton {
+  width:27%;
+  height: 18%;
+  border-radius: 8px;
+  border: #FE4838;
+  background-color: #FE4838;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  margin-left: 3.5%;
+}
+
+ #Searchbar{
+margin-top: 3%;
+margin-left: 3%;
+width: 65%;
+height: 50px;
+background-color:#1F1F21; ;
+border-radius: 25px 0 0 25px;
+ }
+
+
+
+#HomeContent h2{
+font-family:Arial, Helvetica, sans-serif; 
+font-size: 50px;
+font-weight: normal;
+padding-left: 5%;
+}
+
+#HomeContent hr{
+  width: 90%;
+}
+
+/* ////////////////////// */
+
+#searchhh{
+  color: #e3ddf6;
+  background-color:#000000;
+  border-radius: 25px 0 0 25px;
+  border-color: #000000;
+  margin-left: 3%;
+  margin-top: 0.8%;
+  width: 35%;
+  height: 30px;
+  cursor: text;
+}
+
+
+#searchbuttonn{
+  color: #e3ddf6;
+  background-color:#000000;
+  border-radius:  0 25px 25px 0 ;
+  border-color: #353336;
+  margin-top: 0.8%;
+  width: 5%;
+  height: 35px;
+  cursor: text;
+}
+
+#uploadButton{
+  background-color: #4EDBAC;
+  border-radius:  5px ;
+  color: #ffffff;
+  height: 45px;
+  font-size: 18px;
+  width: 85px;
+  border-color:#1F1F21 ;
+  float: right;
+  margin-top: 0.2%;
+  cursor: pointer;
+  margin-right: 10px;
+
+}
+
+#vehicle{
+  background-color: #1F1F21;
+  border-radius: 5px;
+  width: 15%;
+  color: #ffffff;
+
+}
+
+/* ///////////////////////////////////// */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 26px;
+  border: #79747E;
+  border-style:solid;
+  border-width: 1.5px;
+  border-radius: 34px;
+  
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #49454E;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #938F99;
+  -webkit-transition: .4s;
+  transition: .4s;
+ 
+}
+
+input:checked + .slider {
+  background-color: #6750A4;
+}
+
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#CreateButton{
+width: 70px;
+height: 30px;
+border-radius: 15px;
+background-color: #D0BCFF;
+float: right;
+margin-right: 10px;
+border:none;
+}
+
+.Pipelineform p{
+  color:#CAC4D0 ;
+
+  /* width: 70px;
+
+
+
+
+ */
+ 
+ 
+}
+
+/* ///////////////////////////////////// */
+
+
+/* ///////////////////////////////////// */

@@ -1,20 +1,21 @@
-import { cardClasses } from "@mui/material";
-import React, { useState, useEffect } from "react";
-import {useAuthValue} from './AuthContext'
 import './profile.css'
-import AnalyticsIcon from '@mui/icons-material/Analytics';
+import {useAuthValue} from './AuthContext'
+import { signOut } from 'firebase/auth' 
+import { auth } from './firebase'
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import React, { useState} from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { grey } from "@mui/material/colors";
-import { applyActionCode } from "firebase/auth";
+
+//change
+function Profile() {
+  
+  const {currentUser} = useAuthValue()
 
 
-
-
-function AnalyseVideo() {
-	const {currentUser} = useAuthValue()
-	// object for storing and using data
-	// object for storing and using data
-	
 	
 	const [data, setdata] = useState({
 		
@@ -146,14 +147,15 @@ function AnalyseVideo() {
 	
 
 
-	return (
-		
-		
+  return (
+   
+      <div className='center'>
+<div id="HomeContent">
     
-		 <div   >    
- 
-<div><a   href="/"><button type='button' id='back'>Back</button></a></div>
-<h1>Pipelines</h1>
+     <h2>Pipelines</h2>
+     <hr></hr>
+
+  
 <div className='Pipelineform'>
     <p> Analyse :  <span></span>  <span></span> 
 	<select id="vehicle">
@@ -163,15 +165,25 @@ function AnalyseVideo() {
         <option value="motorbike">Motorbikes</option>
     
       </select>
-
+	
 	  
 		<span></span>
 		<span></span>
-		<input type="checkbox" id="outline" name="outline" value="y"></input>
-		<label for="outline"> Track Object</label>
-		<input type="checkbox" id="cnt" name="count" value="y"></input>
+		 {/* // */}
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+		 <label for="outline"> Track Object</label>&nbsp;&nbsp;
+		
+		 <label class="switch"><input type="checkbox" id="outline"  value="y" ></input><span class="slider round"></span></label>
+		{/* // */}
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		{/* <input type="checkbox" id="outline" name="outline" value="y"></input> */}
 		<label for="count"> Count Objects</label> <span></span>
-		<button onClick={pipelineui}>Save</button>
+		{/* <input type="checkbox" id="cnt" name="count" value="y"></input> */}
+		<label class="switch"><input type="checkbox" id="cnt" value="y"></input><span class="slider round"></span></label>
+
+		
+		<button  id='CreateButton'  onClick={pipelineui}>Create</button>
 	
 	  </p> 
 
@@ -198,54 +210,57 @@ function AnalyseVideo() {
 
 
 
-<h1>Analyse Media </h1>
-	
-			 {(typeof data.mydata === 'undefined')?(
-				//  <p>Loading...</p>
-
-				<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-			 ) : (
-				 data.mydata.map((thedata, i)=>(
-					 
-					// <center><br></br><div><button   type="button" onClick={()=>genData(thedata)}   style={{height: "50px", width: "200px"}} key={i}  >{thedata}</button></div></center>
 
 
 
-					<div className='Vd'>
-        
-      					  <center>
-			
-					<div className='Vids'>
-					<div className='tx'>
-						<p2>{thedata}<br/>
-						<hr/>
-						<img src={require('./play.png')} width="90px" height="60px" alt="Logo"/> <br/>
+         
+      <div className='profile'>
 
-						<button id="analyse"  type="button" onClick={()=>pipeline(thedata)}  key={i}  ><AnalyticsIcon sx={{ fontSize: 20}}/></button>
-						
-						</p2>
-						</div>
-						</div>
-						
-						</center> 
+<img src={require('./logo.png')} width="80%" height="20%" alt="Logo"/>
+       
+  <h1>    </h1>
+  
+  
+  <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
+  
+  <br/>
+  <p1 id="user-id"><strong> </strong>{currentUser?.email}</p1>
+  <br/>
+  <hr/>
+  <br/>
 
-         			</div>
-					
-					
+  <div>
+   <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
+   
+   <a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p3>Pipelines</p3></button></a>
+   <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
+   
+   </div>
+   
+   <br/>
+  <hr/>
+
+<br/>
+            
+  <a href="/login" ><button type='button' id='homelogout'  onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo'/><p3>Logout</p3></button></a>
+ 
+  
+<div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="35%" height="40%" alt="Logo"/></div> 
+
+</div>
 
 
 
+</div>
+
+
+      </div>
+      
 
 
 
-					
-				 ))
-			 )
-			 }
-				
-
-		</div>
-	);
+     
+  )
 }
 
-export default AnalyseVideo;
+export default Profile

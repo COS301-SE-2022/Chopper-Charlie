@@ -11,6 +11,26 @@ function Delete() {
 	const [data, setdata] = useState({
 		
 	});
+
+	let str = currentUser?.email;
+
+	function replace (){
+		var string = "";
+		var chart = "";
+		for(let i=0; i < str.length; i++){  //fixed spelling from 'str.lenght'
+			if (str.charAt(i) === "@"||str.charAt(i) === "." ) {
+				chart = "";
+				string = string + chart;
+			}
+			else {
+				chart = str.charAt(i);
+				string = string + chart;
+			}
+		}
+		console.log(string);
+		return string
+		
+	}
 	
 
 	// Using useEffect for single rendering
@@ -68,7 +88,7 @@ function Delete() {
 					<div className='tx'>
 						<p2>{thedata}<br/>
 						<hr/>
-						<img src={require('./play.png')} width="90px" height="60px" alt="Logo"/> <br/>
+						<img src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)} width="90px" height="60px" alt="Logo"/> <br/>
 
 						<button id="del" name={thedata} type="button" onClick={()=>genData(thedata)}  key={i}  ><DeleteIcon sx={{ fontSize: 20}}/></button>
 						</p2>
