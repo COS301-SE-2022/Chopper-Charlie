@@ -87,7 +87,28 @@ function Profile() {
 				
 				}
 
-				
+	function viewList(){
+		
+	// 	let s=t;
+	// 	let newContent ="<div id='MediaBlockList'> <img id='previewList' src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+"+ s +")}  width='80px' height='80px alt='img'  onError={event => {event.target.src = require('./vidImg.png') event.onerror = null}}    /><h2>{"+s+"}</h2><a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+"+s+")}><button id='DownloadButtonList'  onClick={()=>downData("+ s+")}   ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a><button id='AnalyseButtonList' ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;<button id='DeleteButtonList' onClick={()=>delData("+s+")}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button></div> ";
+	// document.getElementById("HomeContent").innerHTML = newContent;
+
+	// for (let i = 0; i < 4; i++) {
+	// 	document.getElementById("HomeContent").style.display="none";
+	//   }
+	
+	// //  document.getElementsByClassName("hc").style.visibility = "hidden";
+	
+	// document.getElementById("HomeContent").style.display="none";
+	// document.getElementById("HomeContentList").style.display="contents";
+		// var t = document.getElementById("HomeContentList");
+		// t.classList.toggle("homecontent")
+
+		// document.getElementById("MediaBlock").style.width="800px";
+
+
+
+		}			
 
 
 
@@ -99,7 +120,7 @@ function Profile() {
 
 		<div id="Searchbar">
 			<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }}/></button>
-			<button id="viewList"><ViewListOutlinedIcon id="listOption" /></button>
+			<button id="viewList" onClick={()=>viewList()}  ><ViewListOutlinedIcon id="listOption" /></button>
 			<button id="viewGrid"><GridViewIcon id="listOption" /></button>
 			<button id='uploadButton' onClick={()=>upData()}   >Upload</button>
 		 </div>
@@ -120,7 +141,30 @@ function Profile() {
 	
    
       <div className='center'>
-   
+ 
+
+
+   {/* <div id="HomeContentList">
+<div id="MediaBlockList">
+<img id="previewList" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="80px" height="80px" alt="img"  onError={event => {
+          event.target.src = require('./vidImg.png')
+          event.onerror = null
+        }}    /><h2>{thedata}</h2>
+		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  onClick={()=>downData(thedata)}   ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
+		<button id="AnalyseButtonList" ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
+		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button>
+</div> 
+</div>  */}
+
+
+
+
+
+
+
+
+
+
     <div id="HomeContent">
 	 
 <div id="MediaBlock">
@@ -139,21 +183,13 @@ function Profile() {
 <button id="DeleteButton" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button></div>
 </p4> 
 </div>
+</div>  
+
+ 
+
+
+
 	 
-
-{/* <div id="MediaBlockList">
-<img id="previewList" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="80px" height="80px" alt="img"  onError={event => {
-          event.target.src = require('./vidImg.png')
-          event.onerror = null
-        }}    /><h2>{thedata}</h2>
-		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  onClick={()=>downData(thedata)}   ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
-		<button id="AnalyseButtonList" ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
-		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button>
-</div>  */}
-
-
-
-	 </div>  
         <div className='profile'>
 
         <img src={require('./logo.png')} width="80%" height="17%" alt="Logo"/>
