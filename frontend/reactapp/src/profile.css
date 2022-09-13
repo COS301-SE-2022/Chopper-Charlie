@@ -867,20 +867,114 @@ border:none;
 #listOption{
   font-size: 25px;
   color:azure;
+
 }
 
-#view{
+
+
+
+#viewGrid{
   background-color: #222225;
-  border-color: #1F1F21;
-  border-radius: 100%;
-  margin-left: 5px;
+  margin-left: 2px;
   margin-top: 3px;
+  border: none;
+  cursor: pointer;
+  border-radius: 100%;
 }
 
+
+#viewGrid:active{
+  background-color: #4086db;
+}
 #viewList{
   background-color: #222225;
-  border-color: #1F1F21;
-  border-radius: 100%;
-  margin-left: 32%;
+  border: none;
+  margin-left: 30%;
   margin-top:3px;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+#MediaBlockList {
+  width: 800px;
+  height: 80px;
+  background-color: #1F1F21;
+  border-radius:15px ;
+  color: #ffffff;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  visibility: hidden;
+}
+
+#MediaBlockList h2{
+  font-size: 17px;
+  margin-top: -50px;
+  margin-left: 100px;
+  font-weight: bold;
+}
+
+#nameDiv{
+ position: relative;
+ border: #4EDBAC;
+}
+
+
+
+#ButtonDivList{
+  height:80% ;
+  margin-left: 3%;
+
+}
+
+#previewList{
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+ 
+ }
+
+ #DownloadButtonList {
+  width:53px;
+  height: 53px;
+  border-radius: 8px;
+  border: #FF7E37;
+  background-color: #FF7E37;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  position: relative;
+  float:right;
+  margin-top: -53px;
+  margin-right: 131px;
+  
+}
+#AnalyseButtonList {
+  width:53px;
+  height: 53px;
+  border-radius: 8px;
+  border: #51B9D4;
+  background-color: #51B9D4;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  position: relative;
+  float:right;
+  margin-top: -53px;
+  margin-right: 70px;
+  
+}
+
+#DeleteButtonList {
+  width:53px;
+  height: 53px;
+  border-radius: 8px;
+  border: #FE4838;
+  background-color: #FE4838;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  position: relative;
+  float:right;
+  margin-top: -53px;
+  margin-right: 10px;
+ 
 }

@@ -99,10 +99,8 @@ function Profile() {
 
 		<div id="Searchbar">
 			<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }}/></button>
-			
-			
 			<button id="viewList"><ViewListOutlinedIcon id="listOption" /></button>
-			<button id="view"><GridViewIcon id="listOption" /></button>
+			<button id="viewGrid"><GridViewIcon id="listOption" /></button>
 			<button id='uploadButton' onClick={()=>upData()}   >Upload</button>
 		 </div>
 
@@ -126,7 +124,7 @@ function Profile() {
     <div id="HomeContent">
 	 
 <div id="MediaBlock">
-{/* <p4><img id="preview" src={require('./temp.png')} width="240px" height="220px" alt="Logo"  /> */}
+
 <p4><img id="preview" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="240px" height="220px" alt="img"  onError={event => {
           event.target.src = require('./vidImg.png')
           event.onerror = null
@@ -137,11 +135,21 @@ function Profile() {
 <hr></hr>
 &nbsp;
 <div  id='ButtonDiv'><a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButton"  onClick={()=>downData(thedata)}   ><CloudDownloadRoundedIcon sx={{ fontSize: 24 }}/><br></br>Download</button></a>&nbsp;
-<button id="AnalyseButton"  ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
-<button id="DeleteButton"  onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button></div>
+<button id="AnalyseButton" ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
+<button id="DeleteButton" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button></div>
 </p4> 
 </div>
 	 
+
+{/* <div id="MediaBlockList">
+<img id="previewList" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="80px" height="80px" alt="img"  onError={event => {
+          event.target.src = require('./vidImg.png')
+          event.onerror = null
+        }}    /><h2>{thedata}</h2>
+		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  onClick={()=>downData(thedata)}   ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
+		<button id="AnalyseButtonList" ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
+		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button>
+</div>  */}
 
 
 
