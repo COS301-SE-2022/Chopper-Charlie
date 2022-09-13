@@ -26,8 +26,7 @@ inputWidth, inputHeight = 416, 416
 
 #Parse command line arguments and extract the values required
 LABELS, weightsPath, configPath, inputVideoPath, outputVideoPath,\
-	preDefinedConfidence, preDefinedThreshold, list_of_vehicles, yn, a, USE_GPU= parseCommandLineArguments()
-
+	preDefinedConfidence, preDefinedThreshold, list_of_vehicles, yn, a, tc, USE_GPU= parseCommandLineArguments()
 # Initialize a list of colors to represent each possible class label
 np.random.seed(42)
 COLORS = np.random.randint(0, 255, size=(len(LABELS), 3),

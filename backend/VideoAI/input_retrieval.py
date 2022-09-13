@@ -31,6 +31,8 @@ def parseCommandLineArguments():
 		help="Boxes")
 	ap.add_argument("-a", "--a", required=False,
 		help="counting")
+	ap.add_argument("-tc", "--tc", required=False,
+		help="containername")
 	ap.add_argument("-u", "--use-gpu", type=bool, default=False,
 		help="boolean indicating if CUDA GPU should be used")
 	
@@ -52,7 +54,8 @@ def parseCommandLineArguments():
 	list_of_vehicles = args["list_of_vehicles"]
 	yn = args["yn"]  #boxes
 	a = args["a"] #counting
+	tc = args["tc"] #container name
 	USE_GPU = args["use_gpu"]
 
 
-	return LABELS, weightsPath,  configPath, inputVideoPath, outputVideoPath, confidence, threshold, list_of_vehicles,yn, a, USE_GPU
+	return LABELS, weightsPath,  configPath, inputVideoPath, outputVideoPath, confidence, threshold, list_of_vehicles,yn, a, tc, USE_GPU
