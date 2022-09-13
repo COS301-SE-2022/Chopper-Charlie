@@ -87,7 +87,7 @@ function Profile() {
 				
 				}
 
-
+				
 
 
 
@@ -127,7 +127,10 @@ function Profile() {
 	 
 <div id="MediaBlock">
 {/* <p4><img id="preview" src={require('./temp.png')} width="240px" height="220px" alt="Logo"  /> */}
-<p4><img id="preview" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="240px" height="220px" alt="img" />
+<p4><img id="preview" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="240px" height="220px" alt="img"  onError={event => {
+          event.target.src = require('./vidImg.png')
+          event.onerror = null
+        }}    />
 &nbsp;{thedata} <br></br>
 &nbsp;&nbsp;&nbsp;<p5>dd/mm/yyyy</p5>
 <br></br>
