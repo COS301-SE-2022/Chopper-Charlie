@@ -300,6 +300,8 @@ while True:
 	# write the output frame to disk
 	writer.write(frame)
 
+	
+
 	cv2.imshow('Frame', frame)
 	if (inputVideoPath.endswith(".mp4")):
 		if cv2.waitKey(1) & 0xFF == ord('q'):

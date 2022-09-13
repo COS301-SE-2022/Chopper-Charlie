@@ -3,6 +3,7 @@ import subprocess
 
 def thisfunct(inpt,outpt,type, box, count):
 # Run detections on all files in the inputVideos directory
+	outpt = "Analysed"+outpt
 	lol = os.getcwd()
 	os.chdir(lol + "/backend/VideoAI/")
 	for fileName in os.listdir("inputVideos/"):

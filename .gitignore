@@ -13,3 +13,5 @@ backend/AzureContainerCreate/__pycache__/azurecreatecontainer.cpython-310.pyc
 backend/AzureContainerRetrieve/__pycache__/azurecontainerretrieve.cpython-310.pyc
 backend/VideoAI/__pycache__/runDetections.cpython-310.pyc
 backend/VideoAI/inputVideos/__pycache__/downdel.cpython-310.pyc
+backend/VideoAI/__pycache__/input_retrieval.cpython-310.pyc
+backend/VideoAI/__pycache__/runDetections.cpython-310.pyc
