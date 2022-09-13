@@ -12,7 +12,7 @@ def thisfunct(inpt,outpt,type, box, count, cn):
 		# print("python3 yolo_video.py --input inputVideos/" + fileName + " --output outputVideos/" + \
 		# 	fileName[:lastDotIndex] + ".avi --yolo yolo-coco --use-gpu 1")
 		cmd = "python3 yolo_video.py --input inputVideos/" + inpt + " --output outputVideos/" + \
-			outpt+ " --yolo yolo-coco --list_of_vehicles " + type +  " --yn " +box + " --a " + count + " --tc " + cn + " --use-gpu 1"
+			outpt+ " --yolo yolo-coco --list_of_vehicles " + type +  " --yn " +box + " --a " + count + " --tc " + cn + " --ct " + outpt +" --use-gpu 1"
 		print("Running command:\n" + cmd)
 		subprocess.run(cmd, shell=True)
 	os.chdir(lol)

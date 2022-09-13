@@ -5,6 +5,8 @@ import time
 from scipy import spatial
 import cv2
 from input_retrieval import *
+from azure.storage.blob import BlobClient
+
 
 
 	
@@ -18,6 +20,7 @@ from input_retrieval import *
 
 
 
+Connection_String = "DefaultEndpointsProtocol=https;AccountName=choppercharlie;AccountKey=Bcrvc/ix8TmB/hoEE2fmp44iHAqEWeiZ1fr7Fml9Z0+Q7RI8NvX2kbqzeufPKHRY54hk+wFgE/+a+AStzl2qTw==;EndpointSuffix=core.windows.net"
 
 
 # Setting the threshold for the number of frames to search a vehicle for
@@ -26,7 +29,9 @@ inputWidth, inputHeight = 416, 416
 
 #Parse command line arguments and extract the values required
 LABELS, weightsPath, configPath, inputVideoPath, outputVideoPath,\
-	preDefinedConfidence, preDefinedThreshold, list_of_vehicles, yn, a, tc, USE_GPU= parseCommandLineArguments()
+	preDefinedConfidence, preDefinedThreshold, list_of_vehicles, yn, a, tc, ct, USE_GPU= parseCommandLineArguments()
+
+	 
 # Initialize a list of colors to represent each possible class label
 np.random.seed(42)
 COLORS = np.random.randint(0, 255, size=(len(LABELS), 3),
@@ -298,8 +303,13 @@ while True:
 
 	# write the output frame to disk
 	writer.write(frame)
+	path = os.path.abspath(os.getcwd())
 
-	
+	blob = BlobClient.from_connection_string(conn_str= Connection_String, container_name= tc, blob_name= ct) 
+	with open(outputVideoPath, "rb") as data:
+		blob.upload_blob(data)
+        
+		
 
 	cv2.imshow('Frame', frame)
 	if (inputVideoPath.endswith(".mp4")):
@@ -320,3 +330,5 @@ print("[INFO] cleaning up...")
 writer.release()
 videoStream.release()
 os.remove(inputVideoPath)
+os.remove(outputVideoPath)
+
