@@ -18,7 +18,6 @@ import GridViewIcon from '@mui/icons-material/GridView';
 
 
 
-
 //change
 function Profile() {
     const {currentUser} = useAuthValue()
@@ -100,8 +99,8 @@ function Profile() {
 
 		<div id="Searchbar">
 			<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }}/></button>
-			<a id='pagelinks' href="/homelist"><button id="viewList"  ><ViewListOutlinedIcon id="listOption"  /></button></a>
-			<button id="viewGrid"><GridViewIcon id="listOptionactive" /></button>
+			<button id="viewList"  ><ViewListOutlinedIcon id="listOptionactive"  /></button>
+			<a id='pagelinks' href="/home"><button id="viewGrid"><GridViewIcon id="listOption" /></button></a>
 			<button id='uploadButton' onClick={()=>upData()}   >Upload</button>
 		 </div>
 
@@ -124,7 +123,28 @@ function Profile() {
  
 
 
-    <div id="HomeContent">
+    <div id="HomeContentList">
+<div id="MediaBlockList">
+<img id="previewList" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="80px" height="80px" alt="img"  onError={event => {
+          event.target.src = require('./vidImg.png')
+          event.onerror = null
+        }}    /><h2>{thedata}</h2>
+		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  onClick={()=>downData(thedata)}   ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
+		<button id="AnalyseButtonList" ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
+		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button>
+</div> 
+</div>  
+
+
+
+
+
+
+
+
+
+
+    {/* <div id="HomeContent">
 	 
 <div id="MediaBlock">
 
@@ -142,7 +162,7 @@ function Profile() {
 <button id="DeleteButton" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button></div>
 </p4> 
 </div>
-</div>   
+</div>   */}
  </div>
  
 ))
