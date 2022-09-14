@@ -17,6 +17,8 @@ import Pipeline from './Pipeline'; //added by mumi
 import Settings from './Settings'; //added by mumi
 import AnalyseVideo from './AnalyseVideo'; //added by mumi
 import Home from './Home'; //added by mumi
+import Homelist from './Homelist'; //added by mumi
+
 
 function App() {
 
@@ -56,6 +58,7 @@ function App() {
           <Route path='/settings' element={<Settings/>} />    {/*    added by mumi */}
           <Route path='/analysevideo' element={<AnalyseVideo/>} /> 
           <Route path='/Home' element={<Home/>} />    {/*    added by mumi */}
+          <Route path='/Homelist' element={<Homelist/>} />    {/*    added by mumi */}
         </Routes>  
       </AuthProvider>
   </Router>
