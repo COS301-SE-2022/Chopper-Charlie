@@ -41,9 +41,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dexOptions {
-        javaMaxHeapSize "4g"
+
+    buildFeatures{
+        viewBinding true
     }
+
     packagingOptions {
         doNotStrip "*/*/libdjivideo.so"
         doNotStrip "*/*/libSDKRelativeJNI.so"
@@ -67,6 +69,7 @@ android {
 
 dependencies {
     implementation('com.dji:dji-sdk:4.16')
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.8'
     compileOnly('com.dji:dji-sdk-provided:4.16')
 
     implementation 'androidx.multidex:multidex:2.0.1'
