@@ -33,7 +33,7 @@
         android:required="true" />
 
     <application
-        android:name=".MApplication"
+        android:name=".subsystems.main.MApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -62,26 +62,30 @@
                 android:resource="@xml/accessory_filter" />
         </activity>
 
-        <service android:name="dji.sdk.sdkmanager.DJIGlobalService"></service>
-
-        <activity android:name="com.bitcoders.choppercharlie.ConnectionActivity"
-            android:screenOrientation="portrait"
+        <service android:name="dji.sdk.sdkmanager.DJIGlobalService" />
+        
+        <activity
+            android:name=".subsystems.drone.ConnectionActivity"
+            android:configChanges="orientation"
             android:launchMode="singleTop"
-            android:configChanges="orientation">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
             </intent-filter>
         </activity>
-        <activity android:name="com.bitcoders.choppercharlie.MainActivity"
-            android:screenOrientation="userLandscape"/>
+        <activity
+            android:name=".subsystems.main.MainActivity"
+            android:screenOrientation="userLandscape" />
     </application>
 
 </manifest>
