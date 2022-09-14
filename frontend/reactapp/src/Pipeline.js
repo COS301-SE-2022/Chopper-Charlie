@@ -47,7 +47,7 @@ function Profile() {
 		
 		function del(){
 			document.getElementById('pps').style.visibility='hidden';
-			document.getElementById('delete').style.visibility='hidden';
+			document.getElementById('deletepipeline').style.visibility='hidden';
 		}
 
 
@@ -57,13 +57,19 @@ function Profile() {
 
 
 		function pipelineui(){
+
+
 		var select = document.getElementById('vehicle');
 		value = select.options[select.selectedIndex].value;
 		// var t = window.confirm(value);
 
 		var ol = document.querySelector('#outline').checked;
         var countt= document.querySelector('#cnt').checked;
-		var t0= "<p1>Pipeline     </p1>"
+		var pName= document.getElementById('pipelineName').value;
+		var n= pName.length;
+		if (n<26) {
+
+		var t0= "<p1>"+pName+"</p1>"
 
 		var t1="<div id='options'>"+value+"</div>";
 		if (ol===true){
@@ -85,13 +91,17 @@ function Profile() {
 			var t3="";
 		}
 
-
+		
+			
 			document.getElementById('pps').innerHTML=t0+t1+t2+t3;
 			var a = document.getElementById('pps');
 			a.style.visibility='visible';
-			document.getElementById('delete').style.visibility='visible';
+			document.getElementById('deletepipeline').style.visibility='visible';
 
-
+		}
+		else {
+			window.alert("Please choose a pipeline name with 25 or less characters.");
+		}
 
 
 
@@ -157,12 +167,12 @@ function Profile() {
 
   
 <div className='Pipelineform'>
-    <p> Analyse :  <span></span>  <span></span> 
+    <p> <input type="text" id="pipelineName"  placeholder="Pipeline Name" ></input>  <span></span> 
 	<select id="vehicle">
-        <option value="car">Cars</option>
-        <option value="bus">Buses</option>
-        <option value="truck">Trucks</option>
-        <option value="motorbike">Motorbikes</option>
+        <option id="optionss" value="car">Cars</option>
+        <option id="optionss" value="bus">Buses</option>
+        <option id="optionss" value="truck">Trucks</option>
+        <option id="optionss" value="motorbike">Motorbikes</option>
     
       </select>
 	
@@ -204,7 +214,8 @@ function Profile() {
 		  <div id='options'>Track Objects</div> */}
           
            <p id="demo"></p>
-          </div> <button id='delete' onClick={del}><DeleteIcon id='icon'/></button>
+		   <br></br>
+           </div><button id='deletepipeline' onClick={del}>Delete</button>
 
 
 

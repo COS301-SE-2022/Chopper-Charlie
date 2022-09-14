@@ -458,6 +458,7 @@ padding-right: 5%;
     position: relative;
     margin-top: 1%;
     margin-left: 6px;
+    margin-right: 10px;
     background-color: #443d57;
     color: #b59ff1;
     font-size: 10px;
@@ -557,17 +558,16 @@ visibility: hidden;
   text-align: left;
   margin: left;
   position: relative;
-  width: 85%;
+  width: 88%;
   color: #ffffff;
   float: left;
   height: 70px;
   font-size: 17px;
-  margin-bottom: 2px;
+  margin-bottom: 40px;
   border-radius: 15px;
   background-color: #222225;  
   flex-wrap: wrap;
   margin-top: 5%;
-  margin-right: 400px;
   margin-left: 40px;
   padding-left: 5%;
   padding-top: 5px;
@@ -588,8 +588,8 @@ visibility: hidden;
   background-color: #222225;
   display: flex;  
   flex-wrap: wrap;
-  margin-right: 500px;
-  margin-left: 50px;
+
+  margin-left: 115px;
   margin-top: 10px;
   padding-top: 10px;
   padding-left: 10px;
@@ -607,6 +607,7 @@ visibility: hidden;
   border: 0.5px solid #575758;
   width: 20px;
   cursor: pointer;
+  
   
   }
 
@@ -793,9 +794,20 @@ padding-left: 5%;
   background-color: #1F1F21;
   border-radius: 5px;
   width: 15%;
+  height: 22px;
   color: #ffffff;
+  font-size: 17px;
+  
 
 }
+
+#vehicle:hover{
+  background-color: #2B2C2E;
+
+}
+
+#optionss:hover {background: #6750A4;}
+
 
 /* ///////////////////////////////////// */
 
@@ -912,7 +924,7 @@ border:none;
 #viewList{
   background-color: #222225;
   border: none;
-  margin-left: 30%;
+  margin-left: 33%;
   margin-top:4px;
   cursor: pointer;
   border-radius: 100%;
@@ -1009,4 +1021,33 @@ color: #51B9D4;
   margin-top: -53px;
   margin-right: 10px;
  
+}
+
+
+#pipelineName{
+  background-color: #2F2F2F;
+  width: 20%;
+  height: 20px;
+  font-size: 18px;
+  border: none;
+  color: #f9f9f9;
+  border-bottom: 2px solid #ACACAC;
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+#deletepipeline{
+  cursor: pointer;
+  color: #a285f0;
+  float: right;
+  border: none;
+  background-color: inherit;
+  margin-left: 10%;
+  margin-top: -35px;
+  visibility: hidden;
+}
+
+#pps p1{
+  margin-right: 10%;
+  margin-left: 5%;
 }
