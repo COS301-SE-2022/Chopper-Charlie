@@ -151,3 +151,14 @@ export const uploadFilesToAccount = async (files, accountName, blobURL) => {
 		console.log('error in azure upload', error);
 	}
 };
+
+export const deleteFileInAccount = async (fileName, accountName, blobURL) => {
+	try {
+		const blobServiceClient = new BlobServiceClient(blobURL);
+		const containerClient = blobServiceClient.getContainerClient(accountName);
+		await containerClient.deleteBlob(fileName);
+		console.log('File Deleted');
+	} catch (error) {
+		console.log('error in azure delete', error);
+	}
+};
