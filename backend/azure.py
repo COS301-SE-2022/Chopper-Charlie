@@ -146,3 +146,13 @@ def delete_container(Container_Name):
         container_client.delete_container()
     except:
         print("Could Not Delete Container")
+
+# Create User Container
+def create_user_container(uid):
+    try:
+        blob_service_client = BlobServiceClient.from_connection_string(
+            Connection_String
+        )
+        blob_service_client.create_container(uid)
+    except:
+        print("Could Not Create Container")
