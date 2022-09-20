@@ -127,3 +127,23 @@ def remove_admin(uid, email):
     except: 
         # IF REQUESTING USER IS NOT A USER
         return {"ERROR": {"code": 401, "message": "UNAUTHORIZED"}}
+    
+    
+def delete_user(uid, email):
+    try:
+        admin = auth.get_user(uid)
+        user = auth.get_user_by_email(email)
+        na = user.custom_claims.get('admin') == None or user.custom_claims.get('admin') == False
+        ss = admin.custom_claims.get('admin') == True and na
+        aa = admin.custom_claims.get('super') == True and user.custom_claims.get('super') == None
+        # IF (SUPER DELETING NOT SUPER) OR (ADMIN DELETING NOT ADMIN)
+        if ss or aa:
+            # delete_container(user.uid.lower())                          # Delete the AzureStorage Container ---> move to server
+            # db.collection("users").document(user.uid).delete()          # Delete the User from Firestore
+            # db.collection("pipelines").document(user.uid).delete()      # Delete the User's Pipeline from Firestore
+            # auth.delete_user(user.uid)                                  # Delete the User from Firebase
+            return {"SUCCESS": {"code": 200, "message": "User account deleted"}}
+
+        return {"ERROR": {"code": 403, "message": "FORBIDDEN - You do not have permission"}}
+    except:
+        return {"ERROR": {"code": 401, "message": "UNAUTHORIZED"}}
