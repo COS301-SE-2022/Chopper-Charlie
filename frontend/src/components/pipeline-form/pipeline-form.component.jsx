@@ -13,7 +13,8 @@ import { useState } from 'react';
 import { selectCurrentUser } from '../../store/user/user.selector';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPipelines } from '../../store/pipelines/pipelines.selector';
-import { CreateButton } from '../buttons/buttons.component'; 
+import { CreateButton } from '../buttons/buttons.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 import './pipeline-form.styles.css';
 
 // const CreateButton = styled(Button)(({ theme }) => ({
@@ -90,7 +91,7 @@ const PipelineForm = () => {
 
 	return (
 		<form onSubmit={handleSubmit} className="pipe-form">
-			
+
 			<Stack
 				spacing={2}
 				direction='row'
@@ -111,7 +112,7 @@ const PipelineForm = () => {
 					// backgroundColor: 'black',
 					padding: '1em',
 					borderRadius: '10px',
-					
+
 				}}>
 				<TextField
 					name='title'
@@ -189,10 +190,12 @@ const PipelineForm = () => {
 					label='Count'
 					labelPlacement='start'
 				/>
-
-				<CreateButton variant='contained' startIcon={<AddIcon />} type='submit'>
+				<Button variant='contained' startIcon={<AddIcon />} type='submit' buttonType={BUTTON_TYPE_CLASSES.create}>
 					create pipeline
-				</CreateButton>
+				</Button>
+				{/* <CreateButton variant='contained' startIcon={<AddIcon />} type='submit'>
+					create pipeline
+				</CreateButton> */}
 			</Stack>
 		</form>
 	);
