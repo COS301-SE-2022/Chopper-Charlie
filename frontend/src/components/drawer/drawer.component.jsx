@@ -53,15 +53,9 @@ const Drawer = () => {
 						minHeight: '45em',
 					}}>
 					<Link to='/'>
-						<div className='logo'>
-							<Logo />
-							{/* <img
-								src='../../assets/react.svg'
-								alt='chopper-charlie'
-								height='50px'
-								width='50px'
-							/> */}
-						</div>
+						<Logo />
+						{/* <div className='logo'>
+						</div> */}
 					</Link>
 
 					<div>

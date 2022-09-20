@@ -4,3 +4,9 @@
     justify-content: center;
     /* overflow-x: hidden; */
 }
+
+.logo {
+    height: 40px;
+    overflow-y: hidden;
+    /* width: 40px; */
+}

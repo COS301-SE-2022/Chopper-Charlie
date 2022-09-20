@@ -10,15 +10,11 @@ import './admin.styles.css';
 import Drawer from '../../components/drawer/drawer.component';
 
 const AdminPortal = () => {
-	// const dispatch = useDispatch();
-  const [accounts, setAccounts] = useState([]);
-	// const accounts = useSelector(selectAccounts);
-	// const currentUser = useSelector(selectCurrentUser);
-	// const [containerName, setContainerName] = useState('');
+	const [accounts, setAccounts] = useState([]);
 	useEffect(() => {
 		const loadAccounts = async () => {
 			const usr = await getUsers();
-      setAccounts(usr);      
+			setAccounts(usr);
 			// console.log('users stuff', usr);
 		};
 		loadAccounts();
@@ -56,24 +52,13 @@ const AdminPortal = () => {
 	// ];
 	// const accounts = useSelector(selectAccounts);
 	return (
-		// <>
-		// 	{/* <AccountCard account={account1} /> */}
-		// 	<div>
-		// 		{accounts.map((account) => {
-		// 			return <AccountCard key={account.email} account={account} />;
-		// 			// return <div>{account.email}</div>
-		// 		})}
-		// 	</div>
-		// </>
-    <div className='admin-wrapper'>
+		<div className='admin-wrapper'>
 			<div className='accounts-grid'>
 				{accounts.map((account) => {
-					return <AccountCard account={account} key={account.email}/>;
+					return <AccountCard account={account} key={account.email} />;
 				})}
 			</div>
-    </div>
-
-
+		</div>
 	);
 };
 

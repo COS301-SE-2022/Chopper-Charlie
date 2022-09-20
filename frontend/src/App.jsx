@@ -22,7 +22,6 @@ import Settings from './routes/settings/settings.component';
 import AdminPortal from './routes/admin/admin.component';
 import Explore from './routes/explore/explore.component';
 import Home from './routes/home/home.component';
-import { setAccounts } from './store/accounts/accounts.action';
 
 
 function App() {
@@ -36,13 +35,6 @@ function App() {
 					dispatch(setPipelinesArray(data.pipelines));
 				};
 				loadPipelines();
-				// const loadUsers = async () => {
-				// 	console.log('loading users');
-				// 	const data = await getUsers();
-				// 	console.log('This is the users data', data);
-				// 	dispatch(setAccounts(data.users));
-				// }
-				// loadUsers();
 			}
 			dispatch(setCurrentUser(user));
 		});
@@ -62,6 +54,7 @@ function App() {
 					<Route path='settings' element={<Settings />} />
 					{/* Add route: admin ? admin-portal : access denied */}
 					<Route path='admin' element={<AdminPortal />} />
+					{/* <Route path=':user' element={<UserPage />} /> */}
 					<Route path='explore' element={<Explore />} />
 				</Route>
 
