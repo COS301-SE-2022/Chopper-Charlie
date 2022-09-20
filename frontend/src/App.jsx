@@ -22,6 +22,8 @@ import Settings from './routes/settings/settings.component';
 import AdminPortal from './routes/admin/admin.component';
 import Explore from './routes/explore/explore.component';
 import Home from './routes/home/home.component';
+import { listFiles } from './utils/azure/azure.utils';
+import { setFiles } from './store/files/files.action';
 
 function App() {
 	const dispatch = useDispatch();
@@ -34,10 +36,17 @@ function App() {
 					dispatch(setPipelinesArray(data.pipelines));
 				};
 				loadPipelines();
-				fetch(`/api/get-sas/${user.uid}`).then((res) =>
-					res.json()).then((data) => {
-						dispatch(setSasUrl(data.sas))
+				fetch(`/api/get-sas/${user.uid}`)
+					.then((res) => res.json())
+					.then((data) => {
+						dispatch(setSasUrl(data.sas));
 					});
+				// const loadMedia = async () => {
+				// 	const response = await listFiles(sasURL);
+				// 	dispatch(setFiles(response));
+				// 	console.log(response);
+				// };
+				loadMedia();
 			}
 			dispatch(setCurrentUser(user));
 		});
@@ -49,8 +58,7 @@ function App() {
 			<Routes>
 				{/* Add route: user ? dashboard : home */}
 				<Route path='/' element={<Home />} />
-				
-				
+
 				<Route path='/portal' element={<Drawer />}>
 					<Route index path='media' element={<Media />} />
 					<Route path='analytics' element={<Analytics />} />
@@ -60,7 +68,6 @@ function App() {
 					{/* <Route path=':user' element={<UserPage />} /> */}
 					<Route path='explore' element={<Explore />} />
 				</Route>
-
 
 				<Route path='auth' element={<Authentication />} />
 			</Routes>

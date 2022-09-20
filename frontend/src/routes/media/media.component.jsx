@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectSasUrl } from '../../store/user/user.selector';
-import { listFiles } from '../../utils/azure/azure.utils';
+import { deleteFile, listFiles, uploadFiles } from '../../utils/azure/azure.utils';
 import { setFiles } from '../../store/files/files.action';
 import { selectFiles } from '../../store/files/files.selector';
 
@@ -31,7 +31,7 @@ const Media = () => {
 
   const handleUpload = async () => {
 		await uploadFiles(selectedFiles, sasURL);
-		const arr = await listFiles();
+		const arr = await listFiles(sasURL);
 		dispatch(setFiles(arr));
 		setSelectedFiles([]);
 		inputRef.current.value = null;
@@ -39,7 +39,7 @@ const Media = () => {
 
   const handleDelete = async (fileName) => {
 		await deleteFile(fileName, sasURL);
-		const arr = await listFiles();
+		const arr = await listFiles(sasURL);
 		dispatch(setFiles(arr));
 	};
 
@@ -62,9 +62,34 @@ const Media = () => {
 			<br />
 
 
-			{files.map((file) => (
-				<div key={file.name}>{file.name}</div>
-			))}
+			{files?.map((file) => {
+				return (
+					<div key={file.name}>
+						{/* {console.log(file.url)} */}
+						{/* <p>{file.url}</p> */}
+						<img
+							src={`${files.url}`}
+							alt='image here'
+							width='250px'
+							height='160px'
+						/>{' '}
+						<br />
+						<div key={file.name}>
+							<span>{file.name}</span> <br />
+							<span>{file.size}</span> <br />
+							<span>{file.date}</span> <br />
+							<button onClick={() => handleDelete(file.name)}>
+								Delete File
+							</button>
+							<a href={file.url} download>
+								<button>Download</button>
+							</a>
+							<br />
+							<br />
+						</div>
+					</div>
+				);
+			})}
 		</>
 	);
 };
