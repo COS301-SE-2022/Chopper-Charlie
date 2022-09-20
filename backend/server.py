@@ -55,6 +55,19 @@ def ai_video(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot):
 	return "True"
 
 
+########################################### ADMIN FUNCTIONS ###########################################
+
+# Return list of all users
+@app.route('/accounts/<uid>')
+def accounts(uid):
+	return list_accounts(uid)
+
+
+
+
+
+
+
 # Running app
 if __name__ == '__main__':
 	app.run(debug=True)
