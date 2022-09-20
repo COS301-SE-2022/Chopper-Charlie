@@ -132,3 +132,17 @@ def delete_blob(Blob_Name, Containers_Name):
     blob_client = container_client.get_blob_client(Blob_Name)
     blob_client.delete_blob()
     messagebox.showinfo("Success", "Successfully Deleted media")  # added now
+    
+    
+    ####################### ADMIN FUNCTIONS ########################################################
+
+# Delete User Container
+def delete_container(Container_Name):
+    try:
+        blob_service_client = BlobServiceClient.from_connection_string(
+            Connection_String
+        )
+        container_client = blob_service_client.get_container_client(Container_Name)
+        container_client.delete_container()
+    except:
+        print("Could Not Delete Container")
