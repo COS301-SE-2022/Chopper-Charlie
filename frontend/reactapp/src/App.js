@@ -6,7 +6,7 @@ import VerifyEmail from './VerifyEmail';
 import Login from './Login'
 import {useState, useEffect} from 'react'
 import {AuthProvider} from './AuthContext'
-import {auth} from './firebase'
+import {auth, createUserDocumentFromAuth} from './firebase'
 import {onAuthStateChanged} from 'firebase/auth'
 import PrivateRoute from './PrivateRoute'
 import {Navigate} from 'react-router-dom'
@@ -18,6 +18,13 @@ import Settings from './Settings'; //added by mumi
 import AnalyseVideo from './AnalyseVideo'; //added by mumi
 import Home from './Home'; //added by mumi
 import Homelist from './Homelist'; //added by mumi
+import { useDispatch } from 'react-redux'; 
+import {
+	getPipelines,
+	onAuthStateChangedListener,
+} from './firebase';
+
+import { setPipelinesArray } from './store/pipelines/pipelines.action';
 
 
 function App() {
@@ -31,8 +38,34 @@ function App() {
     })
   }, [])
 
+  const dispatch = useDispatch();
+	useEffect(() => {
+		const unsubscribe = onAuthStateChangedListener((user) => {
+			if (user) {
+				 createUserDocumentFromAuth(user);
+				const loadPipelines = async () => {
+					const data = await getPipelines(user);
+          console.log("ffdvfvbdfx");
+          console.log(data);
+					dispatch(setPipelinesArray(data.pipelines));
+          
+				};
+				loadPipelines();
+				// const loadUsers = async () => {
+				// 	console.log('loading users');
+				// 	const data = await getUsers();
+				// 	console.log('This is the users data', data);
+				// 	dispatch(setAccounts(data.users));
+				// }
+				// loadUsers();
+			}
+			dispatch(setCurrentUser(user));
+		});
+		return unsubscribe;
+	}, []);
+
   return (
-    <Router>
+   
       <AuthProvider value={{currentUser, timeActive, setTimeActive}}>
         <Routes>
           <Route exact path='/' element={
@@ -61,7 +94,7 @@ function App() {
           <Route path='/Homelist' element={<Homelist/>} />    {/*    added by mumi */}
         </Routes>  
       </AuthProvider>
-  </Router>
+  
   );
 }
 

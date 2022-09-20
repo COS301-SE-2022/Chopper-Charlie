@@ -1,0 +1,4 @@
+export const USER_ACTION_TYPES = {
+    SET_CURRENT_USER: 'SET_CURRENT_USER',
+    SET_SAS_URL: 'SET_SAS_URL',
+};

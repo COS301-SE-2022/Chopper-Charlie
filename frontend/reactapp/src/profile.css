@@ -17,14 +17,15 @@
 
   }
   
-  .profile p1 {
+  /* p1 is h4 */
+  .profile h4 {
     text-align: center;
     color: #dfdbf7;
     font-size: 15px;
   }
 
 
-  .profile p2{
+  .profile h5{
     text-align: center;
     color: #b59ff1;
     font-size: 17px;
@@ -33,7 +34,7 @@
   }
   
 
-  .profile p3{
+  .profile p{
     text-align: left;
     font-size: 15px;
     /* font-weight: bold; */
@@ -664,10 +665,11 @@ width: 75%;
 #preview{
  border-top-left-radius: 8px;
  border-top-right-radius: 8px;
+ margin-top: -20px;
 
 }
 
-#MediaBlock p4{
+#MediaBlock p{
   font-weight: bold;
   font-size: 20px;
   font-family:Arial, Helvetica, sans-serif;
@@ -675,7 +677,7 @@ width: 75%;
 
 }
 
-#MediaBlock p5{
+#MediaBlock h5{
   font-family:Arial, Helvetica, sans-serif;
   font-weight:normal;
   font-size: 12px;
@@ -1047,7 +1049,8 @@ color: #51B9D4;
   visibility: hidden;
 }
 
-#pps p1{
+/* was p1 */
+#pps h4{
   margin-right: 10%;
   margin-left: 5%;
 }

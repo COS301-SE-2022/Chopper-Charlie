@@ -9,10 +9,15 @@ import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import React, { useState} from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import { useSelector } from 'react-redux';
+import { selectPipelines } from './store/pipelines/pipelines.selector';
+import PipelineForm from './pipeline-form.component';
+import PipelineItem from './pipeline-item.component';
 //change
 function Profile() {
   
+
+
   const {currentUser} = useAuthValue()
 
 
@@ -22,6 +27,10 @@ function Profile() {
 	});
 	
 
+
+	const pipelines = useSelector(selectPipelines);
+
+	console.log("sksks",pipelines)
 	// Using useEffect for single rendering
 	
 		// Using fetch to fetch the api from
@@ -69,7 +78,7 @@ function Profile() {
 		var n= pName.length;
 		if (n<26) {
 
-		var t0= "<p1>"+pName+"</p1>"
+		var t0= "<h4>"+pName+"</h4>"
 
 		var t1="<div id='options'>"+value+"</div>";
 		if (ol===true){
@@ -138,12 +147,12 @@ function Profile() {
 
 		// var t = window.confirm(value+"   "+ol+"  " +countt);
 		
-		var t1="<div id='pps'><p1>Pipeline- 1</p1>";
+		var t1="<div id='pps'><h4>Pipeline- 1</h4>";
 		var t2="<div id='options'>"+value+"</div>";
 		var t5="<button id='delete'>Delete</button><p id='demo'></p> </div>";
 
 
-		// var a="<div className='pps'><h1>Pipelines </h1><div className=\"pps\">  <p1>Pipeline 1 </p1><div id='options'>Count Objects</div><button onClick={warning} id='ppsdel'>Delete</button><p id=\"demo\"></p> </div>";
+		// var a="<div className='pps'><h1>Pipelines </h1><div className=\"pps\">  <h4>Pipeline 1 </h4><div id='options'>Count Objects</div><button onClick={warning} id='ppsdel'>Delete</button><p id=\"demo\"></p> </div>";
 
 		// var mydiv=document.getElementById('pp');
 		// mydiv.innerHTML+= "<br></br>"+ t1+t2+t3+t4+t5;
@@ -165,8 +174,39 @@ function Profile() {
      <h2>Pipelines</h2>
      <hr></hr>
 
+	 <div className='analytics-container'>
+			<h1>Your Pipelines</h1>
+			<br />
+			<PipelineForm />
+			<br />
+			<div>
+				{pipelines.map((pipelineItem) => {
+					return (
+						<PipelineItem
+							key={pipelineItem.title}
+							pipelineItem={pipelineItem}
+						/>
+					);
+				})}
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-<div className='Pipelineform'>
+{/* <div className='Pipelineform'>
     <p> <input type="text" id="pipelineName"  placeholder="Pipeline Name" ></input>  <span></span> 
 	<select id="vehicle">
         <option id="optionss" value="car">Cars</option>
@@ -179,17 +219,15 @@ function Profile() {
 	  
 		<span></span>
 		<span></span>
-		 {/* // */}
+		 
 		 &nbsp;&nbsp;&nbsp;&nbsp;
 		 <label for="outline"> Track Object</label>&nbsp;&nbsp;
 		
 		 <label class="switch"><input type="checkbox" id="outline"  value="y" ></input><span class="slider round"></span></label>
-		{/* // */}
+		
 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		{/* <input type="checkbox" id="outline" name="outline" value="y"></input> */}
 		<label for="count"> Count Objects</label> <span></span>
-		{/* <input type="checkbox" id="cnt" name="count" value="y"></input> */}
 		<label class="switch"><input type="checkbox" id="cnt" value="y"></input><span class="slider round"></span></label>
 
 		
@@ -209,13 +247,9 @@ function Profile() {
  <div id="pp"></div> 
 
  <div id="pps" >  
-		  {/* <div id='options'>Car</div>
-          <div id='options'>Count Objects</div>
-		  <div id='options'>Track Objects</div> */}
-          
            <p id="demo"></p>
 		   <br></br>
-           </div><button id='deletepipeline' onClick={del}>Delete</button>
+           </div><button id='deletepipeline' onClick={del}>Delete</button> */}
 
 
 
@@ -224,36 +258,36 @@ function Profile() {
 
 
 
-         
-      <div className='profile'>
+     </div>
+		   <div className='profile'>
 
-<img src={require('./logo.png')} width="80%" height="20%" alt="Logo"/>
-       
-  <h1>    </h1>
+<img src={require('./logo.png')} width="80%" height="17%" alt="Logo"/>
+	   
+ 
   
-  
+  <br/>
   <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
   
   <br/>
-  <p1 id="user-id"><strong> </strong>{currentUser?.email}</p1>
+  <h4 id="user-id"><strong> </strong>{currentUser?.email}</h4>
   <br/>
   <hr/>
   <br/>
-
+  
   <div>
-  <a id='pagelinks' href="/home"><button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button></a>
+   <button type='button' id='home'><HomeRoundedIcon id='icon'/><p>Home</p></button>
    
-   <a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p3>Pipelines</p3></button></a>
-   <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
-   
+   <a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p>Pipelines</p></button></a>
+   <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p>Settings</p></button></a>
+   <br/>
+  
    </div>
    
-   <br/>
   <hr/>
 
-<br/>
-            
-  <a href="/login" ><button type='button' id='homelogout'  onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo'/><p3>Logout</p3></button></a>
+  <br/>
+			
+  <a href="/login" ><button type='button' id='homelogout'  onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo'/><p>Logout</p></button></a>
  
   
 <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="35%" height="40%" alt="Logo"/></div> 
@@ -262,7 +296,7 @@ function Profile() {
 
 
 
-</div>
+
 
 
       </div>

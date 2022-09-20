@@ -34,11 +34,11 @@ function Profile() {
         
         <div className='Vd'>
         <h1>Media </h1>
-        <center><a  href="/upload" id="uplink"><div className='Vid'><div className='tx'><p2><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/>Upload</p2></div></div></a></center>  
-        <center><a  href="/delete"><div className='Vid'><div className='tx'><p2><DeleteIcon sx={{ fontSize: 50 }}/><br/>Delete</p2></div></div></a></center> 
-        <center> <a  href="/download"><div className='Vid'><div className='tx'><p2><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/>Download</p2></div></div></a></center>
-        {/* <center><a  href="/analyse"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse Image</p2></div></div></a></center>     */}
-        <center><a  href="/analysevideo"><div className='Vid'><div className='tx'><p2><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse Media</p2></div></div></a></center>    
+        <center><a  href="/upload" id="uplink"><div className='Vid'><div className='tx'><h5><CloudUploadRoundedIcon sx={{ fontSize: 50 }}/><br/>Upload</h5></div></div></a></center>  
+        <center><a  href="/delete"><div className='Vid'><div className='tx'><h5><DeleteIcon sx={{ fontSize: 50 }}/><br/>Delete</h5></div></div></a></center> 
+        <center> <a  href="/download"><div className='Vid'><div className='tx'><h5><CloudDownloadRoundedIcon sx={{ fontSize: 50 }}/><br/>Download</h5></div></div></a></center>
+        {/* <center><a  href="/analyse"><div className='Vid'><div className='tx'><h5><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse Image</h5></div></div></a></center>     */}
+        <center><a  href="/analysevideo"><div className='Vid'><div className='tx'><h5><AnalyticsIcon sx={{ fontSize: 50 }}/><br/>Analyse Media</h5></div></div></a></center>    
         
          </div>
           {/* <div className='Vid'></div><div className='Vid'></div>
@@ -60,19 +60,19 @@ function Profile() {
           <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
           {/* <img id='pp'  src={require('./j.png')} width="27%" height="12%" alt="profile"/> */}
           <br/>
-          <p1 id="user-id"><strong> </strong>{currentUser?.email}</p1>
+          <h4 id="user-id"><strong> </strong>{currentUser?.email}</h4>
           <br/>
           <hr/>
           <br/>
-          {/* <p1>
+          {/* <h4>
             <strong>Email verified: </strong>
             {`${currentUser?.emailVerified}`}
-          </p1> */}
+          </h4> */}
           <div>
-           <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
+           <button type='button' id='home'><HomeRoundedIcon id='icon'/><p>Home</p></button>
            
-           {/* <a id='pagelinks' href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button></a> */}
-           <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
+           {/* <a id='pagelinks' href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p>Analytics</p></button></a> */}
+           <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p>Settings</p></button></a>
            
            </div>
            

@@ -106,7 +106,7 @@ function Profile() {
 		 </div>
 
 		 {(typeof data.mydata === 'undefined')?(
-			<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+			<div className="lds-ring"><div></div><div></div><div></div><div></div></div>
 
 
 
@@ -128,19 +128,20 @@ function Profile() {
 	 
 <div id="MediaBlock">
 
-<p4><img id="preview" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="240px" height="220px" alt="img"  onError={event => {
+<p><img id="preview" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="240px" height="220px" alt="img"  onError={event => {
           event.target.src = require('./vidImg.png')
           event.onerror = null
         }}    />
-&nbsp;{thedata} <br></br>
-&nbsp;&nbsp;&nbsp;<p5>dd/mm/yyyy</p5>
+&nbsp;{thedata}
+{/* <h5>dd/mm/yyyy</h5> */}
+<br></br>
 <br></br>
 <hr></hr>
 &nbsp;
 <div  id='ButtonDiv'><a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButton"  onClick={()=>downData(thedata)}   ><CloudDownloadRoundedIcon sx={{ fontSize: 24 }}/><br></br>Download</button></a>&nbsp;
 <button id="AnalyseButton" ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
 <button id="DeleteButton" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button></div>
-</p4> 
+</p> 
 </div>
 </div>   
  </div>
@@ -155,22 +156,22 @@ function Profile() {
 
         <img src={require('./logo.png')} width="80%" height="17%" alt="Logo"/>
                
-          <h1>    </h1>
+         
           
-          <br/><br/>
+          <br/>
           <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
           
           <br/>
-          <p1 id="user-id"><strong> </strong>{currentUser?.email}</p1>
+          <h4 id="user-id"><strong> </strong>{currentUser?.email}</h4>
           <br/>
           <hr/>
           <br/>
 		  
           <div>
-           <button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button>
+           <button type='button' id='home'><HomeRoundedIcon id='icon'/><p>Home</p></button>
            
-           <a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p3>Pipelines</p3></button></a>
-           <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
+           <a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p>Pipelines</p></button></a>
+           <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p>Settings</p></button></a>
 		   <br/>
 		  
            </div>
@@ -179,7 +180,7 @@ function Profile() {
 
 		  <br/>
                     
-          <a href="/login" ><button type='button' id='homelogout'  onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo'/><p3>Logout</p3></button></a>
+          <a href="/login" ><button type='button' id='homelogout'  onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo'/><p>Logout</p></button></a>
          
           
         <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="35%" height="40%" alt="Logo"/></div> 

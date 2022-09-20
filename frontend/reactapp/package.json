@@ -17,7 +17,16 @@
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@azure/storage-blob": "^12.11.0",
+    "@mui/joy": "^5.0.0-alpha.45",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "reselect": "^4.1.6",
+    "styled-components": "^5.3.5"
+    
   },
   "scripts": {
     "start": "react-scripts start",
