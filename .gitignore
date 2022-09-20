@@ -16,4 +16,3 @@ backend/VideoAI/inputVideos/__pycache__/downdel.cpython-310.pyc
 backend/VideoAI/__pycache__/input_retrieval.cpython-310.pyc
 backend/VideoAI/__pycache__/runDetections.cpython-310.pyc
 backend/VideoAI/yolo-coco/yolov3.weights
-backend/VideoAI/yolo-coco/yolov3.weights
