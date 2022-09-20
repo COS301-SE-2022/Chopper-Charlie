@@ -13,7 +13,6 @@ import { useState } from "react";
 import { selectCurrentUser } from "../../store/user/user.selector";
 import { useDispatch, useSelector } from "react-redux";
 import { selectPipelines } from "../../store/pipelines/pipelines.selector";
-import { CreateButton } from "../buttons/buttons.component";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import "./pipeline-form.styles.css";
 

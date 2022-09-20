@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { styled } from '@mui/material/styles';
+import { styled as muiStyled} from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
 import Button from '@mui/material/Button';
 
@@ -79,7 +79,7 @@ export const LinkedinButton = styled(BaseButton)`
   }
 `
 
-export const CreateButton = styled(Button)(({ theme }) => ({
+export const CreateButton = muiStyled(Button)(({ theme }) => ({
 	width: '14em',
 	borderRadius: '10px',
 	color: theme.palette.getContrastText(purple[500]),

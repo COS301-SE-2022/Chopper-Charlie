@@ -34,7 +34,14 @@ import { createAccountContainer } from "../azure/azure.utils";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {};
+const firebaseConfig = {
+    apiKey: "AIzaSyDa59D4r_NLTztsm7hHL_5ZHjNkzwv-S-U", 
+    authDomain: "fir-user-reg-auth-50349.firebaseapp.com",  
+    projectId: "fir-user-reg-auth-50349",  
+    storageBucket: "fir-user-reg-auth-50349.appspot.com",
+    messagingSenderId: "287221721322",
+    appId: "1:287221721322:web:83e17a088f333253a2cf93"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
