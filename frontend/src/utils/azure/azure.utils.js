@@ -34,3 +34,17 @@ export const listFiles = async () => {
 		console.log('error in azure list function', error);
 	}
 };
+
+export const uploadFiles = async (files) => {
+	try {
+		const promises = [];
+		for (const file of files) {
+			const blockBlobClient = containerClient.getBlockBlobClient(file.name);
+			promises.push(blockBlobClient.uploadBrowserData(file));
+		}
+		await Promise.all(promises);
+		console.log('Done Uploading');
+	} catch (error) {
+		console.log('error in azure upload', error);
+	}
+};
