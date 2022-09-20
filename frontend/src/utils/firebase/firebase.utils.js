@@ -36,3 +36,25 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+export const auth = getAuth();
+// connectAuthEmulator(auth, "http://localhost:9099");
+
+export const db = getFirestore();
+// connectFirestoreEmulator(db, 'localhost', 8080);
+
+// const functions = getFunctions(getApp());
+// connectFunctionsEmulator(functions, "localhost", 5001);
+
+const storage = getStorage();
+// connectStorageEmulator(storage, "localhost", 9199);
+
+
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({
+	prompt: 'select_account',
+});
+
+
+export const signInWithGooglePopup = () =>
+	signInWithPopup(auth, googleProvider);
