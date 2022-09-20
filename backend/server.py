@@ -77,6 +77,15 @@ def make_user_admin():
 def make_admin_user():
 	return remove_admin(request.json['uid'], request.json['email'])
 
+# Get SAS URL
+@app.route('/get-sas/<uid>')
+def get_sas(uid):
+	type = get_type(uid)
+	if type == "ADMIN":
+		return get_account_sas()
+	if type == "USER":
+		return get_container_sas(uid)
+	return {"ERROR": {"code": 401, "message": "UNAUTHORIZED"}}
 
 # Running app
 if __name__ == '__main__':
