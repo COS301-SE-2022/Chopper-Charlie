@@ -15,7 +15,7 @@ const PipelineItem = ({ pipelineItem }) => {
 	const dispatch = useDispatch();
 	const pipelines = useSelector(selectPipelines);
 	const remover = () => {
-		dispatch(removeItemFromPipelines(pipelines, pipelineItem, currentUser));
+		dispatch(removeItemFromPipelines(pipelines, PipelineItem, currentUser));
 	};
 
 
@@ -52,13 +52,13 @@ const PipelineItem = ({ pipelineItem }) => {
 				},
 			}}>
 			<div className='title-div'>
-				<h3 className='pipe-title'>{pipelineItem.title}</h3>
+				<h3 className='pipe-title'>{PipelineItem.title}</h3>
 			</div>
 
 			<Stack direction='row' spacing={1}>
 				{/* Chip displaying the Vehicle */}
 				<Chip
-					label={pipelineItem.classes}
+					label={PipelineItem.classes}
 					color='primary'
 					sx={{
 						width: '6em',
@@ -66,7 +66,7 @@ const PipelineItem = ({ pipelineItem }) => {
 					}}
 				/>
 
-				{pipelineItem.outline ? (
+				{PipelineItem.outline ? (
 					<Chip
 						label='Outline'
 						sx={{
@@ -86,7 +86,7 @@ const PipelineItem = ({ pipelineItem }) => {
 					/>
 				)}
 
-				{pipelineItem.count ? (
+				{PipelineItem.count ? (
 					<Chip
 						label='Count'
 						sx={{

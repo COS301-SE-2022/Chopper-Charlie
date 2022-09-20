@@ -124,7 +124,7 @@ export const createUserDocumentFromAuth = async (
 	if (!userSnapshot.exists()) {
 		const { displayName, email } = userAuth;
 		const createdAt = new Date();
-		const admin = false;
+		const role = 'user';
 		const containerName = userAuth.uid.toLowerCase();
 		const photo = userAuth.photoURL;
 		try {
@@ -132,7 +132,7 @@ export const createUserDocumentFromAuth = async (
 				displayName,
 				email,
 				createdAt,
-				admin,
+				role,
 				containerName,
 				photo,
 				...additionalInformation,

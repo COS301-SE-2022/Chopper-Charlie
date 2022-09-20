@@ -17,7 +17,7 @@ const Analytics = () => {
 			<div>
 				{pipelines.map((pipelineItem) => {
 					return (
-						<pipelineItem
+						<PipelineItem
 							key={pipelineItem.title}
 							pipelineItem={pipelineItem}
 						/>

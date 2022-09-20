@@ -68,7 +68,7 @@ const AdminPortal = () => {
     <div className='admin-wrapper'>
 			<div className='accounts-grid'>
 				{accounts.map((account) => {
-					return <AccountCard account={account} />;
+					return <AccountCard account={account} key={account.email}/>;
 				})}
 			</div>
     </div>
