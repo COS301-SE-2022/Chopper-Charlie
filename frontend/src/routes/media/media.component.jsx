@@ -9,6 +9,10 @@ const Media = () => {
 	const dispatch = useDispatch();
 	const sasURL = useSelector(selectSasUrl);
 	const files = useSelector(selectFiles);
+  const [selectedFiles, setSelectedFiles] = useState([]);
+	const [isFilePicked, setIsFilePicked] = useState(false);
+  const inputRef = useRef(null);
+
 	useEffect(() => {
 		const loadMedia = async () => {
 			const response = await listFiles(sasURL);
@@ -23,6 +27,14 @@ const Media = () => {
 		if (event.target.files) {
 			setIsFilePicked(true);
 		}
+	};
+
+  const handleUpload = async (event) => {
+		await uploadFiles(selectedFiles, sasURL);
+		const arr = await listFiles();
+		dispatch(setFiles(arr));
+		setSelectedFiles([]);
+		inputRef.current.value = null;
 	};
 
 
