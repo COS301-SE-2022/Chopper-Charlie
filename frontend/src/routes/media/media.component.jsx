@@ -18,6 +18,14 @@ const Media = () => {
 		loadMedia();
 	}, []);
 
+  const handleChange = (event) => {
+		setSelectedFiles(event.target.files);
+		if (event.target.files) {
+			setIsFilePicked(true);
+		}
+	};
+
+
 	return (
 		<>
 			<h1>Media</h1>
@@ -36,7 +44,7 @@ const Media = () => {
 			<hr />
 			<br />
 
-      
+
 			{files.map((file) => (
 				<div key={file.name}>{file.name}</div>
 			))}
