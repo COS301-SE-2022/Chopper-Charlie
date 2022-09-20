@@ -58,3 +58,17 @@ googleProvider.setCustomParameters({
 
 export const signInWithGooglePopup = () =>
 	signInWithPopup(auth, googleProvider);
+
+
+    export const addCollectionAndDocuments = async (
+        collectionKey,
+        objectsToAdd
+    ) => {
+        const collectionRef = collection(db, collectionKey);
+        const batch = writeBatch(db);
+        objectsToAdd.forEach((obj) => {
+            const newDocRef = doc(collectionRef, obj.title.toLowerCase());
+            batch.set(newDocRef, obj);
+        });
+        await batch.commit();
+    };
