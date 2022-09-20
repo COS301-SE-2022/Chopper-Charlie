@@ -1,0 +1,18 @@
+/* body { */
+	/* background: url('https://media.istockphoto.com/photos/blue-wave-conection-dots-and-lines-abstract-technology-background-picture-id1341437690?b=1&k=20&m=1341437690&s=170667a&w=0&h=lVMHsFJtWJgzvgQh7pVns57Gjh3m8ZAt7sP_Z-xtY58=')
+		no-repeat center fixed;
+	background-size: cover;
+	position: fixed;
+    width: 100%; */
+	/* min-height: 100%;
+    min-width: 100%; */
+    /* opacity: 50%; */
+/* } */
+
+.analytics-container {
+	margin-right: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10em;
+}
