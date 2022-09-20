@@ -88,3 +88,17 @@ export const getPipelines = async (user) => {
 		console.log('No such document!');
 	}
 };
+
+export const setPipelines = async (pipelines, user, additionalInformation = {}) => {
+	const pipeDocRef = doc(db, 'pipelines', user.uid);
+	try {
+		console.log("adding pipelines to FireStore")
+		const res = await setDoc(pipeDocRef, {
+			pipelines,
+			...additionalInformation,
+		});
+		console.log('this is the response', res);
+	} catch (error) {
+		console.log('error setting user doc', error.message);
+	}
+};
