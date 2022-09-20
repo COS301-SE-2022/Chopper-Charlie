@@ -169,3 +169,22 @@ def get_account_sas():
     )
     url = "https://{}.blob.core.windows.net/?{}".format(account_name, sas_token)
     return {"sas": url}   
+
+
+def get_container_sas(user_name):
+    from azure.storage.blob import generate_container_sas, ContainerSasPermissions
+    
+    try:
+        create_user_container(user_name)
+    except:
+        print("Container Already Exists")
+    
+    token = generate_container_sas(
+        account_name=account_name,
+        container_name=user_name,
+        account_key=key,
+        permission=ContainerSasPermissions(read=True, write=True, delete=True, list=True, _spr=True),
+        expiry=datetime.utcnow() + timedelta(hours=2)
+    )
+    url = "https://{}.blob.core.windows.net/{}?{}".format(account_name, user_name, token)
+    return {"sas": url}
