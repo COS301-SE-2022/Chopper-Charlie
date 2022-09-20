@@ -43,6 +43,8 @@ const Media = () => {
 		dispatch(setFiles(arr));
 	};
 
+  const imgUrl = 'https://choppercharlie.blob.core.windows.net/nfhcof5vbgto0v51txchd8xkfx82/443573.webp?se=2022-09-20T19%3A18%3A05Z&sp=rwdl&sv=2021-08-06&sr=c&sig=v6n0ylHpJYpskdlbDhLI6l5nN%2BD0rLGJNjqAQxwMDq0%3D'
+
 	return (
 		<>
 			<h1>Media</h1>
@@ -62,22 +64,22 @@ const Media = () => {
 			<br />
 
 
+      {/* <img src={imgUrl} alt="" /> */}
+
 			{files?.map((file) => {
 				return (
 					<div key={file.name}>
 						{/* {console.log(file.url)} */}
 						{/* <p>{file.url}</p> */}
 						<img
-							src={`${files.url}`}
-							alt='image here'
-							width='250px'
-							height='160px'
+							src={files.url}
 						/>{' '}
 						<br />
 						<div key={file.name}>
 							<span>{file.name}</span> <br />
 							<span>{file.size}</span> <br />
 							<span>{file.date}</span> <br />
+              <p>{file.url}</p>
 							<button onClick={() => handleDelete(file.name)}>
 								Delete File
 							</button>
