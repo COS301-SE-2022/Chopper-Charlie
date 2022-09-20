@@ -1,0 +1,3 @@
+export const PIPELINES_ACTION_TYPES = {
+    SET_PIPELINES: 'SET_PIPELINES',
+}
