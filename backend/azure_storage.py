@@ -171,8 +171,7 @@ def get_account_sas():
 
 
 def get_container_sas(user_name):
-    from azure.storage.blob import generate_container_sas, ContainerSasPermissions
-    
+    from azure.storage.blob import generate_container_sas, ContainerSasPermissions    
     try:
         create_user_container(user_name)
     except:
