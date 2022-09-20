@@ -59,6 +59,33 @@ def ai_video(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot):
 	return "True"
 
 
+
+
+from io import BytesIO
+from flask import jsonify, request
+
+@app.route("/ur/<containername>", methods=['POST'])
+def upload_file(containername):
+    
+    try:
+		
+        file = request.files['file_from_react']
+        filename = file.filename
+        #print(f"Uploading file {filename}")
+        file_bytes = file.read()
+        blob_upload(file_bytes,filename,containername)
+		
+
+
+        
+
+    except Exception as e:
+        return {"Message":"Unsuccessful!"}
+        
+
+    return {"Message":"Successfully Uploaded Media!"}
+
+
 # Running app
 if __name__ == '__main__':
 	app.run(debug=True)
