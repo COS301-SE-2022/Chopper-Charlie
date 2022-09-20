@@ -92,7 +92,7 @@ const PipelineForm = () => {
 		<form onSubmit={handleSubmit} className="pipe-form">
 			
 			<Stack
-				spacing={2}
+				spacing={1}
 				direction='row'
 				divider={
 					<Divider
@@ -103,7 +103,7 @@ const PipelineForm = () => {
 						}}
 					/>
 				}
-				justifyContent='space-between'
+				
 				sx={{
 					height: '2.5em',
 					width: '90%',

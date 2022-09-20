@@ -1,6 +1,6 @@
 import './profile.css'
-import {useAuthValue} from './AuthContext'
-import { signOut } from 'firebase/auth' 
+import { useAuthValue } from './AuthContext'
+import { signOut } from 'firebase/auth'
 import { auth } from './firebase'
 import React, { useState } from "react";
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
@@ -14,26 +14,26 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 import SearchIcon from '@mui/icons-material/Search';
 import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
 import GridViewIcon from '@mui/icons-material/GridView';
-
-
+import { useSelector } from 'react-redux';
+import { selectPipelines } from './store/pipelines/pipelines.selector';
 
 
 
 //change
 function Profile() {
-    const {currentUser} = useAuthValue()
+	const { currentUser } = useAuthValue()
 	// object for storing and using data
 	const [data, setdata] = useState({
-		
+
 	});
 
 	let str = currentUser?.email;
 
-	function replace (){
+	function replace() {
 		var string = "";
 		var chart = "";
-		for(let i=0; i < str.length; i++){  //fixed spelling from 'str.lenght'
-			if (str.charAt(i) === "@"||str.charAt(i) === "." ) {
+		for (let i = 0; i < str.length; i++) {  //fixed spelling from 'str.lenght'
+			if (str.charAt(i) === "@" || str.charAt(i) === ".") {
 				chart = "";
 				string = string + chart;
 			}
@@ -42,165 +42,236 @@ function Profile() {
 				string = string + chart;
 			}
 		}
-		console.log(string);
+		// console.log(string);
 		return string
-		
+
 	}
-	
+
 
 	// Using useEffect for single rendering
-	
-		// Using fetch to fetch the api from
-		// flask server it will be redirected to proxy
-		
-		fetch("/mydatapage/"+currentUser?.email).then((res) =>
-			res.json().then((data) => {
-				// Setting a data from api
-				setdata(data);
-                console.log(data);
 
-			})
-		);
-		
-		
-	
+	// Using fetch to fetch the api from
+	// flask server it will be redirected to proxy
 
-	 function delData(str){
+	fetch("/mydatapage/" + currentUser?.email).then((res) =>
+		res.json().then((data) => {
+			// Setting a data from api
+			setdata(data);
+			// console.log(data);
 
-		
+		})
+	);
+
+
+
+
+	function delData(str) {
+
+
 		if (window.confirm("Are you sure you want to delete media?") === true) {
-			fetch("/db/"+str+"/"+currentUser?.email);
-		} 
-	 	
-	 	}
+			fetch("/db/" + str + "/" + currentUser?.email);
+		}
+
+	}
 
 
-		 function downData(str){
-			fetch("/lol/"+str+"/"+currentUser?.email)
-			
+	function downData(str) {
+		fetch("/lol/" + str + "/" + currentUser?.email)
+
+
+	}
+
+
+	function upData() {
+		fetch("/ub/" + currentUser?.email)
+
+
+	}
+
+
+
+	const pipelines = useSelector(selectPipelines);
+
+
+	function openForm(thedata) {
+		document.getElementById("myForm").style.display = "block";
+		window.name=thedata;
+	}
+
+
+	  
 	
-			}
-
-	
-			function upData(){
-				fetch("/ub/"+currentUser?.email)
+	function analyse(pipelineSelected){
 		
-				
-				}
+		var media= window.name;
+		
+		var p =pipelineSelected;
+		var vehicle= p.classes;
+		var count = p.count?"y":"n";
+		var outline = p.outline?"y":"n";
+		
+		
+		fetch("/ai/video/"+media+"/"+currentUser?.email+"/"+vehicle+"/"+outline+"/"+count)
+}
 
-			
+	function closeForm() {
+		document.getElementById("myForm").style.display = "none";
+	}
 
+	
+	
 
 
 
 	return (
 
 
-		<div >    
+		<div >
 
-		<div id="Searchbar">
-			<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }}/></button>
-			<a id='pagelinks' href="/homelist"><button id="viewList"  ><ViewListOutlinedIcon id="listOption"  /></button></a>
-			<button id="viewGrid"><GridViewIcon id="listOptionactive" /></button>
-			<button id='uploadButton' onClick={()=>upData()}   >Upload</button>
-		 </div>
+			<div id="Searchbar">
+				<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }} /></button>
+				<a id='pagelinks' href="/homelist"><button id="viewList"  ><ViewListOutlinedIcon id="listOption" /></button></a>
+				<button id="viewGrid"><GridViewIcon id="listOptionactive" /></button>
+				<button id='uploadButton' onClick={() => upData()}   >Upload</button>
+			</div>
 
-		 {(typeof data.mydata === 'undefined')?(
-			<div className="lds-ring"><div></div><div></div><div></div><div></div></div>
-
-
-
-		 ) : (
-			 data.mydata.map((thedata, i)=>(
-				
+			{(typeof data.mydata === 'undefined') ? (
+				<div className="lds-ring"><div></div><div></div><div></div><div></div></div>
 
 
 
-        
-		
-	
-   
-      <div className='center'>
- 
-
-
-    <div id="HomeContent">
-	 
-<div id="MediaBlock">
-
-<p><img id="preview" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="240px" height="220px" alt="img"  onError={event => {
-          event.target.src = require('./vidImg.png')
-          event.onerror = null
-        }}    />
-&nbsp;{thedata}
-{/* <h5>dd/mm/yyyy</h5> */}
-<br></br>
-<br></br>
-<hr></hr>
-&nbsp;
-<div  id='ButtonDiv'><a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButton"  onClick={()=>downData(thedata)}   ><CloudDownloadRoundedIcon sx={{ fontSize: 24 }}/><br></br>Download</button></a>&nbsp;
-<button id="AnalyseButton" ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
-<button id="DeleteButton" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button></div>
-</p> 
-</div>
-</div>   
- </div>
- 
-))
-	  )
-	  }
-
-
-	 
-        <div className='profile'>
-
-        <img src={require('./logo.png')} width="80%" height="17%" alt="Logo"/>
-               
-         
-          
-          <br/>
-          <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
-          
-          <br/>
-          <h4 id="user-id"><strong> </strong>{currentUser?.email}</h4>
-          <br/>
-          <hr/>
-          <br/>
-		  
-          <div>
-           <button type='button' id='home'><HomeRoundedIcon id='icon'/><p>Home</p></button>
-           
-           <a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p>Pipelines</p></button></a>
-           <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p>Settings</p></button></a>
-		   <br/>
-		  
-           </div>
-           
-          <hr/>
-
-		  <br/>
-                    
-          <a href="/login" ><button type='button' id='homelogout'  onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo'/><p>Logout</p></button></a>
-         
-          
-        <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="35%" height="40%" alt="Logo"/></div> 
-
-        </div>
+			) : (
+				data.mydata.map((thedata, i) => (
 
 
 
 
 
 
-      </div>
-      
 
 
-	  
-		 
+					<div className='center'>
 
 
-);
+
+						<div id="HomeContent">
+
+							<div id="MediaBlock">
+
+
+								<p><img id="preview" src={('https://choppercharlie.blob.core.windows.net/' + replace() + '/' + thedata)} width="240px" height="220px" alt="img" onError={event => {
+									event.target.src = require('./vidImg.png')
+									event.onerror = null
+								}} />
+									&nbsp;{thedata}
+									{/* <h5>dd/mm/yyyy</h5> */}
+									<br></br>
+									<br></br>
+									<hr></hr>
+									&nbsp;
+									<div id='ButtonDiv'><a href={('https://choppercharlie.blob.core.windows.net/' + replace() + '/' + thedata)}><button id="DownloadButton" onClick={() => downData(thedata)}   ><CloudDownloadRoundedIcon sx={{ fontSize: 24 }} /><br></br>Download</button></a>&nbsp;
+										<button id="AnalyseButton" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 24 }} /><br></br>Analyse</button>&nbsp;
+										<button id="DeleteButton" onClick={() => delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }} /><br></br>Delete</button></div>
+								</p>
+
+
+								<div className="form-popup" id="myForm">
+				<div className="form-container">
+					<h1>Select Pipeline</h1>
+
+					{/* <label className="pipelinee"><p>Choose you pipeline for analysis:</p></label><br /> */}
+
+
+					{pipelines.map((pipelineItem) => {
+						
+						return (
+							<div key1={pipelineItem.title}>
+					
+					
+					<button type="button" id="pipelineChosen" className="pipelineChosen" name='pipelineChosen' onClick={() => analyse(pipelineItem)} >{pipelineItem.title}</button>
+
+					</div>
+						);
+					})}
+
+					{/* <button type="button" className="done" onSubmit={() => analyse()}>Done</button> */}
+					<button type="button" onClick={() => closeForm()} className="cancel">Cancel</button>
+				</div>
+			</div>
+
+
+
+
+							</div>
+						</div>
+					</div>
+
+				))
+			)
+			}
+
+
+
+
+
+
+			{/* <button class="open-button" onclick="openForm()">Open Form</button> */}
+
+
+
+			<div className='profile'>
+
+				<img src={require('./logo.png')} width="80%" height="17%" alt="Logo" />
+
+
+
+				<br />
+				<AccountCircleRoundedIcon sx={{ fontSize: 45 }} />
+
+				<br />
+				<h4 id="user-id"><strong> </strong>{currentUser?.email}</h4>
+				<br />
+				<hr />
+				<br />
+
+				<div>
+					<button type='button' id='home'><HomeRoundedIcon id='icon' /><p>Home</p></button>
+
+					<a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon' /><p>Pipelines</p></button></a>
+					<a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon' /><p>Settings</p></button></a>
+					<br />
+
+				</div>
+
+				<hr />
+
+				<br />
+
+				<a href="/login" ><button type='button' id='homelogout' onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo' /><p>Logout</p></button></a>
+
+
+				<div className='sub_div'> <img id='ABlogo' src={require('./AB.png')} width="35%" height="40%" alt="Logo" /></div>
+
+			</div>
+
+
+
+
+
+
+
+
+
+
+		</div>
+
+
+
+
+
+
+
+	);
 }
 
 export default Profile

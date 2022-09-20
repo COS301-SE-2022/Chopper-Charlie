@@ -27,9 +27,10 @@ function Profile() {
 	});
 	
 
-
+// The array for pipelines
 	const pipelines = useSelector(selectPipelines);
 
+	
 	console.log("sksks",pipelines)
 	// Using useEffect for single rendering
 	
@@ -169,7 +170,7 @@ function Profile() {
   return (
    
       <div className='center'>
-<div id="HomeContent">
+
     
      <h2>Pipelines</h2>
      <hr></hr>
@@ -258,7 +259,6 @@ function Profile() {
 
 
 
-     </div>
 		   <div className='profile'>
 
 <img src={require('./logo.png')} width="80%" height="17%" alt="Logo"/>
@@ -275,7 +275,7 @@ function Profile() {
   <br/>
   
   <div>
-   <button type='button' id='home'><HomeRoundedIcon id='icon'/><p>Home</p></button>
+  <a id='pagelinks' href="/home"><button type='button' id='home'><HomeRoundedIcon id='icon'/><p>Home</p></button></a>
    
    <a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p>Pipelines</p></button></a>
    <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p>Settings</p></button></a>
