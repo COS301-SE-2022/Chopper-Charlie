@@ -46,7 +46,7 @@ function App() {
 				// 	dispatch(setFiles(response));
 				// 	console.log(response);
 				// };
-				loadMedia();
+				// loadMedia();
 			}
 			dispatch(setCurrentUser(user));
 		});
