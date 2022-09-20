@@ -178,3 +178,18 @@ export const signOutUser = async () => await signOut(auth);
 
 export const onAuthStateChangedListener = (callback) =>
 	onAuthStateChanged(auth, callback);
+
+// firebase.auth().currentUser.getIdTokenResult()
+//   .then((idTokenResult) => {
+//      // Confirm the user is an Admin.
+//      if (!!idTokenResult.claims.admin) {
+//        // Show admin UI.
+//        console.log('This is an admin user');
+//      } else {
+//        // Show regular user UI.
+// 	   console.log('This is an not admin user');
+//      }
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
