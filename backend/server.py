@@ -67,7 +67,10 @@ def accounts(uid):
 def delete_account(uid, email):
 	return delete_user(uid, email)
 
-
+# MAke User Admin
+@app.route('/make-admin', methods=['PUT'])
+def make_user_admin():
+	return make_admin(request.json['uid'], request.json['email'])
 
 
 
