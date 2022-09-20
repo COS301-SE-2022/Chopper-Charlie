@@ -102,3 +102,62 @@ export const setPipelines = async (pipelines, user, additionalInformation = {}) 
 		console.log('error setting user doc', error.message);
 	}
 };
+
+export const createUserDocumentFromAuth = async (
+	userAuth,
+	additionalInformation = {}
+) => {
+	if (!userAuth) return;
+	const userDocRef = doc(db, 'users', userAuth.uid);
+	const userSnapshot = await getDoc(userDocRef);
+
+	const pipeDocRef = doc(db, 'pipelines', userAuth.uid);
+	const pipeSnapShot = await getDoc(pipeDocRef);
+
+	if (!userSnapshot.exists()) {
+		const { displayName, email } = userAuth;
+		const createdAt = new Date();
+		const admin = false;
+		const containerName = userAuth.uid.toLowerCase();
+		const photo = userAuth.photoURL;
+		try {
+			await setDoc(userDocRef, {
+				displayName,
+				email,
+				createdAt,
+				admin,
+				containerName,
+				photo,
+				...additionalInformation,
+			});
+		} catch (error) {
+			console.log('error creating the user', error.message);
+		}
+		// await createAccountContainer(containerName);
+	}
+	if (!pipeSnapShot.exists()) {
+		const pipelines = [
+			{
+				title: 'Analyse Cars',
+				classes: 'car',
+				outline: true,
+				count: true,
+			},
+			{
+				title: 'Analyse Buses',
+				classes: 'bus',
+				outline: true,
+				count: true,
+			},
+		];
+		try {
+			await setDoc(pipeDocRef, {
+				pipelines,
+				...additionalInformation,
+			});
+		} catch (error) {
+			console.log('error creating the user', error.message);
+		}
+	}
+	return userDocRef;
+};
