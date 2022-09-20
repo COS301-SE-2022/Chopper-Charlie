@@ -147,3 +147,14 @@ def delete_user(uid, email):
         return {"ERROR": {"code": 403, "message": "FORBIDDEN - You do not have permission"}}
     except:
         return {"ERROR": {"code": 401, "message": "UNAUTHORIZED"}}
+    
+    # Return user role
+def get_type(uid):
+    try:
+        user = auth.get_user(uid)
+        if user.custom_claims.get('admin') == None or user.custom_claims.get('admin') == False:
+            return "USER"
+        # if user.custom_claims.get('admin') == True:
+        return "ADMIN"
+    except:
+        return "UNAUTHORIZED"
