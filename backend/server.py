@@ -49,10 +49,10 @@ def b_upload(index_ubloo):
 # 	blob_retrievee(index_sno,index_snoo)
 # 	return "True"
 
-@app.route("/ai/video/<index_snot>/<index_snoot>/<index_snooot>/<index_snoooot>/<index_snooooot>")
-def ai_video(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot):
-	blob_retrieveee(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot)
-	return "True"
+# @app.route("/ai/video/<index_snot>/<index_snoot>/<index_snooot>/<index_snoooot>/<index_snooooot>")
+# def ai_video(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot):
+# 	blob_retrieveee(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot)
+# 	return "True"
 
 
 ########################################### ADMIN FUNCTIONS ###########################################
@@ -84,7 +84,7 @@ def get_sas(uid):
 	if type == "ADMIN":
 		return get_account_sas()
 	if type == "USER":
-		return get_container_sas(uid)
+		return get_container_sas(uid.lower())
 	return {"ERROR": {"code": 401, "message": "UNAUTHORIZED"}}
 
 # Running app

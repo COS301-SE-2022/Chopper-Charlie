@@ -14,7 +14,7 @@ import {
 } from './utils/firebase/firebase.utils';
 import { selectCurrentUser } from './store/user/user.selector';
 import { getUsers } from './utils/firebase/firebase.utils';
-import { setCurrentUser } from './store/user/user.action';
+import { setCurrentUser, setSasUrl } from './store/user/user.action';
 import { setPipelinesArray } from './store/pipelines/pipelines.action';
 import Drawer from './components/drawer/drawer.component';
 import Media from './routes/media/media.component';
@@ -22,7 +22,6 @@ import Settings from './routes/settings/settings.component';
 import AdminPortal from './routes/admin/admin.component';
 import Explore from './routes/explore/explore.component';
 import Home from './routes/home/home.component';
-
 
 function App() {
 	const dispatch = useDispatch();
@@ -35,6 +34,10 @@ function App() {
 					dispatch(setPipelinesArray(data.pipelines));
 				};
 				loadPipelines();
+				fetch(`/api/get-sas/${user.uid}`).then((res) =>
+					res.json()).then((data) => {
+						dispatch(setSasUrl(data.sas))
+					});
 			}
 			dispatch(setCurrentUser(user));
 		});
