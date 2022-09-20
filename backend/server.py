@@ -1,5 +1,6 @@
 # Import flask and datetime module for showing date and time
 from flask import Flask, request
+from flask_cors import CORS
 import os
 import sys
 import inspect
@@ -8,9 +9,11 @@ import inspect
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir) 
-
+from azure import *
+from firebase import *
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Route for seeing a data
 @app.route('/mydatapage/<index_boo>')
