@@ -135,3 +135,19 @@ export const listFilesInAccouunt = async (accountName, blobURL) => {
 		console.log('error in azure list function', error);
 	}
 };
+
+export const uploadFilesToAccount = async (files, accountName, blobURL) => {
+	try {
+		const blobServiceClient = new BlobServiceClient(blobURL);
+		const promises = [];
+		const containerClient = blobServiceClient.getContainerClient(accountName);
+		for (const file of files) {
+			const blockBlobClient = containerClient.getBlockBlobClient(file.name);
+			promises.push(blockBlobClient.uploadBrowserData(file));
+		}
+		await Promise.all(promises);
+		console.log('Done Uploading');
+	} catch (error) {
+		console.log('error in azure upload', error);
+	}
+};
