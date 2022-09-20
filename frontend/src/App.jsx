@@ -8,6 +8,7 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import {
+	createUserDocumentFromAuth,
 	getPipelines,
 	onAuthStateChangedListener,
 } from './utils/firebase/firebase.utils';
@@ -29,7 +30,7 @@ function App() {
 	useEffect(() => {
 		const unsubscribe = onAuthStateChangedListener((user) => {
 			if (user) {
-				// createUserDocumentFromAuth(user);
+				createUserDocumentFromAuth(user);
 				const loadPipelines = async () => {
 					const data = await getPipelines(user);
 					dispatch(setPipelinesArray(data.pipelines));
