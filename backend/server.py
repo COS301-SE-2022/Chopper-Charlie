@@ -72,7 +72,10 @@ def delete_account(uid, email):
 def make_user_admin():
 	return make_admin(request.json['uid'], request.json['email'])
 
-
+# Make Admin a User
+@app.route('/remove-admin', methods=['PUT'])
+def make_admin_user():
+	return remove_admin(request.json['uid'], request.json['email'])
 
 
 # Running app
