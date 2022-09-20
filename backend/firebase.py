@@ -88,3 +88,22 @@ def list_accounts(uid):
         
         # IF REQUESTING USER IS NOT A USER
         return {"ERROR": {"code": 401, "message": "UNAUTHORIZED"}}
+    
+    
+    # Make a User an Admin
+def make_admin(uid, email):
+    try:
+        admin = auth.get_user(uid)
+        user = auth.get_user_by_email(email)
+        if  admin.custom_claims.get('super') == True:
+            if user.custom_claims == None or user.custom_claims.get('admin') == False or user.custom_claims.get('admin') == None:
+                # auth.set_custom_user_claims(user.uid, {'admin': True})
+                # IF ACTION IS SUCCESSFUL
+                return {"SUCCESS": {"code": 200, "message": "User is now an Admin"}}
+            # IF ACTION HAS ALREADY BEEN DONE
+            return {"SUCCESS": {"code": 202, "message": "User is already an Admin"}}
+        # IF REQUESTING USER IS NOT A SUPER USER
+        return {"ERROR": {"code": 403, "message": "FORBIDDEN - You do not have permission"}}
+    except:
+        # IF REQUESTING USER IS NOT A USER
+        return {"ERROR": {"code": 401, "message": "UNAUTHORIZED"}}
