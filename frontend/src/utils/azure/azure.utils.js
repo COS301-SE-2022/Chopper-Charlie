@@ -48,3 +48,12 @@ export const uploadFiles = async (files) => {
 		console.log('error in azure upload', error);
 	}
 };
+
+export const deleteFile = async (fileName) => {
+	try {
+		await containerClient.deleteBlob(fileName);
+		console.log('File Deleted');
+	} catch (error) {
+		console.log('error in azure delete', error);
+	}
+};
