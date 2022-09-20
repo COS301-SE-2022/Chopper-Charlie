@@ -158,7 +158,7 @@ def create_user_container(uid):
         
 def get_account_sas():
     from azure.storage.blob import ResourceTypes, AccountSasPermissions, generate_account_sas
-    
+    print('sending admin user sas')
     sas_token = generate_account_sas(
         account_name=account_name,
         account_key=key,
@@ -167,6 +167,7 @@ def get_account_sas():
         expiry=datetime.utcnow() + timedelta(hours=2)
     )
     url = "https://{}.blob.core.windows.net/?{}".format(account_name, sas_token)
+    
     return {"sas": url}   
 
 
@@ -176,7 +177,7 @@ def get_container_sas(user_name):
         create_user_container(user_name)
     except:
         print("Container Already Exists")
-    
+    print('sending normal user sas')
     token = generate_container_sas(
         account_name=account_name,
         container_name=user_name,

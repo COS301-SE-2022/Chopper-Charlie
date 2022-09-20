@@ -11,13 +11,13 @@ db = firestore.client()
 
 
 # Setting a Super User
-# auth.set_custom_user_claims('g9wNesaQm4cJTfIozQjFilS2HTg2', {'admin': True, 'super': True})
+# auth.set_custom_user_claims('nfHcof5vbgTO0V51tXChD8xkFX82', {'admin': True, 'super': True})
 
 # Setting a Admin User
 # auth.set_custom_user_claims('Wz0QluNMCSVClm13Vyd4jpc225X2', {'admin': True})
 
 
-# user1 = auth.get_user('g9wNesaQm4cJTfIozQjFilS2HTg2')
+# user1 = auth.get_user('nfHcof5vbgTO0V51tXChD8xkFX82')
 # print('isAdmin ' + str(user1.custom_claims.get('admin')) + ', isSuper ' + str(user1.custom_claims.get('super')))
 # user2 = auth.get_user('Wz0QluNMCSVClm13Vyd4jpc225X2')
 # print('isAdmin ' + str(user2.custom_claims.get('admin')) + ', isSuper ' + str(user2.custom_claims.get('super')))

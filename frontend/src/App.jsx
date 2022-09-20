@@ -24,6 +24,7 @@ import Explore from './routes/explore/explore.component';
 import Home from './routes/home/home.component';
 import { listFiles } from './utils/azure/azure.utils';
 import { setFiles } from './store/files/files.action';
+import Account from './routes/account/account.component';
 
 function App() {
 	const dispatch = useDispatch();
@@ -64,9 +65,9 @@ function App() {
 					<Route path='analytics' element={<Analytics />} />
 					<Route path='settings' element={<Settings />} />
 					{/* Add route: admin ? admin-portal : access denied */}
-					<Route path='admin' element={<AdminPortal />} />
-					{/* <Route path=':user' element={<UserPage />} /> */}
 					<Route path='explore' element={<Explore />} />
+					<Route path='admin' element={<AdminPortal />} />
+					<Route path='admin/:accountName' element={<Account />} />
 				</Route>
 
 				<Route path='auth' element={<Authentication />} />

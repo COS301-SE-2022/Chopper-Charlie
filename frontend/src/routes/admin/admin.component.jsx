@@ -7,6 +7,7 @@ import { setAccounts } from '../../store/accounts/accounts.action';
 import { selectAccounts } from '../../store/accounts/accounts.selector';
 import { getUsers } from '../../utils/firebase/firebase.utils';
 import './admin.styles.css';
+import { Link } from 'react-router-dom';
 import Drawer from '../../components/drawer/drawer.component';
 
 const AdminPortal = () => {
@@ -55,7 +56,11 @@ const AdminPortal = () => {
 		<div className='admin-wrapper'>
 			<div className='accounts-grid'>
 				{accounts.map((account) => {
-					return <AccountCard account={account} key={account.email} />;
+					return (
+						<Link to={`${account.containerName}`} key={account.email}>
+							<AccountCard account={account} />
+						</Link>
+					);
 				})}
 			</div>
 		</div>
