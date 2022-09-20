@@ -107,3 +107,23 @@ def make_admin(uid, email):
     except:
         # IF REQUESTING USER IS NOT A USER
         return {"ERROR": {"code": 401, "message": "UNAUTHORIZED"}}
+    
+    
+    # Make an Admin a User    
+def remove_admin(uid, email):
+    try:
+        admin = auth.get_user(uid)
+        user = auth.get_user_by_email(email)
+        if  admin.custom_claims.get('super') == True:
+            not_super = user.custom_claims.get('super') == None or user.custom_claims.get('super') == False
+            if user.custom_claims.get('admin') == True  and not_super:
+                auth.set_custom_user_claims(user.uid, {'admin': False})
+                # IF ACTION IS SUCCESSFUL
+                return {"SUCCESS": {"code": 200, "message": "User removed as Admin"}}       
+            # IF ACTION HAS ALREADY BEEN DONE
+            return {"ERROR": {"code": 202, "message": "Action could not be completed"}}
+        # IF REQUESTING USER IS NOT A SUPER USER
+        return {"ERROR": {"code": 403, "message": "FORBIDDEN - You do not have permission"}}
+    except: 
+        # IF REQUESTING USER IS NOT A USER
+        return {"ERROR": {"code": 401, "message": "UNAUTHORIZED"}}
