@@ -156,3 +156,16 @@ def create_user_container(uid):
         blob_service_client.create_container(uid)
     except:
         print("Could Not Create Container")
+        
+def get_account_sas():
+    from azure.storage.blob import ResourceTypes, AccountSasPermissions, generate_account_sas
+    
+    sas_token = generate_account_sas(
+        account_name=account_name,
+        account_key=key,
+        resource_types=ResourceTypes(service=True, container=True, object=True),
+        permission=AccountSasPermissions(read=True, write=True, delete=True, list=True, _spr=True),
+        expiry=datetime.utcnow() + timedelta(hours=2)
+    )
+    url = "https://{}.blob.core.windows.net/?{}".format(account_name, sas_token)
+    return {"sas": url}   
