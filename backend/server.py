@@ -62,6 +62,10 @@ def ai_video(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot):
 def accounts(uid):
 	return list_accounts(uid)
 
+# Delete User Account
+@app.route('/delete-user/<uid>/<email>')
+def delete_account(uid, email):
+	return delete_user(uid, email)
 
 
 
