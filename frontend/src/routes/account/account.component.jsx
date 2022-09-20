@@ -80,7 +80,7 @@ const Account = () => {
 
 			{files?.map((file) => {
 				return (
-					<div key={File.name}>
+					<div key={file.name}>
 						{/* {console.log(file.url)} */}
 						{/* <p>{file.url}</p> */}
 						<img
