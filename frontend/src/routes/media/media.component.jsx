@@ -29,7 +29,7 @@ const Media = () => {
 		}
 	};
 
-  const handleUpload = async (event) => {
+  const handleUpload = async () => {
 		await uploadFiles(selectedFiles, sasURL);
 		const arr = await listFiles();
 		dispatch(setFiles(arr));
@@ -37,6 +37,11 @@ const Media = () => {
 		inputRef.current.value = null;
 	};
 
+  const handleDelete = async (fileName) => {
+		await deleteFile(fileName, sasURL);
+		const arr = await listFiles();
+		dispatch(setFiles(arr));
+	};
 
 	return (
 		<>
