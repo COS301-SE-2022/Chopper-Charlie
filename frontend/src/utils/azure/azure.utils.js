@@ -81,3 +81,14 @@ export const listAccounts = async (blobURL) => {
 		console.log('error in azure list accounts', error);
 	}
 };
+
+export const deleteAccount = async (containerName, blobURL) => {
+	try {
+		const blobServiceClient = new BlobServiceClient(blobURL);
+		console.log('Deleting account');
+		await blobServiceClient.deleteContainer(containerName);
+		return listAccounts();
+	} catch (error) {
+		console.log('error in azure delete account', error);
+	}
+};
