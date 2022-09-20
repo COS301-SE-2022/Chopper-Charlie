@@ -57,3 +57,27 @@ export const deleteFile = async (fileName) => {
 		console.log('error in azure delete', error);
 	}
 };
+
+
+/// ADMIN FUNCTIONS
+export const listAccounts = async (blobURL) => {
+	try {
+		const blobServiceClient = new BlobServiceClient(blobURL);
+		// let i = 1;
+		let containers = blobServiceClient.listContainers();
+		const accountsArray = [];
+		for await (const container of containers) {
+			// console.log(`Container ${i++}: ${container.name}`);
+			// console.log(`Container ${i}:`, container.properties);
+			// console.log(`Container ${i}:`, container);
+			// i++;
+			let obj = {
+				name: container.name,
+			};
+			accountsArray.push(obj);
+		}
+		return accountsArray;
+	} catch (error) {
+		console.log('error in azure list accounts', error);
+	}
+};
