@@ -5,7 +5,7 @@ from firebase_admin import credentials
 from azure_storage import create_user_container, delete_container
 import json
 
-cred = credentials.Certificate("")
+cred = credentials.Certificate("firebasePrivateKey.json")
 default_app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -152,7 +152,10 @@ def delete_user(uid, email):
 def get_type(uid):
     try:
         user = auth.get_user(uid)
-        if user.custom_claims.get('admin') == None or user.custom_claims.get('admin') == False:
+        print(user.custom_claims)
+        print('the user is' + user.uid)
+        if (not user.custom_claims) or user.custom_claims.get('admin') == None or user.custom_claims.get('admin') == False:
+            print('user is verified')
             return "USER"
         # if user.custom_claims.get('admin') == True:
         return "ADMIN"

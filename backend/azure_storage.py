@@ -8,10 +8,14 @@ from tkinter import filedialog
 import os
 from pathlib import Path
 from tkinter import messagebox
+from dotenv import load_dotenv
 
-Connection_String = "DefaultEndpointsProtocol=https;AccountName=choppercharlie;AccountKey=Bcrvc/ix8TmB/hoEE2fmp44iHAqEWeiZ1fr7Fml9Z0+Q7RI8NvX2kbqzeufPKHRY54hk+wFgE/+a+AStzl2qTw==;EndpointSuffix=core.windows.net"
-key = "Bcrvc/ix8TmB/hoEE2fmp44iHAqEWeiZ1fr7Fml9Z0+Q7RI8NvX2kbqzeufPKHRY54hk+wFgE/+a+AStzl2qTw=="        
-account_name = "choppercharlie"
+load_dotenv()
+
+
+Connection_String = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+key = os.getenv("AZURE_STORAGE_KEY")
+account_name = os.getenv("AZURE_STORAGE_ACCOUNT_NAME")
 
 
 def list_blobs_in_container(Containers_Name):
@@ -139,10 +143,7 @@ def delete_blob(Blob_Name, Containers_Name):
 # Delete User Container
 def delete_container(Container_Name):
     try:
-        blob_service_client = BlobServiceClient.from_connection_string(
-            Connection_String
-        )
-        container_client = blob_service_client.get_container_client(Container_Name)
+        container_client = ContainerClient.from_connection_string(conn_str=Connection_String, container_name=Container_Name)
         container_client.delete_container()
     except:
         print("Could Not Delete Container")
@@ -150,10 +151,8 @@ def delete_container(Container_Name):
 # Create User Container
 def create_user_container(uid):
     try:
-        blob_service_client = BlobServiceClient.from_connection_string(
-            Connection_String
-        )
-        blob_service_client.create_container(uid)
+        container_client = ContainerClient.from_connection_string(conn_str=Connection_String, container_name=uid.lower())
+        container_client.create_container()
     except:
         print("Could Not Create Container")
         
