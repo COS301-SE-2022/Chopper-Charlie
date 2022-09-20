@@ -1,5 +1,5 @@
 import PipelineForm from '../../components/pipeline-form/pipeline-form.component';
-import PipelineItem from '../../components/pipline-item/pipeline-item.component';
+import PipelineItem from '../../components/pipeline-item/pipeline-item.component';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectPipelines } from '../../store/pipelines/pipelines.selector';
@@ -17,7 +17,7 @@ const Analytics = () => {
 			<div>
 				{pipelines.map((pipelineItem) => {
 					return (
-						<PipelineItem
+						<pipelineItem
 							key={pipelineItem.title}
 							pipelineItem={pipelineItem}
 						/>
