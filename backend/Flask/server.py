@@ -40,8 +40,8 @@ def create_thecontainer(index_noo):
 
 @app.route("/db/<index_clo>/<index_cloo>")
 def blob_deletion(index_clo,index_cloo):
-
-		return delete_blob(index_clo,index_cloo)
+	delete_blob(index_clo,index_cloo)
+	return "True"
 
 @app.route("/ub/<index_ubloo>")
 def b_upload(index_ubloo):
