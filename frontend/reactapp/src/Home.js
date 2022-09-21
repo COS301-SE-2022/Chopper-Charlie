@@ -140,12 +140,12 @@ function Profile() {
 		var media= window.name;
 		
 		var p =pipelineSelected;
-		var vehicle= p.classes;
+		var typeAnalysis= p.classes;
 		var count = p.count?"y":"n";
 		var outline = p.outline?"y":"n";
 		
 		
-		fetch("/ai/video/"+media+"/"+currentUser?.email+"/"+vehicle+"/"+outline+"/"+count).then((res) =>
+		fetch("/ai/video/"+media+"/"+currentUser?.email+"/"+typeAnalysis+"/"+outline+"/"+count).then((res) =>
 		res.json().then((data) => {
 			// Setting a data from api
 			setdata(data.Message);
