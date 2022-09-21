@@ -127,6 +127,11 @@ export const listFilesInAccouunt = async (accountName, blobURL) => {
 		console.log('fetching file list');
 		const filesArray = [];
 		const containerClient = blobServiceClient.getContainerClient(accountName);
+		try {
+			await containerClient.create();
+		} catch (error) {
+			console.log('Cannot create container');
+		}
 		let blobs = containerClient.listBlobsFlat();
 		for await (const blob of blobs) {
 			let obj = {
