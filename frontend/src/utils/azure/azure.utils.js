@@ -73,6 +73,30 @@ export const deleteFile = async (fileName, sasURL) => {
 // 		console.log('error in azure list accounts', error);
 // 	}
 // };
+// export const listAdminFiles = async (blobURL, containerName) => {
+// 	try {
+// 		const blobServiceClient = new BlobServiceClient(blobURL);
+// 		const containerClient = blobServiceClient.getContainerClient(containerName);
+// 		let blobs = containerClient.listBlobsFlat();
+// 		const filesArray = [];
+// 		for await (const blob of blobs) {
+// 			let obj = {
+// 				name: blob.name,
+// 				size: blob.properties.contentLength / 1000,
+// 				date: blob.properties.createdOn
+// 					.toISOString()
+// 					.slice(0, 10)
+// 					.replace(/-/g, '-'),
+// 				url: containerClient.getBlobClient(blob.name).url,
+// 			};
+// 			filesArray.push(obj);
+// 		}
+// 		return filesArray;
+// 	} catch (error) {
+// 		console.log('error in azure list admin files', error);
+// 	}
+// };
+
 
 export const deleteAccount = async (containerName, blobURL) => {
 	try {

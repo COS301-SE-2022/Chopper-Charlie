@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { styled as muiStyled } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
@@ -103,9 +104,9 @@ export const MenuButton = ({ children, fileName, items }) => {
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
-	const handleClose = (pipeline) => {
+	const handleClose = (item) => {
 		setAnchorEl(null);
-		console.log(pipeline.title, fileName);
+		console.log(item.title, fileName);
 	};
 	return (
 		<div>

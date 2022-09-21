@@ -11,6 +11,8 @@ import {
 	uploadFiles,
 	uploadFilesToAccount,
 } from '../../utils/azure/azure.utils';
+import { selectPipelines } from '../../store/pipelines/pipelines.selector';
+import Button, { BUTTON_TYPE_CLASSES } from '../../components/button/button.component';
 
 const Account = () => {
     const params = useParams();
@@ -20,6 +22,7 @@ const Account = () => {
 	const [files, setFiles] = useState([]);
 	const inputRef = useRef(null);
 	const sasURL = useSelector(selectSasUrl);
+	const pipelines = useSelector(selectPipelines);
     const [showPopup, setShowPopup] = useState(false)
 
 	useEffect(() => {
@@ -104,9 +107,12 @@ const Account = () => {
 							<button onClick={() => handleDelete(file.name)}>
 								Delete File
 							</button>
-							<button onClick={() => handleAnalyse(file.name)}>
+							{/* <button onClick={() => handleAnalyse(file.name)}>
 								Analyse File
-							</button>
+							</button> */}
+							<Button fileName={file.name} items={pipelines} buttonType={BUTTON_TYPE_CLASSES.menu}>
+								Analyse
+							</Button>
 							<a href={file.url} download>
 								<button>Download</button>
 							</a>
