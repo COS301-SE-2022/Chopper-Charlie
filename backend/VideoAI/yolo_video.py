@@ -53,6 +53,10 @@ def displayVehicleCount(frame, vehicle_count):
 
 			)
 		print("vehicles counted:"+ str(vehicle_count))
+		file = open("../count.txt", "w")
+		file.write(str(vehicle_count))
+		file.close
+
 
 # PURPOSE: Determining if the box-mid point cross the line or are within the range of 5 units
 # from the line
