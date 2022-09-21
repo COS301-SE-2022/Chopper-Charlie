@@ -23,7 +23,6 @@ import MediaCard from '../../components/media-card/media-card.component';
 import MediaGrid from '../../components/media-grid/media-grid.component';
 import { MenuButton } from '../../components/button/button.styles';
 
-
 const Media = () => {
 	const dispatch = useDispatch();
 	const sasURL = useSelector(selectSasUrl);
@@ -110,7 +109,25 @@ const Media = () => {
 	};
 
 	const handleAnalyse = async (fileName, classes, count, outline) => {
-		console.log('calling analyse' + currentUser.uid + fileName + count + outline + classes);
+		// console.log('calling analyse' + currentUser.uid + fileName + count + outline + classes);
+		console.log(`/server/ai/video/${fileName}/${currentUser.uid.toLowerCase()}/${count?"y":"n"}/${outline?"y":"n"}/${classes}`)
+		fetch(
+			`/server/ai/video/${fileName}/${currentUser.uid.toLowerCase()}/${
+				count ? 'y' : 'n'
+			}/${outline ? 'y' : 'n'}/${classes}`
+		)
+			.then((res) => res.json())
+			.then((data) => {
+				console.log('this is the analysis response', data);
+				if (admin) {
+					loadAdminFiles();
+					return;
+				}
+				loadUserFiles();
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	};
 
 	return (
@@ -132,7 +149,11 @@ const Media = () => {
 			<hr />
 			<br />
 
-			<MediaGrid files={files} handleDelete={handleDelete} handleAnalyse={handleAnalyse}/>
+			<MediaGrid
+				files={files}
+				handleDelete={handleDelete}
+				handleAnalyse={handleAnalyse}
+			/>
 		</>
 	);
 };
