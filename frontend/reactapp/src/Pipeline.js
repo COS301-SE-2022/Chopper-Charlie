@@ -31,7 +31,8 @@ function Profile() {
 	const pipelines = useSelector(selectPipelines);
 
 	
-	console.log("sksks",pipelines)
+	// console.log("sksks",pipelines)
+	
 	// Using useEffect for single rendering
 	
 		// Using fetch to fetch the api from

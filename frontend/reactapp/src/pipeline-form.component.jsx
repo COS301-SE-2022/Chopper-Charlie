@@ -60,8 +60,9 @@ const PipelineForm = () => {
 	};
 
 	const handleSubmit = async (event) => {
-		event.preventDefault();
 
+		event.preventDefault();
+console.log("this is the curr user fro pipelines", currentUser);
 		try {
 			let val = true;
 			for (var pipeline of Object.keys(pipelines)) {

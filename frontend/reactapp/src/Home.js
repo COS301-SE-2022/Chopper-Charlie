@@ -82,11 +82,31 @@ function Profile() {
 	}
 
 
-	function upData() {
-		fetch("/ub/" + currentUser?.email)
+	// function upData() {
+	// 	fetch("/ub/" + currentUser?.email)
 
 
-	}
+	// }
+
+	
+	const uploadFile = async (e) => {
+		const file = e.target.files[0];
+		if (file != null) {
+		  const data = new FormData();
+		  data.append('file_from_react', file);
+	  
+		  fetch("/ur/"+currentUser?.email,
+			{
+			  method: 'post',
+			  body: data,
+			}
+		  );
+		//   let res = await response.json();
+		//   if (res.status !== 1){
+		// 	alert('Error uploading file');
+		//   }
+		}
+	  };
 
 
 
@@ -132,7 +152,20 @@ function Profile() {
 				<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }} /></button>
 				<a id='pagelinks' href="/homelist"><button id="viewList"  ><ViewListOutlinedIcon id="listOption" /></button></a>
 				<button id="viewGrid"><GridViewIcon id="listOptionactive" /></button>
-				<button id='uploadButton' onClick={() => upData()}   >Upload</button>
+				{/* <button id='uploadButton' onClick={() => upData()}   >Upload</button> */}
+				
+					{/* <input id='uploadInput'
+						type="file"
+						onChange={uploadFile}>
+					</input> */}
+
+				<div id='uploadInput'><label for="fileInput" class="btn">Upload</label></div>
+				<input id="fileInput"  type="file" onChange={uploadFile}  ></input>
+					
+
+
+
+
 			</div>
 
 			{(typeof data.mydata === 'undefined') ? (

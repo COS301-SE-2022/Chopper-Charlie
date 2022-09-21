@@ -776,21 +776,23 @@ padding-left: 5%;
   cursor: text;
 }
 
-#uploadButton{
+#uploadInput{
   float: right;
   background-color: #4EDBAC;
   border-radius:  5px ;
   color: #ffffff;
-  height: 45px;
+  height: 25px;
   font-size: 18px;
-  width: 85px;
   border-color:#1F1F21 ;
- 
-  margin-top: 0.2%;
+  width: 70px;
+  margin-top: 12.5px;
   cursor: pointer;
-  margin-right: 10px;
-
+  margin-right: 20px;
+ text-align: center;
+ cursor: pointer;
 }
+
+
 
 #vehicle{
   background-color: #1F1F21;
@@ -926,7 +928,7 @@ border:none;
 #viewList{
   background-color: #222225;
   border: none;
-  margin-left: 33%;
+  margin-left: 28%;
   margin-top:4px;
   cursor: pointer;
   border-radius: 100%;
@@ -1126,4 +1128,15 @@ color: #51B9D4;
 
 #myForm label{
   color: #000000;
+}
+
+#fileInput{
+  visibility: hidden;
+}
+
+#Searchbar label{
+
+  cursor: pointer;
+  
+
 }
