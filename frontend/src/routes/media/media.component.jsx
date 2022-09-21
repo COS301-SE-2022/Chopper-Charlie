@@ -13,7 +13,10 @@ import {
 import { setFiles } from '../../store/files/files.action';
 import { selectFiles } from '../../store/files/files.selector';
 import { selectPipelines } from '../../store/pipelines/pipelines.selector';
-import Button, { BUTTON_TYPE_CLASSES } from '../../components/button/button.component';
+import Button, {
+	BUTTON_TYPE_CLASSES,
+} from '../../components/button/button.component';
+import { onAuthStateChangedListener } from '../../utils/firebase/firebase.utils';
 
 const Media = () => {
 	const dispatch = useDispatch();
@@ -26,41 +29,38 @@ const Media = () => {
 	const inputRef = useRef(null);
 
 	useEffect(() => {
-		currentUser
-			?.getIdTokenResult()
-			.then((idTokenResult) => {
-				// Confirm the user is an Admin.
-				// if (!!idTokenResult.claims.super) {
-				// 	// Show admin UI.
-				// 	console.log('this is a super user');
-				// } else {
-				// 	// Show regular user UI.
-				// 	console.log('this is not a super user');
-				// }
-				if (!!idTokenResult.claims.admin) {
-					const loadFiles = async () => {
-						const response = await listFilesInAccouunt(
-							currentUser.uid.toLowerCase(),
-							sasURL
-						);
-						dispatch(setFiles(response));
-						console.log(response);
-					};
-					loadFiles();
-					console.log('this is an admin user');
-				} else {
-					const loadMedia = async () => {
-						const response = await listFiles(sasURL);
-						dispatch(setFiles(response));
-						console.log(response);
-					};
-					loadMedia();
-					console.log('this is not an admin user');
-				}
-			})
-			.catch((error) => {
-				console.log(error);
-			});
+		const unsubscribe = onAuthStateChangedListener((user) => {
+			if (user) {
+				user
+					.getIdTokenResult()
+					.then((idTokenResult) => {
+						if (!!idTokenResult.claims.admin) {
+							const loadFiles = async () => {
+								const response = await listFilesInAccouunt(
+									currentUser.uid.toLowerCase(),
+									sasURL
+								);
+								dispatch(setFiles(response));
+								console.log(response);
+							};
+							loadFiles();
+							console.log('this is an admin user');
+						} else {
+							const loadMedia = async () => {
+								const response = await listFiles(sasURL);
+								dispatch(setFiles(response));
+								console.log(response);
+							};
+							loadMedia();
+							console.log('this is not an admin user');
+						}
+					})
+					.catch((error) => {
+						console.log(error);
+					});
+			}
+		});
+		return unsubscribe;
 	}, []);
 
 	const handleChange = (event) => {
@@ -116,7 +116,10 @@ const Media = () => {
 							<span>{file.size}</span> <br />
 							<span>{file.date}</span> <br />
 							<p>{file.url}</p>
-							<Button fileName={file.name} items={pipelines} buttonType={BUTTON_TYPE_CLASSES.menu}>
+							<Button
+								fileName={file.name}
+								items={pipelines}
+								buttonType={BUTTON_TYPE_CLASSES.menu}>
 								Analyse
 							</Button>
 							<button onClick={() => handleDelete(file.name)}>

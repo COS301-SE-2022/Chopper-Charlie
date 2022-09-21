@@ -7,6 +7,15 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 
+import Fab from '@mui/material/Fab';
+import DeleteIcon from '@mui/icons-material/Delete';
+import DownloadIcon from '@mui/icons-material/Download';
+import DataUsageIcon from '@mui/icons-material/DataUsage';
+import Typography from '@mui/material/Typography';
+
+
+
+
 export const BaseButton = styled.button`
 	min-width: 165px;
 	width: auto;
@@ -97,7 +106,6 @@ export const CreateButton = muiStyled(Button)(({ theme }) => ({
 	},
 }));
 
-
 export const MenuButton = ({ children, fileName, items }) => {
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const open = Boolean(anchorEl);
@@ -135,4 +143,82 @@ export const MenuButton = ({ children, fileName, items }) => {
 			</Menu>
 		</div>
 	);
-}
+};
+
+export const ActionButton = ({ children, colour, icon }) => {
+	return (
+		<Fab
+			variant='extended'
+			sx={{
+				width: '7em',
+				height: '7em',
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'center',
+				justifyContent: 'space-between',
+				padding: '1.5em',
+				backgroundColor: colour,
+				borderRadius: 2,
+				color: 'white',
+			}}>
+			{icon}
+
+			<Typography
+				variant='body2'
+				color='white'
+				sx={{
+					marginTop: 1,
+				}}>
+				{children}
+			</Typography>
+		</Fab>
+	);
+};
+
+export const DeleteButton = ({ children }) => {
+	return (
+		<ActionButton
+			colour='rgba(255, 66, 66, 1)'
+			icon={
+				<DeleteIcon
+					sx={{
+						fontSize: 30,
+					}}
+				/>
+			}>
+			Delete
+		</ActionButton>
+	);
+};
+
+export const DownloadButton = () => {
+	return (
+		<ActionButton
+			colour='rgba(255, 125, 66, 1)'
+			icon={
+				<DownloadIcon
+					sx={{
+						fontSize: 30,
+					}}
+				/>
+			}>
+			Download
+		</ActionButton>
+	);
+};
+
+export const AnalyseButton = () => {
+	return (
+		<ActionButton
+			colour='rgba(66, 192, 255, 1)'
+			icon={
+				<DataUsageIcon
+					sx={{
+						fontSize: 30,
+					}}
+				/>
+			}>
+			Analyse
+		</ActionButton>
+	);
+};

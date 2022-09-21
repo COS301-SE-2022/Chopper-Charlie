@@ -7,6 +7,10 @@ import {
     LinkedinButton,
     CreateButton,
     MenuButton,
+    ActionButton,
+    AnalyseButton,
+    DeleteButton,
+    DownloadButton,
   } from './button.styles';
   
   export const BUTTON_TYPE_CLASSES = {
@@ -17,7 +21,9 @@ import {
     twitter: 'twitter-sign-in',
     linkedin: 'linkedin-sign-in',
     create: 'create-button',
-    menu : 'menu-button',
+    analyse : 'analyse-button',
+    delete : 'delete-button',
+    download : 'download-button',
   };
   
   const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) =>
@@ -30,6 +36,9 @@ import {
       [BUTTON_TYPE_CLASSES.linkedin]: LinkedinButton,
       [BUTTON_TYPE_CLASSES.create]: CreateButton,
       [BUTTON_TYPE_CLASSES.menu]: MenuButton,
+      [BUTTON_TYPE_CLASSES.menu]: AnalyseButton,
+      [BUTTON_TYPE_CLASSES.menu]: DeleteButton,
+      [BUTTON_TYPE_CLASSES.menu]: DownloadButton,
     }[buttonType]);
   
   const Button = ({ children, buttonType, ...otherProps }) => {
