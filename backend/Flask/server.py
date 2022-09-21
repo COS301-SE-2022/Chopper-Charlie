@@ -60,10 +60,18 @@ def b_upload(index_ubloo):
 def ai_video(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot):
 	try:
 		blob_retrieveee(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot)
+		Temp = index_snoot.replace('@', '')
+		Temp = Temp.replace(".","")
+		Temp = Temp.replace("_","")
+        
+
+		with open("backend/count.txt","r") as file:
+			data = file.read().rstrip()
+		
 	except Exception as e:
 		return {"Message":"Error Analysing Media"}
-	return {"Message":"Succesfully Analysed!"}
-
+	return {"Count":"Object Count: "+str(data),"Message":"Succesfully Analysed!", "Link":"https://choppercharlie.blob.core.windows.net/"+Temp+"/Analysed"+index_snot}
+	
 
 
 
