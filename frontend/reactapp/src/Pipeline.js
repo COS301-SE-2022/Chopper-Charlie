@@ -9,10 +9,12 @@ import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import React, { useState} from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useSelector } from 'react-redux';
-import { selectPipelines } from './store/pipelines/pipelines.selector';
 import PipelineForm from './pipeline-form.component';
 import PipelineItem from './pipeline-item.component';
+import { useSelector } from 'react-redux';
+import { selectPipelines } from './store/pipelines/pipelines.selector';
+// import Drawer from '../../components/drawer/drawer.component';
+// import './analytics.styles.css';
 //change
 function Profile() {
   
@@ -28,7 +30,7 @@ function Profile() {
 	
 
 // The array for pipelines
-	const pipelines = useSelector(selectPipelines);
+const pipelines = useSelector(selectPipelines);
 
 	
 	// console.log("sksks",pipelines)
@@ -38,133 +40,16 @@ function Profile() {
 		// Using fetch to fetch the api from
 		// flask server it will be redirected to proxy
 		
-		fetch("/mydatapage/"+currentUser?.email).then((res) =>
-			res.json().then((data) => {
-				// Setting a data from api
-				setdata(data);
-                console.log(data);
+		// fetch("/mydatapage/"+currentUser?.email).then((res) =>
+		// 	res.json().then((data) => {
+		// 		// Setting a data from api
+		// 		setdata(data);
+        //         // console.log(data);
 
-			})
-		);
-		
-	/* function genData(str){
-		fetch("/lol/"+str+"/"+currentUser?.email)
-		genData1(str)
-		} */
-	
-		var value;
-		var outline;
-		var cntt;
-		
-		function del(){
-			document.getElementById('pps').style.visibility='hidden';
-			document.getElementById('deletepipeline').style.visibility='hidden';
-		}
-
-
-		function selected(){
-			var t = window.confirm("lol");
-		}
-
-
-		function pipelineui(){
-
-
-		var select = document.getElementById('vehicle');
-		value = select.options[select.selectedIndex].value;
-		// var t = window.confirm(value);
-
-		var ol = document.querySelector('#outline').checked;
-        var countt= document.querySelector('#cnt').checked;
-		var pName= document.getElementById('pipelineName').value;
-		var n= pName.length;
-		if (n<26) {
-
-		var t0= "<h4>"+pName+"</h4>"
-
-		var t1="<div id='options'>"+value+"</div>";
-		if (ol===true){
-			outline="y"
-			var t2="<div id='options'>Track Objects</div>";
-		}
-		else{
-			outline="n"
-			var t2="";
-			
-		}
-
-		if (countt===true){
-			cntt="y"
-			var t3=" <div id='options'>Count Objects</div>";
-		}
-		else{
-			cntt="n"
-			var t3="";
-		}
-
-		
-			
-			document.getElementById('pps').innerHTML=t0+t1+t2+t3;
-			var a = document.getElementById('pps');
-			a.style.visibility='visible';
-			document.getElementById('deletepipeline').style.visibility='visible';
-
-		}
-		else {
-			window.alert("Please choose a pipeline name with 25 or less characters.");
-		}
-
-
-
-		}
-
+		// 	})
+		// );
 		
 	
-	function pipeline(str){
-		var select = document.getElementById('vehicle');
-		value = select.options[select.selectedIndex].value;
-		// var t = window.confirm(value);
-
-		var ol = document.querySelector('#outline').checked;
-        var countt= document.querySelector('#cnt').checked;
-
-		if (ol===true){
-			outline="y"
-			var t3="<div id='options'>Track Objects</div>";
-		}
-		else{
-			outline="n"
-			var t3="";
-			
-		}
-
-		if (countt===true){
-			cntt="y"
-			var t4=" <div id='options'>Count Objects</div>";
-		}
-		else{
-			cntt="n"
-			var t4="";
-		}
-
-		// var t = window.confirm(value+"   "+ol+"  " +countt);
-		
-		var t1="<div id='pps'><h4>Pipeline- 1</h4>";
-		var t2="<div id='options'>"+value+"</div>";
-		var t5="<button id='delete'>Delete</button><p id='demo'></p> </div>";
-
-
-		// var a="<div className='pps'><h1>Pipelines </h1><div className=\"pps\">  <h4>Pipeline 1 </h4><div id='options'>Count Objects</div><button onClick={warning} id='ppsdel'>Delete</button><p id=\"demo\"></p> </div>";
-
-		// var mydiv=document.getElementById('pp');
-		// mydiv.innerHTML+= "<br></br>"+ t1+t2+t3+t4+t5;
-		
-		// document.getElementById('pp').insertAdjacentHTML('afterend', '<br></br>'+ t1+t2+t3+t4+t5);
-		fetch("/ai/video/"+str+"/"+currentUser?.email+"/"+value+"/"+outline+"/"+cntt)
-
-	
-	
-	}	
 	
 
 
@@ -173,11 +58,11 @@ function Profile() {
       <div className='center'>
 
     
-     <h2>Pipelines</h2>
+     <h2>Your Pipelines</h2>
      <hr></hr>
 
 	 <div className='analytics-container'>
-			<h1>Your Pipelines</h1>
+
 			<br />
 			<PipelineForm />
 			<br />

@@ -1,6 +1,6 @@
 import { createAction } from '../../utils/reducer/reducer.utils';
 import { PIPELINES_ACTION_TYPES } from './pipelines.types';
-import { setPipelines } from "../../firebase";
+import { setPipelines } from "../../firebase.js";
 
 
 export const setPipelinesArray = (pipelineArray) =>

@@ -1,18 +1,39 @@
 // src.firebase.js
-import { initializeApp } from "firebase/app"
-import { getAuth, onAuthStateChanged } from "firebase/auth"
+
 import {
-	getFirestore,
-	doc,
-	getDoc,
-	setDoc,
-	collection,
-	writeBatch,
-	query,
-	getDocs,
-	onSnapshot,
-	connectFirestoreEmulator
-} from 'firebase/firestore';
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  connectAuthEmulator,
+} from "firebase/auth";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  writeBatch,
+  query,
+  getDocs,
+  onSnapshot,
+  connectFirestoreEmulator,
+} from "firebase/firestore";
+import { getApp } from "firebase/app";
+import {
+  getFunctions,
+  connectFunctionsEmulator,
+  httpsCallable,
+} from "firebase/functions";
+import { getStorage, connectStorageEmulator } from "firebase/storage";
+
+
+import { initializeApp } from "firebase/app"
+
+
 
 const firebaseConfig = {
 
@@ -48,7 +69,11 @@ export const getPipelines = async (user) => {
 	}
 };
 
+
+
 export const setPipelines = async (pipelines, user, additionalInformation = {}) => {
+	// console.log("kkkkkkkkkkk   ", user.uid)
+	
 	const pipeDocRef = doc(db, 'pipelines', user.uid);
 	try {
 		console.log("adding pipelines to FireStore")

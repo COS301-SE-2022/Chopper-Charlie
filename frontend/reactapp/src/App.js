@@ -32,11 +32,11 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [timeActive, setTimeActive] = useState(false)
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user)
-    })
-  }, [])
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, (user) => {
+  //     setCurrentUser(user)
+  //   })
+  // }, [])
 
   const dispatch = useDispatch();
 	useEffect(() => {
@@ -45,8 +45,8 @@ function App() {
 				 createUserDocumentFromAuth(user);
 				const loadPipelines = async () => {
 					const data = await getPipelines(user);
-          console.log("ffdvfvbdfx");
-          console.log(data);
+          // console.log("ffdvfvbdfx");
+          // console.log(data);
 					dispatch(setPipelinesArray(data.pipelines));
           
 				};
