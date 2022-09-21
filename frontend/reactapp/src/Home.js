@@ -69,7 +69,14 @@ function Profile() {
 
 
 		if (window.confirm("Are you sure you want to delete media?") === true) {
-			fetch("/db/" + str + "/" + currentUser?.email);
+			fetch("/db/" + str + "/" + currentUser?.email).then((res) =>
+			res.json().then((data) => {
+				// Setting a data from api
+				setdata(data.Message);
+				console.log(JSON.stringify(data.Message));
+				alert(JSON.stringify(data.Message));
+		})
+			);;
 		}
 
 	}
@@ -100,6 +107,13 @@ function Profile() {
 			  method: 'post',
 			  body: data,
 			}
+		  ).then((res) =>
+		  res.json().then((data) => {
+			  // Setting a data from api
+			  setdata(data.Message);
+			  console.log(JSON.stringify(data.Message));
+			  alert(JSON.stringify(data.Message));
+	  })
 		  );
 		//   let res = await response.json();
 		//   if (res.status !== 1){
@@ -131,7 +145,14 @@ function Profile() {
 		var outline = p.outline?"y":"n";
 		
 		
-		fetch("/ai/video/"+media+"/"+currentUser?.email+"/"+vehicle+"/"+outline+"/"+count)
+		fetch("/ai/video/"+media+"/"+currentUser?.email+"/"+vehicle+"/"+outline+"/"+count).then((res) =>
+		res.json().then((data) => {
+			// Setting a data from api
+			setdata(data.Message);
+			console.log(JSON.stringify(data.Message));
+			alert(JSON.stringify(data.Message));
+	})
+		);
 }
 
 	function closeForm() {

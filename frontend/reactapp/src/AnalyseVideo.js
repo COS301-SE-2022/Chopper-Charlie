@@ -156,7 +156,15 @@ function AnalyseVideo() {
 		// mydiv.innerHTML+= "<br></br>"+ t1+t2+t3+t4+t5;
 		
 		// document.getElementById('pp').insertAdjacentHTML('afterend', '<br></br>'+ t1+t2+t3+t4+t5);
-		fetch("/ai/video/"+str+"/"+currentUser?.email+"/"+value+"/"+outline+"/"+cntt)
+		fetch("/ai/video/"+str+"/"+currentUser?.email+"/"+value+"/"+outline+"/"+cntt).then((res) =>
+		res.json().then((data) => {
+			// Setting a data from api
+			setdata(data.Message);
+			console.log(JSON.stringify(data.Message));
+			alert(JSON.stringify(data.Message));
+	})
+		);
+
 
 	
 	

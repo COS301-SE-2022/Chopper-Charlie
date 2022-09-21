@@ -40,8 +40,11 @@ def create_thecontainer(index_noo):
 
 @app.route("/db/<index_clo>/<index_cloo>")
 def blob_deletion(index_clo,index_cloo):
-	delete_blob(index_clo,index_cloo)
-	return "True"
+	try:
+		delete_blob(index_clo,index_cloo)
+	except Exception as e:
+		return {"Message":"Error Deleting Media"}
+	return {"Message":"Succesfully Deleted!"}
 
 @app.route("/ub/<index_ubloo>")
 def b_upload(index_ubloo):
@@ -55,8 +58,11 @@ def b_upload(index_ubloo):
 
 @app.route("/ai/video/<index_snot>/<index_snoot>/<index_snooot>/<index_snoooot>/<index_snooooot>")
 def ai_video(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot):
-	blob_retrieveee(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot)
-	return "True"
+	try:
+		blob_retrieveee(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot)
+	except Exception as e:
+		return {"Message":"Error Analysing Media"}
+	return {"Message":"Succesfully Analysed!"}
 
 
 

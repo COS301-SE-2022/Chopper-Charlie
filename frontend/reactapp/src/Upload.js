@@ -26,7 +26,16 @@ function Upload() {
 			  method: 'post',
 			  body: data,
 			}
+		  ).then((res) =>
+		  res.json().then((data) => {
+			  // Setting a data from api
+			  setdata(data.Message);
+			  console.log(JSON.stringify(data.Message));
+			  alert(JSON.stringify(data.Message));
+	  })
 		  );
+  
+
 		//   let res = await response.json();
 		//   if (res.status !== 1){
 		// 	alert('Error uploading file');
