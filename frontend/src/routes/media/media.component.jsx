@@ -110,7 +110,6 @@ const Media = () => {
 
 	const handleAnalyse = async (fileName, classes, count, outline) => {
 		// console.log('calling analyse' + currentUser.uid + fileName + count + outline + classes);
-		console.log(`/server/ai/video/${fileName}/${currentUser.uid.toLowerCase()}/${count?"y":"n"}/${outline?"y":"n"}/${classes}`)
 		fetch(
 			`/server/ai/video/${fileName}/${currentUser.uid.toLowerCase()}/${
 				count ? 'y' : 'n'

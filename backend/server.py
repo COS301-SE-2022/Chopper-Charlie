@@ -9,6 +9,7 @@ import inspect
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir) 
+from VideoAI.inputVideos.downdel import analyse_file
 from azure_storage import *
 from firebase import *
 
@@ -49,10 +50,15 @@ def b_upload(index_ubloo):
 # 	blob_retrievee(index_sno,index_snoo)
 # 	return "True"
 
-# @app.route("/ai/video/<index_snot>/<index_snoot>/<index_snooot>/<index_snoooot>/<index_snooooot>")
-# def ai_video(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot):
-# 	blob_retrieveee(index_snot,index_snoot,index_snooot,index_snoooot,index_snooooot)
-# 	return "True"
+@app.route("/ai/video/<fileName>/<containerName>/<classes>/<count>/<outline>")
+def ai_video(fileName,containerName,classes,count,outline):
+	try:
+		analyse_file(fileName,containerName,classes,count,outline)
+		with open("backend/count.txt","r") as file:
+			data = file.read().rstrip()
+	except Exception as e:
+		return {"Message":"Error Analysing Media"}
+	return {"Count":"Object Count: "+str(data),"Message":"Succesfully Analysed!"}
 
 
 ########################################### ADMIN FUNCTIONS ###########################################

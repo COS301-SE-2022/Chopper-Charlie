@@ -305,19 +305,19 @@ while True:
 	writer.write(frame)
 	path = os.path.abspath(os.getcwd())
 
-	blob = BlobClient.from_connection_string(conn_str= Connection_String, container_name= tc, blob_name= ct) 
-	with open(outputVideoPath, "rb") as data:
-		blob.upload_blob(data)
+	# blob = BlobClient.from_connection_string(conn_str= Connection_String, container_name= tc, blob_name= ct) 
+	# with open(outputVideoPath, "rb") as data:
+	# 	blob.upload_blob(data)
         
 		
 
-	cv2.imshow('Frame', frame)
-	if (inputVideoPath.endswith(".mp4")):
-		if cv2.waitKey(1) & 0xFF == ord('q'):
-			break	
-	else:
-		if cv2.waitKey(0) & 0xFF == ord('q'):
-			break	
+	# cv2.imshow('Frame', frame)
+	# if (inputVideoPath.endswith(".mp4")):
+	# 	if cv2.waitKey(1) & 0xFF == ord('q'):
+	# 		break	
+	# else:
+	# 	if cv2.waitKey(0) & 0xFF == ord('q'):
+	# 		break	
 
 	
 	# Updating with the current frame detections
@@ -331,4 +331,8 @@ writer.release()
 videoStream.release()
 os.remove(inputVideoPath)
 os.remove(outputVideoPath)
-
+blob = BlobClient.from_connection_string(conn_str= Connection_String, container_name= tc, blob_name= ct) 
+print(outputVideoPath)
+with open(outputVideoPath, "rb") as data:
+	blob.upload_blob(data)
+os.remove(outputVideoPath)

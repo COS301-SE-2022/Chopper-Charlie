@@ -3,7 +3,7 @@ from azure.storage.blob import BlobClient
 from VideoAI.runDetections import thisfunct
 Connection_String = "DefaultEndpointsProtocol=https;AccountName=choppercharlie;AccountKey=Bcrvc/ix8TmB/hoEE2fmp44iHAqEWeiZ1fr7Fml9Z0+Q7RI8NvX2kbqzeufPKHRY54hk+wFgE/+a+AStzl2qTw==;EndpointSuffix=core.windows.net"
 
-def blob_retrieveee(Blob_Name, Containers_Name, type, box, count):
+def analyse_file(Blob_Name, Containers_Name, type, box, count):
     
         Temp = Containers_Name.replace('@', '')
         Temp = Temp.replace('.', '')

@@ -194,7 +194,6 @@ export const MenuButton = ({ children, fileName, items, handleAnalyse }) => {
 	};
 	const handleClose = (item) => {
 		setAnchorEl(null);
-		console.log(item.title, fileName);
 	};
 	return (
 		<div>
@@ -216,9 +215,9 @@ export const MenuButton = ({ children, fileName, items, handleAnalyse }) => {
 				open={open}
 				onClose={handleClose}
 				TransitionComponent={Fade}>
-				{items.map((item) => {
+				{items.map((item, i) => {
 					return (
-						<MenuItem
+						<MenuItem key={i}
 							onClick={() => {
 								handleClose(item);
 								handleAnalyse(fileName, item.classes, item.count, item.outline);

@@ -2,7 +2,10 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCurrentUser, selectSasUrl } from '../../store/user/user.selector';
+import {
+	selectCurrentUser,
+	selectSasUrl,
+} from '../../store/user/user.selector';
 import {
 	deleteFile,
 	deleteFileInAccount,
@@ -12,19 +15,19 @@ import {
 	uploadFilesToAccount,
 } from '../../utils/azure/azure.utils';
 import { selectPipelines } from '../../store/pipelines/pipelines.selector';
-import Button, { BUTTON_TYPE_CLASSES } from '../../components/button/button.component';
+import Button, {
+	BUTTON_TYPE_CLASSES,
+} from '../../components/button/button.component';
 import MediaGrid from '../../components/media-grid/media-grid.component';
 
 const Account = () => {
-    const params = useParams();
+	const params = useParams();
 	const { accountName } = params;
 	const [selectedFiles, setSelectedFiles] = useState([]);
 	const [isFilePicked, setIsFilePicked] = useState(false);
 	const [files, setFiles] = useState([]);
 	const inputRef = useRef(null);
 	const sasURL = useSelector(selectSasUrl);
-	const pipelines = useSelector(selectPipelines);
-    const [showPopup, setShowPopup] = useState(false)
 
 	useEffect(() => {
 		const loadFiles = async () => {
@@ -58,40 +61,62 @@ const Account = () => {
 		setFiles(arr);
 	};
 
-    // const handleAnalyse = async (fileName, accountName) => {
-    //     console.log('analyse')
-    // }
+	const loadFiles = async () => {
+		const arr = await listFilesInAccouunt(accountName, sasURL);
+		setFiles(arr);
+	}
 
+	const handleAnalyse = async (fileName, classes, count, outline) => {
+		// console.log('calling analyse' + currentUser.uid + fileName + count + outline + classes);
+		fetch(
+			`/server/ai/video/${fileName}/${accountName}/${count ? 'y' : 'n'}/${
+				outline ? 'y' : 'n'
+			}/${classes}`
+		)
+			.then((res) => res.json())
+			.then((data) => {
+				console.log('this is the analysis response', data);
+				loadFiles();
+				// const arr = listFilesInAccouunt(accountName, sasURL);
+				// console.log('thius is an arr', arr);
+				// setFiles(arr);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
 
 	return (
 		<>
 			<div>Account Details</div>
 			<div>Files</div>
 
+			<div>
+				<h1>Files</h1>
+				<br />
+				<hr />
+				<input
+					name='file-input'
+					type='file'
+					multiple
+					onChange={handleChange}
+					ref={inputRef}
+				/>
+				<button disabled={!isFilePicked} onClick={handleUpload}>
+					Upload
+				</button>
+				<Link to='/admin'>
+					<button>Delete Account</button>
+				</Link>
+				<hr />
+				<br />
 
-            <div>
-			<h1>Files</h1>
-			<br />
-			<hr />
-			<input
-				name='file-input'
-				type='file'
-				multiple
-				onChange={handleChange}
-				ref={inputRef}
-			/>
-			<button disabled={!isFilePicked} onClick={handleUpload}>
-				Upload
-			</button>
-			<Link to='/admin'>
-				<button>Delete Account</button>
-			</Link>
-			<hr />
-			<br />
-
-			<MediaGrid files={files} handleDelete={handleDelete}/>
-		</div>
-
+				<MediaGrid
+					files={files}
+					handleDelete={handleDelete}
+					handleAnalyse={handleAnalyse}
+				/>
+			</div>
 		</>
 	);
 };

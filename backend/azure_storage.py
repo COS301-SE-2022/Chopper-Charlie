@@ -122,7 +122,7 @@ def blob_retrieve(Blob_Name, Containers_Name):
         print("Error!")
 
 
-#
+
 # Input Image Name And Container Name
 # blob_retrieve("Test88.jpg","media")
 
@@ -135,7 +135,7 @@ def delete_blob(Blob_Name, Containers_Name):
     container_client = blob_service_client.get_container_client(Temp)
     blob_client = container_client.get_blob_client(Blob_Name)
     blob_client.delete_blob()
-    messagebox.showinfo("Success", "Successfully Deleted media")  # added now
+    # messagebox.showinfo("Success", "Successfully Deleted media")  # added now
     
     
     ####################### ADMIN FUNCTIONS ########################################################
