@@ -10,12 +10,15 @@ import {
 	AnalyseButton,
 	DeleteButton,
 	DownloadButton,
+	MenuButton,
 } from '../button/button.styles';
 import { useSelector } from 'react-redux';
 import { selectSasUrl } from '../../store/user/user.selector';
+import { selectPipelines } from '../../store/pipelines/pipelines.selector';
 
 
-const MediaCard = ({file, handleDelete}) => {
+const MediaCard = ({file, handleDelete, handleAnalyse}) => {
+	const pipelines = useSelector(selectPipelines);
 	return (
 		<Card
 			sx={{
@@ -78,7 +81,7 @@ const MediaCard = ({file, handleDelete}) => {
 							sx={{
 								margin: 0,
 							}}>
-							{`${file.size} MB`}
+							{`${file.size} KiB`}
 						</Typography>
 					</Stack>
 				</CardContent>
@@ -94,7 +97,8 @@ const MediaCard = ({file, handleDelete}) => {
           zIndex: 1,
         }}>
 					<DeleteButton onClick={() => handleDelete(file.name)}/>
-					<AnalyseButton />
+					<MenuButton fileName={file.name} items={pipelines} handleAnalyse={handleAnalyse}>Analyse</MenuButton>
+					{/* <AnalyseButton /> */}
 					<DownloadButton />
 				</Stack>
 			</CardActions>

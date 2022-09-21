@@ -12,6 +12,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import DownloadIcon from '@mui/icons-material/Download';
 import DataUsageIcon from '@mui/icons-material/DataUsage';
 import Typography from '@mui/material/Typography';
+import { ListItemContent } from '@mui/joy';
 
 export const BaseButton = styled.button`
 	min-width: 165px;
@@ -103,45 +104,6 @@ export const CreateButton = muiStyled(Button)(({ theme }) => ({
 	},
 }));
 
-export const MenuButton = ({ children, fileName, items }) => {
-	const [anchorEl, setAnchorEl] = React.useState(null);
-	const open = Boolean(anchorEl);
-	const handleClick = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
-	const handleClose = (item) => {
-		setAnchorEl(null);
-		console.log(item.title, fileName);
-	};
-	return (
-		<div>
-			<Button
-				id='fade-button'
-				aria-controls={open ? 'fade-menu' : undefined}
-				aria-haspopup='true'
-				aria-expanded={open ? 'true' : undefined}
-				onClick={handleClick}>
-				{children}
-			</Button>
-			<Menu
-				id='fade-menu'
-				MenuListProps={{
-					'aria-labelledby': 'fade-button',
-				}}
-				anchorEl={anchorEl}
-				open={open}
-				onClose={handleClose}
-				TransitionComponent={Fade}>
-				{items.map((item) => {
-					return (
-						<MenuItem onClick={() => handleClose(item)}>{item.title}</MenuItem>
-					);
-				})}
-			</Menu>
-		</div>
-	);
-};
-
 export const ActionButton = ({ children, colour, icon, ...otherProps }) => {
 	return (
 		<Fab
@@ -207,7 +169,7 @@ export const DownloadButton = ({ ...otherProps }) => {
 	);
 };
 
-export const AnalyseButton = ({ ...otherProps }) => {
+export const AnalyseButton = ({ children, ...otherProps }) => {
 	return (
 		<ActionButton
 			{...otherProps}
@@ -221,5 +183,51 @@ export const AnalyseButton = ({ ...otherProps }) => {
 			}>
 			Analyse
 		</ActionButton>
+	);
+};
+
+export const MenuButton = ({ children, fileName, items, handleAnalyse }) => {
+	const [anchorEl, setAnchorEl] = React.useState(null);
+	const open = Boolean(anchorEl);
+	const handleClick = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
+	const handleClose = (item) => {
+		setAnchorEl(null);
+		console.log(item.title, fileName);
+	};
+	return (
+		<div>
+			<AnalyseButton
+				id='fade-button'
+				aria-controls={open ? 'fade-menu' : undefined}
+				aria-haspopup='true'
+				aria-expanded={open ? 'true' : undefined}
+				onClick={handleClick}>
+				{children}
+			</AnalyseButton>
+
+			<Menu
+				id='fade-menu'
+				MenuListProps={{
+					'aria-labelledby': 'fade-button',
+				}}
+				anchorEl={anchorEl}
+				open={open}
+				onClose={handleClose}
+				TransitionComponent={Fade}>
+				{items.map((item) => {
+					return (
+						<MenuItem
+							onClick={() => {
+								handleClose(item);
+								handleAnalyse(fileName, item.classes, item.count, item.outline);
+							}}>
+							{item.title}
+						</MenuItem>
+					);
+				})}
+			</Menu>
+		</div>
 	);
 };

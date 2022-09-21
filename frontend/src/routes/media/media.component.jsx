@@ -21,6 +21,8 @@ import Button, {
 import { onAuthStateChangedListener } from '../../utils/firebase/firebase.utils';
 import MediaCard from '../../components/media-card/media-card.component';
 import MediaGrid from '../../components/media-grid/media-grid.component';
+import { MenuButton } from '../../components/button/button.styles';
+
 
 const Media = () => {
 	const dispatch = useDispatch();
@@ -107,8 +109,9 @@ const Media = () => {
 		loadUserFiles();
 	};
 
-	const imgUrl =
-		'https://choppercharlie.blob.core.windows.net/nfhcof5vbgto0v51txchd8xkfx82/443573.webp?se=2022-09-20T19%3A18%3A05Z&sp=rwdl&sv=2021-08-06&sr=c&sig=v6n0ylHpJYpskdlbDhLI6l5nN%2BD0rLGJNjqAQxwMDq0%3D';
+	const handleAnalyse = async (fileName, classes, count, outline) => {
+		console.log('calling analyse' + currentUser.uid + fileName + count + outline + classes);
+	};
 
 	return (
 		<>
@@ -129,7 +132,7 @@ const Media = () => {
 			<hr />
 			<br />
 
-			<MediaGrid files={files} handleDelete={handleDelete} />
+			<MediaGrid files={files} handleDelete={handleDelete} handleAnalyse={handleAnalyse}/>
 		</>
 	);
 };

@@ -159,6 +159,20 @@ const PipelineForm = () => {
             <MenuItem value="car">Cars</MenuItem>
             <MenuItem value="bus">Buses</MenuItem>
             <MenuItem value="truck">Trucks</MenuItem>
+            <MenuItem value="bus">Buses</MenuItem>
+            <MenuItem value="truck">Trucks</MenuItem>
+            <MenuItem value="motorbike">Motorbike</MenuItem>
+            <MenuItem value="person">Person</MenuItem>
+            <MenuItem value="train">Train</MenuItem>
+            <MenuItem value="boat">Boat</MenuItem>
+            <MenuItem value="aeroplane">Aeroplane</MenuItem>
+            <MenuItem value="bird">Bird</MenuItem>
+            <MenuItem value="horse">Horse</MenuItem>
+            <MenuItem value="sheep">Sheep</MenuItem>
+            <MenuItem value="cow">Cow</MenuItem>
+            <MenuItem value="elephant">Elephant</MenuItem>
+            <MenuItem value="zebra">Zebra</MenuItem>
+            <MenuItem value="giraffe">Giraffe</MenuItem>
           </Select>
         </FormControl>
 
