@@ -13,9 +13,6 @@ import DownloadIcon from '@mui/icons-material/Download';
 import DataUsageIcon from '@mui/icons-material/DataUsage';
 import Typography from '@mui/material/Typography';
 
-
-
-
 export const BaseButton = styled.button`
 	min-width: 165px;
 	width: auto;
@@ -145,9 +142,10 @@ export const MenuButton = ({ children, fileName, items }) => {
 	);
 };
 
-export const ActionButton = ({ children, colour, icon }) => {
+export const ActionButton = ({ children, colour, icon, ...otherProps }) => {
 	return (
 		<Fab
+			{...otherProps}
 			variant='extended'
 			sx={{
 				width: '7em',
@@ -175,9 +173,10 @@ export const ActionButton = ({ children, colour, icon }) => {
 	);
 };
 
-export const DeleteButton = ({ children }) => {
+export const DeleteButton = ({ ...otherProps }) => {
 	return (
 		<ActionButton
+			{...otherProps}
 			colour='rgba(255, 66, 66, 1)'
 			icon={
 				<DeleteIcon
@@ -191,9 +190,10 @@ export const DeleteButton = ({ children }) => {
 	);
 };
 
-export const DownloadButton = () => {
+export const DownloadButton = ({ ...otherProps }) => {
 	return (
 		<ActionButton
+			{...otherProps}
 			colour='rgba(255, 125, 66, 1)'
 			icon={
 				<DownloadIcon
@@ -207,9 +207,10 @@ export const DownloadButton = () => {
 	);
 };
 
-export const AnalyseButton = () => {
+export const AnalyseButton = ({ ...otherProps }) => {
 	return (
 		<ActionButton
+			{...otherProps}
 			colour='rgba(66, 192, 255, 1)'
 			icon={
 				<DataUsageIcon

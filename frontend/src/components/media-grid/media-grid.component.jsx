@@ -1,8 +1,9 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import MediaCard from '../media-card/media-card.component';
+import { deleteFile } from '../../utils/azure/azure.utils';
 
-const MediaGrid = ({ files }) => {
+const MediaGrid = ({ files, handleDelete }) => {
 	return (
 		<Grid
 			container
@@ -13,7 +14,7 @@ const MediaGrid = ({ files }) => {
 			columnSpacing={{ xs: 1, md: -20 }}>
 			{files?.map((file) => (
 				<Grid item xs={4} sm={4} md={4} key={file.name}>
-					<MediaCard file={file} />
+					<MediaCard file={file} handleDelete={handleDelete}/>
 				</Grid>
 			))}
 		</Grid>

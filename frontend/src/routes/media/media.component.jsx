@@ -6,9 +6,11 @@ import {
 } from '../../store/user/user.selector';
 import {
 	deleteFile,
+	deleteFileInAccount,
 	listFiles,
 	listFilesInAccouunt,
 	uploadFiles,
+	uploadFilesToAccount,
 } from '../../utils/azure/azure.utils';
 import { setFiles } from '../../store/files/files.action';
 import { selectFiles } from '../../store/files/files.selector';
@@ -29,7 +31,20 @@ const Media = () => {
 	const [selectedFiles, setSelectedFiles] = useState([]);
 	const [isFilePicked, setIsFilePicked] = useState(false);
 	const inputRef = useRef(null);
-
+	const [admin, setAdmin] = useState(false);
+	const loadAdminFiles = async () => {
+		const response = await listFilesInAccouunt(
+			currentUser.uid.toLowerCase(),
+			sasURL
+		);
+		dispatch(setFiles(response));
+		console.log(response);
+	};
+	const loadUserFiles = async () => {
+		const response = await listFiles(sasURL);
+		dispatch(setFiles(response));
+		console.log(response);
+	};
 	useEffect(() => {
 		const unsubscribe = onAuthStateChangedListener((user) => {
 			if (user) {
@@ -37,23 +52,11 @@ const Media = () => {
 					.getIdTokenResult()
 					.then((idTokenResult) => {
 						if (!!idTokenResult.claims.admin) {
-							const loadFiles = async () => {
-								const response = await listFilesInAccouunt(
-									currentUser.uid.toLowerCase(),
-									sasURL
-								);
-								dispatch(setFiles(response));
-								console.log(response);
-							};
-							loadFiles();
+							setAdmin(true);
+							loadAdminFiles();
 							console.log('this is an admin user');
 						} else {
-							const loadMedia = async () => {
-								const response = await listFiles(sasURL);
-								dispatch(setFiles(response));
-								console.log(response);
-							};
-							loadMedia();
+							loadUserFiles();
 							console.log('this is not an admin user');
 						}
 					})
@@ -73,17 +76,35 @@ const Media = () => {
 	};
 
 	const handleUpload = async () => {
-		await uploadFiles(selectedFiles, sasURL);
-		const arr = await listFiles(sasURL);
-		dispatch(setFiles(arr));
+		console.log('calling upload');
+		if (admin) {
+			await uploadFilesToAccount(
+				selectedFiles,
+				currentUser.uid.toLowerCase(),
+				sasURL
+			);
+			loadAdminFiles();
+		} else {
+			await uploadFiles(selectedFiles, sasURL);
+			loadUserFiles();
+		}
 		setSelectedFiles([]);
 		inputRef.current.value = null;
 	};
 
 	const handleDelete = async (fileName) => {
+		console.log('calling delete');
+		if (admin) {
+			await deleteFileInAccount(
+				fileName,
+				currentUser.uid.toLowerCase(),
+				sasURL
+			);
+			loadAdminFiles();
+			return;
+		}
 		await deleteFile(fileName, sasURL);
-		const arr = await listFiles(sasURL);
-		dispatch(setFiles(arr));
+		loadUserFiles();
 	};
 
 	const imgUrl =
@@ -108,7 +129,7 @@ const Media = () => {
 			<hr />
 			<br />
 
-			<MediaGrid files={files}/>
+			<MediaGrid files={files} handleDelete={handleDelete} />
 		</>
 	);
 };

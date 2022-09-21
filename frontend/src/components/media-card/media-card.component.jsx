@@ -11,13 +11,16 @@ import {
 	DeleteButton,
 	DownloadButton,
 } from '../button/button.styles';
+import { useSelector } from 'react-redux';
+import { selectSasUrl } from '../../store/user/user.selector';
 
 
-const MediaCard = ({file}) => {
+const MediaCard = ({file, handleDelete}) => {
 	return (
 		<Card
 			sx={{
 				maxWidth: 340,
+				minWidth: 340,
 				backgroundColor: 'rgba(0, 31, 45, 1)',
 				color: 'white',
 				borderRadius: 3,
@@ -90,7 +93,7 @@ const MediaCard = ({file}) => {
 				<Stack direction='row' spacing={1} sx={{
           zIndex: 1,
         }}>
-					<DeleteButton />
+					<DeleteButton onClick={() => handleDelete(file.name)}/>
 					<AnalyseButton />
 					<DownloadButton />
 				</Stack>
