@@ -20,6 +20,7 @@ const Account = () => {
 	const [files, setFiles] = useState([]);
 	const inputRef = useRef(null);
 	const sasURL = useSelector(selectSasUrl);
+    const [showPopup, setShowPopup] = useState(false)
 
 	useEffect(() => {
 		const loadFiles = async () => {
@@ -52,6 +53,12 @@ const Account = () => {
 		console.log('thius is an arr', arr);
 		setFiles(arr);
 	};
+
+    // const handleAnalyse = async (fileName, accountName) => {
+    //     console.log('analyse')
+    // }
+
+
 	return (
 		<>
 			<div>Account Details</div>
@@ -96,6 +103,9 @@ const Account = () => {
 							<span>{file.date}</span> <br />
 							<button onClick={() => handleDelete(file.name)}>
 								Delete File
+							</button>
+							<button onClick={() => handleAnalyse(file.name)}>
+								Analyse File
 							</button>
 							<a href={file.url} download>
 								<button>Download</button>

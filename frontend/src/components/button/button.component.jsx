@@ -5,7 +5,8 @@ import {
     FacebookButton,
     TwitterButton,
     LinkedinButton,
-    CreateButton
+    CreateButton,
+    MenuButton,
   } from './button.styles';
   
   export const BUTTON_TYPE_CLASSES = {
@@ -15,7 +16,8 @@ import {
     facebook: 'facebook-sign-in',
     twitter: 'twitter-sign-in',
     linkedin: 'linkedin-sign-in',
-    create: 'create-button'
+    create: 'create-button',
+    menu : 'menu-button',
   };
   
   const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) =>
@@ -27,6 +29,7 @@ import {
       [BUTTON_TYPE_CLASSES.twitter]: TwitterButton,
       [BUTTON_TYPE_CLASSES.linkedin]: LinkedinButton,
       [BUTTON_TYPE_CLASSES.create]: CreateButton,
+      [BUTTON_TYPE_CLASSES.menu]: MenuButton,
     }[buttonType]);
   
   const Button = ({ children, buttonType, ...otherProps }) => {
