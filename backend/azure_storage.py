@@ -156,8 +156,12 @@ def create_user_container(uid):
     except:
         print("Could Not Create Container")
         
-def get_account_sas():
+def get_account_sas(user_name):
     from azure.storage.blob import ResourceTypes, AccountSasPermissions, generate_account_sas
+    try:
+        create_user_container(user_name)
+    except:
+        print("Container Already Exists")
     print('sending admin user sas')
     sas_token = generate_account_sas(
         account_name=account_name,
