@@ -17,6 +17,7 @@ import Button, {
 	BUTTON_TYPE_CLASSES,
 } from '../../components/button/button.component';
 import { onAuthStateChangedListener } from '../../utils/firebase/firebase.utils';
+import MediaCard from '../../components/media-card/media-card.component';
 
 const Media = () => {
 	const dispatch = useDispatch();
@@ -91,6 +92,7 @@ const Media = () => {
 		<>
 			<h1>Media</h1>
 			<br />
+			<MediaCard />
 			<hr />
 			<input
 				name='file-input'
