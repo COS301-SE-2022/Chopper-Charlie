@@ -159,9 +159,11 @@ function AnalyseVideo() {
 		fetch("/ai/video/"+str+"/"+currentUser?.email+"/"+value+"/"+outline+"/"+cntt).then((res) =>
 		res.json().then((data) => {
 			// Setting a data from api
-			setdata(data.Message);
-			console.log(JSON.stringify(data.Message));
-			alert(JSON.stringify(data.Message));
+			setdata(data);
+			//console.log(JSON.stringify(data.Message));
+			const countt = JSON.stringify(data.Count);
+			const mes = (JSON.stringify(data.Message));
+			alert(countt);
 	})
 		);
 

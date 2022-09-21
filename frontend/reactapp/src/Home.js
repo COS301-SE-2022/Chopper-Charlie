@@ -148,9 +148,12 @@ function Profile() {
 		fetch("/ai/video/"+media+"/"+currentUser?.email+"/"+typeAnalysis+"/"+outline+"/"+count).then((res) =>
 		res.json().then((data) => {
 			// Setting a data from api
-			setdata(data.Message);
-			console.log(JSON.stringify(data.Message));
-			alert(JSON.stringify(data.Message));
+			setdata(data);
+			//console.log(JSON.stringify(data.Message));
+			const countt = JSON.stringify(data.Count);
+			const mes = JSON.stringify(data.Message);
+			const link = JSON.stringify(data.Link)
+			alert(mes+"\n"+countt+"\n"+link);
 	})
 		);
 }
