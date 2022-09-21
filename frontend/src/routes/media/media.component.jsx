@@ -18,6 +18,7 @@ import Button, {
 } from '../../components/button/button.component';
 import { onAuthStateChangedListener } from '../../utils/firebase/firebase.utils';
 import MediaCard from '../../components/media-card/media-card.component';
+import MediaGrid from '../../components/media-grid/media-grid.component';
 
 const Media = () => {
 	const dispatch = useDispatch();
@@ -92,7 +93,7 @@ const Media = () => {
 		<>
 			<h1>Media</h1>
 			<br />
-			<MediaCard />
+
 			<hr />
 			<input
 				name='file-input'
@@ -107,35 +108,7 @@ const Media = () => {
 			<hr />
 			<br />
 
-			{/* <img src={imgUrl} alt="" /> */}
-
-			{files?.map((file) => {
-				return (
-					<div key={file.name}>
-						<img src={files.url} /> <br />
-						<div key={file.name}>
-							<span>{file.name}</span> <br />
-							<span>{file.size}</span> <br />
-							<span>{file.date}</span> <br />
-							<p>{file.url}</p>
-							<Button
-								fileName={file.name}
-								items={pipelines}
-								buttonType={BUTTON_TYPE_CLASSES.menu}>
-								Analyse
-							</Button>
-							<button onClick={() => handleDelete(file.name)}>
-								Delete File
-							</button>
-							<a href={file.url} download>
-								<button>Download</button>
-							</a>
-							<br />
-							<br />
-						</div>
-					</div>
-				);
-			})}
+			<MediaGrid files={files}/>
 		</>
 	);
 };

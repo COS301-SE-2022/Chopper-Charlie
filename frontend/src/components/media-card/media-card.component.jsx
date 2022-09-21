@@ -1,13 +1,4 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
-import EditIcon from '@mui/icons-material/Edit';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import DeleteIcon from '@mui/icons-material/Delete';
-import NavigationIcon from '@mui/icons-material/Navigation';
-import DownloadIcon from '@mui/icons-material/Download';
-import DataUsageIcon from '@mui/icons-material/DataUsage';
 import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -15,14 +6,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import { CardActionArea, CardActions } from '@mui/material';
-import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 import {
 	AnalyseButton,
 	DeleteButton,
 	DownloadButton,
 } from '../button/button.styles';
 
-const MediaCard = () => {
+const MediaCard = ({file}) => {
 	return (
 		<Card
 			sx={{
@@ -38,7 +28,7 @@ const MediaCard = () => {
 				<CardMedia
 					component='img'
 					height='180'
-					image='https://routespartnership.org/industry-resources/images-video-library/free-use-wildlife-images/reptiles/lizard-731336_1920.jpg/@@images/0076275f-747b-438f-8d54-76fe474b12ff.jpeg'
+					image={file.url}
 					alt='green iguana'
 				/>
 				<CardContent
@@ -52,19 +42,28 @@ const MediaCard = () => {
 						sx={{
 							textAlign: 'start',
 						}}>
-						Lizard
+						{file.name}
 					</Typography>
 					<Stack
 						direction='row'
 						spacing={1}
-						sx={{ justifyContent: 'space-between', margin: 0 }}>
+						sx={{
+							justifyContent: 'space-between',
+							margin: 0,
+							alignItems: 'center',
+              backgroundColor: 'red',
+              padding: 0,
+              height: '0px',
+						}}>
+						{/* <p>22-05-2021</p>
+						<p>22-05-2021</p> */}
 						<Typography
 							variant='body2'
 							color='white'
 							sx={{
 								margin: 0,
 							}}>
-							2022-10-10
+							{file.date}
 						</Typography>
 						<Typography
 							variant='body2'
@@ -72,7 +71,7 @@ const MediaCard = () => {
 							sx={{
 								margin: 0,
 							}}>
-							340
+							{`${file.size} MB`}
 						</Typography>
 					</Stack>
 				</CardContent>
