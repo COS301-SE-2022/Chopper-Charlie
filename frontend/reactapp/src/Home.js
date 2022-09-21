@@ -143,7 +143,7 @@ function Profile() {
 		var typeAnalysis= p.classes;
 		var count = p.count?"y":"n";
 		var outline = p.outline?"y":"n";
-		
+		document.getElementById("myForm").style.display = "none";
 		
 		fetch("/ai/video/"+media+"/"+currentUser?.email+"/"+typeAnalysis+"/"+outline+"/"+count).then((res) =>
 		res.json().then((data) => {

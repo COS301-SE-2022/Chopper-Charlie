@@ -14,25 +14,26 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 import SearchIcon from '@mui/icons-material/Search';
 import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
 import GridViewIcon from '@mui/icons-material/GridView';
-
+import { useSelector } from 'react-redux';
+import { selectPipelines } from './store/pipelines/pipelines.selector';
 
 
 
 //change
 function Profile() {
-    const {currentUser} = useAuthValue()
+	const { currentUser } = useAuthValue()
 	// object for storing and using data
 	const [data, setdata] = useState({
-		
+
 	});
 
 	let str = currentUser?.email;
 
-	function replace (){
+	function replace() {
 		var string = "";
 		var chart = "";
-		for(let i=0; i < str.length; i++){  //fixed spelling from 'str.lenght'
-			if (str.charAt(i) === "@"||str.charAt(i) === "." ) {
+		for (let i = 0; i < str.length; i++) {  //fixed spelling from 'str.lenght'
+			if (str.charAt(i) === "@" || str.charAt(i) === ".") {
 				chart = "";
 				string = string + chart;
 			}
@@ -41,54 +42,60 @@ function Profile() {
 				string = string + chart;
 			}
 		}
-		console.log(string);
+		// console.log(string);
 		return string
-		
+
 	}
-	
+
 
 	// Using useEffect for single rendering
-	
-		// Using fetch to fetch the api from
-		// flask server it will be redirected to proxy
-		
-		fetch("/mydatapage/"+currentUser?.email).then((res) =>
+
+	// Using fetch to fetch the api from
+	// flask server it will be redirected to proxy
+
+	fetch("/mydatapage/" + currentUser?.email).then((res) =>
+		res.json().then((data) => {
+			// Setting a data from api
+			setdata(data);
+			// console.log(data);
+
+		})
+	);
+
+
+
+
+	function delData(str) {
+
+
+		if (window.confirm("Are you sure you want to delete media?") === true) {
+			fetch("/db/" + str + "/" + currentUser?.email).then((res) =>
 			res.json().then((data) => {
 				// Setting a data from api
-				setdata(data);
-                console.log(data);
+				setdata(data.Message);
+				console.log(JSON.stringify(data.Message));
+				alert(JSON.stringify(data.Message));
+		})
+			);;
+		}
 
-			})
-		);
-		
-		
-	
-
-	 function delData(str){
-
-		
-		if (window.confirm("Are you sure you want to delete media?") === true) {
-			fetch("/db/"+str+"/"+currentUser?.email);
-		} 
-	 	
-	 	}
+	}
 
 
-		 function downData(str){
-			fetch("/lol/"+str+"/"+currentUser?.email)
-			
-	
-			}
+	function downData(str) {
+		fetch("/lol/" + str + "/" + currentUser?.email)
+
+
+	}
+
+
+	// function upData() {
+	// 	fetch("/ub/" + currentUser?.email)
+
+
+	// }
 
 	
-			function upData(){
-				fetch("/ub/"+currentUser?.email)
-		
-				
-				}
-
-			
-					
 	const uploadFile = async (e) => {
 		const file = e.target.files[0];
 		if (file != null) {
@@ -100,6 +107,13 @@ function Profile() {
 			  method: 'post',
 			  body: data,
 			}
+		  ).then((res) =>
+		  res.json().then((data) => {
+			  // Setting a data from api
+			  setdata(data.Message);
+			  console.log(JSON.stringify(data.Message));
+			  alert(JSON.stringify(data.Message));
+	  })
 		  );
 		//   let res = await response.json();
 		//   if (res.status !== 1){
@@ -107,6 +121,47 @@ function Profile() {
 		//   }
 		}
 	  };
+
+
+
+	const pipelines = useSelector(selectPipelines);
+
+
+	function openForm(thedata) {
+		document.getElementById("myForm").style.display = "block";
+		window.name=thedata;
+	}
+
+
+	  
+	
+	function analyse(pipelineSelected){
+		
+		var media= window.name;
+		
+		var p =pipelineSelected;
+		var typeAnalysis= p.classes;
+		var count = p.count?"y":"n";
+		var outline = p.outline?"y":"n";
+		document.getElementById("myForm").style.display = "none";
+		
+		fetch("/ai/video/"+media+"/"+currentUser?.email+"/"+typeAnalysis+"/"+outline+"/"+count).then((res) =>
+		res.json().then((data) => {
+			// Setting a data from api
+			setdata(data.Message);
+			console.log(JSON.stringify(data.Message));
+			alert(JSON.stringify(data.Message));
+	})
+		);
+}
+
+	function closeForm() {
+		document.getElementById("myForm").style.display = "none";
+	}
+
+	
+	
+
 
 
 
@@ -150,8 +205,36 @@ function Profile() {
           event.onerror = null
         }}    /><h2>{thedata}</h2>
 		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  onClick={()=>downData(thedata)}   ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
-		<button id="AnalyseButtonList" ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
+		<button id="AnalyseButtonList" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
 		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button>
+
+
+
+
+		
+		<div className="form-popup" id="myForm">
+				<div className="form-container">
+					<h1>Select Pipeline</h1>
+
+					{/* <label className="pipelinee"><p>Choose you pipeline for analysis:</p></label><br /> */}
+
+
+					{pipelines.map((pipelineItem) => {
+						
+						return (
+							<div key1={pipelineItem.title}>
+					
+					
+					<button type="button" id="pipelineChosen" className="pipelineChosen" name='pipelineChosen' onClick={() => analyse(pipelineItem)} >{pipelineItem.title}</button>
+
+					</div>
+						);
+					})}
+
+					{/* <button type="button" className="done" onSubmit={() => analyse()}>Done</button> */}
+					<button type="button" onClick={() => closeForm()} className="cancel">Cancel</button>
+				</div>
+			</div>
 </div> 
 </div>  
 
