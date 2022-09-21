@@ -75,7 +75,7 @@ const AccountCard = ({ account }) => {
 						color: 'black',
 						bgcolor: 'white',
 					}}>
-					{account.role}
+					{account.role || 'user'}
 				</CardOverflow>
 
 				{/* {account.role === 'super' && (

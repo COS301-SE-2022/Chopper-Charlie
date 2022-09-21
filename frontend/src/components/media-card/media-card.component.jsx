@@ -12,6 +12,7 @@ import {
 	DownloadButton,
 } from '../button/button.styles';
 
+
 const MediaCard = ({file}) => {
 	return (
 		<Card
@@ -37,10 +38,13 @@ const MediaCard = ({file}) => {
 					}}>
 					<Typography
 						gutterBottom
-						variant='h5'
+						variant='h6'
 						component='div'
+            noWrap={true}
 						sx={{
 							textAlign: 'start',
+              flexShrink: 0
+
 						}}>
 						{file.name}
 					</Typography>
@@ -83,7 +87,9 @@ const MediaCard = ({file}) => {
 					justifyContent: 'center',
 					float: 'bottom',
 				}}>
-				<Stack direction='row' spacing={1} sx={{}}>
+				<Stack direction='row' spacing={1} sx={{
+          zIndex: 1,
+        }}>
 					<DeleteButton />
 					<AnalyseButton />
 					<DownloadButton />
