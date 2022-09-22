@@ -134,7 +134,7 @@ function Profile() {
 
 
 	  
-	
+	window.ress=" ";
 	function analyse(pipelineSelected){
 		
 		var media= window.name;
@@ -144,26 +144,52 @@ function Profile() {
 		var count = p.count?"y":"n";
 		var outline = p.outline?"y":"n";
 		document.getElementById("myForm").style.display = "none";
-		
+
+
+		document.getElementById("ResultmyForm").style.display = "block";
+		document.getElementById("textResults").innerHTML="Analysing...";
+
+
+
 		fetch("/ai/video/"+media+"/"+currentUser?.email+"/"+typeAnalysis+"/"+outline+"/"+count).then((res) =>
 		res.json().then((data) => {
 			// Setting a data from api
 			setdata(data);
 			//console.log(JSON.stringify(data.Message));
-			const countt = JSON.stringify(data.Count);
-			const mes = JSON.stringify(data.Message);
-			const link = JSON.stringify(data.Link)
-			alert(mes+"\n"+countt+"\n"+link);
-	})
+
+			let countt = JSON.stringify(data.Count);
+			let mes = JSON.stringify(data.Message);
+			let link = JSON.stringify(data.Link)
+			// alert(mes+"\n"+countt+"\n"+link);
+			// document.getElementById("textResults").innerHTML=window.countt;
+			// document.getElementById("ResultmyForm").style.display = "block";
+			resultsDiv(countt);
+	} 
+	 
+	)
 		);
+
+		document.getElementById("ResultmyForm").style.display = "block";
+		
+		
+	
+
+
 }
 
 	function closeForm() {
 		document.getElementById("myForm").style.display = "none";
 	}
 
+	function closeResultForm() {
+		document.getElementById("ResultmyForm").style.display = "none";
+	}
 	
-	
+	function resultsDiv(tt){
+			
+		document.getElementById("ResultmyForm").style.display = "block";
+		document.getElementById("textResults").innerHTML=tt;
+	}
 
 
 
@@ -258,6 +284,17 @@ function Profile() {
 
 
 
+			
+
+
+
+
+
+
+
+
+
+
 
 							</div>
 						</div>
@@ -273,6 +310,20 @@ function Profile() {
 
 
 			{/* <button class="open-button" onclick="openForm()">Open Form</button> */}
+
+
+			<div className="Resultform-popup" id="ResultmyForm">
+				<div className="Resultform-container">
+					<h1>Results:</h1>
+					<div id="textResults"></div>
+					<button type="button" onClick={() => closeResultForm()} className="cancel">Cancel</button>
+				</div>
+			</div>
+
+
+
+
+
 
 
 

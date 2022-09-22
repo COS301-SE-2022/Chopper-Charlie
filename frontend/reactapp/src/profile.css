@@ -1140,3 +1140,66 @@ color: #51B9D4;
   
 
 }
+
+
+/* //////////////////////////////////////////////////////////////// */
+
+.Resultform-popup {
+  display:none;
+  position: fixed;
+  margin-left:35%;
+  margin-top:10%;
+  border: 4px solid #096ab4;
+  width: 150px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.Resultform-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+
+
+/* Set a style for the submit/login button */
+.Resultform-container .btn {
+  background-color: #04AA6D;
+  color: rgb(0, 0, 0);
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.Resultform-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.Resultform-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#ResultmyForm p{
+  color: #000000;
+}
+
+#ResultmyForm h1{
+  color: #000000;
+}
+
+#ResultmyForm label{
+  color: #000000;
+}
+
+
+#textResults{
+  color: #000000;
+  font: 20px;
+}
+/* //////////////////////////////////////////////////// */
