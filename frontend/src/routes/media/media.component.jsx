@@ -22,8 +22,10 @@ import { onAuthStateChangedListener } from '../../utils/firebase/firebase.utils'
 import MediaCard from '../../components/media-card/media-card.component';
 import MediaGrid from '../../components/media-grid/media-grid.component';
 import { MenuButton } from '../../components/button/button.styles';
+import TopBar from '../../components/top-bar/top-bar.component';
 
 const Media = () => {
+
 	const dispatch = useDispatch();
 	const sasURL = useSelector(selectSasUrl);
 	const files = useSelector(selectFiles);
@@ -32,6 +34,7 @@ const Media = () => {
 	const [selectedFiles, setSelectedFiles] = useState([]);
 	const [isFilePicked, setIsFilePicked] = useState(false);
 	const inputRef = useRef(null);
+	const fileInput = document.getElementsByName('file-input');
 	const [admin, setAdmin] = useState(false);
 	const loadAdminFiles = async () => {
 		const response = await listFilesInAccouunt(
@@ -133,7 +136,7 @@ const Media = () => {
 		<>
 			<h1>Media</h1>
 			<br />
-
+			<TopBar />
 			<hr />
 			<input
 				name='file-input'
@@ -142,7 +145,7 @@ const Media = () => {
 				onChange={handleChange}
 				ref={inputRef}
 			/>
-			<button disabled={!isFilePicked} onClick={handleUpload}>
+			<button disabled={!isFilePicked} onClick={() => inputRef.click()}>
 				Upload
 			</button>
 			<hr />

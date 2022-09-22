@@ -28,7 +28,10 @@ a {
 body {
   margin: 0;
   display: flex;
-  /* flex-direction: column; */
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
