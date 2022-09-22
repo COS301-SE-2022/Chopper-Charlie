@@ -21,7 +21,8 @@ from AzureBlobUpload.azureblobupload import blob_upload
 from VideoAI.inputVideos.downdel import blob_retrieveee
 # from ImageAI.vehicle_counting import blob_retrievee
 # from ImageAI.vehicle_detector import VehicleDetector
-
+from azure_storage import *
+from firebase import *
 
 # from ImageAI.vehicle_counting import blob_retrievee
 # from ImageAI.vehicle_detector import VehicleDetector
@@ -132,6 +133,45 @@ def upload_file(containername):
             return {"Message": "Filename can only contain Letters And Numbers and NO SPACES"}
     else:
         return {"Message": "Filename can only contain Letters And Numbers and NO SPACES"}
+
+
+
+
+
+########################################### ADMIN FUNCTIONS ###########################################
+
+# Return list of all users
+@app.route('/accounts/<uid>')
+def accounts(uid):
+	return list_accounts(uid)
+
+# Delete User Account
+@app.route('/delete-user/<uid>/<email>')
+def delete_account(uid, email):
+	return delete_user(uid, email)
+
+# MAke User Admin
+@app.route('/make-admin', methods=['PUT'])
+def make_user_admin():
+	return make_admin(request.json['uid'], request.json['email'])
+
+# Make Admin a User
+@app.route('/remove-admin', methods=['PUT'])
+def make_admin_user():
+	return remove_admin(request.json['uid'], request.json['email'])
+
+# Get SAS URL
+@app.route('/get-sas/<uid>')
+def get_sas(uid):
+	type = get_type(uid)
+	if type == "ADMIN":
+		return get_account_sas(uid.lower())
+	if type == "USER":
+		return get_container_sas(uid.lower())
+	return {"ERROR": {"code": 401, "message": "UNAUTHORIZED"}}
+
+
+
 
 
 # Running app

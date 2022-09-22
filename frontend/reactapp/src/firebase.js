@@ -150,3 +150,10 @@ export const createUserDocumentFromAuth = async (
 
 export const onAuthStateChangedListener = (callback) =>
 onAuthStateChanged(auth, callback);
+
+export const getUsers = async () => {
+	const usersRef = collection(db, 'users');
+	const q = query(usersRef);
+	const querySnapshot = await getDocs(q);
+	return querySnapshot.docs.map((doc) => doc.data());
+}
