@@ -38,6 +38,15 @@ def Show_Containers_Blobs(index_boo):
 
     return {"mydata": list_blobs_in_container(index_boo)}
 
+@app.route('/mydatapageanalyse/<index_boo>')
+def Show_Containers_Blobss(index_boo):
+    l_s = list_blobs_in_container(index_boo)
+    print("___________________________---")
+    
+    data = list(filter(lambda x: "Analyse" in x, l_s))
+    print(data)
+    return {"mydata": data }
+
 
 @app.route("/lol/<index_no>/<index_glo>")
 def download_blobs(index_no, index_glo):
