@@ -110,7 +110,7 @@ function Profile() {
 		  ).then((res) =>
 		  res.json().then((data) => {
 			  // Setting a data from api
-			  setdata(data.Message);
+			  setdata(data);
 			  console.log(JSON.stringify(data.Message));
 			  alert(JSON.stringify(data.Message));
 	  })
