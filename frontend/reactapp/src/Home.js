@@ -95,13 +95,18 @@ function Profile() {
 
 	// }
 
+	function uploadingPopup(a){
+		document.getElementById("UploadmyForm").style.display = "block";
+		document.getElementById("textUpload").innerHTML=a ; 
+	}
+
 	
 	const uploadFile = async (e) => {
 		const file = e.target.files[0];
 		if (file != null) {
 		  const data = new FormData();
 		  data.append('file_from_react', file);
-	  
+		  document.getElementById("UploadmyForm").style.display = "block";
 		  fetch("/ur/"+currentUser?.email,
 			{
 			  method: 'post',
@@ -112,13 +117,17 @@ function Profile() {
 			  // Setting a data from api
 			  setdata(data);
 			  console.log(JSON.stringify(data.Message));
-			  alert(JSON.stringify(data.Message));
+			//   alert(JSON.stringify(data.Message));
+			uploadingPopup(JSON.stringify(data.Message));
+			document.getElementById("Uploadcancel").style.display = "block";
 	  })
 		  );
 		//   let res = await response.json();
 		//   if (res.status !== 1){
 		// 	alert('Error uploading file');
 		//   }
+
+		
 		}
 	  };
 
@@ -164,6 +173,7 @@ function Profile() {
 			// document.getElementById("textResults").innerHTML=window.countt;
 			// document.getElementById("ResultmyForm").style.display = "block";
 			resultsDiv(countt,mes,link);
+			document.getElementById("resultcancel").style.display = "block";
 	} 
 	 
 	)
@@ -185,6 +195,10 @@ function Profile() {
 		document.getElementById("ResultmyForm").style.display = "none";
 	}
 	
+	function closeUploadForm() {
+		document.getElementById("UploadmyForm").style.display = "none";
+	}
+
 	function resultsDiv(a,b,linkk){
 			
 		document.getElementById("ResultmyForm").style.display = "block";
@@ -318,11 +332,18 @@ function Profile() {
 				<div className="Resultform-container">
 					<h1>Results:</h1>
 					<div id="textResults"></div>
-					<button type="button" onClick={() => closeResultForm()} className="cancel">Cancel</button>
+					<button id='resultcancel' type="button" onClick={() => closeResultForm()} className="cancel">Cancel</button>
 				</div>
 			</div>
 
 
+			<div className="Uploadform-popup" id="UploadmyForm">
+				<div className="Uploadform-container">
+					
+					 <div id="textUpload">Uploading...</div>
+					<button  id='Uploadcancel'   type="button" onClick={() => closeUploadForm()} className="cancel">Cancel</button>
+				</div>
+			</div>
 
 
 
