@@ -1,4 +1,4 @@
-backend/VideoAI/yolo-coco/yolov3.weights
+yolov3.weights
 node_modules
 flask_env
 .env
