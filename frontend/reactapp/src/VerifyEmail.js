@@ -1,17 +1,17 @@
 import './verifyEmail.css'
-import {useAuthValue} from './AuthContext'
 import {useState, useEffect} from 'react'
 import {auth} from './firebase'
 import {sendEmailVerification} from 'firebase/auth'
 import {useNavigate} from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { selectCurrentUser } from './store/user/user.selector'
 
 function VerifyEmail() {
 
-  const {currentUser} = useAuthValue()
   const [time, setTime] = useState(60)
   const {timeActive, setTimeActive} = useAuthValue()
   const navigate = useNavigate()
-
+  const currentUser = useSelector(selectCurrentUser)
   useEffect(() => {
     const interval = setInterval(() => {
       currentUser?.reload()

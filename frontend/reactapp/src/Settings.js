@@ -1,5 +1,4 @@
 import './profile.css'
-import {useAuthValue} from './AuthContext'
 import { signOut,sendPasswordResetEmail } from 'firebase/auth' 
 import { auth } from './firebase'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
@@ -18,6 +17,8 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { purple } from '@mui/material/colors';
 import Switch from '@mui/material/Switch';
 import { alpha, styled } from '@mui/material/styles';
+import { useSelector } from 'react-redux';
+import { selectCurrentUser } from './store/user/user.selector';
 
 
 
@@ -25,7 +26,7 @@ import { alpha, styled } from '@mui/material/styles';
 //change
 function Profile() {
   
-  const {currentUser} = useAuthValue()
+  const currentUser = useSelector(selectCurrentUser)
 
   const SendEmail= e => {
     sendPasswordResetEmail(auth, currentUser?.email)

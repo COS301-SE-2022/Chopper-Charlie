@@ -3,7 +3,6 @@ import './forms.css'
 import {auth} from './firebase'
 import {useNavigate} from 'react-router-dom'
 import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
-import {useAuthValue} from './AuthContext'
 
 function Register() {
   

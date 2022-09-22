@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import {useAuthValue} from './AuthContext'
 import './profile.css'
 import DeleteIcon from '@mui/icons-material/Delete';
+import { selectCurrentUser } from "./store/user/user.selector";
+import { useSelector } from "react-redux";
 
 //i hope it worked
 
 function Delete() {
-	const {currentUser} = useAuthValue()
-	// object for storing and using data
+	const currentUser = useSelector(selectCurrentUser)	// object for storing and using data
 	const [data, setdata] = useState({
 		
 	});

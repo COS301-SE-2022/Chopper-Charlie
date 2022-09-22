@@ -1,14 +1,15 @@
 import { Alert } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
-import {useAuthValue} from './AuthContext'
 import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
 import './profile.css'
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "./store/user/user.selector";
 
 
 
 
 function Upload() {
-	const {currentUser} = useAuthValue()
+	const currentUser = useSelector(selectCurrentUser)
 	// object for storing and using data
 	const [data, setdata] = useState({
 		

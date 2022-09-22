@@ -1,5 +1,4 @@
 import './profile.css'
-import {useAuthValue} from './AuthContext'
 import { signOut } from 'firebase/auth' 
 import { auth } from './firebase'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
@@ -12,6 +11,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
+import { useSelector } from 'react-redux';
+import { selectCurrentUser } from './store/user/user.selector';
 
 
 
@@ -20,7 +21,7 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 //change
 function Profile() {
   
-  const {currentUser} = useAuthValue()
+  const currentUser = useSelector(selectCurrentUser)
 
   return (
    

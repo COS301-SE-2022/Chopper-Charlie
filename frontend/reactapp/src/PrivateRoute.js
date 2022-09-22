@@ -1,11 +1,11 @@
+import { useSelector } from 'react-redux'
 import {Navigate} from 'react-router-dom'
-import {useAuthValue} from './AuthContext'
+import { selectCurrentUser } from './store/user/user.selector'
 
 export default function PrivateRoute({children}) {
 
   
-  const {currentUser} = useAuthValue()
-  
+  const currentUser = useSelector(selectCurrentUser)  
 
 
   
