@@ -163,7 +163,7 @@ function Profile() {
 			// alert(mes+"\n"+countt+"\n"+link);
 			// document.getElementById("textResults").innerHTML=window.countt;
 			// document.getElementById("ResultmyForm").style.display = "block";
-			resultsDiv(countt);
+			resultsDiv(countt,mes,link);
 	} 
 	 
 	)
@@ -185,10 +185,12 @@ function Profile() {
 		document.getElementById("ResultmyForm").style.display = "none";
 	}
 	
-	function resultsDiv(tt){
+	function resultsDiv(a,b,linkk){
 			
 		document.getElementById("ResultmyForm").style.display = "block";
-		document.getElementById("textResults").innerHTML=tt;
+		var h= "<a href="+linkk+"><button id= analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 24 }} /><br></br>Download</button></a>";
+		document.getElementById("textResults").innerHTML=a + b + h;        
+
 	}
 
 
