@@ -4,3 +4,4 @@ flask_env
 .env
 firebasePrivateKey.json
 *.pyc
+dist
