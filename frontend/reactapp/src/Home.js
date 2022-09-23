@@ -20,10 +20,9 @@ import { selectCurrentUser } from './store/user/user.selector';
 
 //change
 function Profile() {
-<<<<<<< HEAD
 
 
-	
+	// i allowed merges
 
 
 
@@ -31,10 +30,6 @@ function Profile() {
 	
 
 	const { currentUser } = useAuthValue();
-=======
-	// const { currentUser } = useAuthValue();
-	const currentUser = useSelector(selectCurrentUser);
->>>>>>> 9f37639c13aaa827d6c46b5ae718fcfd29bf31c2
 	// object for storing and using data
 	const [data, setdata] = useState({});
 	const [isAdmin, setIsAdmin] = useState(false);
@@ -424,13 +419,7 @@ function Profile() {
 							<p>Admin</p>
 						</button>
 					</a>
-<<<<<<< HEAD
 					
-=======
-
-					<br />
-				</div>
->>>>>>> 9f37639c13aaa827d6c46b5ae718fcfd29bf31c2
 
 				</div>
 				<br />
