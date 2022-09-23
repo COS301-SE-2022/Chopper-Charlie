@@ -28,8 +28,8 @@ function Profile() {
 
 
 	
-
-	const { currentUser } = useAuthValue();
+	const currentUser = useSelector(selectCurrentUser)
+	// const { currentUser } = useAuthValue();
 	// object for storing and using data
 	const [data, setdata] = useState({});
 	const [isAdmin, setIsAdmin] = useState(false);
@@ -84,7 +84,7 @@ function Profile() {
 		res.json().then((data) => {
 			// Setting a data from api
 			setdata(data);
-			// console.log(data);
+			//  console.log(data);
 		})
 	);
 

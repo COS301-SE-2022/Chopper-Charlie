@@ -5,7 +5,7 @@ from firebase_admin import credentials
 from azure_storage import create_user_container, delete_container
 import json
 
-cred = credentials.Certificate("firebasePrivateKey.json")
+cred = credentials.Certificate("backend/Flask/firebasePrivateKey.json")
 default_app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
