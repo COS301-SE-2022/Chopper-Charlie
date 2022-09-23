@@ -216,7 +216,7 @@ function Profile() {
 
 			<div id="Searchbar">
 				<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }} /></button>
-				<a id='pagelinks' href="/homelist"><button id="viewList"  ><ViewListOutlinedIcon id="listOption" /></button></a>
+				<a id='pagelinks' href="/Resultslist"><button id="viewList"  ><ViewListOutlinedIcon id="listOption" /></button></a>
 				<button id="viewGrid"><GridViewIcon id="listOptionactive" /></button>
 
 			</div>

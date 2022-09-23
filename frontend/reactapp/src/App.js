@@ -19,6 +19,7 @@ import AnalyseVideo from './AnalyseVideo'; //added by mumi
 import Home from './Home'; //added by mumi
 import Homelist from './Homelist'; //added by mumi
 import Results from './Results'; //added by mumi
+import ResultsList from './ResultsList'; //added by mumi
 import { useDispatch, useSelector } from 'react-redux'; 
 import {
 	getPipelines,
@@ -96,6 +97,7 @@ function App() {
           <Route path='/Home' element={<Home/>} />    {/*    added by mumi */}
           <Route path='/Homelist' element={<Homelist/>} />    {/*    added by mumi */}
           <Route path='/Results' element={<Results/>} />    {/*    added by mumi */}
+          <Route path='/ResultsList' element={<ResultsList/>} />    {/*    added by mumi */}
         </Routes>  
       </AuthProvider>
   
