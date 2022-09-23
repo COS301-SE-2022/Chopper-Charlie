@@ -352,18 +352,19 @@ function Profile() {
 
 			<div className='profile'>
 
-				<img src={require('./logo.png')} width="80%" height="17%" alt="Logo" />
+				<img src={require('./logo.png')} width="60%" height="13%" alt="Logo" />
 
 
 
-				<br />
-				<AccountCircleRoundedIcon sx={{ fontSize: 45 }} />
+				<br/>
+				<br/>
+				<AccountCircleRoundedIcon sx={{ fontSize: 35 }} />
 
-				<br />
+			
 				<h4 id="user-id"><strong> </strong>{currentUser?.email}</h4>
-				<br />
+				
 				<hr />
-				<br />
+			
 
 				<div>
 					<button type='button' id='home'><HomeRoundedIcon id='icon' /><p>Home</p></button>
@@ -371,7 +372,7 @@ function Profile() {
 					<a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon' /><p>Pipelines</p></button></a>
 					<a id='pagelinks' href="/results"><button type='button' id='home'><FiberManualRecordIcon id='icon' /><p>Results</p></button></a>
 					<a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon' /><p>Settings</p></button></a>
-					<br />
+					
 
 				</div>
 

@@ -156,8 +156,10 @@ padding-right: 5%;
 }
 
 #home{
-    height: 32px;
-    margin: 2%;
+    height: 37px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    
     text-align: left;
     color: #333237;;
     padding-left: 10%;
@@ -748,7 +750,7 @@ margin-left: 3%;
 width: 65%;
 height: 50px;
 background-color:#1F1F21; ;
-border-radius: 25px 0 0 25px;
+border-radius: 15px;
  }
 
 
@@ -769,7 +771,7 @@ padding-left: 5%;
 #searchhh{
   color: #e3ddf6;
   background-color:#000000;
-  border-radius: 25px 0 0 25px;
+  border-radius: 15px 0 0 15px;
   border-color: #000000;
   margin-left: 3%;
   margin-top: 0.8%;
@@ -782,12 +784,12 @@ padding-left: 5%;
 #searchbuttonn{
   color: #e3ddf6;
   background-color:#000000;
-  border-radius:  0 25px 25px 0 ;
+  border-radius:  0 15px 15px 0 ;
   border-color: #353336;
   margin-top: 0.8%;
   width: 5%;
   height: 35px;
-  cursor: text;
+  cursor: pointer;
 }
 
 #uploadInput{
