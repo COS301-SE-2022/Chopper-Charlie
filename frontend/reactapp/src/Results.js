@@ -214,18 +214,12 @@ function Profile() {
 
 		<div >
 
-			{/* <div id="Searchbar">
+			<div id="Searchbar">
 				<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }} /></button>
 				<a id='pagelinks' href="/homelist"><button id="viewList"  ><ViewListOutlinedIcon id="listOption" /></button></a>
 				<button id="viewGrid"><GridViewIcon id="listOptionactive" /></button>
 
-				
-					
-
-
-
-
-			</div> */}
+			</div>
 
 			{(typeof data.mydata === 'undefined') ? (
 				<div className="lds-ring"><div></div><div></div><div></div><div></div></div>

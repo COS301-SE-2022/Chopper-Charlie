@@ -213,7 +213,28 @@ function Profile() {
 	return (
 
 
-		<div >    
+		<div > 
+
+
+
+<div className="Resultform-popup" id="ResultmyForm">
+				<div className="Resultform-container">
+					<h1>Results:</h1>
+					<div id="textResults"></div>
+					<button id='resultcancel' type="button" onClick={() => closeResultForm()} className="cancel">Cancel</button>
+				</div>
+			</div>
+
+
+			<div className="Uploadform-popup" id="UploadmyForm">
+				<div className="Uploadform-container">
+					
+					 <div id="textUpload">Uploading...</div>
+					<button  id='Uploadcancel'   type="button" onClick={() => closeUploadForm()} className="cancel">Cancel</button>
+				</div>
+			</div>
+
+
 
 		<div id="Searchbar">
 			<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }}/></button>
@@ -249,7 +270,7 @@ function Profile() {
           event.target.src = require('./vidImg.png')
           event.onerror = null
         }}    /><h2>{thedata}</h2>
-		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  onClick={()=>downData(thedata)}   ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
+		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
 		<button id="AnalyseButtonList" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
 		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button>
 
@@ -318,22 +339,6 @@ function Profile() {
 	  }
 
 
-<div className="Resultform-popup" id="ResultmyForm">
-				<div className="Resultform-container">
-					<h1>Results:</h1>
-					<div id="textResults"></div>
-					<button id='resultcancel' type="button" onClick={() => closeResultForm()} className="cancel">Cancel</button>
-				</div>
-			</div>
-
-
-			<div className="Uploadform-popup" id="UploadmyForm">
-				<div className="Uploadform-container">
-					
-					 <div id="textUpload">Uploading...</div>
-					<button  id='Uploadcancel'   type="button" onClick={() => closeUploadForm()} className="cancel">Cancel</button>
-				</div>
-			</div>
 
 
 
