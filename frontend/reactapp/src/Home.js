@@ -19,6 +19,15 @@ import { selectPipelines } from './store/pipelines/pipelines.selector';
 
 //change
 function Profile() {
+
+
+	
+
+
+
+
+	
+
 	const { currentUser } = useAuthValue();
 	// object for storing and using data
 	const [data, setdata] = useState({});
@@ -181,6 +190,7 @@ function Profile() {
 	}
 
 	return (
+		
 		<div>
 			<div id='Searchbar'>
 				<input id='searchhh'></input>
@@ -202,11 +212,11 @@ function Profile() {
 						onChange={uploadFile}>
 					</input> */}
 
-				<div id='uploadInput'>
-					<label for='fileInput' class='btn'>
+				
+					<label  id='uploadInput' for='fileInput' class='btn'>
 						Upload
 					</label>
-				</div>
+				
 				<input id='fileInput' type='file' onChange={uploadFile}></input>
 			</div>
 
@@ -349,9 +359,9 @@ function Profile() {
 					<strong> </strong>
 					{currentUser?.email}
 				</h4>
-				<br />
-				<hr />
-				<br />
+				
+				{/* <hr /> */}
+				
 
 				<div>
 					<button type='button' id='home'>
@@ -378,10 +388,11 @@ function Profile() {
 							<p>Admin</p>
 						</button>
 					</a>
-					<br />
-				</div>
+					
 
-				<hr />
+				</div>
+				<br />
+				{/* <hr /> */}
 
 				<br />
 
@@ -404,6 +415,7 @@ function Profile() {
 				</div>
 			</div>
 		</div>
+		
 	);
 }
 
