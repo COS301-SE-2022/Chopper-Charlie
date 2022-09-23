@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import {
 	deleteFileInAccount,
 	listFilesInAccount,
@@ -34,6 +35,7 @@ const Account = () => {
 	const [data, setdata] = useState({});
 	const [userRole, setUserRole] = useState('');
 	const [adminRole, setAdminRole] = useState('');
+	let navigate = useNavigate();
 
 	useEffect(() => {
 		fetch('/mydatapage/' + accountName).then((res) =>
@@ -220,12 +222,14 @@ const Account = () => {
 	}
 
 	const handleDelete = async () => {
+		// navigate("/admin");
+
 		try {
-			fetch('/delete-user/' + currentUser.uid + accountName).then((res) =>
+			fetch(`/delete-user/${currentUser.uid}/${accountName}`).then((res) =>
 				res.json().then((data) => {
 					// Setting a data from api
-					console.log('The user is of role: ' + data.role);
-					setUserRole(data.role);
+					console.log('Reply from deleting user: ' + data.SUCCESS.message || data.ERROR.message);
+					navigate("/admin");
 					// console.log(data);
 				})
 			);
@@ -269,7 +273,7 @@ const Account = () => {
 			<h2>Accont: {accountName}</h2>
 			<h5>role: {userRole}</h5>
 			{adminRole === 'super' && !(userRole === 'super') && (
-				<button onClick={() => handleDelete()}>Delete Account</button>
+				<button onClick={handleDelete}>Delete Account</button>
 			)}
 			{adminRole === 'admin' &&
 				!(userRole === 'super' || userRole === 'admin') && (
