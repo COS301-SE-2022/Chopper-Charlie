@@ -8,8 +8,7 @@ import {
 	uploadFilesToAccount,
 } from '../../utils/azure/azure.utils';
 // import { selectSasUrl } from '../../store/user/user.selector';
-import './profile.css';
-import { useAuthValue } from './AuthContext';
+import '../../profile.css';
 import { signOut } from 'firebase/auth';
 // import { auth } from './firebase';
 import { auth } from '../../firebase';
@@ -43,6 +42,8 @@ const Account = () => {
 			})
 		);
 	}, []);
+
+	let str = accountName
 
 	function replace() {
 		var string = '';
@@ -232,7 +233,7 @@ const Account = () => {
 										height='220px'
 										alt='img'
 										onError={(event) => {
-											event.target.src = require('./vidImg.png');
+											event.target.src = require('../../vidImg.png');
 											event.onerror = null;
 										}}
 									/>
@@ -336,7 +337,7 @@ const Account = () => {
 			</div>
 
 			<div className='profile'>
-				<img src={require('./logo.png')} width='80%' height='17%' alt='Logo' />
+				<img src={require('../../logo.png')} width='80%' height='17%' alt='Logo' />
 
 				<br />
 				<AccountCircleRoundedIcon sx={{ fontSize: 45 }} />
@@ -392,7 +393,7 @@ const Account = () => {
 					{' '}
 					<img
 						id='ABlogo'
-						src={require('./AB.png')}
+						src={require('../../AB.png')}
 						width='35%'
 						height='40%'
 						alt='Logo'
