@@ -27,7 +27,7 @@ const Admin = () => {
 		<div className='admin-wrapper'>
 			<h2>User Accounts</h2>
 			<div className='accounts-grid'>
-				{accounts.map((account) => {
+				{accounts?.map((account) => {
 					return (
 						<Link to={`${account.email}`} key={account.email}>
 							<AccountCard account={account} />

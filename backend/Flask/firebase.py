@@ -95,9 +95,11 @@ def make_admin(uid, email):
     try:
         admin = auth.get_user(uid)
         user = auth.get_user_by_email(email)
+        city_ref = db.collection(u'users').document(user.uid)
         if  admin.custom_claims.get('super') == True:
             if user.custom_claims == None or user.custom_claims.get('admin') == False or user.custom_claims.get('admin') == None:
-                # auth.set_custom_user_claims(user.uid, {'admin': True})
+                auth.set_custom_user_claims(user.uid, {'admin': True})
+                city_ref.update({u'role': 'admin'})
                 # IF ACTION IS SUCCESSFUL
                 return {"SUCCESS": {"code": 200, "message": "User is now an Admin"}}
             # IF ACTION HAS ALREADY BEEN DONE
@@ -114,10 +116,12 @@ def remove_admin(uid, email):
     try:
         admin = auth.get_user(uid)
         user = auth.get_user_by_email(email)
+        city_ref = db.collection(u'users').document(user.uid)
         if  admin.custom_claims.get('super') == True:
             not_super = user.custom_claims.get('super') == None or user.custom_claims.get('super') == False
             if user.custom_claims.get('admin') == True  and not_super:
                 auth.set_custom_user_claims(user.uid, {'admin': False})
+                city_ref.update({u'role': 'user'})
                 # IF ACTION IS SUCCESSFUL
                 return {"SUCCESS": {"code": 200, "message": "User removed as Admin"}}       
             # IF ACTION HAS ALREADY BEEN DONE
@@ -133,15 +137,20 @@ def delete_user(uid, email):
     try:
         admin = auth.get_user(uid)
         user = auth.get_user_by_email(email)
+        
+        conatainer = email
+        conatainer = conatainer.replace('@', '')
+        conatainer = conatainer.replace('.', '')
+        conatainer = conatainer.replace('_', '')
         na = user.custom_claims.get('admin') == None or user.custom_claims.get('admin') == False
         ss = admin.custom_claims.get('admin') == True and na
         aa = admin.custom_claims.get('super') == True and user.custom_claims.get('super') == None
         # IF (SUPER DELETING NOT SUPER) OR (ADMIN DELETING NOT ADMIN)
         if ss or aa:
-            # delete_container(user.uid.lower())                          # Delete the AzureStorage Container ---> move to server
-            # db.collection("users").document(user.uid).delete()          # Delete the User from Firestore
-            # db.collection("pipelines").document(user.uid).delete()      # Delete the User's Pipeline from Firestore
-            # auth.delete_user(user.uid)                                  # Delete the User from Firebase
+            delete_container(conatainer)                                # Delete the AzureStorage Container ---> move to server
+            db.collection(u'users').document(user.uid).delete()          # Delete the User from Firestore
+            db.collection(u'pipelines').document(user.uid).delete()      # Delete the User's Pipeline from Firestore
+            auth.delete_user(user.uid)                                  # Delete the User from Firebase
             return {"SUCCESS": {"code": 200, "message": "User account deleted"}}
 
         return {"ERROR": {"code": 403, "message": "FORBIDDEN - You do not have permission"}}

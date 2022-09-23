@@ -152,14 +152,14 @@ def delete_account(uid, email):
 	return delete_user(uid, email)
 
 # MAke User Admin
-@app.route('/make-admin', methods=['PUT'])
-def make_user_admin():
-	return make_admin(request.json['uid'], request.json['email'])
+@app.route('/make-admin/<uid>/<email>')
+def make_user_admin(uid, email):
+	return make_admin(uid, email)
 
 # Make Admin a User
-@app.route('/remove-admin', methods=['PUT'])
-def make_admin_user():
-	return remove_admin(request.json['uid'], request.json['email'])
+@app.route('/remove-admin/<uid>/<email>')
+def make_admin_user(uid, email):
+	return remove_admin(uid, email)
 
 # Get SAS URL
 @app.route('/get-sas/<uid>')

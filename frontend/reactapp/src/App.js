@@ -76,7 +76,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={
             <PrivateRoute>
-              <Profile/>
+              <Home/>
             </PrivateRoute>
           }/>
           <Route path="/login" element={
