@@ -161,3 +161,20 @@ def get_type(uid):
         return "ADMIN"
     except:
         return "UNAUTHORIZED"
+
+
+def get_type_email(email):
+    try:
+        user = auth.get_user_by_email(email)
+        print(user.custom_claims)
+        print('the user is' + user.uid)
+        if (not user.custom_claims) or user.custom_claims.get('admin') == None or user.custom_claims.get('admin') == False:
+            print('user is verified')
+            return {"role": "user"}
+        if user.custom_claims.get('super') == True:
+            print('user is verified')
+            return {"role": "super"}
+        # if user.custom_claims.get('admin') == True:
+        return{"role": "admin"}
+    except:
+        return {"role": "UNAUTHORIZED"}

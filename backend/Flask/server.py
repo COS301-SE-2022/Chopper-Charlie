@@ -172,7 +172,9 @@ def get_sas(uid):
 	return {"ERROR": {"code": 401, "message": "UNAUTHORIZED"}}
 
 
-
+@app.route('/get-type/<email>')
+def get_account_type(email):
+    return get_type_email(email)
 
 
 # Running app

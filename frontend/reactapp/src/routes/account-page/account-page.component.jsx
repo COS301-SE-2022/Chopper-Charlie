@@ -26,24 +26,64 @@ import GridViewIcon from '@mui/icons-material/GridView';
 import { selectPipelines } from '../../store/pipelines/pipelines.selector';
 import { selectCurrentUser } from '../../store/user/user.selector';
 
-
 const Account = () => {
 	const currentUser = useSelector(selectCurrentUser);
 	const params = useParams();
 	const { accountName } = params;
+	const [files, setFiles] = useState([]);
 	const [data, setdata] = useState({});
+	const [userRole, setUserRole] = useState('');
+	const [adminRole, setAdminRole] = useState('');
 
 	useEffect(() => {
 		fetch('/mydatapage/' + accountName).then((res) =>
 			res.json().then((data) => {
 				// Setting a data from api
-				setdata(data);
+				setFiles(data);
 				// console.log(data);
 			})
 		);
+	}, [data]);
+
+	useEffect(() => {
+		fetch('/get-type/' + accountName).then((res) =>
+			res.json().then((data) => {
+				// Setting a data from api
+				console.log('The user is of role: ' + data.role);
+				setUserRole(data.role);
+				// console.log(data);
+			})
+		);
+
+		try {
+			currentUser
+				.getIdTokenResult()
+				.then((idTokenResult) => {
+					// Confirm the user is an Admin.
+					if (!!idTokenResult.claims.admin) {
+						// Show admin UI.
+						setAdminRole('admin');
+						console.log('This is an admin user');
+					} 
+					if (!!idTokenResult.claims.super) {
+						// Show admin UI.
+						setAdminRole('super');
+						console.log('This is a super user');
+					} 
+					else {
+						// Show regular user UI.
+						console.log('This is not admin user');
+					}
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		} catch (error) {
+			console.log('Error getting custom claims: ', error);
+		}
 	}, []);
 
-	let str = accountName
+	let str = accountName;
 
 	function replace() {
 		var string = '';
@@ -70,6 +110,7 @@ const Account = () => {
 					setdata(data.Message);
 					console.log(JSON.stringify(data.Message));
 					alert(JSON.stringify(data.Message));
+					setFiles([]);
 				})
 			);
 		}
@@ -97,6 +138,7 @@ const Account = () => {
 					//   alert(JSON.stringify(data.Message));
 					uploadingPopup(JSON.stringify(data.Message));
 					document.getElementById('Uploadcancel').style.display = 'block';
+					setFiles([]);
 				})
 			);
 			//   let res = await response.json();
@@ -181,6 +223,9 @@ const Account = () => {
 	return (
 		<div>
 			<h2>Accont: {accountName}</h2>
+			{(adminRole === "super" && !(userRole === "super")) && <button>Delete Account</button>}
+			{(adminRole === "super" && userRole === "user") && <button>Make Admin</button>}
+			{(adminRole === "super" && userRole === "admin") && <button>Remove Admin</button>}
 			<div id='Searchbar'>
 				<input id='searchhh'></input>
 				<button id='searchbuttonn'>
@@ -209,7 +254,7 @@ const Account = () => {
 				<input id='fileInput' type='file' onChange={uploadFile}></input>
 			</div>
 
-			{typeof data.mydata === 'undefined' ? (
+			{typeof files.mydata === 'undefined' ? (
 				<div className='lds-ring'>
 					<div></div>
 					<div></div>
@@ -217,7 +262,7 @@ const Account = () => {
 					<div></div>
 				</div>
 			) : (
-				data.mydata.map((thedata, i) => (
+				files.mydata.map((thedata, i) => (
 					<div className='center'>
 						<div id='HomeContent'>
 							<div id='MediaBlock'>
@@ -338,7 +383,12 @@ const Account = () => {
 			</div>
 
 			<div className='profile'>
-				<img src={require('../../logo.png')} width='80%' height='17%' alt='Logo' />
+				<img
+					src={require('../../logo.png')}
+					width='80%'
+					height='17%'
+					alt='Logo'
+				/>
 
 				<br />
 				<AccountCircleRoundedIcon sx={{ fontSize: 45 }} />
