@@ -1,8 +1,18 @@
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+	deleteFileInAccount,
+	listFilesInAccount,
+	uploadFilesToAccount,
+} from '../../utils/azure/azure.utils';
+// import { selectSasUrl } from '../../store/user/user.selector';
 import './profile.css';
 import { useAuthValue } from './AuthContext';
 import { signOut } from 'firebase/auth';
-import { auth } from './firebase';
-import React, { useState } from 'react';
+// import { auth } from './firebase';
+import { auth } from '../../firebase';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
@@ -14,16 +24,25 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 import SearchIcon from '@mui/icons-material/Search';
 import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
 import GridViewIcon from '@mui/icons-material/GridView';
-import { useSelector } from 'react-redux';
-import { selectPipelines } from './store/pipelines/pipelines.selector';
+import { selectPipelines } from '../../store/pipelines/pipelines.selector';
+import { selectCurrentUser } from '../../store/user/user.selector';
 
-//change
-function Profile() {
-	const { currentUser } = useAuthValue();
-	// object for storing and using data
+
+const Account = () => {
+	const currentUser = useSelector(selectCurrentUser);
+	const params = useParams();
+	const { accountName } = params;
 	const [data, setdata] = useState({});
 
-	let str = currentUser?.email;
+	useEffect(() => {
+		fetch('/mydatapage/' + accountName).then((res) =>
+			res.json().then((data) => {
+				// Setting a data from api
+				setdata(data);
+				// console.log(data);
+			})
+		);
+	}, []);
 
 	function replace() {
 		var string = '';
@@ -42,22 +61,9 @@ function Profile() {
 		return string;
 	}
 
-	// Using useEffect for single rendering
-
-	// Using fetch to fetch the api from
-	// flask server it will be redirected to proxy
-
-	fetch('/mydatapage/' + currentUser?.email).then((res) =>
-		res.json().then((data) => {
-			// Setting a data from api
-			setdata(data);
-			// console.log(data);
-		})
-	);
-
 	function delData(str) {
 		if (window.confirm('Are you sure you want to delete media?') === true) {
-			fetch('/db/' + str + '/' + currentUser?.email).then((res) =>
+			fetch('/db/' + str + '/' + accountName).then((res) =>
 				res.json().then((data) => {
 					// Setting a data from api
 					setdata(data.Message);
@@ -67,15 +73,6 @@ function Profile() {
 			);
 		}
 	}
-
-	function downData(str) {
-		fetch('/lol/' + str + '/' + currentUser?.email);
-	}
-
-	// function upData() {
-	// 	fetch("/ub/" + currentUser?.email)
-
-	// }
 
 	function uploadingPopup(a) {
 		document.getElementById('UploadmyForm').style.display = 'block';
@@ -88,7 +85,7 @@ function Profile() {
 			const data = new FormData();
 			data.append('file_from_react', file);
 			document.getElementById('UploadmyForm').style.display = 'block';
-			fetch('/ur/' + currentUser?.email, {
+			fetch('/ur/' + accountName, {
 				method: 'post',
 				body: data,
 			}).then((res) =>
@@ -132,7 +129,7 @@ function Profile() {
 			'/ai/video/' +
 				media +
 				'/' +
-				currentUser?.email +
+				accountName +
 				'/' +
 				typeAnalysis +
 				'/' +
@@ -198,9 +195,9 @@ function Profile() {
 				{/* <button id='uploadButton' onClick={() => upData()}   >Upload</button> */}
 
 				{/* <input id='uploadInput'
-						type="file"
-						onChange={uploadFile}>
-					</input> */}
+					type="file"
+					onChange={uploadFile}>
+				</input> */}
 
 				<div id='uploadInput'>
 					<label for='fileInput' class='btn'>
@@ -365,7 +362,6 @@ function Profile() {
 							<p>Pipelines</p>
 						</button>
 					</a>
-					<a id='pagelinks' href="/results"><button type='button' id='home'><FiberManualRecordIcon id='icon' /><p>Results</p></button></a>
 					<a id='pagelinks' href='/settings'>
 						<button type='button' id='home'>
 							<SettingsRoundedIcon id='icon' />
@@ -405,6 +401,6 @@ function Profile() {
 			</div>
 		</div>
 	);
-}
+};
 
-export default Profile;
+export default Account;

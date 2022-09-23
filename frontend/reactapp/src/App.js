@@ -21,12 +21,14 @@ import Homelist from './Homelist'; //added by mumi
 import Results from './Results'; //added by mumi
 import ResultsList from './ResultsList'; //added by mumi
 import { useDispatch, useSelector } from 'react-redux'; 
+import Admin from './routes/admin/admin-page.component';
 import {
 	getPipelines,
 	onAuthStateChangedListener,
 } from './firebase';
 
 import { setPipelinesArray } from './store/pipelines/pipelines.action';
+import Account from './routes/account-page/account-page.component';
 import { selectCurrentUser } from './store/user/user.selector';
 import { setCurrentUser } from './store/user/user.action';
 
@@ -95,6 +97,8 @@ function App() {
           <Route path='/settings' element={<Settings/>} />    {/*    added by mumi */}
           <Route path='/analysevideo' element={<AnalyseVideo/>} /> 
           <Route path='/Home' element={<Home/>} />    {/*    added by mumi */}
+          <Route path='/admin' element={<Admin/>} />    {/*    added by mumi */}
+          <Route path='admin/:accountName' element={<Account />} />
           <Route path='/Homelist' element={<Homelist/>} />    {/*    added by mumi */}
           <Route path='/Results' element={<Results/>} />    {/*    added by mumi */}
           <Route path='/ResultsList' element={<ResultsList/>} />    {/*    added by mumi */}

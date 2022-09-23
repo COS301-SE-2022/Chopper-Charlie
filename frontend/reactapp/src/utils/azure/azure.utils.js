@@ -98,30 +98,30 @@ export const deleteFile = async (fileName, sasURL) => {
 // };
 
 
-export const deleteAccount = async (containerName, blobURL) => {
-	try {
-		const blobServiceClient = new BlobServiceClient(blobURL);
-		console.log('Deleting account');
-		await blobServiceClient.deleteContainer(containerName);
-		return listAccounts();
-	} catch (error) {
-		console.log('error in azure delete account', error);
-	}
-};
+// export const deleteAccount = async (containerName, blobURL) => {
+// 	try {
+// 		const blobServiceClient = new BlobServiceClient(blobURL);
+// 		console.log('Deleting account');
+// 		await blobServiceClient.deleteContainer(containerName);
+// 		return listAccounts();
+// 	} catch (error) {
+// 		console.log('error in azure delete account', error);
+// 	}
+// };
 
-export const createAccountContainer = async (containerName, blobURL) => {
-	try {
-		const blobServiceClient = new BlobServiceClient(blobURL);
-		console.log('Creating account container');
-		await blobServiceClient.createContainer(containerName);
-		return listAccounts();
-	} catch (error) {
-		console.log('error in azure create account', error);
-	}
-};
+// export const createAccountContainer = async (containerName, blobURL) => {
+// 	try {
+// 		const blobServiceClient = new BlobServiceClient(blobURL);
+// 		console.log('Creating account container');
+// 		await blobServiceClient.createContainer(containerName);
+// 		return listAccounts();
+// 	} catch (error) {
+// 		console.log('error in azure create account', error);
+// 	}
+// };
 
 
-export const listFilesInAccouunt = async (accountName, blobURL) => {
+export const listFilesInAccount = async (accountName, blobURL) => {
 	try {
 		const blobServiceClient = new BlobServiceClient(blobURL);
 		console.log('fetching file list');
