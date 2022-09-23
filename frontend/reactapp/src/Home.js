@@ -369,6 +369,7 @@ function Profile() {
 					<button type='button' id='home'><HomeRoundedIcon id='icon' /><p>Home</p></button>
 
 					<a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon' /><p>Pipelines</p></button></a>
+					<a id='pagelinks' href="/results"><button type='button' id='home'><FiberManualRecordIcon id='icon' /><p>Results</p></button></a>
 					<a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon' /><p>Settings</p></button></a>
 					<br />
 

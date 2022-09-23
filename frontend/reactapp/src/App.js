@@ -18,18 +18,22 @@ import Settings from './Settings'; //added by mumi
 import AnalyseVideo from './AnalyseVideo'; //added by mumi
 import Home from './Home'; //added by mumi
 import Homelist from './Homelist'; //added by mumi
-import { useDispatch } from 'react-redux'; 
+import Results from './Results'; //added by mumi
+import ResultsList from './ResultsList'; //added by mumi
+import { useDispatch, useSelector } from 'react-redux'; 
 import {
 	getPipelines,
 	onAuthStateChangedListener,
 } from './firebase';
 
 import { setPipelinesArray } from './store/pipelines/pipelines.action';
-
+import { selectCurrentUser } from './store/user/user.selector';
+import { setCurrentUser } from './store/user/user.action';
 
 function App() {
 
-  const [currentUser, setCurrentUser] = useState(null)
+  // const [currentUser, setCurrentUser] = useState(null)
+  const currentUser = useSelector(selectCurrentUser)
   const [timeActive, setTimeActive] = useState(false)
 
   // useEffect(() => {
@@ -92,6 +96,8 @@ function App() {
           <Route path='/analysevideo' element={<AnalyseVideo/>} /> 
           <Route path='/Home' element={<Home/>} />    {/*    added by mumi */}
           <Route path='/Homelist' element={<Homelist/>} />    {/*    added by mumi */}
+          <Route path='/Results' element={<Results/>} />    {/*    added by mumi */}
+          <Route path='/ResultsList' element={<ResultsList/>} />    {/*    added by mumi */}
         </Routes>  
       </AuthProvider>
   

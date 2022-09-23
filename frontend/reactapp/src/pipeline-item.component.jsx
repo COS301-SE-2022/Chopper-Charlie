@@ -15,7 +15,10 @@ const PipelineItem = ({ pipelineItem }) => {
 	const dispatch = useDispatch();
 	const pipelines = useSelector(selectPipelines);
 	const remover = () => {
-		dispatch(removeItemFromPipelines(pipelines, pipelineItem, currentUser));
+
+		if (window.confirm("Are you sure you want to delete this pipeline?") === true) {
+			dispatch(removeItemFromPipelines(pipelines, pipelineItem, currentUser));
+		}
 	};
 
 
@@ -133,7 +136,7 @@ const PipelineItem = ({ pipelineItem }) => {
 					},
 				}}
 				onClick={remover}>
-				<DeleteIcon fontSize='inherit' sx={{ fontSize: 35, color: 'white' }} />
+				<DeleteIcon   fontSize='inherit' sx={{ fontSize: 35, color: 'white' }} />
 			</IconButton>
 		</Stack>
 	);

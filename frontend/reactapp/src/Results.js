@@ -1,6 +1,6 @@
 import './profile.css'
-import {useAuthValue} from './AuthContext'
-import { signOut } from 'firebase/auth' 
+import { useAuthValue } from './AuthContext'
+import { signOut } from 'firebase/auth'
 import { auth } from './firebase'
 import React, { useState } from "react";
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
@@ -53,7 +53,7 @@ function Profile() {
 	// Using fetch to fetch the api from
 	// flask server it will be redirected to proxy
 
-	fetch("/mydatapage/" + currentUser?.email).then((res) =>
+	fetch("/mydatapageanalyse/" + currentUser?.email).then((res) =>
 		res.json().then((data) => {
 			// Setting a data from api
 			setdata(data);
@@ -209,76 +209,60 @@ function Profile() {
 
 
 
-
 	return (
 
 
-		<div > 
+		<div >
 
+			<div id="Searchbar">
+				<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }} /></button>
+				<a id='pagelinks' href="/Resultslist"><button id="viewList"  ><ViewListOutlinedIcon id="listOption" /></button></a>
+				<button id="viewGrid"><GridViewIcon id="listOptionactive" /></button>
 
-
-<div className="Resultform-popup" id="ResultmyForm">
-				<div className="Resultform-container">
-					<h1>Results:</h1>
-					<div id="textResults"></div>
-					<button id='resultcancel' type="button" onClick={() => closeResultForm()} className="cancel">Cancel</button>
-				</div>
 			</div>
 
-
-			<div className="Uploadform-popup" id="UploadmyForm">
-				<div className="Uploadform-container">
-					
-					 <div id="textUpload">Uploading...</div>
-					<button  id='Uploadcancel'   type="button" onClick={() => closeUploadForm()} className="cancel">Cancel</button>
-				</div>
-			</div>
+			{(typeof data.mydata === 'undefined') ? (
+				<div className="lds-ring"><div></div><div></div><div></div><div></div></div>
 
 
 
-		<div id="Searchbar">
-			<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }}/></button>
-			<button id="viewList"  ><ViewListOutlinedIcon id="listOptionactive"  /></button>
-			<a id='pagelinks' href="/home"><button id="viewGrid"><GridViewIcon id="listOption" /></button></a>
-			
-			<div id='uploadInput'><label for="fileInput" class="btn">Upload</label></div>
-				<input id="fileInput"  type="file" onChange={uploadFile}  ></input>
-		 </div>
-
-		 {(typeof data.mydata === 'undefined')?(
-			<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-
-
-
-		 ) : (
-			 data.mydata.map((thedata, i)=>(
-				
-
-
-
-        
-		
-	
-   
-      <div className='center'>
- 
-
-
-    <div id="HomeContentList">
-<div id="MediaBlockList">
-<img id="previewList" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="80px" height="80px" alt="img"  onError={event => {
-          event.target.src = require('./vidImg.png')
-          event.onerror = null
-        }}    /><h2>{thedata}</h2>
-		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
-		<button id="AnalyseButtonList" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
-		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button>
+			) : (
+				data.mydata.map((thedata, i) => (
 
 
 
 
-		
-		<div className="form-popup" id="myForm">
+
+
+
+
+					<div className='center'>
+
+
+
+						<div id="HomeContent">
+
+							<div id="MediaBlock">
+
+
+								<p><img id="preview" src={('https://choppercharlie.blob.core.windows.net/' + replace() + '/' + thedata)} width="240px" height="220px" alt="img" onError={event => {
+									event.target.src = require('./vidImg.png')
+									event.onerror = null
+								}} />
+									&nbsp;{thedata}
+									{/* <h5>dd/mm/yyyy</h5> */}
+									<br></br>
+									<br></br>
+									<hr></hr>
+									&nbsp;
+                                    <button id='ResultButton'>Results</button>
+									<div id='ButtonDiv'><a href={('https://choppercharlie.blob.core.windows.net/' + replace() + '/' + thedata)}><button id="DownloadButton"   ><CloudDownloadRoundedIcon sx={{ fontSize: 24 }} /><br></br>Download</button></a>&nbsp;
+										<button id="AnalyseButton" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 24 }} /><br></br>Analyse</button>&nbsp;
+										<button id="DeleteButton" onClick={() => delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }} /><br></br>Delete</button></div>
+								</p>
+
+
+								<div className="form-popup" id="myForm">
 				<div className="form-container">
 					<h1>Select Pipeline</h1>
 
@@ -301,19 +285,53 @@ function Profile() {
 					<button type="button" onClick={() => closeForm()} className="cancel">Cancel</button>
 				</div>
 			</div>
-</div> 
-</div>  
+
+
+
+			
 
 
 
 
- </div>
- 
-))
-	  )
-	  }
 
 
+
+
+
+
+
+							</div>
+						</div>
+					</div>
+
+				))
+			)
+			}
+
+
+
+
+
+
+			{/* <button class="open-button" onclick="openForm()">Open Form</button> */}
+
+
+			<div className="Resultform-popup" id="ResultmyForm">
+				<div className="Resultform-container">
+					<h1>Results:</h1>
+					<div id="textResults"></div>
+					<button id='resultcancel' type="button" onClick={() => closeResultForm()} className="cancel">Cancel</button>
+				</div>
+			</div>
+
+
+			<div className="Uploadform-popup" id="UploadmyForm">
+				<div className="Uploadform-container">
+					
+					 <div id="textUpload">Uploading...</div>
+					<button  id='Uploadcancel'   type="button" onClick={() => closeUploadForm()} className="cancel">Cancel</button>
+				</div>
+			</div>
 
 
 
@@ -336,7 +354,7 @@ function Profile() {
 				<br />
 
 				<div>
-					<button type='button' id='home'><HomeRoundedIcon id='icon' /><p>Home</p></button>
+                <a id='pagelinks' href="/home"><button type='button' id='home'><HomeRoundedIcon id='icon' /><p>Home</p></button></a>
 
 					<a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon' /><p>Pipelines</p></button></a>
 					<a id='pagelinks' href="/results"><button type='button' id='home'><FiberManualRecordIcon id='icon' /><p>Results</p></button></a>
@@ -373,9 +391,7 @@ function Profile() {
 
 
 
-
-
-);
+	);
 }
 
 export default Profile
