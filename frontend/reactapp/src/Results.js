@@ -255,6 +255,7 @@ function Profile() {
 									<br></br>
 									<hr></hr>
 									&nbsp;
+                                    <button id='ResultButton'>Results</button>
 									<div id='ButtonDiv'><a href={('https://choppercharlie.blob.core.windows.net/' + replace() + '/' + thedata)}><button id="DownloadButton"   ><CloudDownloadRoundedIcon sx={{ fontSize: 24 }} /><br></br>Download</button></a>&nbsp;
 										<button id="AnalyseButton" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 24 }} /><br></br>Analyse</button>&nbsp;
 										<button id="DeleteButton" onClick={() => delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }} /><br></br>Delete</button></div>

@@ -247,9 +247,11 @@ function Profile() {
           event.target.src = require('./vidImg.png')
           event.onerror = null
         }}    /><h2>{thedata}</h2>
+       
 		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
 		<button id="AnalyseButtonList" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
 		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button>
+        <button id='ResultButtonList'>Results</button>
 
 
 
