@@ -1,6 +1,6 @@
 yolov3.weights
 node_modules
-flask_env
+env
 .env
 firebasePrivateKey.json
 *.pyc
