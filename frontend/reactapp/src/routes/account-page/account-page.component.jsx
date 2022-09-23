@@ -220,10 +220,26 @@ const Account = () => {
 		document.getElementById('textResults').innerHTML = a + b + h;
 	}
 
+	const handleDelete = async () => {
+		try {
+			fetch('/delete-user/'+ currentUser.uid + accountName).then((res) =>
+			res.json().then((data) => {
+				// Setting a data from api
+				console.log('The user is of role: ' + data.role);
+				setUserRole(data.role);
+				// console.log(data);
+			})
+		);
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
 	return (
 		<div>
 			<h2>Accont: {accountName}</h2>
-			{(adminRole === "super" && !(userRole === "super")) && <button>Delete Account</button>}
+			{(adminRole === "super" && !(userRole === "super")) && <button onClick={() => handleDelete()}>Delete Account</button>}
+			{(adminRole === "admin" && !(userRole === "super" || userRole === "admin")) && <button>Delete Account</button>}
 			{(adminRole === "super" && userRole === "user") && <button>Make Admin</button>}
 			{(adminRole === "super" && userRole === "admin") && <button>Remove Admin</button>}
 			<div id='Searchbar'>

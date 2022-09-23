@@ -2,7 +2,7 @@ import './profile.css';
 import { useAuthValue } from './AuthContext';
 import { signOut } from 'firebase/auth';
 import { auth } from './firebase';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
@@ -16,9 +16,11 @@ import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
 import GridViewIcon from '@mui/icons-material/GridView';
 import { useSelector } from 'react-redux';
 import { selectPipelines } from './store/pipelines/pipelines.selector';
+import { selectCurrentUser } from './store/user/user.selector';
 
 //change
 function Profile() {
+<<<<<<< HEAD
 
 
 	
@@ -29,8 +31,35 @@ function Profile() {
 	
 
 	const { currentUser } = useAuthValue();
+=======
+	// const { currentUser } = useAuthValue();
+	const currentUser = useSelector(selectCurrentUser);
+>>>>>>> 9f37639c13aaa827d6c46b5ae718fcfd29bf31c2
 	// object for storing and using data
 	const [data, setdata] = useState({});
+	const [isAdmin, setIsAdmin] = useState(false);
+	const [role, setRole] = useState('user')
+
+	useEffect(() => {
+		try {
+			currentUser
+				.getIdTokenResult()
+				.then((idTokenResult) => {
+					// Confirm the user is an Admin.
+					if (!!idTokenResult.claims.admin) {
+						// Show admin UI.
+						setIsAdmin(true);
+						setRole('Admin')
+						console.log('This is an admin user');
+					}
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		} catch (error) {
+			console.log('Error getting custom claims: ', error);
+		}
+	}, []);
 
 	let str = currentUser?.email;
 
@@ -358,6 +387,7 @@ function Profile() {
 				<h4 id='user-id'>
 					<strong> </strong>
 					{currentUser?.email}
+					
 				</h4>
 				
 				{/* <hr /> */}
@@ -375,20 +405,32 @@ function Profile() {
 							<p>Pipelines</p>
 						</button>
 					</a>
-					<a id='pagelinks' href="/results"><button type='button' id='home'><FiberManualRecordIcon id='icon' /><p>Results</p></button></a>
+					<a id='pagelinks' href='/results'>
+						<button type='button' id='home'>
+							<FiberManualRecordIcon id='icon' />
+							<p>Results</p>
+						</button>
+					</a>
 					<a id='pagelinks' href='/settings'>
 						<button type='button' id='home'>
 							<SettingsRoundedIcon id='icon' />
 							<p>Settings</p>
 						</button>
 					</a>
+
 					<a id='pagelinks' href='/admin'>
 						<button type='button' id='home'>
 							<SettingsRoundedIcon id='icon' />
 							<p>Admin</p>
 						</button>
 					</a>
+<<<<<<< HEAD
 					
+=======
+
+					<br />
+				</div>
+>>>>>>> 9f37639c13aaa827d6c46b5ae718fcfd29bf31c2
 
 				</div>
 				<br />

@@ -21,7 +21,8 @@ from AzureBlobUpload.azureblobupload import blob_upload
 from VideoAI.inputVideos.downdel import blob_retrieveee
 # from ImageAI.vehicle_counting import blob_retrievee
 # from ImageAI.vehicle_detector import VehicleDetector
-
+from firebase import *
+from azure_storage import *
 
 # from ImageAI.vehicle_counting import blob_retrievee
 # from ImageAI.vehicle_detector import VehicleDetector
