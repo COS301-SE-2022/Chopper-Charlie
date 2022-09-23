@@ -180,6 +180,7 @@ const Account = () => {
 
 	return (
 		<div>
+			<h2>Accont: {accountName}</h2>
 			<div id='Searchbar'>
 				<input id='searchhh'></input>
 				<button id='searchbuttonn'>

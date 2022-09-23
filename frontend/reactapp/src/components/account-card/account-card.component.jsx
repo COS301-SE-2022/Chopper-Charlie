@@ -29,7 +29,7 @@ const AccountCard = ({ account }) => {
 					boxShadow: 'none',
 				}}>
 				<AspectRatio ratio='1' sx={{ width: 90, minWidth: 80 }}>
-					<img src={account.photo} alt='' />
+					<img src={account.photo || "https://stonegatesl.com/wp-content/uploads/2021/01/avatar-300x300.jpg"} alt='' />
 				</AspectRatio>
 
 				<CardContent>
