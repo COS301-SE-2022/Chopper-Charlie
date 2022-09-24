@@ -1022,10 +1022,14 @@ border:none;
 
 #viewGrid{
   background-color:inherit;
-  padding-top: 15px;
+  border: white 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  /* background-color:inherit;
+  margin-top: -30px;
   border: none;
   cursor: pointer;
-  border-radius: 100%;
+  border-radius: 100%; */
 }
 
 
@@ -1033,11 +1037,18 @@ border:none;
 #viewList{
   background-color: inherit;
   border: none;
-  margin-left: 77%;
-  margin-top:4px;
+  margin-left: 320px;
   cursor: pointer;
-  border-radius: 100%;
+  /* background-color: inherit;
+  border: none;
+  margin-left: 60%;
+  cursor: pointer;
+  border-radius: 100%; */
 }
+
+
+
+
 
 #listOptionactive{
 color: #51B9D4;
@@ -1313,8 +1324,9 @@ color: #51B9D4;
   border: none;
   width: 100%;
   height: 25px;
-  margin: 8px;
+  margin: auto;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 
@@ -1367,35 +1379,34 @@ color: #51B9D4;
   position: fixed;
   margin-left:35%;
   margin-top:10%;
-  border: 4px solid #096ab4;
-  width: 150px;
   z-index: 9;
 }
 
 /* Add styles to the form container */
 .Uploadform-container {
+  width: 250px;
+  max-height: 300px;
   max-width: 300px;
   padding: 10px;
-  background-color: white;
+  background-color: #0F0F0F;
+  border-radius: 5px;
+  text-align: center;
 }
 
 
 
-/* Set a style for the submit/login button */
-.Uploadform-container .btn {
-  background-color: #04AA6D;
-  color: rgb(0, 0, 0);
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
+
 
 /* Add a red background color to the cancel button */
 .Uploadform-container .cancel {
-  background-color: red;
+  background-color: #cc6259;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  height: 25px;
+  margin: auto;
+  margin-top: 15px;
 }
 
 /* Add some hover effects to buttons */
@@ -1404,19 +1415,21 @@ color: #51B9D4;
 }
 
 #UploadmyForm p{
-  color: #000000;
+  color: #ffffff;
 }
 
 #UploadmyForm h1{
-  color: #000000;
+  color: #ffffff;
 }
 
 #UploadmyForm label{
-  color: #000000;
+  color: #ffffff;
 }
 
 #textUpload{
-  color: #000000;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 
@@ -1426,8 +1439,33 @@ color: #51B9D4;
 }
 /* //////////////////////////////////////////////////// */
 
-h2 {
+#center h2 {
   font-size: 40px;
   padding-left: 30%;
   
 }
+
+.loader {
+
+  margin: auto;
+  margin-top: 15px;
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #4198A9;
+  width: 30px;
+  height: 30px;;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

@@ -16,7 +16,11 @@ import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
 import GridViewIcon from '@mui/icons-material/GridView';
 import { useSelector } from 'react-redux';
 import { selectPipelines } from './store/pipelines/pipelines.selector';
-
+import UploadIcon from '@mui/icons-material/Upload';
+import ReorderIcon from '@mui/icons-material/Reorder';
+import TuneIcon from '@mui/icons-material/Tune';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 
 //change
@@ -119,6 +123,7 @@ function Profile() {
 			  console.log(JSON.stringify(data.Message));
 			//   alert(JSON.stringify(data.Message));
 			uploadingPopup(JSON.stringify(data.Message));
+			document.getElementById("Loader").style.display = "none";
 			document.getElementById("Uploadcancel").style.display = "block";
 	  })
 		  );
@@ -202,7 +207,7 @@ function Profile() {
 	function resultsDiv(a,b,linkk){
 			
 		document.getElementById("ResultmyForm").style.display = "block";
-		var h= "<a href="+linkk+"><button id= analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 24 }} /><br></br>Download</button></a>";
+		var h= "<a href="+linkk+"><button id= 'analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 24 }} /><br></br>Download</button></a>";
 		document.getElementById("textResults").innerHTML=a + b + h;        
 
 	}
@@ -235,15 +240,37 @@ function Profile() {
 			</div>
 
 
+			<div id='Searchbar'>
+				
+				<div>
+				<div id='ConSearch'><input id='searchhh' placeholder="Search"></input>
+				<button id='searchbuttonn'>
+					<SearchIcon sx={{ fontSize: 14 }} />
+				</button>
+				
 
-		<div id="Searchbar">
-			<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }}/></button>
-			<button id="viewList"  ><ViewListOutlinedIcon id="listOptionactive"  /></button>
-			<a id='pagelinks' href="/home"><button id="viewGrid"><GridViewIcon id="listOption" /></button></a>
-			
-			<div id='uploadInput'><label for="fileInput" class="btn">Upload</label></div>
-				<input id="fileInput"  type="file" onChange={uploadFile}  ></input>
-		 </div>
+
+				<a id='pagelinks' href='/homelist'>
+					<button id='viewList'>
+						<ReorderIcon id='listOptionactive' />
+					</button>
+				</a>
+				<a id='pagelinks' href='/home'>
+				<button id='viewGrid'>
+					<GridViewIcon id='listOption' />
+				</button></a>
+
+
+				</div>
+
+
+					<div id='uploadInput'><label   for='fileInput' class='btn'>
+					<UploadIcon id="upIcon" sx={{ fontSize: 20 }} />Upload
+					</label></div>
+				
+				<input id='fileInput' type='file' onChange={uploadFile}></input>
+			</div>
+			</div>
 
 		 {(typeof data.mydata === 'undefined')?(
 			<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
