@@ -82,6 +82,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 const Account = () => {
+
+
+	const [color, changeColor] = useState('#242424');
+	
+	document.body.style.backgroundColor = color;
 	const currentUser = useSelector(selectCurrentUser);
 	const fileUpload = useRef(null);
 	const params = useParams();

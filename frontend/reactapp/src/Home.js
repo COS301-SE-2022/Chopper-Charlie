@@ -84,9 +84,9 @@ function Profile() {
 	// i allowed merges
 	const fileUpload = useRef(null);
 	const [color, changeColor] = useState('#242424');
-	const dispatch = useDispatch();
+	
 	document.body.style.backgroundColor = color;
-
+	const dispatch = useDispatch();
 	const currentUser = useSelector(selectCurrentUser);
 	const files = useSelector(selectFiles);
 	// const { currentUser } = useAuthValue();

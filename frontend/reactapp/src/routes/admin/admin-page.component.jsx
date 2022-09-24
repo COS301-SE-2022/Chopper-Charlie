@@ -13,8 +13,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from 'firebase/auth';
 import { addItemToFiles, setFiles } from '../../store/files/files.action';
 import { selectFiles } from '../../store/files/files.selector';
+import TuneIcon from '@mui/icons-material/Tune';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 const Admin = () => {
+	const [color, changeColor] = useState('#242424');
+	
+	document.body.style.backgroundColor = color;
+
+
 	const [accounts, setAccounts] = useState([]);
 	const currentUser = useSelector(selectCurrentUser);
 	const dispatch = useDispatch();
@@ -39,8 +47,9 @@ const Admin = () => {
 
 
 	return (
+		
 		<div className='admin-wrapper'>
-			<h2>User Accounts</h2>
+			<h2 id="AdminAccount">User Accounts</h2>
 			<div className='accounts-grid'>
 				{accounts?.map((account) => {
 					return (
@@ -50,31 +59,47 @@ const Admin = () => {
 					);
 				})}
 			</div>
+
+
+
+
+
+
+
+
 			<div className='profile'>
-				<img src={require('../../logo.png')} width='80%' height='17%' alt='Logo' />
+				<img src={require('../../logo.png')} width='70%' height='15%' alt='Logo' />
 
 				<br />
-				<AccountCircleRoundedIcon sx={{ fontSize: 45 }} />
+				<br />
+				<AccountCircleRoundedIcon sx={{ fontSize: 35 }} />
 
 				<br />
 				<h4 id='user-id'>
 					<strong> </strong>
 					{currentUser?.email}
 				</h4>
-				<br />
-				<hr />
-				<br />
+
+				{/* <hr /> */}
 
 				<div>
-					<button type='button' id='home'>
-						<HomeRoundedIcon id='icon' />
-						<p>Home</p>
-					</button>
+					<a id='pagelinks' href='/home'>
+						<button type='button' id='home'>
+							<HomeRoundedIcon id='icon' />
+							<p>Home</p>
+						</button>
+					</a>
 
 					<a id='pagelinks' href='/pipeline'>
 						<button type='button' id='home'>
-							<FiberManualRecordIcon id='icon' />
+							<TuneIcon id='icon' />
 							<p>Pipelines</p>
+						</button>
+					</a>
+					<a id='pagelinks' href='/results'>
+						<button type='button' id='home'>
+							<AssessmentIcon id='icon' />
+							<p>Results</p>
 						</button>
 					</a>
 					<a id='pagelinks' href='/settings'>
@@ -83,16 +108,16 @@ const Admin = () => {
 							<p>Settings</p>
 						</button>
 					</a>
+
 					<a id='pagelinks' href='/admin'>
 						<button type='button' id='home'>
-							<SettingsRoundedIcon id='icon' />
+							<AdminPanelSettingsIcon id='icon' />
 							<p>Admin</p>
 						</button>
 					</a>
-					<br />
 				</div>
-
-				<hr />
+				<br />
+				{/* <hr /> */}
 
 				<br />
 
@@ -102,6 +127,7 @@ const Admin = () => {
 						<p>Logout</p>
 					</button>
 				</a>
+
 				<div className='sub_div'>
 					{' '}
 					<img
