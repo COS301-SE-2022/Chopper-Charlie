@@ -197,6 +197,15 @@ def add_results(email ,filename, count, obj):
         doc_ref = db.collection(u'results').document(user.uid)
         print('doc ref found')
         doc_ref.set({filename: {obj : count}}, merge=True) 
-    except:
-        print('user not found')
+        # doc_ref.set({[{filename: [{obj : count}]}]}, merge=True) 
+    except Exception as e:
+        print(e)
         
+# add_results('bitcoders7860@gmail.com', 'test.jpg', 5, 'car')
+# add_results('bitcoders7860@gmail.com', 'test.jpg', 5, 'truck')
+# add_results('bitcoders7860@gmail.com', 'test2.jpg', 4, 'person')
+# add_results('bitcoders7860@gmail.com', 'test2.jpg', 2, 'cow')
+# add_results('bitcoders7860@gmail.com', 'test3.jpg', 12, 'bus')
+# add_results('bitcoders7860@gmail.com', 'test3.jpg', 11, 'sheep')
+# add_results('bitcoders7860@gmail.com', 'test4.jpg', 12, 'person')
+# add_results('bitcoders7860@gmail.com', 'test4.jpg', 15, 'boat')
