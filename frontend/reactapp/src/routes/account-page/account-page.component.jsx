@@ -98,7 +98,7 @@ const Account = () => {
 	let navigate = useNavigate();
 
 	useEffect(() => {
-		fetch('/mydatapage/' + accountName).then((res) =>
+		fetch('/mydatapageall/' + accountName).then((res) =>
 			res.json().then((data) => {
 				// Setting a data from api
 				setFiles(data);

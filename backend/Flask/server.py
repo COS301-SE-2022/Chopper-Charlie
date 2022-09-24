@@ -41,6 +41,16 @@ def Show_Containers_Blobs(index_boo):
     
     return {"mydata": data }
 
+
+@app.route('/mydatapageall/<index_boo>')
+def Show_Containers_Blobsss(index_boo):
+
+    data = list_blobs_in_container(index_boo)
+    
+    
+    
+    return {"mydata": data }
+
 @app.route('/mydatapageanalyse/<index_boo>')
 def Show_Containers_Blobss(index_boo):
     l_s = list_blobs_in_container(index_boo)
