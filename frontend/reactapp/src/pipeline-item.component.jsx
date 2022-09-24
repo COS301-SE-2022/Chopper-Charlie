@@ -29,6 +29,7 @@ const PipelineItem = ({ pipelineItem }) => {
 			justifyContent='space-between'
 			sx={{
 				margin: '1em',
+				marginLeft:"60px",
 				width: '50em',
 				border: '1px solid transparent',
 				position: 'relative',

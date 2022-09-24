@@ -217,7 +217,7 @@ function Profile() {
 		var h =
 			'<a href=' +
 			linkk +
-			"><button id= analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 24 }} /><br></br>Download</button></a>";
+			"><br></br><button id= 'analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 12 }} />Download</button></a><br></br>";
 		document.getElementById('textResults').innerHTML = a + b + h;
 	}
 
@@ -361,7 +361,7 @@ function Profile() {
 
 			<div className='Resultform-popup' id='ResultmyForm'>
 				<div className='Resultform-container'>
-					<h1>Results:</h1>
+					<h1>Results</h1>
 					<div id='textResults'></div>
 					<button
 						id='resultcancel'

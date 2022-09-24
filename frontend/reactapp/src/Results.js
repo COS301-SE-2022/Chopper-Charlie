@@ -16,7 +16,11 @@ import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
 import GridViewIcon from '@mui/icons-material/GridView';
 import { useSelector } from 'react-redux';
 import { selectPipelines } from './store/pipelines/pipelines.selector';
-
+import TuneIcon from '@mui/icons-material/Tune';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import UploadIcon from '@mui/icons-material/Upload';
+import ReorderIcon from '@mui/icons-material/Reorder';
 
 
 //change
@@ -214,11 +218,37 @@ function Profile() {
 
 		<div >
 
-			<div id="Searchbar">
-				<input id='searchhh'></input><button id='searchbuttonn' ><SearchIcon sx={{ fontSize: 12 }} /></button>
-				<a id='pagelinks' href="/Resultslist"><button id="viewList"  ><ViewListOutlinedIcon id="listOption" /></button></a>
-				<button id="viewGrid"><GridViewIcon id="listOptionactive" /></button>
+<div id='Searchbar'>
+				
+				<div>
+				<div id='ConSearch'><input id='searchhh' placeholder="Search"></input>
+				<button id='searchbuttonn'>
+					<SearchIcon sx={{ fontSize: 14 }} />
+				</button>
+				</div>
+				<a id='pagelinks' href='/homelist'>
+					<button id='viewList'>
+						<ReorderIcon id='listOption' />
+					</button>
+				</a>
+				<button id='viewGrid'>
+					<GridViewIcon id='listOptionactive' />
+				</button>
+				
+				{/* <button id='uploadButton' onClick={() => upData()}   >Upload</button> */}
 
+				{/* <input id='uploadInput'
+						type="file"
+						onChange={uploadFile}>
+					</input> */}
+
+				
+					<div id='uploadInput'><label   for='fileInput' class='btn'>
+					<UploadIcon id="upIcon" sx={{ fontSize: 20 }} />Upload
+					</label></div>
+				
+				<input id='fileInput' type='file' onChange={uploadFile}></input>
+			</div>
 			</div>
 
 			{(typeof data.mydata === 'undefined') ? (
@@ -338,56 +368,82 @@ function Profile() {
 
 
 
-			<div className='profile'>
-
-				<img src={require('./logo.png')} width="80%" height="17%" alt="Logo" />
-
-
+			
+<div className='profile'>
+				<img src={require('./logo.png')} width='70%' height='15%' alt='Logo' />
 
 				<br />
-				<AccountCircleRoundedIcon sx={{ fontSize: 45 }} />
+				<br />
+				<AccountCircleRoundedIcon sx={{ fontSize: 35 }} />
 
 				<br />
-				<h4 id="user-id"><strong> </strong>{currentUser?.email}</h4>
-				<br />
-				<hr />
-				<br />
+				<h4 id='user-id'>
+					<strong> </strong>
+					{currentUser?.email}
+					
+				</h4>
+				
+				{/* <hr /> */}
+				
 
 				<div>
-                <a id='pagelinks' href="/home"><button type='button' id='home'><HomeRoundedIcon id='icon' /><p>Home</p></button></a>
+				<a id='pagelinks' href='/home'><button type='button' id='home'>
+						<HomeRoundedIcon id='icon' />
+						<p>Home</p>
+					</button></a>
 
-					<a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon' /><p>Pipelines</p></button></a>
-					<a id='pagelinks' href="/results"><button type='button' id='home'><FiberManualRecordIcon id='icon' /><p>Results</p></button></a>
-					<a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon' /><p>Settings</p></button></a>
-					<br />
+					<a id='pagelinks' href='/pipeline'>
+						<button type='button' id='home'>
+							<TuneIcon id='icon' />
+							<p>Pipelines</p>
+						</button>
+					</a>
+					<a id='pagelinks' href='/results'>
+						<button type='button' id='home'>
+							<AssessmentIcon id='icon' />
+							<p>Results</p>
+						</button>
+					</a>
+					<a id='pagelinks' href='/settings'>
+						<button type='button' id='home'>
+							<SettingsRoundedIcon id='icon' />
+							<p>Settings</p>
+						</button>
+					</a>
+
+					<a id='pagelinks' href='/admin'>
+						<button type='button' id='home'>
+							<AdminPanelSettingsIcon id='icon' />
+							<p>Admin</p>
+						</button>
+					</a>
+					
 
 				</div>
-
-				<hr />
+				<br />
+				{/* <hr /> */}
 
 				<br />
 
-				<a href="/login" ><button type='button' id='homelogout' onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo' /><p>Logout</p></button></a>
+				<a href='/login'>
+					<button type='button' id='homelogout' onClick={() => signOut(auth)}>
+						<LogoutRoundedIcon id='iconlo' />
+						<p>Logout</p>
+					</button>
+				</a>
 
-
-				<div className='sub_div'> <img id='ABlogo' src={require('./AB.png')} width="35%" height="40%" alt="Logo" /></div>
-
+				<div className='sub_div'>
+					{' '}
+					<img
+						id='ABlogo'
+						src={require('./AB.png')}
+						width='35%'
+						height='40%'
+						alt='Logo'
+					/>
+				</div>
 			</div>
-
-
-
-
-
-
-
-
-
-
 		</div>
-
-
-
-
 
 
 

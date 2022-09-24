@@ -120,6 +120,7 @@ const PipelineForm = () => {
           // backgroundColor: 'black',
           padding: "1em",
           borderRadius: "10px",
+          marginLeft:"15px"
         }}
       >
         <TextField

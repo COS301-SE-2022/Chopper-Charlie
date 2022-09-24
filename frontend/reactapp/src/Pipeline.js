@@ -13,6 +13,9 @@ import PipelineForm from './pipeline-form.component';
 import PipelineItem from './pipeline-item.component';
 import { useSelector } from 'react-redux';
 import { selectPipelines } from './store/pipelines/pipelines.selector';
+import TuneIcon from '@mui/icons-material/Tune';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 // import Drawer from '../../components/drawer/drawer.component';
 // import './analytics.styles.css';
 //change
@@ -63,7 +66,7 @@ const pipelines = useSelector(selectPipelines);
 
     
      <h2>Your Pipelines</h2>
-     <hr></hr>
+
 
 	 <div className='analytics-container'>
 
@@ -148,49 +151,81 @@ const pipelines = useSelector(selectPipelines);
 
 
 
+<div className='profile'>
+				<img src={require('./logo.png')} width='70%' height='15%' alt='Logo' />
 
-		   <div className='profile'>
+				<br />
+				<br />
+				<AccountCircleRoundedIcon sx={{ fontSize: 35 }} />
 
-<img src={require('./logo.png')} width="80%" height="17%" alt="Logo"/>
-	   
- 
-  
-  <br/>
-  <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
-  
-  <br/>
-  <h4 id="user-id"><strong> </strong>{currentUser?.email}</h4>
-  <br/>
-  <hr/>
-  <br/>
-  
-  <div>
-  <a id='pagelinks' href="/home"><button type='button' id='home'><HomeRoundedIcon id='icon'/><p>Home</p></button></a>
-   
-   <a id='pagelinks' href="/pipeline"><button type='button' id='home'><FiberManualRecordIcon id='icon'/><p>Pipelines</p></button></a>
-   <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p>Settings</p></button></a>
-   <br/>
-  
-   </div>
-   
-  <hr/>
+				<br />
+				<h4 id='user-id'>
+					<strong> </strong>
+					{currentUser?.email}
+					
+				</h4>
+				
+				{/* <hr /> */}
+				
 
-  <br/>
-			
-  <a href="/login" ><button type='button' id='homelogout'  onClick={() => signOut(auth)}   ><LogoutRoundedIcon id='iconlo'/><p>Logout</p></button></a>
- 
-  
-<div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="35%" height="40%" alt="Logo"/></div> 
+				<div>
+				<a id='pagelinks' href='/home'><button type='button' id='home'>
+						<HomeRoundedIcon id='icon' />
+						<p>Home</p>
+					</button></a>
 
-</div>
+					<a id='pagelinks' href='/pipeline'>
+						<button type='button' id='home'>
+							<TuneIcon id='icon' />
+							<p>Pipelines</p>
+						</button>
+					</a>
+					<a id='pagelinks' href='/results'>
+						<button type='button' id='home'>
+							<AssessmentIcon id='icon' />
+							<p>Results</p>
+						</button>
+					</a>
+					<a id='pagelinks' href='/settings'>
+						<button type='button' id='home'>
+							<SettingsRoundedIcon id='icon' />
+							<p>Settings</p>
+						</button>
+					</a>
 
+					<a id='pagelinks' href='/admin'>
+						<button type='button' id='home'>
+							<AdminPanelSettingsIcon id='icon' />
+							<p>Admin</p>
+						</button>
+					</a>
+					
 
+				</div>
+				<br />
+				{/* <hr /> */}
 
+				<br />
 
+				<a href='/login'>
+					<button type='button' id='homelogout' onClick={() => signOut(auth)}>
+						<LogoutRoundedIcon id='iconlo' />
+						<p>Logout</p>
+					</button>
+				</a>
 
-
-      </div>
-      
+				<div className='sub_div'>
+					{' '}
+					<img
+						id='ABlogo'
+						src={require('./AB.png')}
+						width='35%'
+						height='40%'
+						alt='Logo'
+					/>
+				</div>
+			</div>
+		</div>
 
 
 
