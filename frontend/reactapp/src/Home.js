@@ -131,6 +131,8 @@ function Profile() {
 			const data = new FormData();
 			data.append('file_from_react', file);
 			document.getElementById('UploadmyForm').style.display = 'block';
+			document.getElementById('uploader').style.display='block';
+			document.getElementById('textUpload').innerHTML= "Uploading..";
 			fetch('/ur/' + currentUser?.email, {
 				method: 'post',
 				body: data,
@@ -140,8 +142,11 @@ function Profile() {
 					setdata(data);
 					console.log(JSON.stringify(data.Message));
 					//   alert(JSON.stringify(data.Message));
+					document.getElementById('uploader').style.display='none';
 					uploadingPopup(JSON.stringify(data.Message));
+					
 					document.getElementById('Uploadcancel').style.display = 'block';
+					
 				})
 			);
 			//   let res = await response.json();
@@ -167,8 +172,8 @@ function Profile() {
 		var count = p.count ? 'y' : 'n';
 		var outline = p.outline ? 'y' : 'n';
 		document.getElementById('myForm').style.display = 'none';
-
 		document.getElementById('ResultmyForm').style.display = 'block';
+		document.getElementById('loader').style.display='block';
 		document.getElementById('textResults').innerHTML = 'Analysing...';
 
 		fetch(
@@ -195,6 +200,7 @@ function Profile() {
 				// document.getElementById("textResults").innerHTML=window.countt;
 				// document.getElementById("ResultmyForm").style.display = "block";
 				resultsDiv(countt, mes, link);
+				document.getElementById('loader').style.display="none";
 				document.getElementById('resultcancel').style.display = 'block';
 			})
 		);
@@ -220,7 +226,7 @@ function Profile() {
 			'<a href=' +
 			linkk +
 			"><br></br><button id= 'analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 12 }} />Download</button></a><br></br>";
-		document.getElementById('textResults').innerHTML = a + b + h;
+		document.getElementById('textResults').innerHTML = a + "<br/>"+b + h;
 	}
 
 
@@ -230,40 +236,41 @@ function Profile() {
 	}
 
 	return (
+
 		<div>
+
+
+			
 			<div id='Searchbar'>
+				
+	return (
 				<div>
-					<div id='ConSearch'>
-						<input id='searchhh' placeholder='Search'></input>
-						<button id='searchbuttonn'>
-							<SearchIcon sx={{ fontSize: 14 }} />
-						</button>
-					</div>
-					<a id='pagelinks' href='/homelist'>
-						<button id='viewList'>
-							<ReorderIcon id='listOption' />
-						</button>
-					</a>
-					<button id='viewGrid'>
-						<GridViewIcon id='listOptionactive' />
+				<div id='ConSearch'><input id='searchhh' placeholder="Search"></input>
+				<button id='searchbuttonn'>
+					<SearchIcon sx={{ fontSize: 14 }} />
+				</button>
+				
+
+
+				<a id='pagelinks' href='/homelist'>
+					<button id='viewList'>
+						<ReorderIcon id='listOption' />
 					</button>
+				</a>
+				<button id='viewGrid'>
+					<GridViewIcon id='listOptionactive' />
+				</button>
 
-					{/* <button id='uploadButton' onClick={() => upData()}   >Upload</button> */}
 
-					{/* <input id='uploadInput'
-						type="file"
-						onChange={uploadFile}>
-					</input> */}
-
-					<div id='uploadInput'>
-						<label for='fileInput' class='btn'>
-							<UploadIcon id='upIcon' sx={{ fontSize: 20 }} />
-							Upload
-						</label>
-					</div>
-
-					<input id='fileInput' type='file' onChange={uploadFile}></input>
 				</div>
+
+
+					<div id='uploadInput'><label   for='fileInput' class='btn'>
+					<UploadIcon id="upIcon" sx={{ fontSize: 20 }} />Upload
+					</label></div>
+				
+				<input id='fileInput' type='file' onChange={uploadFile}></input>
+			</div>
 			</div>
 
 			{typeof data.mydata === 'undefined' ? (
@@ -371,12 +378,13 @@ function Profile() {
 				<div className='Resultform-container'>
 					<h1>Results</h1>
 					<div id='textResults'></div>
+					<div id= "loader"  className="loader"></div>
 					<button
 						id='resultcancel'
 						type='button'
 						onClick={() => closeResultForm()}
 						className='cancel'>
-						Cancel
+						Close
 					</button>
 				</div>
 			</div>
@@ -384,12 +392,13 @@ function Profile() {
 			<div className='Uploadform-popup' id='UploadmyForm'>
 				<div className='Uploadform-container'>
 					<div id='textUpload'>Uploading...</div>
+					<div id= "uploader"  className="uploader"></div>
 					<button
 						id='Uploadcancel'
 						type='button'
 						onClick={() => closeUploadForm()}
 						className='cancel'>
-						Cancel
+						Close
 					</button>
 				</div>
 			</div>
