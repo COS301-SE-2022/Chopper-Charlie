@@ -1,7 +1,7 @@
 import './profile.css'
 import {useAuthValue} from './AuthContext'
 import { signOut } from 'firebase/auth' 
-import { auth, getFileResult } from './firebase'
+import { auth, deleteFileResult, getFileResult } from './firebase'
 import React, { useEffect, useState } from "react";
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
@@ -107,6 +107,9 @@ function Profile() {
 					alert(JSON.stringify(data.Message));
 				})
 			);
+			deleteFileResult(currentUser, str).catch((err) => {
+				console.log(err);
+			});	
 		}
 	}
 
