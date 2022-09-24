@@ -407,7 +407,7 @@ function Profile() {
 					}}
 				/>
 				<span>
-				<a href='/home'>
+				<a href='/results'>
 					<IconButton
 						// disabled
 						aria-label='grid'
