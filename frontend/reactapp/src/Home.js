@@ -243,7 +243,7 @@ function Profile() {
 			
 			<div id='Searchbar'>
 				
-	return (
+
 				<div>
 				<div id='ConSearch'><input id='searchhh' placeholder="Search"></input>
 				<button id='searchbuttonn'>

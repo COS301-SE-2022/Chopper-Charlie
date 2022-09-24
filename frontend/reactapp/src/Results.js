@@ -243,7 +243,7 @@ function Profile() {
 				
 
 
-				<a id='pagelinks' href='/homelist'>
+				<a id='pagelinks' href='/ResultsList'>
 					<button id='viewList'>
 						<ReorderIcon id='listOption' />
 					</button>
@@ -414,7 +414,7 @@ function Profile() {
 				
 
 				<div>
-				<a id='pagelinks' href='/pipeline'>
+				<a id='pagelinks' href='/home'>
 					<button type='button' id='home'>
 						<HomeRoundedIcon id='icon' />
 						<p>Home</p>
