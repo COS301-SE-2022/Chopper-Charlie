@@ -843,7 +843,7 @@ width: 80%;
 
 
   color: #ffffff;
-  background-color:#242424;
+  background-color:#464646;
   border-radius: 5px 0 0 5px;
   border-color: #c1c1c1;
   border: none;
@@ -853,6 +853,7 @@ width: 80%;
   height: 30px;
   cursor: text;
   font-size: 16px;
+ 
 
 }
 
@@ -862,12 +863,12 @@ width: 80%;
   
  
   color:#ffffff;
-  background-color:#242424;
+  background-color:#464646;
   border-radius:  0 5px 5px 0 ;
   border-color: #c1c1c1;
   border: none;
   width: 5%;
-  height: 32px;
+  height: 32.2px;
   cursor: pointer;
 
  
@@ -1037,7 +1038,7 @@ border:none;
 #viewList{
   background-color: inherit;
   border: none;
-  margin-left: 320px;
+  margin-left: 310px;
   cursor: pointer;
   /* background-color: inherit;
   border: none;
@@ -1446,7 +1447,7 @@ color: #51B9D4;
 }
 
 .loader {
-
+  display: none;
   margin: auto;
   margin-top: 15px;
   border: 12px solid #f3f3f3;
@@ -1469,3 +1470,28 @@ color: #51B9D4;
   100% { transform: rotate(360deg); }
 }
 
+/* //////////////////// */
+
+.uploader {
+  display: none;
+  margin: auto;
+  margin-top: 15px;
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #4198A9;
+  width: 30px;
+  height: 30px;;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

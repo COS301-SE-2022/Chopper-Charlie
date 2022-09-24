@@ -129,6 +129,8 @@ function Profile() {
 			const data = new FormData();
 			data.append('file_from_react', file);
 			document.getElementById('UploadmyForm').style.display = 'block';
+			document.getElementById('uploader').style.display='block';
+			document.getElementById('textUpload').innerHTML= "Uploading..";
 			fetch('/ur/' + currentUser?.email, {
 				method: 'post',
 				body: data,
@@ -138,9 +140,9 @@ function Profile() {
 					setdata(data);
 					console.log(JSON.stringify(data.Message));
 					//   alert(JSON.stringify(data.Message));
-					
+					document.getElementById('uploader').style.display='none';
 					uploadingPopup(JSON.stringify(data.Message));
-					document.getElementById('loader').style.display="none";
+					
 					document.getElementById('Uploadcancel').style.display = 'block';
 					
 				})
@@ -168,8 +170,8 @@ function Profile() {
 		var count = p.count ? 'y' : 'n';
 		var outline = p.outline ? 'y' : 'n';
 		document.getElementById('myForm').style.display = 'none';
-
 		document.getElementById('ResultmyForm').style.display = 'block';
+		document.getElementById('loader').style.display='block';
 		document.getElementById('textResults').innerHTML = 'Analysing...';
 
 		fetch(
@@ -379,7 +381,7 @@ function Profile() {
 			<div className='Uploadform-popup' id='UploadmyForm'>
 				<div className='Uploadform-container'>
 					<div id='textUpload'>Uploading...</div>
-					<div id= "loader"  className="loader"></div>
+					<div id= "uploader"  className="uploader"></div>
 					<button
 						id='Uploadcancel'
 						type='button'

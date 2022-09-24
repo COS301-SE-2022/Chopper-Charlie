@@ -111,6 +111,7 @@ function Profile() {
 		  const data = new FormData();
 		  data.append('file_from_react', file);
 		  document.getElementById("UploadmyForm").style.display = "block";
+		  document.getElementById("loader").style.display = "block";
 		  fetch("/ur/"+currentUser?.email,
 			{
 			  method: 'post',
@@ -123,7 +124,7 @@ function Profile() {
 			  console.log(JSON.stringify(data.Message));
 			//   alert(JSON.stringify(data.Message));
 			uploadingPopup(JSON.stringify(data.Message));
-			document.getElementById("Loader").style.display = "none";
+			document.getElementById("loader").style.display = "none";
 			document.getElementById("Uploadcancel").style.display = "block";
 	  })
 		  );
