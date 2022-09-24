@@ -231,8 +231,12 @@ function Profile() {
 
 
 	const getFileResult = (filename) => {
-		const results = files[filename]
-		console.log(`This is the results: ${results} for ${filename}`)
+		getFileResult(currentUser).then((data) => {
+			console.log('this is the results data: ',data);
+			dispatch(setFiles(data));
+			const results = files[filename]
+			console.log(`This is the results for ${filename} : ${results}`)
+		})
 	}
 
 	return (
