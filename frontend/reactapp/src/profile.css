@@ -719,6 +719,7 @@ width: 75%;
   margin-right: 20px;
   margin-left: 20px;
   
+  
 }
 
 #MediaBlock:hover{
@@ -738,14 +739,16 @@ width: 75%;
   font-weight: bold;
   font-size: 20px;
   font-family:Arial, Helvetica, sans-serif;
+  word-break: break-all;
+    white-space: normal;
 
+  }
 
-}
 
 #MediaBlock h5{
   font-family:Arial, Helvetica, sans-serif;
   font-weight:normal;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 
@@ -754,6 +757,7 @@ width: 75%;
   height:80% ;
   margin-top: -20px;
   margin-left: 3%;
+  padding-bottom: 3px;
 
 }
 
@@ -1628,3 +1632,4 @@ color: #51B9D4;
   padding-left: 400px;
   
 }
+
