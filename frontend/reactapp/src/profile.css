@@ -573,10 +573,10 @@ visibility: hidden;
 
 #settings{
   width: 300px;
-  background-color: #222225;
+  background-color: #1A1A1A;
   margin: auto;
   margin-top: 30px;
-  border-radius: 15px;
+  border-radius: 5px;
   height: 60%;
   text-align: center;
   position: relative;
@@ -594,13 +594,15 @@ visibility: hidden;
   height: 40px;
   font-size: 13px;
   background-color: rgb(34, 34, 37);
-  color: rgb(181, 159, 241);;
+  color: rgb(57, 57, 57);;
   font-size: 14px;
   margin-top: 3%;
-  border-radius: 20px;
+  border-radius: 5px;
   border: 1px solid #575758;
-  width: 50%;
+  width: 70%;
   cursor: pointer;
+  color:#58aee7;
+  font-weight: bold;
   
   
 }
@@ -1517,4 +1519,8 @@ color: #51B9D4;
 #pipelineHeading{
   font-size: 40px;
   margin-left: 30%;
+}
+#settingsHeading{
+  font-size: 40px;
+  margin-left: 35%;
 }
