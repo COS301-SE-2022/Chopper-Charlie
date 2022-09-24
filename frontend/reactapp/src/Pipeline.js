@@ -65,7 +65,7 @@ const pipelines = useSelector(selectPipelines);
       <div className='center'>
 
     
-     <h2>Your Pipelines</h2>
+     <h2 id='pipelineHeading'>Your Pipelines</h2>
 
 
 	 <div className='analytics-container'>
