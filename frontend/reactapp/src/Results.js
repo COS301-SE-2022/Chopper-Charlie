@@ -414,10 +414,12 @@ function Profile() {
 				
 
 				<div>
+				<a id='pagelinks' href='/pipeline'>
 					<button type='button' id='home'>
 						<HomeRoundedIcon id='icon' />
 						<p>Home</p>
 					</button>
+					</a>
 
 					<a id='pagelinks' href='/pipeline'>
 						<button type='button' id='home'>
