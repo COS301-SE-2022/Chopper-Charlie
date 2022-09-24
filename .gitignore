@@ -5,4 +5,5 @@ yolov3.weights
 env
 firebasePrivateKey.json
 .env
-
+node_modules
+/node_modules
