@@ -9,6 +9,10 @@ import {useAuthValue} from './AuthContext'
 
 function Login(){
 
+  const [color, changeColor] = useState('#242424');
+	document.body.style.backgroundColor = color;
+
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('') 
   const [error, setError] = useState('')
