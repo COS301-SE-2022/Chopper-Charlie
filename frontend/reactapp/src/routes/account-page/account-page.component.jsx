@@ -26,9 +26,64 @@ import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
 import GridViewIcon from '@mui/icons-material/GridView';
 import { selectPipelines } from '../../store/pipelines/pipelines.selector';
 import { selectCurrentUser } from '../../store/user/user.selector';
+import ReorderIcon from '@mui/icons-material/Reorder';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import FileUploadIcon from '@mui/icons-material/FileUpload';
+import InputBase from '@mui/material/InputBase';
+import { styled, alpha } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import TuneIcon from '@mui/icons-material/Tune';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+
+
+
+const Search = styled('div')(({ theme }) => ({
+	position: 'relative',
+	borderRadius: theme.shape.borderRadius,
+	backgroundColor: alpha(theme.palette.common.white, 0.15),
+	'&:hover': {
+		backgroundColor: alpha(theme.palette.common.white, 0.25),
+	},
+	marginRight: theme.spacing(2),
+	marginLeft: 0,
+	width: '100%',
+	[theme.breakpoints.up('sm')]: {
+		marginLeft: theme.spacing(3),
+		width: 'auto',
+	},
+}));
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+	padding: theme.spacing(0, 2),
+	height: '100%',
+	position: 'absolute',
+	pointerEvents: 'none',
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+	color: 'inherit',
+	'& .MuiInputBase-input': {
+		padding: theme.spacing(1, 1, 1, 0),
+		// vertical padding + font size from searchIcon
+		paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+		transition: theme.transitions.create('width'),
+		width: '100%',
+		[theme.breakpoints.up('md')]: {
+			width: '20ch',
+		},
+	},
+}));
+
 
 const Account = () => {
 	const currentUser = useSelector(selectCurrentUser);
+	const fileUpload = useRef(null);
 	const params = useParams();
 	const { accountName } = params;
 	const [files, setFiles] = useState([]);
@@ -270,8 +325,8 @@ const Account = () => {
 
 	return (
 		<div>
-			<h2>Accont: {accountName}</h2>
-			<h5>role: {userRole}</h5>
+			<h2 id="adminHeading">Account of : {accountName}</h2>
+			<h5 id="adminHeadingRole">Role: {userRole}</h5>
 			{adminRole === 'super' && !(userRole === 'super') && (
 				<button onClick={handleDelete}>Delete Account</button>
 			)}
@@ -285,33 +340,65 @@ const Account = () => {
 			{adminRole === 'super' && userRole === 'admin' && (
 				<button onClick={handleRemoveAdmin}>Remove Admin</button>
 			)}
-			<div id='Searchbar'>
-				<input id='searchhh'></input>
-				<button id='searchbuttonn'>
-					<SearchIcon sx={{ fontSize: 12 }} />
-				</button>
-				<a id='pagelinks' href='/homelist'>
-					<button id='viewList'>
-						<ViewListOutlinedIcon id='listOption' />
-					</button>
-				</a>
-				<button id='viewGrid'>
-					<GridViewIcon id='listOptionactive' />
-				</button>
-				{/* <button id='uploadButton' onClick={() => upData()}   >Upload</button> */}
-
-				{/* <input id='uploadInput'
-					type="file"
-					onChange={uploadFile}>
-				</input> */}
-
-				<div id='uploadInput'>
-					<label for='fileInput' class='btn'>
+			
+			<Stack
+				justifyContent='space-between'
+				alignItems='center'
+				direction={'row'}
+				spacing={{ xs: 1, sm: 2, md: 4 }}
+				sx={{
+					backgroundColor: '#1a1a1a',
+					padding: 1,
+					borderRadius: 2,
+					color: 'white',
+					minHeight: '3em',
+					maxHeight: '3.5em',
+					maxWidth: '70%',
+					minWidth: '15em',
+					paddingRight: '20px',
+				}}>
+				<Search>
+					<SearchIconWrapper>
+						<SearchIcon />
+					</SearchIconWrapper>
+					<StyledInputBase
+						placeholder='Search…'
+						inputProps={{ 'aria-label': 'search' }}
+					/>
+				</Search>
+				<Box
+					sx={{
+						width: 200,
+						height: 0,
+					}}
+				/>
+				<span>
+					
+				</span>
+				<div>
+					<Button
+						variant='contained'
+						startIcon={<FileUploadIcon />}
+						sx={{ minWidth: '100px', backgroundColor: '#007ade' }}
+						onClick={() => {
+							fileUpload.current.click();
+						}}>
 						Upload
-					</label>
+					</Button>
+					<input
+						id='fileInput'
+						type='file'
+						onChange={uploadFile}
+						ref={fileUpload}
+						style={{ opacity: '0', width: '0', height: '0' }}></input>
 				</div>
-				<input id='fileInput' type='file' onChange={uploadFile}></input>
-			</div>
+			</Stack>
+
+
+
+
+
+
 
 			{typeof files.mydata === 'undefined' ? (
 				<div className='lds-ring'>
@@ -441,36 +528,40 @@ const Account = () => {
 				</div>
 			</div>
 
+			
 			<div className='profile'>
-				<img
-					src={require('../../logo.png')}
-					width='80%'
-					height='17%'
-					alt='Logo'
-				/>
+				<img src={require('../../logo.png')} width='70%' height='15%' alt='Logo' />
 
 				<br />
-				<AccountCircleRoundedIcon sx={{ fontSize: 45 }} />
+				<br />
+				<AccountCircleRoundedIcon sx={{ fontSize: 35 }} />
 
 				<br />
 				<h4 id='user-id'>
 					<strong> </strong>
 					{currentUser?.email}
 				</h4>
-				<br />
-				<hr />
-				<br />
+
+				{/* <hr /> */}
 
 				<div>
-					<button type='button' id='home'>
-						<HomeRoundedIcon id='icon' />
-						<p>Home</p>
-					</button>
+					<a id='pagelinks' href='/home'>
+						<button type='button' id='home'>
+							<HomeRoundedIcon id='icon' />
+							<p>Home</p>
+						</button>
+					</a>
 
 					<a id='pagelinks' href='/pipeline'>
 						<button type='button' id='home'>
-							<FiberManualRecordIcon id='icon' />
+							<TuneIcon id='icon' />
 							<p>Pipelines</p>
+						</button>
+					</a>
+					<a id='pagelinks' href='/results'>
+						<button type='button' id='home'>
+							<AssessmentIcon id='icon' />
+							<p>Results</p>
 						</button>
 					</a>
 					<a id='pagelinks' href='/settings'>
@@ -479,16 +570,16 @@ const Account = () => {
 							<p>Settings</p>
 						</button>
 					</a>
+
 					<a id='pagelinks' href='/admin'>
 						<button type='button' id='home'>
-							<SettingsRoundedIcon id='icon' />
+							<AdminPanelSettingsIcon id='icon' />
 							<p>Admin</p>
 						</button>
 					</a>
-					<br />
 				</div>
-
-				<hr />
+				<br />
+				{/* <hr /> */}
 
 				<br />
 
@@ -510,6 +601,9 @@ const Account = () => {
 					/>
 				</div>
 			</div>
+
+
+
 		</div>
 	);
 };

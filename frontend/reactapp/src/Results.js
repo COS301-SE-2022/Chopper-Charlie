@@ -25,7 +25,66 @@ import { selectCurrentUser } from './store/user/user.selector';
 import { setFiles } from './store/files/files.action';
 import { selectFiles } from './store/files/files.selector';
 
+
+import { useRef } from 'react';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import FileUploadIcon from '@mui/icons-material/FileUpload';
+import InputBase from '@mui/material/InputBase';
+import { styled, alpha } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom';
 //change
+
+// ################### Search Bar ###################
+
+
+const Search = styled('div')(({ theme }) => ({
+	position: 'relative',
+	borderRadius: theme.shape.borderRadius,
+	backgroundColor: alpha(theme.palette.common.white, 0.15),
+	'&:hover': {
+		backgroundColor: alpha(theme.palette.common.white, 0.25),
+	},
+	marginRight: theme.spacing(2),
+	marginLeft: 0,
+	width: '100%',
+	[theme.breakpoints.up('sm')]: {
+		marginLeft: theme.spacing(3),
+		width: 'auto',
+	},
+}));
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+	padding: theme.spacing(0, 2),
+	height: '100%',
+	position: 'absolute',
+	pointerEvents: 'none',
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+	color: 'inherit',
+	'& .MuiInputBase-input': {
+		padding: theme.spacing(1, 1, 1, 0),
+		// vertical padding + font size from searchIcon
+		paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+		transition: theme.transitions.create('width'),
+		width: '100%',
+		[theme.breakpoints.up('md')]: {
+			width: '20ch',
+		},
+	},
+}));
+
+// ##################################################
+
+
+
+
 function Profile() {
 
 
@@ -34,7 +93,7 @@ function Profile() {
 	const [color, changeColor] = useState("#242424");
 
 	document.body.style.backgroundColor = color;
-
+	const fileUpload = useRef(null);
 
 
 	
@@ -264,37 +323,74 @@ function Profile() {
 		<div>
 
 
-			
-			<div id='Searchbar'>
-				
+<Stack
+				justifyContent='space-between'
+				alignItems='center'
+				direction={'row'}
+				spacing={{ xs: 1, sm: 2, md: 4 }}
+				sx={{
+					backgroundColor: '#1a1a1a',
+					padding: 1,
+					borderRadius: 2,
+					color: 'white',
+					minHeight: '3em',
+					maxHeight: '3.5em',
+					maxWidth: '70%',
+					minWidth: '15em',
+					paddingRight: '20px',
+				}}>
+				<Search>
+					<SearchIconWrapper>
+						<SearchIcon />
+					</SearchIconWrapper>
+					<StyledInputBase
+						placeholder='Search…'
+						inputProps={{ 'aria-label': 'search' }}
+					/>
+				</Search>
+				<Box
+					sx={{
+						width: 200,
+						height: 0,
+					}}
+				/>
+				<span>
+					<IconButton
+						// disabled
+						aria-label='grid'
+						sx={{
+							color: '#51B9D4',
+						}}>
+						<GridViewIcon />
+					</IconButton>
+					<a href='/resultslist'>
+						<IconButton
+							aria-label='list'
+							sx={{
+								color: 'white',
+							}}>
+							<ReorderIcon />
+						</IconButton>
+					</a>
+				</span>
 				<div>
-				<div id='ConSearch'><input id='searchhh' placeholder="Search"></input>
-				<button id='searchbuttonn'>
-					<SearchIcon sx={{ fontSize: 14 }} />
-				</button>
-				
-
-
-				<a id='pagelinks' href='/ResultsList'>
-					<button id='viewList'>
-						<ReorderIcon id='listOption' />
-					</button>
-				</a>
-				<button id='viewGrid'>
-					<GridViewIcon id='listOptionactive' />
-				</button>
-
-
+					<Button
+						variant='contained'
+						startIcon={<FileUploadIcon />}
+						sx={{ minWidth: '100px', backgroundColor: '#007ade' }}
+						onClick={() => {
+							fileUpload.current.click();
+						}}>
+						Upload
+					</Button>
+					<input
+						id='fileInput'
+						type='file'
+						onChange={uploadFile}
+						ref={fileUpload}
+						style={{ opacity: '0', width: '0', height: '0' }}></input>
 				</div>
-
-
-					<div id='uploadInput'><label   for='fileInput' class='btn'>
-					<UploadIcon id="upIcon" sx={{ fontSize: 20 }} />Upload
-					</label></div>
-				
-				<input id='fileInput' type='file' onChange={uploadFile}></input>
-			</div>
-			</div>
+			</Stack>
 
 
 			{typeof data.mydata === 'undefined' ? (

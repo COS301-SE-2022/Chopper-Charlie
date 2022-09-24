@@ -1607,3 +1607,17 @@ color: #51B9D4;
   display: block;
 }
 /* //////////////////////////////////////////////////// */
+
+
+
+#adminHeading{
+  font-size: 25px;
+  color: #ffffff;
+  padding-left: 30px;
+}
+
+#adminHeadingRole{
+  font-size: 25px;
+  color: #51B9D4;
+  padding-left: 35px;
+}
