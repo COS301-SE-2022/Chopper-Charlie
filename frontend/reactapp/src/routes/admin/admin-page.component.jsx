@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AccountCard from '../../components/account-card/account-card.component';
-import { auth, getFileResult, getUsers } from '../../firebase';
+import { auth, deleteFileResult, getFileResult, getUsers } from '../../firebase';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
@@ -35,6 +35,9 @@ const Admin = () => {
 		// 	// console.log('This is the first file', data[filename]);
 		// })
 	}, []);
+
+
+
 	return (
 		<div className='admin-wrapper'>
 			<h2>User Accounts</h2>
@@ -99,7 +102,6 @@ const Admin = () => {
 						<p>Logout</p>
 					</button>
 				</a>
-
 				<div className='sub_div'>
 					{' '}
 					<img
