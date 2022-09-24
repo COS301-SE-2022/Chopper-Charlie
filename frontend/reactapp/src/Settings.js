@@ -88,7 +88,7 @@ function Profile() {
 
 				{/* <hr /> */}
 
-				<div><a id='pagelinks' href='/pipeline'>
+				<div><a id='pagelinks' href='/home'>
 					<button type='button' id='home'>
 						<HomeRoundedIcon id='icon' />
 						<p>Home</p>
