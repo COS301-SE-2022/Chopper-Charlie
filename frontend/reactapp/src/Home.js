@@ -230,6 +230,9 @@ function Profile() {
 	return (
 		
 		<div>
+
+
+			
 			<div id='Searchbar'>
 				
 				<div>

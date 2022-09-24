@@ -686,7 +686,7 @@ width: 75%;
 #HomeContentList {
   width: 75%;
   height: 100%;
-  background-color:#000000;
+  background-color:inherit;
   /* list-style-position: outside; */
   /* display: contents; */
 
@@ -1061,7 +1061,7 @@ color: #51B9D4;
 #MediaBlockList {
   width: 800px;
   height: 80px;
-  background-color: #1F1F21;
+  background-color: #1A1A1A;
   border-radius:15px ;
   color: #ffffff;
   margin-bottom: 30px;
@@ -1294,10 +1294,11 @@ color: #51B9D4;
 /* //////////////////////////////////////////////////////////////// */
 
 .Resultform-popup {
-  display:none;
+  display: none;
   position: fixed;
   margin-left:35%;
-  margin-top:10%;
+  margin-top: -30px;
+  border-radius: 5px;
   z-index: 9;
 }
 
@@ -1376,10 +1377,11 @@ color: #51B9D4;
 /* //////////////////////////////////////////////////////////////// */
 
 .Uploadform-popup {
-  display:none;
+  display: none;
   position: fixed;
   margin-left:35%;
-  margin-top:10%;
+  margin-top: -30px;
+  border-radius: 5px;
   z-index: 9;
 }
 
@@ -1495,3 +1497,5 @@ color: #51B9D4;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
