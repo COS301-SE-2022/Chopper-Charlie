@@ -781,15 +781,17 @@ width: 75%;
 
 
 #ResultButton {
-  width:27%;
-  height: 18%;
-  border-radius: 8px;
-  border: #9928B3;
-  background-color: #9928B3;
+  width:90%;
+  height:25px;
+  border-radius: 5px;
+  padding: 3px;
+  border: #14bf80;
+  background-color: #14bf80;
   cursor: pointer;
   font-size: 10px;
   color: #e7e3f6;
-  margin-left: 3.5%;
+  margin-left: 5%;
+  
 }
 
 
