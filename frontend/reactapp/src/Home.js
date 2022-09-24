@@ -14,6 +14,11 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 import SearchIcon from '@mui/icons-material/Search';
 import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
 import GridViewIcon from '@mui/icons-material/GridView';
+import UploadIcon from '@mui/icons-material/Upload';
+import ReorderIcon from '@mui/icons-material/Reorder';
+import TuneIcon from '@mui/icons-material/Tune';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { useSelector } from 'react-redux';
 import { selectPipelines } from './store/pipelines/pipelines.selector';
 import { selectCurrentUser } from './store/user/user.selector';
@@ -24,6 +29,9 @@ function Profile() {
 
 	// i allowed merges
 
+	const [color, changeColor] = useState("#242424");
+
+	document.body.style.backgroundColor = color;
 
 
 
@@ -217,18 +225,22 @@ function Profile() {
 		
 		<div>
 			<div id='Searchbar'>
-				<input id='searchhh'></input>
+				
+				<div>
+				<div id='ConSearch'><input id='searchhh' placeholder="Search"></input>
 				<button id='searchbuttonn'>
-					<SearchIcon sx={{ fontSize: 12 }} />
+					<SearchIcon sx={{ fontSize: 14 }} />
 				</button>
+				</div>
 				<a id='pagelinks' href='/homelist'>
 					<button id='viewList'>
-						<ViewListOutlinedIcon id='listOption' />
+						<ReorderIcon id='listOption' />
 					</button>
 				</a>
 				<button id='viewGrid'>
 					<GridViewIcon id='listOptionactive' />
 				</button>
+				
 				{/* <button id='uploadButton' onClick={() => upData()}   >Upload</button> */}
 
 				{/* <input id='uploadInput'
@@ -237,12 +249,14 @@ function Profile() {
 					</input> */}
 
 				
-					<label  id='uploadInput' for='fileInput' class='btn'>
-						Upload
-					</label>
+					<div id='uploadInput'><label   for='fileInput' class='btn'>
+					<UploadIcon id="upIcon" sx={{ fontSize: 20 }} />Upload
+					</label></div>
 				
 				<input id='fileInput' type='file' onChange={uploadFile}></input>
 			</div>
+			</div>
+
 
 			{typeof data.mydata === 'undefined' ? (
 				<div className='lds-ring'>
@@ -373,10 +387,11 @@ function Profile() {
 			</div>
 
 			<div className='profile'>
-				<img src={require('./logo.png')} width='80%' height='17%' alt='Logo' />
+				<img src={require('./logo.png')} width='70%' height='15%' alt='Logo' />
 
 				<br />
-				<AccountCircleRoundedIcon sx={{ fontSize: 45 }} />
+				<br />
+				<AccountCircleRoundedIcon sx={{ fontSize: 35 }} />
 
 				<br />
 				<h4 id='user-id'>
@@ -396,13 +411,13 @@ function Profile() {
 
 					<a id='pagelinks' href='/pipeline'>
 						<button type='button' id='home'>
-							<FiberManualRecordIcon id='icon' />
+							<TuneIcon id='icon' />
 							<p>Pipelines</p>
 						</button>
 					</a>
 					<a id='pagelinks' href='/results'>
 						<button type='button' id='home'>
-							<FiberManualRecordIcon id='icon' />
+							<AssessmentIcon id='icon' />
 							<p>Results</p>
 						</button>
 					</a>
@@ -415,7 +430,7 @@ function Profile() {
 
 					<a id='pagelinks' href='/admin'>
 						<button type='button' id='home'>
-							<SettingsRoundedIcon id='icon' />
+							<AdminPanelSettingsIcon id='icon' />
 							<p>Admin</p>
 						</button>
 					</a>

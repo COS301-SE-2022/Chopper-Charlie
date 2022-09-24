@@ -18,6 +18,10 @@ import { selectPipelines } from './store/pipelines/pipelines.selector';
 //change
 function Profile() {
   
+	const [color, changeColor] = useState("#242424");
+
+	document.body.style.backgroundColor = color;
+
 
 
   const {currentUser} = useAuthValue()
