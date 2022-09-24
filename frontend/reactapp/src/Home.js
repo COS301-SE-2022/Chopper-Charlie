@@ -1,7 +1,7 @@
 import './profile.css';
 import { useAuthValue } from './AuthContext';
 import { signOut } from 'firebase/auth';
-import { auth } from './firebase';
+import { auth, getFileResult } from './firebase';
 import React, { useEffect, useState } from 'react';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
@@ -19,29 +19,27 @@ import ReorderIcon from '@mui/icons-material/Reorder';
 import TuneIcon from '@mui/icons-material/Tune';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectPipelines } from './store/pipelines/pipelines.selector';
 import { selectCurrentUser } from './store/user/user.selector';
+import { setFiles } from './store/files/files.action';
+import { selectFiles } from './store/files/files.selector';
 
 //change
 function Profile() {
-
-
 	// i allowed merges
 
-	const [color, changeColor] = useState("#242424");
-
+	const [color, changeColor] = useState('#242424');
+	const dispatch = useDispatch();
 	document.body.style.backgroundColor = color;
 
-
-
-	
-	const currentUser = useSelector(selectCurrentUser)
+	const currentUser = useSelector(selectCurrentUser);
+	const files = useSelector(selectFiles);
 	// const { currentUser } = useAuthValue();
 	// object for storing and using data
 	const [data, setdata] = useState({});
 	const [isAdmin, setIsAdmin] = useState(false);
-	const [role, setRole] = useState('user')
+	const [role, setRole] = useState('user');
 
 	useEffect(() => {
 		try {
@@ -52,7 +50,7 @@ function Profile() {
 					if (!!idTokenResult.claims.admin) {
 						// Show admin UI.
 						setIsAdmin(true);
-						setRole('Admin')
+						setRole('Admin');
 						console.log('This is an admin user');
 					}
 				})
@@ -62,7 +60,11 @@ function Profile() {
 		} catch (error) {
 			console.log('Error getting custom claims: ', error);
 		}
+
 	}, []);
+
+
+	
 
 	let str = currentUser?.email;
 
@@ -221,42 +223,48 @@ function Profile() {
 		document.getElementById('textResults').innerHTML = a + b + h;
 	}
 
+
+	const getFileResult = (filename) => {
+		const results = files[filename]
+		console.log(`This is the results: ${results} for ${filename}`)
+	}
+
 	return (
-		
 		<div>
 			<div id='Searchbar'>
-				
 				<div>
-				<div id='ConSearch'><input id='searchhh' placeholder="Search"></input>
-				<button id='searchbuttonn'>
-					<SearchIcon sx={{ fontSize: 14 }} />
-				</button>
-				</div>
-				<a id='pagelinks' href='/homelist'>
-					<button id='viewList'>
-						<ReorderIcon id='listOption' />
+					<div id='ConSearch'>
+						<input id='searchhh' placeholder='Search'></input>
+						<button id='searchbuttonn'>
+							<SearchIcon sx={{ fontSize: 14 }} />
+						</button>
+					</div>
+					<a id='pagelinks' href='/homelist'>
+						<button id='viewList'>
+							<ReorderIcon id='listOption' />
+						</button>
+					</a>
+					<button id='viewGrid'>
+						<GridViewIcon id='listOptionactive' />
 					</button>
-				</a>
-				<button id='viewGrid'>
-					<GridViewIcon id='listOptionactive' />
-				</button>
-				
-				{/* <button id='uploadButton' onClick={() => upData()}   >Upload</button> */}
 
-				{/* <input id='uploadInput'
+					{/* <button id='uploadButton' onClick={() => upData()}   >Upload</button> */}
+
+					{/* <input id='uploadInput'
 						type="file"
 						onChange={uploadFile}>
 					</input> */}
 
-				
-					<div id='uploadInput'><label   for='fileInput' class='btn'>
-					<UploadIcon id="upIcon" sx={{ fontSize: 20 }} />Upload
-					</label></div>
-				
-				<input id='fileInput' type='file' onChange={uploadFile}></input>
-			</div>
-			</div>
+					<div id='uploadInput'>
+						<label for='fileInput' class='btn'>
+							<UploadIcon id='upIcon' sx={{ fontSize: 20 }} />
+							Upload
+						</label>
+					</div>
 
+					<input id='fileInput' type='file' onChange={uploadFile}></input>
+				</div>
+			</div>
 
 			{typeof data.mydata === 'undefined' ? (
 				<div className='lds-ring'>
@@ -397,11 +405,9 @@ function Profile() {
 				<h4 id='user-id'>
 					<strong> </strong>
 					{currentUser?.email}
-					
 				</h4>
-				
+
 				{/* <hr /> */}
-				
 
 				<div>
 					<button type='button' id='home'>
@@ -434,8 +440,6 @@ function Profile() {
 							<p>Admin</p>
 						</button>
 					</a>
-					
-
 				</div>
 				<br />
 				{/* <hr /> */}
@@ -461,7 +465,6 @@ function Profile() {
 				</div>
 			</div>
 		</div>
-		
 	);
 }
 
