@@ -92,12 +92,12 @@ def ai_video(index_snot, index_snoot, index_snooot, index_snoooot, index_snooooo
         Temp = Temp.replace("_", "")
 
         with open("backend/count.txt", "r") as file:
-            obj = file.read().rstrip()
+            data = file.read().rstrip()
         
         email = index_snoot
         fileName = "Analysed"+index_snot
-        data = index_snooot    
-        add_results(email, fileName, obj, data) 
+        obj = index_snooot    
+        add_results(email, fileName, data, obj) 
     
             
     except Exception as e:
