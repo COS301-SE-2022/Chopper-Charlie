@@ -1,7 +1,7 @@
 import './profile.css'
 import {useAuthValue} from './AuthContext'
 import { signOut } from 'firebase/auth' 
-import { auth } from './firebase'
+import { auth, getFileResult } from './firebase'
 import React, { useEffect, useState } from "react";
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
@@ -14,7 +14,7 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 import SearchIcon from '@mui/icons-material/Search';
 import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
 import GridViewIcon from '@mui/icons-material/GridView';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectPipelines } from './store/pipelines/pipelines.selector';
 import UploadIcon from '@mui/icons-material/Upload';
 import ReorderIcon from '@mui/icons-material/Reorder';
@@ -22,6 +22,8 @@ import TuneIcon from '@mui/icons-material/Tune';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { selectCurrentUser } from './store/user/user.selector';
+import { selectFiles } from './store/files/files.selector';
+import { setFiles } from './store/files/files.action';
 
 //change
 function Profile() {
@@ -213,6 +215,11 @@ function Profile() {
 		document.getElementById('ResultmyForm').style.display = 'none';
 	}
 
+	function closeResultFormResult() {
+		document.getElementById('ResultmyFormResult').style.display = 'none';
+		
+	}
+
 	function closeUploadForm() {
 		document.getElementById('UploadmyForm').style.display = 'none';
 	}
@@ -227,11 +234,78 @@ function Profile() {
 	}
 
 
+	const dispatch = useDispatch();
+	const files = useSelector(selectFiles);
+
+
+	const getFileResultfunction = (filename) => {
+		getFileResult(currentUser).then((data) => {
+			console.log('this is the results data: ',data);
+			dispatch(setFiles(data));
+			const results = files[filename]
+			document.getElementById('textResultsResult').innerHTML = "";
+			
+			document.getElementById('ResultmyFormResult').style.display = 'block';
+			Object.entries(results).forEach(([key, value]) => {
+				console.log("Object Type: "+key+"Object Count: "+value)
+				document.getElementById('textResultsResult').innerHTML += "Type: "+key+"     Count: " + value +"<br>";
+			});
+			
+			
+		})
+	}
+	
+
 
 	return (
 
 
 		<div > 
+			<div className='Resultform-popup' id='ResultmyForm'>
+				<div className='Resultform-container'>
+					<h1>Results</h1>
+					<div id='textResults'></div>
+					<div id= "loader"  className="loader"></div>
+					<button
+						id='resultcancel'
+						type='button'
+						onClick={() => closeResultForm()}
+						className='cancel'>
+						Close
+					</button>
+				</div>
+			</div>
+
+
+
+
+
+			<div className='ResultformResult-popup' id='ResultmyFormResult'>
+				<div className='ResultformResult-container'>
+					
+					<h1>Results</h1>
+					<div id='textResultsResult'></div>
+					<div id= "loader"  className="loader"></div>
+					<button id='resultcancelResult' type='button' onClick={() => closeResultFormResult()} className='cancel'> Close </button>
+				</div>
+			</div>
+
+
+
+
+			<div className='Uploadform-popup' id='UploadmyForm'>
+				<div className='Uploadform-container'>
+					<div id='textUpload'>Uploading...</div>
+					<div id= "uploader"  className="uploader"></div>
+					<button
+						id='Uploadcancel'
+						type='button'
+						onClick={() => closeUploadForm()}
+						className='cancel'>
+						Close
+					</button>
+				</div>
+			</div>
 
 			<div id='Searchbar'>
 				
@@ -265,34 +339,9 @@ function Profile() {
 				<input id='fileInput' type='file' onChange={uploadFile}></input>
 			</div>
 			</div>
-			<div className='Resultform-popup' id='ResultmyForm'>
-				<div className='Resultform-container'>
-					<h1>Results</h1>
-					<div id='textResults'></div>
-					<div id= "loader"  className="loader"></div>
-					<button
-						id='resultcancel'
-						type='button'
-						onClick={() => closeResultForm()}
-						className='cancel'>
-						Close
-					</button>
-				</div>
-			</div>
 
-			<div className='Uploadform-popup' id='UploadmyForm'>
-				<div className='Uploadform-container'>
-					<div id='textUpload'>Uploading...</div>
-					<div id= "uploader"  className="uploader"></div>
-					<button
-						id='Uploadcancel'
-						type='button'
-						onClick={() => closeUploadForm()}
-						className='cancel'>
-						Close
-					</button>
-				</div>
-			</div>
+
+			
 
 
 
@@ -326,11 +375,11 @@ function Profile() {
 <img id="previewList" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="80px" height="80px" alt="img"  onError={event => {
           event.target.src = require('./vidImg.png')
           event.onerror = null
-        }}    /><h2>{thedata}</h2><button id='ResultListButton'>Results</button>
+        }}    /><h2>{thedata}</h2><button id='ResultListButton' onClick={()=>getFileResultfunction(thedata)}>Results</button>
 		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
 		<button id="AnalyseButtonList" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
 		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button>
-
+		
 
 
 

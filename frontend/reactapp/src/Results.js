@@ -1,7 +1,7 @@
 import './profile.css';
 import { useAuthValue } from './AuthContext';
 import { signOut } from 'firebase/auth';
-import { auth } from './firebase';
+import { auth, getFileResult } from './firebase';
 import React, { useEffect, useState } from 'react';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
@@ -19,9 +19,11 @@ import ReorderIcon from '@mui/icons-material/Reorder';
 import TuneIcon from '@mui/icons-material/Tune';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectPipelines } from './store/pipelines/pipelines.selector';
 import { selectCurrentUser } from './store/user/user.selector';
+import { setFiles } from './store/files/files.action';
+import { selectFiles } from './store/files/files.selector';
 
 //change
 function Profile() {
@@ -214,6 +216,11 @@ function Profile() {
 		document.getElementById('ResultmyForm').style.display = 'none';
 	}
 
+	function closeResultFormResult() {
+		document.getElementById('ResultmyFormResult').style.display = 'none';
+		
+	}
+
 	function closeUploadForm() {
 		document.getElementById('UploadmyForm').style.display = 'none';
 	}
@@ -225,6 +232,28 @@ function Profile() {
 			linkk +
 			"><br></br><button id= 'analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 12 }} />Download</button></a><br></br>";
 		document.getElementById('textResults').innerHTML = a + "<br/>"+b + h;
+	}
+
+
+	const dispatch = useDispatch();
+	const files = useSelector(selectFiles);
+
+
+	const getFileResultfunction = (filename) => {
+		getFileResult(currentUser).then((data) => {
+			console.log('this is the results data: ',data);
+			dispatch(setFiles(data));
+			const results = files[filename]
+			document.getElementById('textResultsResult').innerHTML = "";
+			
+			document.getElementById('ResultmyFormResult').style.display = 'block';
+			Object.entries(results).forEach(([key, value]) => {
+				//console.log("Object Type: "+key+"Object Count: "+value)
+				document.getElementById('textResultsResult').innerHTML += "Type: "+key+"     Count: " + value +"<br>";
+			});
+			
+			
+		})
 	}
 
 	return (
@@ -296,7 +325,7 @@ function Profile() {
 									/>
 									&nbsp;{thedata}  
 									{/* <h5>dd/mm/yyyy</h5> */}
-									<br></br><button id='ResultButton'>Results</button>
+									<br></br><button id='ResultButton' onClick={()=>getFileResultfunction(thedata)} >Results</button>
 									<br></br>
 									<hr></hr>
 									&nbsp;
@@ -381,6 +410,31 @@ function Profile() {
 					</button>
 				</div>
 			</div>
+
+
+
+
+
+
+			<div className='ResultformResult-popup' id='ResultmyFormResult'>
+				<div className='ResultformResult-container'>
+					<h1>Results</h1>
+					<div id='textResultsResult'></div>
+					<div id= "loader"  className="loader"></div>
+					<button
+						id='resultcancelResult'
+						type='button'
+						onClick={() => closeResultFormResult()}
+						className='cancel'>
+						Close
+					</button>
+				</div>
+			</div>
+
+
+
+
+
 
 			<div className='Uploadform-popup' id='UploadmyForm'>
 				<div className='Uploadform-container'>
