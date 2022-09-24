@@ -11,11 +11,8 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
-import SearchIcon from '@mui/icons-material/Search';
 import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
-import GridViewIcon from '@mui/icons-material/GridView';
 import UploadIcon from '@mui/icons-material/Upload';
-import ReorderIcon from '@mui/icons-material/Reorder';
 import TuneIcon from '@mui/icons-material/Tune';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
@@ -25,10 +22,67 @@ import { selectCurrentUser } from './store/user/user.selector';
 import { setFiles } from './store/files/files.action';
 import { selectFiles } from './store/files/files.selector';
 
+// MUMTAAAAAAZZZZZZ HEEERRREEE IISSSSSS TTTHHHEEE SEEEAAAARRCHHHH BBAAAAARRRRRRRRRRRRRRRRR!!!!!!!!!!!!!!!!!!!!
+// ################### Search Bar ###################
+import { useRef } from 'react';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import FileUploadIcon from '@mui/icons-material/FileUpload';
+import GridViewIcon from '@mui/icons-material/GridView';
+import ReorderIcon from '@mui/icons-material/Reorder';
+import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
+import { styled, alpha } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom';
+
+const Search = styled('div')(({ theme }) => ({
+	position: 'relative',
+	borderRadius: theme.shape.borderRadius,
+	backgroundColor: alpha(theme.palette.common.white, 0.15),
+	'&:hover': {
+		backgroundColor: alpha(theme.palette.common.white, 0.25),
+	},
+	marginRight: theme.spacing(2),
+	marginLeft: 0,
+	width: '100%',
+	[theme.breakpoints.up('sm')]: {
+		marginLeft: theme.spacing(3),
+		width: 'auto',
+	},
+}));
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+	padding: theme.spacing(0, 2),
+	height: '100%',
+	position: 'absolute',
+	pointerEvents: 'none',
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+	color: 'inherit',
+	'& .MuiInputBase-input': {
+		padding: theme.spacing(1, 1, 1, 0),
+		// vertical padding + font size from searchIcon
+		paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+		transition: theme.transitions.create('width'),
+		width: '100%',
+		[theme.breakpoints.up('md')]: {
+			width: '20ch',
+		},
+	},
+}));
+
+// ##################################################
+
 //change
 function Profile() {
 	// i allowed merges
-
+	const fileUpload = useRef(null);
 	const [color, changeColor] = useState('#242424');
 	const dispatch = useDispatch();
 	document.body.style.backgroundColor = color;
@@ -60,11 +114,7 @@ function Profile() {
 		} catch (error) {
 			console.log('Error getting custom claims: ', error);
 		}
-
 	}, []);
-
-
-	
 
 	let str = currentUser?.email;
 
@@ -131,8 +181,8 @@ function Profile() {
 			const data = new FormData();
 			data.append('file_from_react', file);
 			document.getElementById('UploadmyForm').style.display = 'block';
-			document.getElementById('uploader').style.display='block';
-			document.getElementById('textUpload').innerHTML= "Uploading..";
+			document.getElementById('uploader').style.display = 'block';
+			document.getElementById('textUpload').innerHTML = 'Uploading..';
 			fetch('/ur/' + currentUser?.email, {
 				method: 'post',
 				body: data,
@@ -142,11 +192,10 @@ function Profile() {
 					setdata(data);
 					console.log(JSON.stringify(data.Message));
 					//   alert(JSON.stringify(data.Message));
-					document.getElementById('uploader').style.display='none';
+					document.getElementById('uploader').style.display = 'none';
 					uploadingPopup(JSON.stringify(data.Message));
-					
+
 					document.getElementById('Uploadcancel').style.display = 'block';
-					
 				})
 			);
 			//   let res = await response.json();
@@ -173,7 +222,7 @@ function Profile() {
 		var outline = p.outline ? 'y' : 'n';
 		document.getElementById('myForm').style.display = 'none';
 		document.getElementById('ResultmyForm').style.display = 'block';
-		document.getElementById('loader').style.display='block';
+		document.getElementById('loader').style.display = 'block';
 		document.getElementById('textResults').innerHTML = 'Analysing...';
 
 		fetch(
@@ -200,7 +249,7 @@ function Profile() {
 				// document.getElementById("textResults").innerHTML=window.countt;
 				// document.getElementById("ResultmyForm").style.display = "block";
 				resultsDiv(countt, mes, link);
-				document.getElementById('loader').style.display="none";
+				document.getElementById('loader').style.display = 'none';
 				document.getElementById('resultcancel').style.display = 'block';
 			})
 		);
@@ -226,56 +275,117 @@ function Profile() {
 			'<a href=' +
 			linkk +
 			"><br></br><button id= 'analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 12 }} />Download</button></a><br></br>";
-		document.getElementById('textResults').innerHTML = a + "<br/>"+b + h;
+		document.getElementById('textResults').innerHTML = a + '<br/>' + b + h;
 	}
-
 
 	const getFileResult = (filename) => {
 		getFileResult(currentUser).then((data) => {
-			console.log('this is the results data: ',data);
+			console.log('this is the results data: ', data);
 			dispatch(setFiles(data));
-			const results = files[filename]
-			console.log(`This is the results for ${filename} : ${results}`)
-		})
-	}
+			const results = files[filename];
+			console.log(`This is the results for ${filename} : ${results}`);
+		});
+	};
 
 	return (
-
 		<div>
-
-
-			
-			<div id='Searchbar'>
-				
-
+			{/* <div id='Searchbar'>
 				<div>
-				<div id='ConSearch'><input id='searchhh' placeholder="Search"></input>
-				<button id='searchbuttonn'>
-					<SearchIcon sx={{ fontSize: 14 }} />
-				</button>
-				
+					<div id='ConSearch'>
+						<input id='searchhh' placeholder='Search'></input>
+						<button id='searchbuttonn'>
+							<SearchIcon sx={{ fontSize: 14 }} />
+						</button>
 
+						<a id='pagelinks' href='/homelist'>
+							<button id='viewList'>
+								<ReorderIcon id='listOption' />
+							</button>
+						</a>
+						<button id='viewGrid'>
+							<GridViewIcon id='listOptionactive' />
+						</button>
+					</div>
 
-				<a id='pagelinks' href='/homelist'>
-					<button id='viewList'>
-						<ReorderIcon id='listOption' />
-					</button>
-				</a>
-				<button id='viewGrid'>
-					<GridViewIcon id='listOptionactive' />
-				</button>
+					<div id='uploadInput'>
+						<label for='fileInput' class='btn'>
+							<UploadIcon id='upIcon' sx={{ fontSize: 20 }} />
+							Upload
+						</label>
+					</div>
 
-
+					<input id='fileInput' type='file' onChange={uploadFile}></input>
 				</div>
+			</div> */}
 
-
-					<div id='uploadInput'><label   for='fileInput' class='btn'>
-					<UploadIcon id="upIcon" sx={{ fontSize: 20 }} />Upload
-					</label></div>
-				
-				<input id='fileInput' type='file' onChange={uploadFile}></input>
-			</div>
-			</div>
+			<Stack
+				justifyContent='space-between'
+				alignItems='center'
+				direction={'row'}
+				spacing={{ xs: 1, sm: 2, md: 4 }}
+				sx={{
+					backgroundColor: '#1a1a1a',
+					padding: 1,
+					borderRadius: 2,
+					color: 'white',
+					minHeight: '3em',
+					maxHeight: '3.5em',
+					maxWidth: '70%',
+					minWidth: '15em',
+					paddingRight: '20px',
+				}}>
+				<Search>
+					<SearchIconWrapper>
+						<SearchIcon />
+					</SearchIconWrapper>
+					<StyledInputBase
+						placeholder='Search…'
+						inputProps={{ 'aria-label': 'search' }}
+					/>
+				</Search>
+				<Box
+					sx={{
+						width: 200,
+						height: 0,
+					}}
+				/>
+				<span>
+					<IconButton
+						// disabled
+						aria-label='grid'
+						sx={{
+							color: '#51B9D4',
+						}}>
+						<GridViewIcon />
+					</IconButton>
+					<a href='/homelist'>
+						<IconButton
+							aria-label='list'
+							sx={{
+								color: 'white',
+							}}>
+							<ReorderIcon />
+						</IconButton>
+					</a>
+				</span>
+				<div>
+					<Button
+						variant='contained'
+						startIcon={<FileUploadIcon />}
+						sx={{ minWidth: '100px', backgroundColor: '#007ade' }}
+						onClick={() => {
+							fileUpload.current.click();
+						}}>
+						Upload
+					</Button>
+					<input
+						id='fileInput'
+						type='file'
+						onChange={uploadFile}
+						ref={fileUpload}
+						style={{ opacity: '0', width: '0', height: '0' }}></input>
+				</div>
+			</Stack>
 
 			{typeof data.mydata === 'undefined' ? (
 				<div className='lds-ring'>
@@ -382,7 +492,7 @@ function Profile() {
 				<div className='Resultform-container'>
 					<h1>Results</h1>
 					<div id='textResults'></div>
-					<div id= "loader"  className="loader"></div>
+					<div id='loader' className='loader'></div>
 					<button
 						id='resultcancel'
 						type='button'
@@ -396,7 +506,7 @@ function Profile() {
 			<div className='Uploadform-popup' id='UploadmyForm'>
 				<div className='Uploadform-container'>
 					<div id='textUpload'>Uploading...</div>
-					<div id= "uploader"  className="uploader"></div>
+					<div id='uploader' className='uploader'></div>
 					<button
 						id='Uploadcancel'
 						type='button'
@@ -423,10 +533,12 @@ function Profile() {
 				{/* <hr /> */}
 
 				<div>
-				<a id='pagelinks' href='/home'><button type='button' id='home'>
-						<HomeRoundedIcon id='icon' />
-						<p>Home</p>
-					</button></a>
+					<a id='pagelinks' href='/home'>
+						<button type='button' id='home'>
+							<HomeRoundedIcon id='icon' />
+							<p>Home</p>
+						</button>
+					</a>
 
 					<a id='pagelinks' href='/pipeline'>
 						<button type='button' id='home'>
