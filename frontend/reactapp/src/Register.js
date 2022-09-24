@@ -7,6 +7,12 @@ import {useAuthValue} from './AuthContext'
 
 function Register() {
   
+
+  const [color, changeColor] = useState('#242424');
+	document.body.style.backgroundColor = color;
+
+
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -88,7 +94,7 @@ function Register() {
 
         
 <div class="btn">
-          <button  id='login' type='submit'>Register</button>
+          <button  id='registerButton' type='submit'>Register</button>
           <a href="/login"><button type='button' id='reg'>Login</button></a>
 </div>
 
