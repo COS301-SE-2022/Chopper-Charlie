@@ -6,7 +6,7 @@ import VerifyEmail from './VerifyEmail';
 import Login from './Login'
 import {useState, useEffect} from 'react'
 import {AuthProvider} from './AuthContext'
-import {auth, createUserDocumentFromAuth} from './firebase'
+import {auth, createUserDocumentFromAuth, getFileResult} from './firebase'
 import {onAuthStateChanged} from 'firebase/auth'
 import PrivateRoute from './PrivateRoute'
 import {Navigate} from 'react-router-dom'
@@ -31,6 +31,7 @@ import { setPipelinesArray } from './store/pipelines/pipelines.action';
 import Account from './routes/account-page/account-page.component';
 import { selectCurrentUser } from './store/user/user.selector';
 import { setCurrentUser } from './store/user/user.action';
+import { setFiles } from './store/files/files.action';
 
 function App() {
 
@@ -68,6 +69,15 @@ function App() {
 			dispatch(setCurrentUser(user));
 		});
 		return unsubscribe;
+	}, []);
+
+  useEffect(() => {
+		getFileResult(currentUser).then((data) => {
+			console.log('this is the results data: ',data);
+			dispatch(setFiles(data));
+			// let filename =  'test.jpg'
+			// console.log('This is the first file', data[filename]);
+		})
 	}, []);
 
   return (

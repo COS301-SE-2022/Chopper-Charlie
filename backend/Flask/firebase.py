@@ -5,7 +5,7 @@ from firebase_admin import credentials
 from azure_storage import create_user_container, delete_container
 import json
 
-cred = credentials.Certificate("backend/Flask/firebasePrivateKey.json")
+cred = credentials.Certificate("firebasePrivateKey.json")
 default_app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -187,3 +187,25 @@ def get_type_email(email):
         return{"role": "admin"}
     except:
         return {"role": "UNAUTHORIZED"}
+    
+    
+def add_results(email ,filename, count, obj):
+    try:
+        print('adding results')
+        user = auth.get_user_by_email(email)
+        print('user found')
+        doc_ref = db.collection(u'results').document(user.uid)
+        print('doc ref found')
+        doc_ref.set({filename: {obj : count}}, merge=True) 
+        # doc_ref.set({[{filename: [{obj : count}]}]}, merge=True) 
+    except Exception as e:
+        print(e)
+        
+# add_results('bitcoders7860@gmail.com', 'test.jpg', 5, 'car')
+# add_results('bitcoders7860@gmail.com', 'test.jpg', 5, 'truck')
+# add_results('bitcoders7860@gmail.com', 'test2.jpg', 4, 'person')
+# add_results('bitcoders7860@gmail.com', 'test2.jpg', 2, 'cow')
+# add_results('bitcoders7860@gmail.com', 'test3.jpg', 12, 'bus')
+# add_results('bitcoders7860@gmail.com', 'test3.jpg', 11, 'sheep')
+# add_results('bitcoders7860@gmail.com', 'test4.jpg', 12, 'person')
+# add_results('bitcoders7860@gmail.com', 'test4.jpg', 15, 'boat')

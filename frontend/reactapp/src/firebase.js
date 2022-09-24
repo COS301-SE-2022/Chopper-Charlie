@@ -157,3 +157,15 @@ export const getUsers = async () => {
 	const querySnapshot = await getDocs(q);
 	return querySnapshot.docs.map((doc) => doc.data());
 }
+
+
+export const getFileResult = async (user) => {
+	console.log("Entering results")
+	  const docRef = doc(db, 'results', user.uid);
+	  const docSnap = await getDoc(docRef);
+	  if (docSnap.exists()) {
+		  return docSnap.data();
+	  } else {
+		  console.log('No such document!');
+	  }
+  };
