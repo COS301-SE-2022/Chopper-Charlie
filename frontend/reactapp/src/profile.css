@@ -795,6 +795,19 @@ width: 75%;
 }
 
 
+#ResultListButton {
+  width:24%;
+  height:25px;
+  border-radius: 5px;
+  padding: 3px;
+  border: #14bf80;
+  background-color: #14bf80;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  margin-left: 40%;
+}
+
 #DeleteButton {
   width:27%;
   height: 18%;
