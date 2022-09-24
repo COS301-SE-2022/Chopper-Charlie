@@ -5,7 +5,7 @@ from firebase_admin import credentials
 from azure_storage import create_user_container, delete_container
 import json
 
-cred = credentials.Certificate("backend/Flask/firebasePrivateKey.json")
+cred = credentials.Certificate("firebasePrivateKey.json")
 default_app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -187,3 +187,16 @@ def get_type_email(email):
         return{"role": "admin"}
     except:
         return {"role": "UNAUTHORIZED"}
+    
+    
+def add_results(email ,filename, count, obj):
+    try:
+        print('adding results')
+        user = auth.get_user_by_email(email)
+        print('user found')
+        doc_ref = db.collection(u'results').document(user.uid)
+        print('doc ref found')
+        doc_ref.set({filename: {obj : count}}, merge=True) 
+    except:
+        print('user not found')
+        

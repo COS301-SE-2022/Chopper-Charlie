@@ -93,7 +93,13 @@ def ai_video(index_snot, index_snoot, index_snooot, index_snoooot, index_snooooo
 
         with open("backend/count.txt", "r") as file:
             data = file.read().rstrip()
-
+        
+        email = index_snoot
+        fileName = index_snot
+        obj = index_snooot    
+        add_results(email, fileName, obj, data) 
+    
+            
     except Exception as e:
         return {"Message": "Error Analysing Media"}
     return {"Count": "Object Count: "+str(data), "Message": "Succesfully Analysed!", "Link": "https://choppercharlie.blob.core.windows.net/"+Temp+"/Analysed"+index_snot}
