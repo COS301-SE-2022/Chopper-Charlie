@@ -410,7 +410,7 @@ function Profile() {
 												thedata
 											}>
 											<button id='DownloadButton'>
-												<CloudDownloadRoundedIcon sx={{ fontSize: 24 }} />
+												<CloudDownloadRoundedIcon sx={{ fontSize: 20 }} />
 												<br></br>Download
 											</button>
 										</a>
@@ -418,12 +418,12 @@ function Profile() {
 										<button
 											id='AnalyseButton'
 											onClick={() => openForm(thedata)}>
-											<AnalyticsIcon sx={{ fontSize: 24 }} />
+											<AnalyticsIcon sx={{ fontSize: 20 }} />
 											<br></br>Analyse
 										</button>
 										&nbsp;
 										<button id='DeleteButton' onClick={() => delData(thedata)}>
-											<DeleteIcon sx={{ fontSize: 24 }} />
+											<DeleteIcon sx={{ fontSize: 20 }} />
 											<br></br>Delete
 										</button>
 									</div>
