@@ -59,8 +59,8 @@ function Profile() {
       
         <div id='settings'>
             
-        <AccountCircleRoundedIcon sx={{ fontSize: 70 ,padding:2}}/>
-        <p1><strong> </strong>{currentUser?.email}</p1><br></br>
+        <AccountCircleRoundedIcon sx={{ fontSize: 70 ,padding:2}}/><br></br><br></br>
+        <p1><strong> </strong>{currentUser?.email}</p1><br></br><br></br>
         <button id="changepass" type='button'  onClick={SendEmail}>Change password</button> <br></br>
        
         </div>
