@@ -196,7 +196,7 @@ padding-left: 5%;
 
  border-radius: 5px; 
   border: 3px solid transparent; /*2*/
-  border-image:linear-gradient(to left, #9928B3, #4198A9); 
+  border-image:linear-gradient(to left, #9928B3, #58aee7); 
  border-image-slice: 1;
 
 
