@@ -481,10 +481,10 @@ function Profile() {
 <img id="previewList" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="80px" height="80px" alt="img"  onError={event => {
           event.target.src = require('./vidImg.png')
           event.onerror = null
-        }}    /><h2>{thedata}</h2><button id='ResultButtonList' onClick={()=>getFileResultfunction(thedata)}><AssignmentIcon sx={{ fontSize: 24 }}/><br></br>Results</button>
+        }}    /><h2>{thedata}</h2><button id='ResultButtonList' onClick={()=>getFileResultfunction(thedata)}><AssignmentIcon sx={{ fontSize: 20 }}/><br></br>Results</button>
 		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
-		<button id="AnalyseButtonList" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
-		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button>
+		<button id="AnalyseButtonList" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 20 }}/><br></br>Analyse</button>&nbsp;
+		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 20 }}/><br></br>Delete</button>
 		
 
 
