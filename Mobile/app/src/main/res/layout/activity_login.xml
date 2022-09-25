@@ -7,6 +7,8 @@
     tools:context=".subsystems.LoginActivity"
     android:background="@color/black">
 
+
+
     <ImageView
         android:id="@+id/choppercharlie"
         android:layout_width="350dp"
@@ -46,7 +48,7 @@
         app:layout_constraintBottom_toTopOf="@id/password_input"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:backgroundTint="@color/white"></EditText>
+        android:backgroundTint="@color/white" />
 
     <EditText
         android:id="@+id/password_input" 
