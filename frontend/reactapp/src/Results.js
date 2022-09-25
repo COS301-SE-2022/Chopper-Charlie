@@ -36,6 +36,7 @@ import { styled, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
+import SideBar from './components/sidebar/sidebar.component';
 //change
 
 // ################### Search Bar ###################
@@ -571,82 +572,7 @@ function Profile() {
 				</div>
 			</div>
 
-			<div className='profile'>
-				<img src={require('./logo.png')} width='70%' height='15%' alt='Logo' />
-
-				<br />
-				<br />
-				<AccountCircleRoundedIcon sx={{ fontSize: 35 }} />
-
-				<br />
-				<h4 id='user-id'>
-					<strong> </strong>
-					{currentUser?.email}
-					
-				</h4>
-				
-				{/* <hr /> */}
-				
-
-				<div>
-				<a id='pagelinks' href='/home'>
-					<button type='button' id='home'>
-						<HomeRoundedIcon id='icon' />
-						<p>Home</p>
-					</button>
-					</a>
-
-					<a id='pagelinks' href='/pipeline'>
-						<button type='button' id='home'>
-							<TuneIcon id='icon' />
-							<p>Pipelines</p>
-						</button>
-					</a>
-					<a id='pagelinks' href='/results'>
-						<button type='button' id='home'>
-							<AssessmentIcon id='icon' />
-							<p>Results</p>
-						</button>
-					</a>
-					<a id='pagelinks' href='/settings'>
-						<button type='button' id='home'>
-							<SettingsRoundedIcon id='icon' />
-							<p>Settings</p>
-						</button>
-					</a>
-
-					<a id='pagelinks' href='/admin'>
-						<button type='button' id='home'>
-							<AdminPanelSettingsIcon id='icon' />
-							<p>Admin</p>
-						</button>
-					</a>
-					
-
-				</div>
-				<br />
-				{/* <hr /> */}
-
-				<br />
-
-				<a href='/login'>
-					<button type='button' id='homelogout' onClick={() => signOut(auth)}>
-						<LogoutRoundedIcon id='iconlo' />
-						<p>Logout</p>
-					</button>
-				</a>
-
-				<div className='sub_div'>
-					{' '}
-					<img
-						id='ABlogo'
-						src={require('./AB.png')}
-						width='35%'
-						height='40%'
-						alt='Logo'
-					/>
-				</div>
-			</div>
+			<SideBar/>
 		</div>
 		
 	);
