@@ -32,6 +32,9 @@
         android:name="android.hardware.usb.accessory"
         android:required="true" />
 
+    <!--For Flask-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".subsystems.main.MApplication"
         android:allowBackup="true"
@@ -39,7 +42,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ChopperCharlie">
+        android:theme="@style/Theme.ChopperCharlie"
+        android:usesCleartextTraffic="true">       <!-- For Flask -->
 
         <!-- DJI SDK -->
         <uses-library android:name="com.android.future.usb.accessory" />
@@ -85,6 +89,9 @@
         </activity>
         <activity
             android:name=".subsystems.main.MainActivity"
+            android:screenOrientation="userLandscape" />
+        <activity
+            android:name=".subsystems.Upload"
             android:screenOrientation="userLandscape" />
     </application>
 
