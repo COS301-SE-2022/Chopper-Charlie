@@ -158,6 +158,7 @@ function Profile() {
 		if (file != null) {
 			const data = new FormData();
 			data.append('file_from_react', file);
+			document.getElementById('Uploadcancel').style.display='none';
 			document.getElementById('UploadmyForm').style.display = 'block';
 			document.getElementById('uploader').style.display = 'block';
 			document.getElementById('textUpload').innerHTML = 'Uploading..';
@@ -172,7 +173,7 @@ function Profile() {
 					//   alert(JSON.stringify(data.Message));
 					document.getElementById('uploader').style.display = 'none';
 					uploadingPopup(JSON.stringify(data.Message));
-
+					
 					document.getElementById('Uploadcancel').style.display = 'block';
 				})
 			);
