@@ -13,7 +13,6 @@ import {
 	getRole,
 } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
-import PrivateRoute from './PrivateRoute';
 import { Navigate } from 'react-router-dom';
 import Download from './Download';
 import Delete from './Delete';
@@ -34,7 +33,7 @@ import Account from './routes/account-page/account-page.component';
 import { selectCurrentUser } from './store/user/user.selector';
 import { setCurrentUser } from './store/user/user.action';
 import { setFiles } from './store/files/files.action';
-import { AdminRoute } from './routes/admin-route';
+import { AdminRoute, PrivateRoute } from './routes/admin-route';
 
 function App() {
 	// const [currentUser, setCurrentUser] = useState(null)
@@ -83,9 +82,10 @@ function App() {
 			<Routes>
 				<Route
 					exact
+					index
 					path='/'
 					element={
-						<PrivateRoute>
+						<PrivateRoute user={currentUser}>
 							<Home />
 						</PrivateRoute>
 					}
@@ -114,12 +114,40 @@ function App() {
 				<Route path='/download' element={<Download />} />
 				<Route path='/delete' element={<Delete />} />
 				<Route path='/upload' element={<Upload />} /> {/*    added by mumi */}
-				<Route path='/pipeline' element={<Pipeline />} />{' '}
+				<Route
+					path='/pipeline'
+					element={
+						<PrivateRoute user={currentUser}>
+							<Pipeline />
+						</PrivateRoute>
+					}
+				/>{' '}
 				{/*    added by mumi */}
-				<Route path='/settings' element={<Settings />} />{' '}
+				<Route
+					path='/settings'
+					element={
+						<PrivateRoute user={currentUser}>
+							<Settings />
+						</PrivateRoute>
+					}
+				/>{' '}
 				{/*    added by mumi */}
-				<Route path='/analysevideo' element={<AnalyseVideo />} />
-				<Route path='/Home' element={<Home />} /> {/*    added by mumi */}
+				<Route
+					path='/analysevideo'
+					element={
+						<PrivateRoute user={currentUser}>
+							<Settings />
+						</PrivateRoute>
+					}
+				/>
+				<Route
+					path='/Home'
+					element={
+						<PrivateRoute user={currentUser}>
+							<Home />
+						</PrivateRoute>
+					}
+				/>{' '}
 				<Route
 					path='/admin'
 					element={
@@ -137,10 +165,32 @@ function App() {
 						</AdminRoute>
 					}
 				/>
-				<Route path='/Homelist' element={<Homelist />} />{' '}
+				<Route
+					path='/Homelist'
+					element={
+						<PrivateRoute user={currentUser}>
+							<Homelist />
+						</PrivateRoute>
+					}
+				/>{' '}
 				{/*    added by mumi */}
-				<Route path='/Results' element={<Results />} /> {/*    added by mumi */}
-				<Route path='/ResultsList' element={<ResultsList />} />{' '}
+				<Route
+					path='/Results'
+					element={
+						<PrivateRoute user={currentUser}>
+							<Results />
+						</PrivateRoute>
+					}
+				/>{' '}
+				{/*    added by mumi */}
+				<Route
+					path='/ResultsList'
+					element={
+						<PrivateRoute user={currentUser}>
+							<ResultsList />
+						</PrivateRoute>
+					}
+				/>{' '}
 				{/*    added by mumi */}
 			</Routes>
 		</AuthProvider>

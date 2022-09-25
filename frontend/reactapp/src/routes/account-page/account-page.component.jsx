@@ -91,7 +91,6 @@ const Account = () => {
 	const [files, setFiles] = useState([]);
 	const [data, setdata] = useState({});
 	const [userRole, setUserRole] = useState('');
-	const { role } = currentUser;
 	// const [adminRole, setAdminRole] = useState('');
 	let navigate = useNavigate();
 
@@ -109,9 +108,7 @@ const Account = () => {
 		fetch('/get-type/' + accountName).then((res) =>
 			res.json().then((data) => {
 				// Setting a data from api
-				console.log('The user is of role: ' + data.role);
 				setUserRole(data.role);
-				console.log('the admin user role is : ', role);
 			})
 		);
 	}, []);
@@ -318,28 +315,28 @@ const Account = () => {
 			<h2 id='adminHeading'>Account of : {accountName}</h2>
 			<h5 id='adminHeadingRole'>Role: {userRole}</h5>
 
-			{role === 'super' && !(userRole === 'super') && (
+			{currentUser?.role === 'super' && !(userRole === 'super') && (
 				<button id='DeleteAccFunc' onClick={handleDelete}>
 					<ClearIcon sx={{ fontSize: 17, marginBottom: -0.5 }} />
 					Delete Account
 				</button>
 			)}
 
-			{role === 'admin' && !(userRole === 'super' || userRole === 'admin') && (
+			{currentUser?.role === 'admin' && !(userRole === 'super' || userRole === 'admin') && (
 				<button id='DeleteAccFunc' onClick={handleDelete}>
 					<ClearIcon sx={{ fontSize: 17, marginBottom: -0.5 }} />
 					Delete Account
 				</button>
 			)}
 
-			{role === 'super' && userRole === 'user' && (
+			{currentUser?.role === 'super' && userRole === 'user' && (
 				<button id='adminFunc' onClick={handleAdmin}>
 					<AdminPanelSettingsIcon sx={{ fontSize: 17, marginBottom: -0.5 }} />{' '}
 					Make admin
 				</button>
 			)}
 
-			{role === 'super' && userRole === 'admin' && (
+			{currentUser?.role === 'super' && userRole === 'admin' && (
 				<button id='RemoveadminFunc' onClick={handleRemoveAdmin}>
 					<PersonRemoveIcon sx={{ fontSize: 17, marginBottom: -0.5 }} /> Remove
 					admin

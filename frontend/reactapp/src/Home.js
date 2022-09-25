@@ -92,7 +92,6 @@ function Profile() {
 	// const { currentUser } = useAuthValue();
 	// object for storing and using data
 	const [data, setdata] = useState({});
-	const { role } = currentUser;
 
 	let str = currentUser?.email;
 
@@ -559,7 +558,7 @@ function Profile() {
 						</button>
 					</a>
 
-					{(role === 'admin' || role === "super") && (
+					{(currentUser?.role === 'admin' || currentUser?.role === "super") && (
 						<a id='pagelinks' href='/admin'>
 							<button type='button' id='home'>
 								<AdminPanelSettingsIcon id='icon' />
