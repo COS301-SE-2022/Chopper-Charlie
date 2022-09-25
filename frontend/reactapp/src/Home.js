@@ -84,7 +84,7 @@ function Profile() {
 	// i allowed merges
 	const fileUpload = useRef(null);
 	const [color, changeColor] = useState('#242424');
-	
+
 	document.body.style.backgroundColor = color;
 	const dispatch = useDispatch();
 	const currentUser = useSelector(selectCurrentUser);
@@ -92,8 +92,7 @@ function Profile() {
 	// const { currentUser } = useAuthValue();
 	// object for storing and using data
 	const [data, setdata] = useState({});
-	const [isAdmin, setIsAdmin] = useState(false);
-	const [role, setRole] = useState('user');
+	const { role } = currentUser;
 
 	let str = currentUser?.email;
 
@@ -254,7 +253,12 @@ function Profile() {
 			'<a href=' +
 			linkk +
 			"><br></br><button id= 'analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 12 }} />Download</button></a><br></br>";
-		document.getElementById('textResults').innerHTML = a + '<br/>' + b + "<br/> Download results below and view them on the results page <br/>"+h;
+		document.getElementById('textResults').innerHTML =
+			a +
+			'<br/>' +
+			b +
+			'<br/> Download results below and view them on the results page <br/>' +
+			h;
 	}
 
 	const getFileResult = (filename) => {
@@ -268,35 +272,6 @@ function Profile() {
 
 	return (
 		<div>
-			{/* <div id='Searchbar'>
-				<div>
-					<div id='ConSearch'>
-						<input id='searchhh' placeholder='Search'></input>
-						<button id='searchbuttonn'>
-							<SearchIcon sx={{ fontSize: 14 }} />
-						</button>
-
-						<a id='pagelinks' href='/homelist'>
-							<button id='viewList'>
-								<ReorderIcon id='listOption' />
-							</button>
-						</a>
-						<button id='viewGrid'>
-							<GridViewIcon id='listOptionactive' />
-						</button>
-					</div>
-
-					<div id='uploadInput'>
-						<label for='fileInput' class='btn'>
-							<UploadIcon id='upIcon' sx={{ fontSize: 20 }} />
-							Upload
-						</label>
-					</div>
-
-					<input id='fileInput' type='file' onChange={uploadFile}></input>
-				</div>
-			</div> */}
-
 			<Stack
 				justifyContent='space-between'
 				alignItems='center'
@@ -398,7 +373,6 @@ function Profile() {
 									&nbsp;{thedata}
 									{/* <h5>dd/mm/yyyy</h5> */}
 									<br></br>
-									
 									<hr></hr>
 									&nbsp;
 									<div id='ButtonDiv'>
@@ -538,12 +512,14 @@ function Profile() {
 						</button>
 					</a>
 
-					<a id='pagelinks' href='/admin'>
-						<button type='button' id='home'>
-							<AdminPanelSettingsIcon id='icon' />
-							<p>Admin</p>
-						</button>
-					</a>
+					{(role === 'admin' || role === "super") && (
+						<a id='pagelinks' href='/admin'>
+							<button type='button' id='home'>
+								<AdminPanelSettingsIcon id='icon' />
+								<p>Admin</p>
+							</button>
+						</a>
+					)}
 				</div>
 				<br />
 				{/* <hr /> */}
