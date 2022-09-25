@@ -269,6 +269,32 @@ function Profile() {
 		});
 	};
 
+
+	// const [messageSearch, setMessage] = useState('');
+	// const search = event => {
+	// 	setMessage(event.target.value);
+	
+	// 	 console.log('value is:', event.target.value);
+	// 	// data.mydata.map((thedata, i) => 
+		
+	// 	// test(thedata,i,event.target.value)
+	// 	// );
+
+
+
+	//   };
+
+	const [query, setQuery] = useState("")
+
+
+
+
+
+
+
+
+
+
 	return (
 		<div>
 			<Stack
@@ -294,6 +320,7 @@ function Profile() {
 					<StyledInputBase
 						placeholder='Search…'
 						inputProps={{ 'aria-label': 'search' }}
+						onChange={event => setQuery(event.target.value)} 
 					/>
 				</Search>
 				<Box
@@ -348,7 +375,16 @@ function Profile() {
 					<div></div>
 				</div>
 			) : (
-				data.mydata.map((thedata, i) => (
+				data.mydata.filter(post => {
+					if (query === '') {
+					  return post;
+					} else if (post.toLowerCase().includes(query.toLowerCase())) {
+					  return post;
+					}
+				  })
+				
+				
+				.map((thedata, i) => (
 					<div className='center'>
 						<div id='HomeContent'>
 							<div id='MediaBlock'>
@@ -439,6 +475,17 @@ function Profile() {
 			)}
 
 			{/* <button class="open-button" onclick="openForm()">Open Form</button> */}
+
+
+
+
+
+
+
+
+
+
+
 
 			<div className='Resultform-popup' id='ResultmyForm'>
 				<div className='Resultform-container'>
