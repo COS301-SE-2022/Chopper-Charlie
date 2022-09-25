@@ -1337,6 +1337,7 @@ color: #51B9D4;
   height: 25px;
   margin: 8px;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 /* Add some hover effects to buttons */
@@ -1419,6 +1420,7 @@ color: #51B9D4;
   height: 25px;
   margin: auto;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 /* Add some hover effects to buttons */
@@ -1488,6 +1490,7 @@ color: #51B9D4;
   height: 25px;
   margin: auto;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 /* Add some hover effects to buttons */
@@ -1617,7 +1620,7 @@ color: #51B9D4;
 
 /* Add a red background color to the cancel button */
 .ResultformResult-container #analysedMed{
-  background-color: #4198A9;
+  background-color: #58aee7;
   color: #ffffff;
   border-radius: 5px;
   border: none;
