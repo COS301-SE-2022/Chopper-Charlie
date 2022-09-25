@@ -461,7 +461,7 @@ padding-left: 5%;
   border: 8px solid rgb(219, 192, 246);
   border-radius: 150%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #4198A9 transparent transparent transparent;
+  border-color: #51B9D4 transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
@@ -722,18 +722,39 @@ width: 75%;
   
 }
 
+
+#MediaBlockResults{
+  
+  text-align: left;
+  margin: auto;
+  position: relative;
+  width: 240px;
+  color: #ffffff;
+  float: left;
+  height: 380px;
+  border: 1px solid #1A1A1A;
+  margin-bottom: 5%;
+  border-radius: 8px;
+  background-color: #1A1A1A;
+  display: flex;  
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 20px;
+  
+  
+}
+
+
+
+
+
 #MediaBlock:hover{
   top: -3px;
 }
 
 
 
-#preview{
- border-top-left-radius: 8px;
- border-top-right-radius: 8px;
- margin-top: -20px;
 
-}
 
 #MediaBlock p{
   font-weight: bold;
@@ -751,7 +772,38 @@ width: 75%;
   font-size: 10px;
 }
 
+#preview{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-top: -20px;
+ 
+ }
 
+
+ 
+#MediaBlockResults:hover{
+  top: -3px;
+}
+
+
+
+
+
+#MediaBlockResults p{
+  font-weight: bold;
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif;
+  word-break: break-all;
+    white-space: normal;
+
+  }
+
+
+#MediaBlockResults h5{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  font-size: 10px;
+}
 
 #ButtonDiv{
   height:80% ;
@@ -791,12 +843,13 @@ width: 75%;
   height:25px;
   border-radius: 5px;
   padding: 3px;
-  border: #14bf80;
-  background-color: #14bf80;
+  border: #58aee7;
+  background-color: #58aee7;
   cursor: pointer;
-  font-size: 10px;
-  color: #e7e3f6;
+  font-size: 14px;
+  color: #ffffff;
   margin-left: 5%;
+  padding-top: 4px;
   
 }
 
@@ -1123,15 +1176,15 @@ color: #51B9D4;
   width:53px;
   height: 53px;
   border-radius: 8px;
-  border: #43fd9a;
-  background-color: #43fd9a;
+  border: #58aee7;
+  background-color: #58aee7;
   cursor: pointer;
   font-size: 10px;
   color: #e7e3f6;
   position: relative;
   float:right;
   margin-top: -53px;
-  margin-right: 200px;
+  margin-right: 192px;
   
 }
 
@@ -1139,8 +1192,8 @@ color: #51B9D4;
   width:53px;
   height: 53px;
   border-radius: 8px;
-  border: #FF7E37;
-  background-color: #FF7E37;
+  border: #9928B3;
+  background-color: #9928B3;
   cursor: pointer;
   font-size: 10px;
   color: #e7e3f6;
@@ -1154,8 +1207,8 @@ color: #51B9D4;
   width:53px;
   height: 53px;
   border-radius: 8px;
-  border: #51B9D4;
-  background-color: #51B9D4;
+  border: #9928B3;
+  background-color: #9928B3;
   cursor: pointer;
   font-size: 10px;
   color: #e7e3f6;
@@ -1170,8 +1223,8 @@ color: #51B9D4;
   width:53px;
   height: 53px;
   border-radius: 8px;
-  border: #FE4838;
-  background-color: #FE4838;
+  border: #9928B3;
+  background-color: #9928B3;
   cursor: pointer;
   font-size: 10px;
   color: #e7e3f6;
@@ -1341,7 +1394,7 @@ color: #51B9D4;
 
 /* Add a red background color to the cancel button */
 .Resultform-container #analysedMed{
-  background-color: #4198A9;
+  background-color: #58aee7;
   color: #ffffff;
   border-radius: 5px;
   border: none;
@@ -1475,7 +1528,7 @@ color: #51B9D4;
   margin-top: 15px;
   border: 12px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 12px solid #4198A9;
+  border-top: 12px solid #58aee7;
   width: 30px;
   height: 30px;;
   -webkit-animation: spin 2s linear infinite; /* Safari */
@@ -1501,7 +1554,7 @@ color: #51B9D4;
   margin-top: 15px;
   border: 12px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 12px solid #4198A9;
+  border-top: 12px solid #58aee7;
   width: 30px;
   height: 30px;;
   -webkit-animation: spin 2s linear infinite; /* Safari */

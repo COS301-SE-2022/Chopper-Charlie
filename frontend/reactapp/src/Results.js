@@ -24,6 +24,7 @@ import { selectPipelines } from './store/pipelines/pipelines.selector';
 import { selectCurrentUser } from './store/user/user.selector';
 import { setFiles } from './store/files/files.action';
 import { selectFiles } from './store/files/files.selector';
+import AssignmentIcon from '@mui/icons-material/Assignment';
 
 
 import { useRef } from 'react';
@@ -293,7 +294,7 @@ function Profile() {
 			'<a href=' +
 			linkk +
 			"><br></br><button id= 'analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 12 }} />Download</button></a><br></br>";
-		document.getElementById('textResults').innerHTML = a + "<br/>"+b + h;
+			document.getElementById('textResults').innerHTML = a + '<br/>' + b + "<br/> Download results below and view them on the results page <br/>"+h;
 	}
 
 
@@ -404,7 +405,7 @@ function Profile() {
 				data.mydata.map((thedata, i) => (
 					<div className='center'>
 						<div id='HomeContent'>
-							<div id='MediaBlock'>
+							<div id='MediaBlockResults'>
 								<p>
 									<img
 										id='preview'
@@ -424,7 +425,7 @@ function Profile() {
 									/>
 									&nbsp;{thedata}  
 									{/* <h5>dd/mm/yyyy</h5> */}
-									<br></br><button id='ResultButton' onClick={()=>getFileResultfunction(thedata)} >Results</button>
+									<br></br><button id='ResultButton' onClick={()=>getFileResultfunction(thedata)} ><AssignmentIcon sx={{ fontSize: 14 }} />&nbsp;&nbsp;Results</button>
 									<br></br>
 									<hr></hr>
 									&nbsp;

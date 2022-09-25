@@ -24,7 +24,7 @@ import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { selectCurrentUser } from './store/user/user.selector';
 import { selectFiles } from './store/files/files.selector';
 import { setFiles } from './store/files/files.action';
-
+import AssignmentIcon from '@mui/icons-material/Assignment';
 
 
 
@@ -298,7 +298,7 @@ function Profile() {
 			'<a href=' +
 			linkk +
 			"><br></br><button id= 'analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 12 }} />Download</button></a><br></br>";
-		document.getElementById('textResults').innerHTML = a + "<br/>"+b + h;
+			document.getElementById('textResults').innerHTML = a + '<br/>' + b + "<br/> Download results below and view them on the results page <br/>"+h;
 	}
 
 
@@ -481,7 +481,7 @@ function Profile() {
 <img id="previewList" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="80px" height="80px" alt="img"  onError={event => {
           event.target.src = require('./vidImg.png')
           event.onerror = null
-        }}    /><h2>{thedata}</h2><button id='ResultListButton' onClick={()=>getFileResultfunction(thedata)}>Results</button>
+        }}    /><h2>{thedata}</h2><button id='ResultButtonList' onClick={()=>getFileResultfunction(thedata)}><AssignmentIcon sx={{ fontSize: 24 }}/><br></br>Results</button>
 		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  ><CloudDownloadRoundedIcon sx={{ fontSize: 23 }}/>Download</button></a>
 		<button id="AnalyseButtonList" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 24 }}/><br></br>Analyse</button>&nbsp;
 		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 24 }}/><br></br>Delete</button>

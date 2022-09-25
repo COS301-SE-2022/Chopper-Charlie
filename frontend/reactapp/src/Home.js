@@ -275,7 +275,7 @@ function Profile() {
 			'<a href=' +
 			linkk +
 			"><br></br><button id= 'analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 12 }} />Download</button></a><br></br>";
-		document.getElementById('textResults').innerHTML = a + '<br/>' + b + h;
+		document.getElementById('textResults').innerHTML = a + '<br/>' + b + "<br/> Download results below and view them on the results page <br/>"+h;
 	}
 
 	const getFileResult = (filename) => {
