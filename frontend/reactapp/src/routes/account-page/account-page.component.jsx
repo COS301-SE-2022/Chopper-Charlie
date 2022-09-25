@@ -37,8 +37,8 @@ import IconButton from '@mui/material/IconButton';
 import TuneIcon from '@mui/icons-material/Tune';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-
-
+import ClearIcon from '@mui/icons-material/Clear';
+import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 
 const Search = styled('div')(({ theme }) => ({
 	position: 'relative',
@@ -332,6 +332,8 @@ const Account = () => {
 		<div>
 			<h2 id="adminHeading">Account of : {accountName}</h2>
 			<h5 id="adminHeadingRole">Role: {userRole}</h5>
+			
+			<button id ="adminFunc"><AdminPanelSettingsIcon sx={{fontSize:17, marginBottom:-0.5}}/> Make admin</button><button id='RemoveadminFunc'><PersonRemoveIcon sx={{fontSize:17, marginBottom:-0.5}}/> Remove admin</button><button id='DeleteAccFunc'><ClearIcon sx={{fontSize:17, marginBottom:-0.5}}/>Delete Account</button>
 			{adminRole === 'super' && !(userRole === 'super') && (
 				<button onClick={handleDelete}>Delete Account</button>
 			)}
