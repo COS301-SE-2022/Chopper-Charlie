@@ -34,6 +34,7 @@ import Account from './routes/account-page/account-page.component';
 import { selectCurrentUser } from './store/user/user.selector';
 import { setCurrentUser } from './store/user/user.action';
 import { setFiles } from './store/files/files.action';
+import { AdminRoute } from './routes/admin-route';
 
 function App() {
 	// const [currentUser, setCurrentUser] = useState(null)
@@ -119,8 +120,23 @@ function App() {
 				{/*    added by mumi */}
 				<Route path='/analysevideo' element={<AnalyseVideo />} />
 				<Route path='/Home' element={<Home />} /> {/*    added by mumi */}
-				<Route path='/admin' element={<Admin />} /> {/*    added by mumi */}
-				<Route path='admin/:accountName' element={<Account />} />
+				<Route
+					path='/admin'
+					element={
+						<AdminRoute user={currentUser}>
+							<Admin />
+						</AdminRoute>
+					}
+				/>{' '}
+				{/*    added by mumi */}
+				<Route
+					path='admin/:accountName'
+					element={
+						<AdminRoute user={currentUser}>
+							<Account />
+						</AdminRoute>
+					}
+				/>
 				<Route path='/Homelist' element={<Homelist />} />{' '}
 				{/*    added by mumi */}
 				<Route path='/Results' element={<Results />} /> {/*    added by mumi */}
