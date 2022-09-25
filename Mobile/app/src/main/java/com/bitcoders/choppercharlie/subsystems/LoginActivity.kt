@@ -1,24 +1,31 @@
 package com.bitcoders.choppercharlie.subsystems
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
+import com.bitcoders.choppercharlie.R
 import com.bitcoders.choppercharlie.databinding.ActivityLoginBinding
 import com.bitcoders.choppercharlie.subsystems.drone.ConnectionActivity
 import com.bitcoders.choppercharlie.subsystems.main.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import okhttp3.*
+import okio.IOException
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         auth = FirebaseAuth.getInstance()
 
@@ -41,6 +48,9 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "Empty fields are not allowed!", Toast.LENGTH_LONG).show()
             }
         }
+
+
+
     }
 
     public override fun onStart() {
