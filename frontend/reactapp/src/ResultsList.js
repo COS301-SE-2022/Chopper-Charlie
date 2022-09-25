@@ -323,7 +323,7 @@ function Profile() {
 		})
 	}
 	
-
+	const [query, setQuery] = useState("");
 
 	return (
 
@@ -398,6 +398,7 @@ function Profile() {
 					<StyledInputBase
 						placeholder='Search…'
 						inputProps={{ 'aria-label': 'search' }}
+						onChange={event => setQuery(event.target.value)} 
 					/>
 				</Search>
 				<Box
@@ -463,7 +464,16 @@ function Profile() {
 
 
 		 ) : (
-			 data.mydata.map((thedata, i)=>(
+			data.mydata.filter(post => {
+				if (query === '') {
+				  return post;
+				} else if (post.toLowerCase().includes(query.toLowerCase())) {
+				  return post;
+				}
+			  })
+			
+			
+			.map((thedata, i) => (
 				
 
 

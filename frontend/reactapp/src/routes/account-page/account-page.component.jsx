@@ -309,6 +309,10 @@ const Account = () => {
 		}
 	};
 
+
+	const [query, setQuery] = useState("");
+
+
 	return (
 		<div>
 			<h2 id='adminHeading'>Account of : {accountName}</h2>
@@ -365,6 +369,7 @@ const Account = () => {
 					<StyledInputBase
 						placeholder='Search…'
 						inputProps={{ 'aria-label': 'search' }}
+						onChange={event => setQuery(event.target.value)} 
 					/>
 				</Search>
 				<Box
@@ -401,7 +406,20 @@ const Account = () => {
 					<div></div>
 				</div>
 			) : (
-				files.mydata.map((thedata, i) => (
+		
+					files.mydata.filter(post => {
+						if (query === '') {
+						  return post;
+						} else if (post.toLowerCase().includes(query.toLowerCase())) {
+						  return post;
+						}
+					  })
+					
+					
+					.map((thedata, i) => (
+
+
+
 					<div className='center'>
 						<div id='HomeContent'>
 							<div id='MediaBlock'>
@@ -424,7 +442,7 @@ const Account = () => {
 									/>
 									&nbsp;{thedata}
 									{/* <h5>dd/mm/yyyy</h5> */}
-									<br></br>
+									
 									<br></br>
 									<hr></hr>
 									&nbsp;

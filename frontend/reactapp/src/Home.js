@@ -285,7 +285,7 @@ function Profile() {
 
 	//   };
 
-	const [query, setQuery] = useState("")
+	const [query, setQuery] = useState("");
 
 
 

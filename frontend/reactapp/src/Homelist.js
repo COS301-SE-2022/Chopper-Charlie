@@ -279,6 +279,8 @@ document.body.style.backgroundColor = color;
 	}
 
 
+	const [query, setQuery] = useState("");
+
 
 	return (
 
@@ -309,6 +311,7 @@ document.body.style.backgroundColor = color;
 					<StyledInputBase
 						placeholder='Search…'
 						inputProps={{ 'aria-label': 'search' }}
+						onChange={event => setQuery(event.target.value)} 
 					/>
 				</Search>
 				<Box
@@ -403,7 +406,16 @@ document.body.style.backgroundColor = color;
 
 
 		 ) : (
-			 data.mydata.map((thedata, i)=>(
+			data.mydata.filter(post => {
+				if (query === '') {
+				  return post;
+				} else if (post.toLowerCase().includes(query.toLowerCase())) {
+				  return post;
+				}
+			  })
+			
+			
+			.map((thedata, i) => (
 				
 
 
