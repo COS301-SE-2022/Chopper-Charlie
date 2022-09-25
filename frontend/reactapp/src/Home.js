@@ -379,7 +379,7 @@ function Profile() {
 				data.mydata.filter(post => {
 					if (query === '') {
 					  return post;
-					} else if (post.includes(query)) {
+					} else if (post.toLowerCase().includes(query.toLowerCase())) {
 					  return post;
 					}
 				  })
