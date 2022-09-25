@@ -10,8 +10,8 @@ import Box from '@mui/material/Box';
 import Link from '@mui/joy/Link';
 
 const AccountCard = ({ account }) => {
-	// let date = new Date(account.createdAt.seconds * 1000).toDateString();
-	let date = '2022-09-19';
+	let date = new Date(account.createdAt.seconds * 1000).toDateString();
+	// let date = '2022-09-19';
 	return (
 		<CssVarsProvider>
 			<Card

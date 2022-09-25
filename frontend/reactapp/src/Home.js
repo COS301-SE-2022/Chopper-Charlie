@@ -95,27 +95,6 @@ function Profile() {
 	const [isAdmin, setIsAdmin] = useState(false);
 	const [role, setRole] = useState('user');
 
-	useEffect(() => {
-		try {
-			currentUser
-				.getIdTokenResult()
-				.then((idTokenResult) => {
-					// Confirm the user is an Admin.
-					if (!!idTokenResult.claims.admin) {
-						// Show admin UI.
-						setIsAdmin(true);
-						setRole('Admin');
-						console.log('This is an admin user');
-					}
-				})
-				.catch((error) => {
-					console.log(error);
-				});
-		} catch (error) {
-			console.log('Error getting custom claims: ', error);
-		}
-	}, []);
-
 	let str = currentUser?.email;
 
 	function replace() {

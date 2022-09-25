@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import {
 	deleteFileInAccount,
 	listFilesInAccount,
@@ -80,12 +80,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 	},
 }));
 
-
 const Account = () => {
-
-
 	const [color, changeColor] = useState('#242424');
-	
+
 	document.body.style.backgroundColor = color;
 	const currentUser = useSelector(selectCurrentUser);
 	const fileUpload = useRef(null);
@@ -94,7 +91,8 @@ const Account = () => {
 	const [files, setFiles] = useState([]);
 	const [data, setdata] = useState({});
 	const [userRole, setUserRole] = useState('');
-	const [adminRole, setAdminRole] = useState('');
+	const { role } = currentUser;
+	// const [adminRole, setAdminRole] = useState('');
 	let navigate = useNavigate();
 
 	useEffect(() => {
@@ -113,35 +111,9 @@ const Account = () => {
 				// Setting a data from api
 				console.log('The user is of role: ' + data.role);
 				setUserRole(data.role);
-				// console.log(data);
+				console.log('the admin user role is : ', role);
 			})
 		);
-
-		try {
-			currentUser
-				.getIdTokenResult()
-				.then((idTokenResult) => {
-					// Confirm the user is an Admin.
-					if (!!idTokenResult.claims.admin) {
-						// Show admin UI.
-						setAdminRole('admin');
-						console.log('This is an admin user');
-					}
-					if (!!idTokenResult.claims.super) {
-						// Show admin UI.
-						setAdminRole('super');
-						console.log('This is a super user');
-					} else {
-						// Show regular user UI.
-						console.log('This is not admin user');
-					}
-				})
-				.catch((error) => {
-					console.log(error);
-				});
-		} catch (error) {
-			console.log('Error getting custom claims: ', error);
-		}
 	}, []);
 
 	let str = accountName;
@@ -288,8 +260,11 @@ const Account = () => {
 			fetch(`/delete-user/${currentUser.uid}/${accountName}`).then((res) =>
 				res.json().then((data) => {
 					// Setting a data from api
-					console.log('Reply from deleting user: ' + data.SUCCESS.message || data.ERROR.message);
-					navigate("/admin");
+					console.log(
+						'Reply from deleting user: ' + data.SUCCESS.message ||
+							data.ERROR.message
+					);
+					navigate('/admin');
 					// console.log(data);
 				})
 			);
@@ -303,7 +278,10 @@ const Account = () => {
 			fetch(`/make-admin/${currentUser.uid}/${accountName}`).then((res) =>
 				res.json().then((data) => {
 					// Setting a data from api
-					console.log('Reply from making admin: ' + data.SUCCESS.message || data.ERROR.message);
+					console.log(
+						'Reply from making admin: ' + data.SUCCESS.message ||
+							data.ERROR.message
+					);
 					setUserRole('admin');
 					// console.log(data);
 				})
@@ -312,13 +290,16 @@ const Account = () => {
 			console.error(error);
 		}
 	};
-	
+
 	const handleRemoveAdmin = async () => {
 		try {
 			fetch(`/remove-admin/${currentUser.uid}/${accountName}`).then((res) =>
 				res.json().then((data) => {
 					// Setting a data from api
-					console.log('Reply from making admin: ' + data.SUCCESS.message || data.ERROR.message);
+					console.log(
+						'Reply from making admin: ' + data.SUCCESS.message ||
+							data.ERROR.message
+					);
 					setUserRole('user');
 					// console.log(data);
 				})
@@ -330,24 +311,37 @@ const Account = () => {
 
 	return (
 		<div>
-			<h2 id="adminHeading">Account of : {accountName}</h2>
-			<h5 id="adminHeadingRole">Role: {userRole}</h5>
-			
-			<button id ="adminFunc"><AdminPanelSettingsIcon sx={{fontSize:17, marginBottom:-0.5}}/> Make admin</button><button id='RemoveadminFunc'><PersonRemoveIcon sx={{fontSize:17, marginBottom:-0.5}}/> Remove admin</button><button id='DeleteAccFunc'><ClearIcon sx={{fontSize:17, marginBottom:-0.5}}/>Delete Account</button>
-			{adminRole === 'super' && !(userRole === 'super') && (
-				<button onClick={handleDelete}>Delete Account</button>
+			<h2 id='adminHeading'>Account of : {accountName}</h2>
+			<h5 id='adminHeadingRole'>Role: {userRole}</h5>
+
+			{role === 'super' && !(userRole === 'super') && (
+				<button id='DeleteAccFunc' onClick={handleDelete}>
+					<ClearIcon sx={{ fontSize: 17, marginBottom: -0.5 }} />
+					Delete Account
+				</button>
 			)}
-			{adminRole === 'admin' &&
-				!(userRole === 'super' || userRole === 'admin') && (
-					<button>Delete Account</button>
-				)}
-			{adminRole === 'super' && userRole === 'user' && (
-				<button onClick={handleAdmin}>Make Admin</button>
+
+			{role === 'admin' && !(userRole === 'super' || userRole === 'admin') && (
+				<button id='DeleteAccFunc' onClick={handleDelete}>
+					<ClearIcon sx={{ fontSize: 17, marginBottom: -0.5 }} />
+					Delete Account
+				</button>
 			)}
-			{adminRole === 'super' && userRole === 'admin' && (
-				<button onClick={handleRemoveAdmin}>Remove Admin</button>
+
+			{role === 'super' && userRole === 'user' && (
+				<button id='adminFunc' onClick={handleAdmin}>
+					<AdminPanelSettingsIcon sx={{ fontSize: 17, marginBottom: -0.5 }} />{' '}
+					Make admin
+				</button>
 			)}
-			
+
+			{role === 'super' && userRole === 'admin' && (
+				<button id='RemoveadminFunc' onClick={handleRemoveAdmin}>
+					<PersonRemoveIcon sx={{ fontSize: 17, marginBottom: -0.5 }} /> Remove
+					admin
+				</button>
+			)}
+
 			<Stack
 				justifyContent='space-between'
 				alignItems='center'
@@ -379,9 +373,7 @@ const Account = () => {
 						height: 0,
 					}}
 				/>
-				<span>
-					
-				</span>
+				<span></span>
 				<div>
 					<Button
 						variant='contained'
@@ -400,12 +392,6 @@ const Account = () => {
 						style={{ opacity: '0', width: '0', height: '0' }}></input>
 				</div>
 			</Stack>
-
-
-
-
-
-
 
 			{typeof files.mydata === 'undefined' ? (
 				<div className='lds-ring'>
@@ -535,9 +521,13 @@ const Account = () => {
 				</div>
 			</div>
 
-			
 			<div className='profile'>
-				<img src={require('../../logo.png')} width='70%' height='15%' alt='Logo' />
+				<img
+					src={require('../../logo.png')}
+					width='70%'
+					height='15%'
+					alt='Logo'
+				/>
 
 				<br />
 				<br />
@@ -608,9 +598,6 @@ const Account = () => {
 					/>
 				</div>
 			</div>
-
-
-
 		</div>
 	);
 };
