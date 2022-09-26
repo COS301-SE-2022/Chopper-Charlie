@@ -115,7 +115,7 @@ const PipelineForm = () => {
         justifyContent="space-between"
         sx={{
           height: "2.5em",
-          width: "900px",
+          width: "70%",
           backgroundColor: "#1a1a1a",
           // backgroundColor: 'black',
           padding: "1em",

@@ -30,7 +30,7 @@ const PipelineItem = ({ pipelineItem }) => {
 			sx={{
 				margin: '1em',
 				marginLeft:"60px",
-				width: '50em',
+				width: '65%',
 				border: '1px solid transparent',
 				position: 'relative',
 				backgroundClip: 'padding-box',
