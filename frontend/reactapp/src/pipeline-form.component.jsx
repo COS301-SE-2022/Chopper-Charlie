@@ -108,12 +108,12 @@ const PipelineForm = () => {
 				justifyContent='space-between'
 				sx={{
 					height: '2.5em',
-					width: '1000px',
+					width: '70%',
 					backgroundColor: '#1a1a1a',
 					// backgroundColor: 'black',
 					padding: '1em',
 					borderRadius: '10px',
-					marginLeft: '15px',
+					marginLeft: '3%',
 				}}>
 				<TextField
 					name='title'
