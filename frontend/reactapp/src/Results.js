@@ -430,7 +430,7 @@ function Profile() {
 							<div id='MediaBlockResults'>
 								<p>
 									<img
-										id='preview'
+										id='previewResults'
 										src={
 											'https://choppercharlie.blob.core.windows.net/' +
 											replace() +

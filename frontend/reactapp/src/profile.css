@@ -711,13 +711,16 @@ width: 75%;
   float: left;
   height: 350px;
   border: 1px solid #1A1A1A;
+  
   margin-bottom: 5%;
   border-radius: 8px;
   background-color: #1A1A1A;
-  display: flex;  
-  flex-wrap: wrap;
+  /* display: flex;   */
+   flex-wrap: wrap;
   margin-right: 20px;
   margin-left: 20px;
+
+ 
   
   
 }
@@ -731,13 +734,14 @@ width: 75%;
   width: 240px;
   color: #ffffff;
   float: left;
-  height: 380px;
+  height: 360px;
   border: 1px solid #1A1A1A;
+  
   margin-bottom: 5%;
   border-radius: 8px;
   background-color: #1A1A1A;
-  display: flex;  
-  flex-wrap: wrap;
+  /* display: flex;   */
+   flex-wrap: wrap;
   margin-right: 20px;
   margin-left: 20px;
   
@@ -757,13 +761,22 @@ width: 75%;
 
 
 #MediaBlock p{
+  margin-top: -20px;
+  padding-top: 10px;
   font-weight: bold;
   font-size: 20px;
   font-family:Arial, Helvetica, sans-serif;
-  word-break: break-all;
-    white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:normal;
+  /* word-break: break-all;
+    white-space: normal; */
 
   }
+
+
+
+ 
 
 
 #MediaBlock h5{
@@ -772,10 +785,18 @@ width: 75%;
   font-size: 10px;
 }
 
-#preview{
+#previewResults{
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  margin-top: -20px;
+  margin-top: -10px;
+ 
+ 
+ }
+
+ #preview{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+ 
  
  }
 
@@ -790,11 +811,14 @@ width: 75%;
 
 
 #MediaBlockResults p{
+  margin-top: -20px;
+  padding-top: 10px;
   font-weight: bold;
   font-size: 20px;
   font-family:Arial, Helvetica, sans-serif;
-  word-break: break-all;
-    white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:normal;
 
   }
 
@@ -814,8 +838,8 @@ width: 75%;
 }
 
 #DownloadButton {
-  width:28%;
-  height: 18%;
+  width:65px;
+  height: 65px;
   border-radius: 8px;
   border: #9928B3;
   background-color: #9928B3;
@@ -826,8 +850,8 @@ width: 75%;
 }
 
 #AnalyseButton {
-  width:28%;
-  height: 18%;
+  width:65px;
+  height: 65px;
   border-radius: 8px;
   border: #9928B3;
   background-color: #9928B3;
@@ -839,8 +863,8 @@ width: 75%;
 
 
 #DeleteButton {
-  width:28%;
-  height: 18%;
+  width:65px;
+  height: 65px;
   border-radius: 8px;
   border: #9928B3;
   background-color: #9928B3;
@@ -858,6 +882,7 @@ width: 75%;
   height:25px;
   border-radius: 5px;
   padding: 3px;
+  
   border: #58aee7;
   background-color: #58aee7;
   cursor: pointer;
@@ -865,6 +890,7 @@ width: 75%;
   color: #ffffff;
   margin-left: 5%;
   padding-top: 4px;
+  margin-top: 5px;
   
 }
 
@@ -1137,7 +1163,7 @@ color: #51B9D4;
 
 
 #MediaBlockList {
-  width: 800px;
+  width: 85%;
   height: 80px;
   background-color: #1A1A1A;
   border-radius:15px ;
