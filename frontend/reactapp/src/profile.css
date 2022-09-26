@@ -1179,6 +1179,11 @@ color: #51B9D4;
   margin-left: 100px;
   font-weight: bold;
   color: #f9f9f9;
+  width: 55%;
+  flex-wrap: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:normal;
 }
 
 #nameDiv{
