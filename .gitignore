@@ -7,3 +7,6 @@ firebasePrivateKey.json
 .env
 node_modules
 /node_modules
+frontend/reactapp/firebase.json
+*.cache
+frontend/reactapp/.firebaserc
