@@ -82,19 +82,21 @@
         </activity>
 
         <activity
-            android:name=".subsystems.Nav"
+            android:name=".subsystems.mediaManager.ConnectionActivity"
             android:screenOrientation="userLandscape" />
-        <activity
-            android:name=".subsystems.main.MainActivity"
-            android:screenOrientation="userLandscape" />
+
         <activity
             android:name=".subsystems.mediaManager.MediaMain"
             android:screenOrientation="userLandscape" />
         <activity
+            android:name=".subsystems.main.MainActivity"
+            android:screenOrientation="userLandscape" />
+
+        <activity
             android:name=".subsystems.Upload"
             android:screenOrientation="userLandscape" />
         <activity
-            android:name=".subsystems.mediaManager.ConnectionActivity"
+            android:name=".subsystems.Nav"
             android:screenOrientation="userLandscape" />
 
 
