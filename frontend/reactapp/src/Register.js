@@ -98,9 +98,6 @@ function Register() {
           <button  id='registerButton' type='submit'>Register</button>
           <a href="/login"><button type='button' id='reg'>Login</button></a>
 </div>
-<p id="or">- OR - </p>
-          <GoogleButton id="google" onClick={() => { console.log('Google button clicked') }}  type="light" label='Register with Google' />
-          
         </form>
        
       </div>
