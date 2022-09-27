@@ -189,7 +189,7 @@ function Profile() {
 	// }
 
 	function uploadingPopup(a) {
-		document.getElementById('UploadmyForm').style.display = 'block';
+		document.getElementById('UploadmyFormList').style.display = 'block';
 		document.getElementById('textUpload').innerHTML = a;
 	}
 
@@ -198,7 +198,7 @@ function Profile() {
 		if (file != null) {
 			const data = new FormData();
 			data.append('file_from_react', file);
-			document.getElementById('UploadmyForm').style.display = 'block';
+			document.getElementById('UploadmyFormList').style.display = 'block';
 			document.getElementById('uploader').style.display='block';
 			document.getElementById('textUpload').innerHTML= "Uploading..";
 			fetch('/ur/' + currentUser?.email, {
@@ -290,7 +290,7 @@ function Profile() {
 	}
 
 	function closeUploadForm() {
-		document.getElementById('UploadmyForm').style.display = 'none';
+		document.getElementById('UploadmyFormList').style.display = 'none';
 	}
 
 	function resultsDiv(a, b, linkk) {
@@ -362,8 +362,8 @@ function Profile() {
 
 
 
-			<div className='Uploadform-popup' id='UploadmyForm'>
-				<div className='Uploadform-container'>
+			<div className='Uploadform-popupList' id='UploadmyFormList'>
+				<div className='Uploadform-containerList'>
 					<div id='textUpload'>Uploading...</div>
 					<div id= "uploader"  className="uploader"></div>
 					<button

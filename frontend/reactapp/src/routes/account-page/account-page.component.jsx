@@ -157,8 +157,11 @@ const Account = () => {
 		if (file != null) {
 			const data = new FormData();
 			data.append('file_from_react', file);
+			document.getElementById('Uploadcancel').style.display='none';
 			document.getElementById('UploadmyForm').style.display = 'block';
-			fetch('/ur/' + accountName, {
+			document.getElementById('uploader').style.display = 'block';
+			document.getElementById('textUpload').innerHTML = 'Uploading..';
+			fetch('/ur/' + currentUser?.email, {
 				method: 'post',
 				body: data,
 			}).then((res) =>
@@ -167,9 +170,10 @@ const Account = () => {
 					setdata(data);
 					console.log(JSON.stringify(data.Message));
 					//   alert(JSON.stringify(data.Message));
+					document.getElementById('uploader').style.display = 'none';
 					uploadingPopup(JSON.stringify(data.Message));
+					
 					document.getElementById('Uploadcancel').style.display = 'block';
-					setFiles([]);
 				})
 			);
 			//   let res = await response.json();
@@ -182,7 +186,7 @@ const Account = () => {
 	const pipelines = useSelector(selectPipelines);
 
 	function openForm(thedata) {
-		document.getElementById('myForm').style.display = 'block';
+		document.getElementById('myFormAcc').style.display = 'block';
 		window.name = thedata;
 	}
 
@@ -194,16 +198,16 @@ const Account = () => {
 		var typeAnalysis = p.classes;
 		var count = p.count ? 'y' : 'n';
 		var outline = p.outline ? 'y' : 'n';
-		document.getElementById('myForm').style.display = 'none';
-
+		document.getElementById('myFormAcc').style.display = 'none';
 		document.getElementById('ResultmyForm').style.display = 'block';
+		document.getElementById('loader').style.display = 'block';
 		document.getElementById('textResults').innerHTML = 'Analysing...';
 
 		fetch(
 			'/ai/video/' +
 				media +
 				'/' +
-				accountName +
+				currentUser?.email +
 				'/' +
 				typeAnalysis +
 				'/' +
@@ -223,6 +227,7 @@ const Account = () => {
 				// document.getElementById("textResults").innerHTML=window.countt;
 				// document.getElementById("ResultmyForm").style.display = "block";
 				resultsDiv(countt, mes, link);
+				document.getElementById('loader').style.display = 'none';
 				document.getElementById('resultcancel').style.display = 'block';
 			})
 		);
@@ -231,7 +236,7 @@ const Account = () => {
 	}
 
 	function closeForm() {
-		document.getElementById('myForm').style.display = 'none';
+		document.getElementById('myFormAcc').style.display = 'none';
 	}
 
 	function closeResultForm() {
@@ -247,8 +252,13 @@ const Account = () => {
 		var h =
 			'<a href=' +
 			linkk +
-			"><button id= analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 24 }} /><br></br>Download</button></a>";
-		document.getElementById('textResults').innerHTML = a + b + h;
+			"><br></br><button id= 'analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 12 }} />Download</button></a><br></br>";
+		document.getElementById('textResults').innerHTML =
+			a +
+			'<br/>' +
+			b +
+			'<br/> Download results below and view them on the results page <br/>' +
+			h;
 	}
 
 	const handleDelete = async () => {
@@ -472,8 +482,8 @@ const Account = () => {
 									</div>
 								</p>
 
-								<div className='form-popup' id='myForm'>
-									<div className='form-container'>
+								<div className='form-popupAcc' id='myFormAcc'>
+									<div className='form-containerAcc'>
 										<h1>Select Pipeline</h1>
 
 										{/* <label className="pipelinee"><p>Choose you pipeline for analysis:</p></label><br /> */}
@@ -514,6 +524,7 @@ const Account = () => {
 				<div className='Resultform-container'>
 					<h1>Results:</h1>
 					<div id='textResults'></div>
+					<div id='loader' className='loader'></div>
 					<button
 						id='resultcancel'
 						type='button'
@@ -527,6 +538,7 @@ const Account = () => {
 			<div className='Uploadform-popup' id='UploadmyForm'>
 				<div className='Uploadform-container'>
 					<div id='textUpload'>Uploading...</div>
+					<div id='uploader' className='uploader'></div>
 					<button
 						id='Uploadcancel'
 						type='button'

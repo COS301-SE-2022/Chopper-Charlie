@@ -1851,3 +1851,140 @@ color: #51B9D4;
 #myFormList label{
   color: #ffffff;
 }
+
+/* ///////////////////////////////////////////////////////// */
+
+.Uploadform-popupList {
+  display: none;
+  position: fixed;
+  margin-left:35%;
+  margin-top: 20px;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.Uploadform-containerList {
+  width: 250px;
+  max-height: 300px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #0F0F0F;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+
+
+
+/* Add a red background color to the cancel button */
+.Uploadform-containerList .cancel {
+  background-color: #cc6259;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  height: 25px;
+  margin: auto;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Add some hover effects to buttons */
+.Uploadform-containerList .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#UploadmyFormList p{
+  color: #ffffff;
+}
+
+#UploadmyFormList h1{
+  color: #ffffff;
+}
+
+#UploadmyFormList label{
+  color: #ffffff;
+}
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* The popup form - hidden by default */
+.form-popupAcc {
+  display: none;
+  position: fixed;
+  margin-left:35%;
+  margin-top:-35%;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-containerAcc {
+  width: 250px;
+  max-height: 300px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #0F0F0F;
+  border-radius: 5px;
+  text-align: center;
+  overflow-y: auto ;
+}
+
+/* Full-width input fields */
+
+
+/* When the inputs get focus, do something */
+
+
+/* Set a style for the submit/login button */
+.form-containerAcc .pipelineChosen {
+
+  background-color:#444444;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+  height: 28px;
+  width: 100%;
+  
+}
+
+
+
+
+
+
+/* Add a red background color to the cancel button */
+.form-containerAcc .cancel {
+  background-color: #cc6259;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  height: 25px;
+  margin: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Add some hover effects to buttons */
+.form-containerAcc .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#myFormAcc p{
+  color: #ffffff;
+}
+
+#myFormAcc h1{
+  color: #ffffff;
+  font-size: 30px;
+}
+
+#myFormAcc label{
+  color: #ffffff;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////// */
