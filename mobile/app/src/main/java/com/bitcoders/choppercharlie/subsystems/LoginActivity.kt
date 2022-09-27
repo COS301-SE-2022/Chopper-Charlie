@@ -11,6 +11,7 @@ import com.bitcoders.choppercharlie.R
 import com.bitcoders.choppercharlie.databinding.ActivityLoginBinding
 
 import com.bitcoders.choppercharlie.subsystems.main.MainActivity
+import com.bitcoders.choppercharlie.subsystems.mediaManager.ConnectionActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import okhttp3.*
@@ -36,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
             if(email.isNotEmpty() && pass.isNotEmpty()){
                 auth.signInWithEmailAndPassword(email,pass).addOnCompleteListener{
                     if(it.isSuccessful){
-                        val intent = Intent(this, Nav::class.java)
+                        val intent = Intent(this, ConnectionActivity::class.java)
                         startActivity(intent)
                     }
                     else{
