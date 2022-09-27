@@ -4,6 +4,7 @@ import {auth} from './firebase'
 import {useNavigate} from 'react-router-dom'
 import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {useAuthValue} from './AuthContext'
+import GoogleButton from 'react-google-button'
 
 function Register() {
   
@@ -97,7 +98,9 @@ function Register() {
           <button  id='registerButton' type='submit'>Register</button>
           <a href="/login"><button type='button' id='reg'>Login</button></a>
 </div>
-
+<p id="or">- OR - </p>
+          <GoogleButton id="google" onClick={() => { console.log('Google button clicked') }}  type="light" label='Register with Google' />
+          
         </form>
        
       </div>
