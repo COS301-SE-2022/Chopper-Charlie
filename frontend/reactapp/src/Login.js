@@ -85,7 +85,7 @@ const SendEmail= e => {
             <button id="login" type='submit'>Login</button>
           </div>
           <p id="or">- OR - </p>
-          <GoogleButton id="google" onClick={() => { console.log('Google button clicked') }}  type="light" />
+          <GoogleButton id="google" onClick={() => { console.log('Google button clicked') }}  type="light" label='Log in with Google' />
           
         </form>
         
