@@ -208,7 +208,7 @@ document.body.style.backgroundColor = color;
 	const pipelines = useSelector(selectPipelines);
 
 	function openForm(thedata) {
-		document.getElementById('myForm').style.display = 'block';
+		document.getElementById('myFormList').style.display = 'block';
 		window.name = thedata;
 	}
 
@@ -220,7 +220,7 @@ document.body.style.backgroundColor = color;
 		var typeAnalysis = p.classes;
 		var count = p.count ? 'y' : 'n';
 		var outline = p.outline ? 'y' : 'n';
-		document.getElementById('myForm').style.display = 'none';
+		document.getElementById('myFormList').style.display = 'none';
 		document.getElementById('ResultmyForm').style.display = 'block';
 		document.getElementById('loader').style.display='block';
 		document.getElementById('textResults').innerHTML = 'Analysing...';
@@ -258,7 +258,7 @@ document.body.style.backgroundColor = color;
 	}
 
 	function closeForm() {
-		document.getElementById('myForm').style.display = 'none';
+		document.getElementById('myFormList').style.display = 'none';
 	}
 
 	function closeResultForm() {
@@ -442,8 +442,8 @@ document.body.style.backgroundColor = color;
 
 
 		
-		<div className="form-popup" id="myForm">
-				<div className="form-container">
+		<div className="form-popupList" id="myFormList">
+				<div className="form-containerList">
 					<h1>Select Pipeline</h1>
 
 					{/* <label className="pipelinee"><p>Choose you pipeline for analysis:</p></label><br /> */}
