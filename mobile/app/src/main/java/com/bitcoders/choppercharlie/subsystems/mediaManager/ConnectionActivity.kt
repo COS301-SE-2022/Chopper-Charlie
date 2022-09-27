@@ -10,6 +10,8 @@ import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import com.bitcoders.choppercharlie.R
+import com.bitcoders.choppercharlie.subsystems.Upload
+import com.bitcoders.choppercharlie.subsystems.main.MainActivity
 import com.bitcoders.choppercharlie.subsystems.mediaManager.ConnectionViewModel
 import dji.sdk.sdkmanager.DJISDKManager
 
@@ -22,6 +24,13 @@ class ConnectionActivity : AppCompatActivity() {
 
     private val model: ConnectionViewModel by viewModels()
 
+
+///////////////////////////////////////////////////////////
+    private lateinit var GoFly: Button
+    private lateinit var up: Button
+//////////////////////////////////////////////////////////
+
+
     companion object {
         const val TAG = "ConnectionActivity"
     }
@@ -29,7 +38,17 @@ class ConnectionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_connection)
-
+//////////////////////////////////////////////////////////////////////////////////////////
+        GoFly = findViewById(R.id.Gofly)
+        GoFly.isEnabled = false
+        GoFly.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+        up = findViewById(R.id.up)
+        up.setOnClickListener {
+            startActivity(Intent(this, Upload::class.java))
+        }
+/////////////////////////////////////////////////////////////////////////////////////////
         ActivityCompat.requestPermissions(this,
             arrayOf(
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -72,10 +91,12 @@ class ConnectionActivity : AppCompatActivity() {
             if (isConnected) {
                 mTextConnectionStatus.text = "Status: Connected"
                 mBtnOpen.isEnabled = true
+                GoFly.isEnabled = true
             }
             else {
                 mTextConnectionStatus.text = "Status: Disconnected"
                 mBtnOpen.isEnabled = false
+                GoFly.isEnabled = false
             }
         })
 
