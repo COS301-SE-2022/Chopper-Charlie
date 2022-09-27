@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "287221721322",
+    "firebase_url": "https://fir-user-reg-auth-50349-default-rtdb.firebaseio.com",
+    "project_id": "fir-user-reg-auth-50349",
+    "storage_bucket": "fir-user-reg-auth-50349.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287221721322:android:e5b50533c42cb028a2cf93",
+        "android_client_info": {
+          "package_name": "com.bitcoders.choppercharlie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287221721322-kj5rfh1nterqb00k0k7ffcro8o7jaofs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASW2pO06t2G2LHj08cawx6S3BT-aDzF7w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287221721322-kj5rfh1nterqb00k0k7ffcro8o7jaofs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
