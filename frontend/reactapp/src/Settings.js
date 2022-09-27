@@ -38,7 +38,7 @@ function Profile() {
   const SendEmail= e => {
     sendPasswordResetEmail(auth, currentUser?.email)
     .then(() => {
-      alert("An email has been sent to, Change your password with link")
+      alert("A link has been sent to your email, Please use the link to change your password. ")
     })
   }
 
