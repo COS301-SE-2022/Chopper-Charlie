@@ -38,9 +38,9 @@
     <application
         android:name=".subsystems.main.MApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/choppercharlielogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/choppercharlielogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChopperCharlie"
         android:usesCleartextTraffic="true">       <!-- For Flask -->
@@ -73,7 +73,8 @@
 
         <activity
             android:name=".subsystems.LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -83,7 +84,7 @@
 
         <activity
             android:name=".subsystems.mediaManager.ConnectionActivity"
-            android:screenOrientation="userLandscape" />
+            android:screenOrientation="fullSensor" />
 
         <activity
             android:name=".subsystems.mediaManager.MediaMain"
@@ -94,7 +95,7 @@
 
         <activity
             android:name=".subsystems.Upload"
-            android:screenOrientation="userLandscape" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".subsystems.Nav"
             android:screenOrientation="userLandscape" />
