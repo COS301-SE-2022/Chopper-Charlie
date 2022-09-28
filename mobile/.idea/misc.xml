@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/27797/ChopperCharlie/app/src/main/res/drawable/round_btn.xml" value="0.184" />
+        <entry key="..\:/Users/27797/ChopperCharlie/app/src/main/res/drawable/round_btn_disable.xml" value="0.184" />
+        <entry key="..\:/Users/27797/ChopperCharlie/app/src/main/res/drawable/round_btn_normal.xml" value="0.184" />
+        <entry key="..\:/Users/27797/ChopperCharlie/app/src/main/res/drawable/round_btn_pressed.xml" value="0.184" />
+        <entry key="..\:/Users/27797/ChopperCharlie/app/src/main/res/layout/activity_connection.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/27797/ChopperCharlie/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/27797/ChopperCharlie/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Yaasir/Documents/Android Dev/OLD Chopper-Charlie-mobile-fpv-develop/app/src/main/res/drawable/background_selector.xml" value="0.261" />
+        <entry key="..\:/Users/Yaasir/Documents/Android Dev/OLD Chopper-Charlie-mobile-fpv-develop/app/src/main/res/layout/activity_connection.xml" value="0.25" />
+        <entry key="..\:/Users/Yaasir/Documents/Android Dev/OLD Chopper-Charlie-mobile-fpv-develop/app/src/main/res/layout/activity_login.xml" value="0.14343928280358598" />
+        <entry key="..\:/Users/Yaasir/Documents/Android Dev/OLD Chopper-Charlie-mobile-fpv-develop/app/src/main/res/layout/activity_main.xml" value="0.19375" />
+        <entry key="..\:/Users/Yaasir/Documents/Android Dev/OLD Chopper-Charlie-mobile-fpv-develop/app/src/main/res/layout/activity_media.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/Yaasir/Documents/Android Dev/OLD Chopper-Charlie-mobile-fpv-develop/app/src/main/res/layout/activity_nav.xml" value="0.18" />
+        <entry key="..\:/Users/Yaasir/Documents/Android Dev/OLD Chopper-Charlie-mobile-fpv-develop/app/src/main/res/layout/activity_upload.xml" value="0.18" />
+        <entry key="..\:/Users/Yaasir/Documents/Android Dev/OLD Chopper-Charlie-mobile-fpv-develop/app/src/main/res/layout/media_info_item.xml" value="0.18333333333333332" />
+        <entry key="..\:/Users/Yaasir/Documents/Android Dev/OLD Chopper-Charlie-mobile-fpv-develop/app/src/main/res/layout/prompt_input_position.xml" value="0.18333333333333332" />
+        <entry key="..\:/Users/Yaasir/OneDrive/UP CS/CS 3rd Year/Semester 2/COS301/New folder/Chopper-Charlie-mobile-fpv-develop/app/src/main/res/layout/activity_connection.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Yaasir/OneDrive/UP CS/CS 3rd Year/Semester 2/COS301/New folder/Chopper-Charlie-mobile-fpv-develop/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Yaasir/OneDrive/UP CS/CS 3rd Year/Semester 2/COS301/New folder/Chopper-Charlie-mobile-fpv-develop/app/src/main/res/layout/activity_main.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
