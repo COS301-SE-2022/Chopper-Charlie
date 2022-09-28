@@ -24,7 +24,7 @@ const SideBar = () => {
 
     
 			<div className='profile'>
-            <img src={require('../../logo.png')} width='70%' height='15%' alt='Logo' />
+            <img src={require('../../logo.png')} width='70%' height='14%' alt='Logo' />
 
             <br />
             <br />
