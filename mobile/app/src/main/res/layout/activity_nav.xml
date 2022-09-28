@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_op"
+        android:layout_width="151dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="430dp"
+        android:layout_toEndOf="@+id/Gofly"
+        android:text="Open"
+        android:textSize="20dp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/Gofly"
+        android:layout_width="151dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@+id/up"
+        android:layout_marginBottom="2dp"
+        android:text="GoFly"
+        android:textSize="20dp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/up"
+        android:layout_width="151dp"
+        android:layout_height="75dp"
+
+        android:layout_alignEnd="@+id/btn_op"
+        android:layout_marginTop="430dp"
+        android:layout_marginEnd="-211dp"
+        android:text="Upload"
+        android:textSize="20dp" />
+
+</RelativeLayout>
