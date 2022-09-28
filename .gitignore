@@ -1,4 +1,12 @@
-yolov3.weights
 *.pyc
+__pycache__/
 __pycache__
+yolov3.weights
 env
+firebasePrivateKey.json
+.env
+node_modules
+/node_modules
+frontend/reactapp/firebase.json
+*.cache
+frontend/reactapp/.firebaserc
