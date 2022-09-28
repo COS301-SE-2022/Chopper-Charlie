@@ -4,11 +4,7 @@ import {
 	getAuth,
 	signInWithPopup,
 	GoogleAuthProvider,
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-	signOut,
 	onAuthStateChanged,
-	connectAuthEmulator,
 } from 'firebase/auth';
 import {
 	getFirestore,
@@ -16,21 +12,10 @@ import {
 	getDoc,
 	setDoc,
 	collection,
-	writeBatch,
 	query,
 	getDocs,
-	onSnapshot,
-	connectFirestoreEmulator,
-	deleteField,
-	updateDoc,
+
 } from 'firebase/firestore';
-import { getApp } from 'firebase/app';
-import {
-	getFunctions,
-	connectFunctionsEmulator,
-	httpsCallable,
-} from 'firebase/functions';
-import { getStorage, connectStorageEmulator } from 'firebase/storage';
 
 import { initializeApp } from 'firebase/app';
 
@@ -54,6 +39,16 @@ const auth = getAuth(app);
 export { auth };
 
 export const db = getFirestore();
+
+
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({
+	prompt: 'select_account',
+});
+
+export const signInWithGooglePopup = () =>
+	signInWithPopup(auth, googleProvider);
+
 
 export const getPipelines = async (user) => {
 	console.log('Entering pipeline');
