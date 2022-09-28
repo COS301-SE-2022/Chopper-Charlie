@@ -4,9 +4,16 @@ import {auth} from './firebase'
 import {useNavigate} from 'react-router-dom'
 import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {useAuthValue} from './AuthContext'
+import GoogleButton from 'react-google-button'
 
 function Register() {
   
+
+  const [color, changeColor] = useState('#242424');
+	document.body.style.backgroundColor = color;
+
+
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -88,10 +95,9 @@ function Register() {
 
         
 <div class="btn">
-          <button  id='login' type='submit'>Register</button>
+          <button  id='registerButton' type='submit'>Register</button>
           <a href="/login"><button type='button' id='reg'>Login</button></a>
 </div>
-
         </form>
        
       </div>

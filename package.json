@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "firebase": "^9.8.2",
-    "react-icons": "^4.4.0"
+    "react-google-button": "^0.7.2"
   }
 }

@@ -1,0 +1,13 @@
+.title-div {
+    /* background-color: aqua; */
+    margin-right: 0;
+    width: 15em;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.pipe-title {
+    flex-shrink: 0;
+    font-weight: 500;
+}

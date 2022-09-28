@@ -14,5 +14,5 @@ def delete_blob(Blob_Name,Containers_Name):
     container_client = blob_service_client.get_container_client(Temp)
     blob_client = container_client.get_blob_client(Blob_Name)
     blob_client.delete_blob()
-    messagebox.showinfo("Success","Successfully Deleted media")  #added now
+    #messagebox.showinfo("Success","Successfully Deleted media")  #added now
 

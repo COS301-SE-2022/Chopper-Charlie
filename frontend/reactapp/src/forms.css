@@ -9,10 +9,10 @@ body {
 .auth{
     width: 40%;
     margin:auto; 
-    margin-top: 3%;
+    margin-top: 1%;
     max-width: 300px;
-    background-color: rgb(34, 34, 37);
-    border: 3px solid #000000;
+    background-color: #1A1A1A;
+    border: #1A1A1A;
     padding: 15px;
     text-align: center;
     border-radius: 15px;
@@ -53,11 +53,12 @@ body {
   .auth form > input {
     height: 40px;
     color: rgb(245, 250, 250);
-    background-color: rgb(34, 34, 37);
+    background-color:#323236;
     border: 0.5px solid #575758;
     font-size: 13px;
     padding: 0 10px;
-    border-radius: 20px;
+    border-radius: 5px;
+    font-size: 15px;
   }
 
   .auth form > button{
@@ -67,7 +68,7 @@ body {
     background-color: rgb(181, 159, 241);
     font-size: 14px;
     padding: 0 10px;
-    border-radius: 20px;
+    border-radius: 5px;
     border: 0.5px solid #575758;
   }
 
@@ -76,32 +77,51 @@ body {
 #pass {
   padding-bottom: 0%;
   height: 40px;
-  background-color: rgb(34, 34, 37);
+  background-color:#323236;
   border: 0.5px solid #575758;
   font-size: 13px;
-  border-radius: 20px;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
   #login{
     height: 40px;
     margin: auto;
     width: 30%;
-    background-color: rgb(181, 159, 241);
+    background-color: #3FA9F5;
     font-size: 14px;
     padding: 0 10px;
-    border-radius: 20px;
+    border-radius: 5px;
     border: 0.5px solid #575758;
+    cursor: pointer;
+    margin-left: 10px;
   }
   
+  #registerButton{
+    height: 40px;
+    margin: auto;
+    width: 30%;
+    background-color: #3FA9F5;
+    font-size: 14px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 0.5px solid #575758;
+    cursor: pointer;
+    
+  }
+
+
 #reg{
   height: 40px;
   background-color: rgb(34, 34, 37);
-  color: rgb(181, 159, 241);;
+  color: #3FA9F5;
   font-size: 14px;
   padding: 0 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   border: 0.5px solid #575758;
   width: 30%;
+  cursor: pointer;
+  margin-left: 10px;
   
 }
 
@@ -111,20 +131,35 @@ body {
   color: #575758;
   text-decoration: underline;
   padding-left: 2%;
-  padding-top: 0%;
   cursor: pointer;
+  margin-top: -2.5px;
 }
 
 #AB{
+  /* align-self: center;
+  position: relative; */
   align-self: center;
   position: relative;
   bottom: 0;
   left: 45%;
-  padding-top: 11vw;
+  padding-top: 1.5vw;
 }
 
 .center {
   position: relative;
-  top: 5vw;
+  top: 2vw;
 }
 
+#google{
+  
+  margin: auto;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: -20px;
+
+
+}
+#or{
+  color: #747474;
+  margin-top: -10px;
+}

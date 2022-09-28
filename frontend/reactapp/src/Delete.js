@@ -51,8 +51,15 @@ function Delete() {
 	
 
 	function genData(str){
-		fetch("/db/"+str+"/"+currentUser?.email)
-		}
+		fetch("/db/"+str+"/"+currentUser?.email).then((res) =>
+		res.json().then((data) => {
+			// Setting a data from api
+			setdata(data.Message);
+			console.log(JSON.stringify(data.Message));
+			alert(JSON.stringify(data.Message));
+	})
+		);
+}
 
 
 	return (

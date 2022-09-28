@@ -13,6 +13,35 @@ function Upload() {
 	const [data, setdata] = useState({
 		
 	});
+
+
+	const uploadFile = async (e) => {
+		const file = e.target.files[0];
+		if (file != null) {
+		  const data = new FormData();
+		  data.append('file_from_react', file);
+	  
+		  fetch("/ur/"+currentUser?.email,
+			{
+			  method: 'post',
+			  body: data,
+			}
+		  ).then((res) =>
+		  res.json().then((data) => {
+			  // Setting a data from api
+			  setdata(data.Message);
+			  console.log(JSON.stringify(data.Message));
+			  alert(JSON.stringify(data.Message));
+	  })
+		  );
+  
+
+		//   let res = await response.json();
+		//   if (res.status !== 1){
+		// 	alert('Error uploading file');
+		//   }
+		}
+	  };
     
 
 
@@ -45,6 +74,13 @@ function Upload() {
             <p> Select file to upload : </p>
 			<button id="up" type='button' onClick={()=>genData()} >Upload <CloudUploadRoundedIcon sx={{ fontSize: 14 }}/>   </button>
 			</div>
+
+			<form>
+  <input
+    type="file"
+    onChange={uploadFile}>
+  </input>
+</form>
 
 		</div>
 	);

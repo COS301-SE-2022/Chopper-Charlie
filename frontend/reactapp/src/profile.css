@@ -1,30 +1,35 @@
 .profile{
  
-    width: 90%;
-    max-width: 250px;
-    padding: 20px;
-    text-align: center;
-    position: fixed;
-    float: right;
-    right: 0%;
-    width: 30%;
-    margin:auto; 
-    height: 100vh;
-    background-color: #1F1F21;
-    border: 3px solid #000000;
-    border-radius: 15px;
-    top: 0%;
+  width: 90%;
+  max-width: 240px;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  float: right;
+  right: 0%;
+  width: 30%;
+  margin:auto; 
+  height: 100vh;
+  background-color: #0F0F0F;
+  top: 0%;
+     /* background-color: #ffffff;
+  border: 3px solid #ffffff; */
 
+  /* background-image: linear-gradient(43deg, #25C4EF 0%, #8970EC 46%, #AC30C8 100%); */
+
+
+    
   }
   
-  .profile p1 {
+  /* p1 is h4 */
+  .profile h4 {
     text-align: center;
-    color: #dfdbf7;
-    font-size: 15px;
+    color: #ffffff;
+    font-size: 14px;
   }
 
 
-  .profile p2{
+  .profile h5{
     text-align: center;
     color: #b59ff1;
     font-size: 17px;
@@ -33,11 +38,12 @@
   }
   
 
-  .profile p3{
+  .profile p{
     text-align: left;
     font-size: 15px;
     /* font-weight: bold; */
     padding-top: 2%;
+    
     
   
    
@@ -49,8 +55,13 @@
 
   #icon{
 position: relative;
-color: #333237;
+color: #e1e1e1;
 padding-right: 5%;
+padding-left: 5%;
+  }
+
+  #icon :hover{
+    color: #ffffff;
   }
 
   #iconlo{
@@ -155,37 +166,84 @@ padding-right: 5%;
 }
 
 #home{
-    height: 32px;
-    margin: 2%;
-    text-align: left;
-    color: #333237;;
-    padding-left: 10%;
-    width: 100%;
-    background-color: #e7e3f6;
-    font-size: 14px;
-    border-radius: 20px;
-    border: 0.5px solid #575758;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-family:Arial, Helvetica, sans-serif
-}
-
-#homelogout{
-  height: 32px;
-  color: #e3ddf6;
-  margin: 2%;
+  height: 35px;
+  margin: auto;
+  margin-top: 5%;
   text-align: left;
-  padding-left: 10%;
+  color: #e1e1e1;;
   width: 100%;
-  background-color: #C44A4A;
+  background-color: #1A1A1A;
   font-size: 14px;
-  border-radius: 20px;
-  border: 0.5px solid #575758;
+  border-radius: 5px;
+  /* border: 3px solid inherit; */
+  border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
+  
 }
+
+#home:hover {
+  background-color: #1A1A1A;
+  
+  color: #ffffff;
+ 
+  transition: all .5s ease;
+  transition-property: all;
+  transition-duration: 0.7s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+
+ border-radius: 5px; 
+  border: 3px solid transparent; /*2*/
+  border-image:linear-gradient(to left, #9928B3, #58aee7); 
+ border-image-slice: 1;
+
+
+
+  
+ 
+}
+
+
+
+
+
+#homelogout{
+  height: 32px;
+  color: #ffffff;
+  margin: auto;
+  text-align: center;
+  padding-left: 35%;
+  width: 100%;
+  background-color: #1A1A1A;
+  font-size: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+}
+
+#homelogout:hover,
+#homelogout:focus {
+    background-color: #cc6259;
+    color: rgb(255, 255, 255);
+    transition: all .5s ease;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+
+
+
+
+
+
+
 
 .sub_div {
   position: absolute;
@@ -403,7 +461,7 @@ padding-right: 5%;
   border: 8px solid rgb(219, 192, 246);
   border-radius: 150%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #a285f0 transparent transparent transparent;
+  border-color: #51B9D4 transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
@@ -458,6 +516,7 @@ padding-right: 5%;
     position: relative;
     margin-top: 1%;
     margin-left: 6px;
+    margin-right: 10px;
     background-color: #443d57;
     color: #b59ff1;
     font-size: 10px;
@@ -514,13 +573,14 @@ visibility: hidden;
 
 #settings{
   width: 300px;
-  background-color: #222225;
-  border-radius: 20px;
-  height: 70vh;
-  margin-left: 70%;
+  background-color: #1A1A1A;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 5px;
+  height: 60%;
   text-align: center;
   position: relative;
-  top: -10px;
+  padding-bottom: 15px;
 
 }
 
@@ -534,13 +594,16 @@ visibility: hidden;
   height: 40px;
   font-size: 13px;
   background-color: rgb(34, 34, 37);
-  color: rgb(181, 159, 241);;
+  color: rgb(57, 57, 57);;
   font-size: 14px;
   margin-top: 3%;
-  border-radius: 20px;
-  border: 0.5px solid #575758;
-  width: 50%;
+  border-radius: 5px;
+  border: 1px solid #575758;
+  width: 70%;
   cursor: pointer;
+  color:#58aee7;
+  font-weight: bold;
+  
   
 }
 
@@ -555,17 +618,16 @@ visibility: hidden;
   text-align: left;
   margin: left;
   position: relative;
-  width: 85%;
+  width: 88%;
   color: #ffffff;
   float: left;
   height: 70px;
   font-size: 17px;
-  margin-bottom: 2px;
+  margin-bottom: 40px;
   border-radius: 15px;
   background-color: #222225;  
   flex-wrap: wrap;
   margin-top: 5%;
-  margin-right: 400px;
   margin-left: 40px;
   padding-left: 5%;
   padding-top: 5px;
@@ -586,8 +648,8 @@ visibility: hidden;
   background-color: #222225;
   display: flex;  
   flex-wrap: wrap;
-  margin-right: 500px;
-  margin-left: 50px;
+
+  margin-left: 115px;
   margin-top: 10px;
   padding-top: 10px;
   padding-left: 10px;
@@ -606,12 +668,38 @@ visibility: hidden;
   width: 20px;
   cursor: pointer;
   
+  
   }
 
 #HomeContent {
 position: relative;
 width: 75%;
+/* display: none; */
+
 }
+
+/* #HomeContentListt {
+  
+  display: none;
+  
+  } */
+
+
+#HomeContentList {
+  width: 75%;
+  height: 100%;
+  background-color:inherit;
+  /* list-style-position: outside; */
+  /* display: contents; */
+
+  }
+
+
+/* #something{
+  position: absolute;
+} */
+
+
 
 #MediaBlock{
   
@@ -622,52 +710,139 @@ width: 75%;
   color: #ffffff;
   float: left;
   height: 350px;
-  border: 1px solid #37373a;
+  border: 1px solid #1A1A1A;
+  
   margin-bottom: 5%;
   border-radius: 8px;
-  background-color: #1F1F21;
-  display: flex;  
-  flex-wrap: wrap;
+  background-color: #1A1A1A;
+  /* display: flex;   */
+   flex-wrap: wrap;
   margin-right: 20px;
   margin-left: 20px;
+
+ 
+  
   
 }
 
-#preview{
- border-top-left-radius: 8px;
- border-top-right-radius: 8px;
 
+#MediaBlockResults{
+  
+  text-align: left;
+  margin: auto;
+  position: relative;
+  width: 240px;
+  color: #ffffff;
+  float: left;
+  height: 360px;
+  border: 1px solid #1A1A1A;
+  
+  margin-bottom: 5%;
+  border-radius: 8px;
+  background-color: #1A1A1A;
+  /* display: flex;   */
+   flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 20px;
+  
+  
 }
 
-#MediaBlock p4{
+
+
+
+
+#MediaBlock:hover{
+  top: -3px;
+}
+
+
+
+
+
+#MediaBlock p{
+  margin-top: -20px;
+  padding-top: 10px;
   font-weight: bold;
   font-size: 20px;
   font-family:Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:normal;
+  /* word-break: break-all;
+    white-space: normal; */
+
+  }
 
 
-}
 
-#MediaBlock p5{
+ 
+
+
+#MediaBlock h5{
   font-family:Arial, Helvetica, sans-serif;
   font-weight:normal;
-  font-size: 12px;
+  font-size: 10px;
+}
+
+#previewResults{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-top: -10px;
+ 
+ 
+ }
+
+ #preview{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+ 
+ 
+ }
+
+
+ 
+#MediaBlockResults:hover{
+  top: -3px;
 }
 
 
+
+
+
+#MediaBlockResults p{
+  margin-top: -20px;
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:normal;
+
+  }
+
+
+#MediaBlockResults h5{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  font-size: 10px;
+}
 
 #ButtonDiv{
   height:80% ;
   margin-top: -20px;
   margin-left: 3%;
+  padding-bottom: 3px;
 
 }
 
 #DownloadButton {
-  width:27%;
-  height: 18%;
+  width:65px;
+  height: 65px;
   border-radius: 8px;
-  border: #FF7E37;
-  background-color: #FF7E37;
+  border: #9928B3;
+  background-color: #9928B3;
   cursor: pointer;
   font-size: 10px;
   color: #e7e3f6;
@@ -675,36 +850,74 @@ width: 75%;
 }
 
 #AnalyseButton {
-  width:27%;
-  height: 18%;
+  width:65px;
+  height: 65px;
   border-radius: 8px;
-  border: #51B9D4;
-  background-color: #51B9D4;
+  border: #9928B3;
+  background-color: #9928B3;
   cursor: pointer;
   font-size: 10px;
   color: #e7e3f6;
-  margin-left: 3.5%;
+  margin-left: 3px;
 }
 
+
 #DeleteButton {
-  width:27%;
-  height: 18%;
+  width:65px;
+  height: 65px;
   border-radius: 8px;
-  border: #FE4838;
-  background-color: #FE4838;
+  border: #9928B3;
+  background-color: #9928B3;
   cursor: pointer;
   font-size: 10px;
   color: #e7e3f6;
-  margin-left: 3.5%;
+  margin-left: 3px;
+  
 }
+
+
+
+#ResultButton {
+  width:90%;
+  height:25px;
+  border-radius: 5px;
+  padding: 3px;
+  
+  border: #58aee7;
+  background-color: #58aee7;
+  cursor: pointer;
+  font-size: 14px;
+  color: #ffffff;
+  margin-left: 5%;
+  padding-top: 4px;
+  margin-top: 5px;
+  
+}
+
+#ResultListButton {
+  width:24%;
+  height:25px;
+  border-radius: 5px;
+  padding: 3px;
+  border: #14bf80;
+  background-color: #14bf80;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  margin-left: 40%;
+}
+
+
 
  #Searchbar{
 margin-top: 3%;
 margin-left: 3%;
-width: 65%;
+width: 70%;
 height: 50px;
-background-color:#1F1F21; ;
-border-radius: 25px 0 0 25px;
+background-color:#1A1A1A; ;
+border-radius: 5px;
+
+
  }
 
 
@@ -722,52 +935,94 @@ padding-left: 5%;
 
 /* ////////////////////// */
 
+
+#ConSearch{
+ position: absolute;
+margin-left: 5px;
+margin-top: 7px;
+width: 80%;
+}
+
 #searchhh{
-  color: #e3ddf6;
-  background-color:#000000;
-  border-radius: 25px 0 0 25px;
-  border-color: #000000;
-  margin-left: 3%;
-  margin-top: 0.8%;
-  width: 35%;
+
+
+  color: #ffffff;
+  background-color:#464646;
+  border-radius: 5px 0 0 5px;
+  border-color: #c1c1c1;
+  border: none;
+  /* border: none; */
+  margin-left: 2%;
+  width: 30%;
   height: 30px;
   cursor: text;
+  font-size: 16px;
+ 
+
 }
 
 
 #searchbuttonn{
-  color: #e3ddf6;
-  background-color:#000000;
-  border-radius:  0 25px 25px 0 ;
-  border-color: #353336;
-  margin-top: 0.8%;
+ 
+  
+ 
+  color:#ffffff;
+  background-color:#464646;
+  border-radius:  0 5px 5px 0 ;
+  border-color: #c1c1c1;
+  border: none;
   width: 5%;
-  height: 35px;
-  cursor: text;
+  height: 32.2px;
+  cursor: pointer;
+
+ 
 }
 
-#uploadButton{
-  background-color: #4EDBAC;
+#upIcon{
+margin-bottom: -5px;
+}
+
+#uploadInput{
+  float: right;
+  position:relative;
+  background-color: #285EFE;
   border-radius:  5px ;
   color: #ffffff;
-  height: 45px;
+  font-weight: bold;
+  height: 30px;
   font-size: 18px;
-  width: 85px;
   border-color:#1F1F21 ;
-  float: right;
-  margin-top: 0.2%;
+  width: 90px;
+  margin-top: 8px;
+  padding-top: 4px;
+  margin-right: 8px;
+  text-align: center;
   cursor: pointer;
-  margin-right: 10px;
-
+  
+ text-align: center;
+ cursor: pointer;
 }
+
+
 
 #vehicle{
   background-color: #1F1F21;
   border-radius: 5px;
   width: 15%;
+  height: 22px;
   color: #ffffff;
+  font-size: 17px;
+  
 
 }
+
+#vehicle:hover{
+  background-color: #2B2C2E;
+
+}
+
+#optionss:hover {background: #6750A4;}
+
 
 /* ///////////////////////////////////// */
 
@@ -861,7 +1116,875 @@ border:none;
  
 }
 
-/* ///////////////////////////////////// */
+#listOption{
+  font-size: 25px;
+  color:azure;
+
+}
 
 
-/* ///////////////////////////////////// */
+
+
+#viewGrid{
+  background-color:inherit;
+  border: white 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  /* background-color:inherit;
+  margin-top: -30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 100%; */
+}
+
+
+
+#viewList{
+  background-color: inherit;
+  border: none;
+  margin-left: 310px;
+  cursor: pointer;
+  /* background-color: inherit;
+  border: none;
+  margin-left: 60%;
+  cursor: pointer;
+  border-radius: 100%; */
+}
+
+
+
+
+
+#listOptionactive{
+color: #51B9D4;
+}
+
+
+
+
+#MediaBlockList {
+  width: 85%;
+  height: 80px;
+  background-color: #1A1A1A;
+  border-radius:15px ;
+  color: #ffffff;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  
+}
+
+#MediaBlockList h2{
+  font-size: 17px;
+  margin-top: -50px;
+  margin-left: 100px;
+  font-weight: bold;
+  color: #f9f9f9;
+  width: 55%;
+  flex-wrap: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:normal;
+}
+
+#nameDiv{
+ position: relative;
+ border: #4EDBAC;
+}
+
+
+
+#ButtonDivList{
+  height:80% ;
+  margin-left: 3%;
+
+}
+
+#previewList{
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+ 
+ 
+ }
+
+
+ #ResultButtonList {
+  width:53px;
+  height: 53px;
+  border-radius: 8px;
+  border: #58aee7;
+  background-color: #58aee7;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  position: relative;
+  float:right;
+  margin-top: -53px;
+  margin-right: 192px;
+  
+}
+
+ #DownloadButtonList {
+  width:53px;
+  height: 53px;
+  border-radius: 8px;
+  border: #9928B3;
+  background-color: #9928B3;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  position: relative;
+  float:right;
+  margin-top: -53px;
+  margin-right: 131px;
+  
+}
+#AnalyseButtonList {
+  width:53px;
+  height: 53px;
+  border-radius: 8px;
+  border: #9928B3;
+  background-color: #9928B3;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  position: relative;
+  float:right;
+  margin-top: -53px;
+  margin-right: 70px;
+  
+}
+
+#DeleteButtonList {
+  width:53px;
+  height: 53px;
+  border-radius: 8px;
+  border: #9928B3;
+  background-color: #9928B3;
+  cursor: pointer;
+  font-size: 10px;
+  color: #e7e3f6;
+  position: relative;
+  float:right;
+  margin-top: -53px;
+  margin-right: 10px;
+ 
+}
+
+
+
+
+
+#pipelineName{
+  background-color: #2F2F2F;
+  width: 20%;
+  height: 20px;
+  font-size: 18px;
+  border: none;
+  color: #f9f9f9;
+  border-bottom: 2px solid #ACACAC;
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+#deletepipeline{
+  cursor: pointer;
+  color: #a285f0;
+  float: right;
+  border: none;
+  background-color: inherit;
+  margin-left: 10%;
+  margin-top: -35px;
+  visibility: hidden;
+}
+
+/* was p1 */
+#pps h4{
+  margin-right: 10%;
+  margin-left: 5%;
+}
+
+/* ///////////////////////////////////////////////// */
+
+
+
+
+
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  margin-left:35%;
+  margin-top:-20%;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  width: 250px;
+  max-height: 300px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #0F0F0F;
+  border-radius: 5px;
+  text-align: center;
+  overflow-y: auto ;
+}
+
+/* Full-width input fields */
+
+
+/* When the inputs get focus, do something */
+
+
+/* Set a style for the submit/login button */
+.form-container .pipelineChosen {
+
+  background-color:#444444;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+  height: 28px;
+  width: 100%;
+  
+}
+
+
+
+
+
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: #cc6259;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  height: 25px;
+  margin: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#myForm p{
+  color: #ffffff;
+}
+
+#myForm h1{
+  color: #ffffff;
+  font-size: 30px;
+}
+
+#myForm label{
+  color: #ffffff;
+}
+
+
+
+
+
+#fileInput{
+  visibility: hidden;
+}
+
+#Searchbar label{
+
+  cursor: pointer;
+  
+
+}
+
+
+/* //////////////////////////////////////////////////////////////// */
+
+.Resultform-popup {
+  display: none;
+  position: fixed;
+  margin-left:35%;
+  margin-top: -30px;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.Resultform-container {
+  width: 250px;
+  max-height: 300px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #0F0F0F;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
+
+
+
+
+/* Add a red background color to the cancel button */
+.Resultform-container #analysedMed{
+  background-color: #58aee7;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  height: 25px;
+  margin: auto;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+
+.Resultform-container .cancel{
+  background-color: #cc6259;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  height: 25px;
+  margin: auto;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Add some hover effects to buttons */
+.Resultform-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#ResultmyForm p{
+  color: #ffffff;
+}
+
+#ResultmyForm h1{
+  color: #ffffff;
+}
+
+#ResultmyForm label{
+  color: #ffffff;
+}
+
+
+#textResults{
+  color: #ffffff;
+  font: 40px;
+}
+
+
+#resultcancel{
+  display: none;
+}
+/* //////////////////////////////////////////////////// */
+
+
+
+/* //////////////////////////////////////////////////////////////// */
+
+.Uploadform-popup {
+  display: none;
+  position: fixed;
+  margin-left:35%;
+  margin-top: -30px;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.Uploadform-container {
+  width: 250px;
+  max-height: 300px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #0F0F0F;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+
+
+
+/* Add a red background color to the cancel button */
+.Uploadform-container .cancel {
+  background-color: #cc6259;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  height: 25px;
+  margin: auto;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Add some hover effects to buttons */
+.Uploadform-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#UploadmyForm p{
+  color: #ffffff;
+}
+
+#UploadmyForm h1{
+  color: #ffffff;
+}
+
+#UploadmyForm label{
+  color: #ffffff;
+}
+
+#textUpload{
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+
+#Uploadcancel{
+  display: none;
+}
+/* //////////////////////////////////////////////////// */
+
+#center h2 {
+  font-size: 40px;
+  padding-left: 30%;
+  
+}
+
+.loader {
+  display: none;
+  margin: auto;
+  margin-top: 15px;
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #58aee7;
+  width: 30px;
+  height: 30px;;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* //////////////////// */
+
+.uploader {
+  display: none;
+  margin: auto;
+  margin-top: 15px;
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #58aee7;
+  width: 30px;
+  height: 30px;;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+#pipelineHeading{
+  font-size: 40px;
+  margin-left: 30%;
+}
+#settingsHeading{
+  font-size: 40px;
+  margin-left: 36.5%;
+}
+
+
+
+
+
+.ResultformResult-popup {
+  display: none;
+  position: fixed;
+  margin-left:35%;
+  margin-top: -30px;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.ResultformResult-container {
+  width: 250px;
+  max-height: 300px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #0F0F0F;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
+
+
+
+
+/* Add a red background color to the cancel button */
+.ResultformResult-container #analysedMed{
+  background-color: #58aee7;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  height: 25px;
+  margin: auto;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+
+.ResultformResult-container .cancel{
+  background-color: #cc6259;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  height: 25px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+/* Add some hover effects to buttons */
+.ResultformResult-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#ResultmyFormResult p{
+  color: #ffffff;
+}
+
+#ResultmyFormResult h1{
+  color: #ffffff;
+}
+
+#ResultmyFormResult label{
+  color: #ffffff;
+}
+
+
+#textResultsResult{
+  color: #ffffff;
+  font: 40px;
+}
+
+
+#resultcancelResult{
+  display: block;
+}
+/* //////////////////////////////////////////////////// */
+
+
+
+#adminHeading{
+  font-size: 25px;
+  color: #ffffff;
+  padding-left: 30px;
+}
+
+#adminHeadingRole{
+  font-size: 25px;
+  color: #58aee7;
+  padding-left: 35px;
+}
+
+#AdminAccount{
+  font-size: 35px;
+  color: #ffffff;
+  padding-left: 400px;
+  
+}
+
+#adminFunc{
+  width: 140px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #97a1a7;
+  border: none;
+  margin-left: 70px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#RemoveadminFunc{
+  width: 140px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #97a1a7;
+  border: none;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#DeleteAccFunc{
+  width: 140px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #cf5c51;
+  border: none;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////// */
+/* The popup form - hidden by default */
+.form-popupList {
+  display: none;
+  position: fixed;
+  margin-left:35%;
+  margin-top:-5%;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-containerList {
+  width: 250px;
+  max-height: 300px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #0F0F0F;
+  border-radius: 5px;
+  text-align: center;
+  overflow-y: auto ;
+}
+
+/* Full-width input fields */
+
+
+/* When the inputs get focus, do something */
+
+
+/* Set a style for the submit/login button */
+.form-containerList .pipelineChosen {
+
+  background-color:#444444;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+  height: 28px;
+  width: 100%;
+  
+}
+
+
+
+
+
+
+/* Add a red background color to the cancel button */
+.form-containerList .cancel {
+  background-color: #cc6259;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  height: 25px;
+  margin: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Add some hover effects to buttons */
+.form-containerList .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#myFormList p{
+  color: #ffffff;
+}
+
+#myFormList h1{
+  color: #ffffff;
+  font-size: 30px;
+}
+
+#myFormList label{
+  color: #ffffff;
+}
+
+/* ///////////////////////////////////////////////////////// */
+
+.Uploadform-popupList {
+  display: none;
+  position: fixed;
+  margin-left:35%;
+  margin-top: 20px;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.Uploadform-containerList {
+  width: 250px;
+  max-height: 300px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #0F0F0F;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+
+
+
+/* Add a red background color to the cancel button */
+.Uploadform-containerList .cancel {
+  background-color: #cc6259;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  height: 25px;
+  margin: auto;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Add some hover effects to buttons */
+.Uploadform-containerList .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#UploadmyFormList p{
+  color: #ffffff;
+}
+
+#UploadmyFormList h1{
+  color: #ffffff;
+}
+
+#UploadmyFormList label{
+  color: #ffffff;
+}
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* The popup form - hidden by default */
+.form-popupAcc {
+  display: none;
+  position: fixed;
+  margin-left:35%;
+  margin-top:-35%;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-containerAcc {
+  width: 250px;
+  max-height: 300px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #0F0F0F;
+  border-radius: 5px;
+  text-align: center;
+  overflow-y: auto ;
+}
+
+/* Full-width input fields */
+
+
+/* When the inputs get focus, do something */
+
+
+/* Set a style for the submit/login button */
+.form-containerAcc .pipelineChosen {
+
+  background-color:#444444;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+  height: 28px;
+  width: 100%;
+  
+}
+
+
+
+
+
+
+/* Add a red background color to the cancel button */
+.form-containerAcc .cancel {
+  background-color: #cc6259;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  height: 25px;
+  margin: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Add some hover effects to buttons */
+.form-containerAcc .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#myFormAcc p{
+  color: #ffffff;
+}
+
+#myFormAcc h1{
+  color: #ffffff;
+  font-size: 30px;
+}
+
+#myFormAcc label{
+  color: #ffffff;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////// */

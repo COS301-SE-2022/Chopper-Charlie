@@ -14,39 +14,35 @@ import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import { Alert, Hidden } from '@mui/material';
 import { padding } from '@mui/system';
-
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { purple } from '@mui/material/colors';
 import Switch from '@mui/material/Switch';
 import { alpha, styled } from '@mui/material/styles';
-
-
+import TuneIcon from '@mui/icons-material/Tune';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import React, { useState } from 'react';
+import SideBar from './components/sidebar/sidebar.component';
 
 
 //change
 function Profile() {
+
+
+  const [color, changeColor] = useState('#242424');
+
+	document.body.style.backgroundColor = color;
   
   const {currentUser} = useAuthValue()
 
   const SendEmail= e => {
     sendPasswordResetEmail(auth, currentUser?.email)
     .then(() => {
-      alert("An email has been sent to, Change your password with link")
+      alert("A link has been sent to your email, Please use the link to change your password. ")
     })
   }
 
-  const GreenSwitch = styled(Switch)(({ theme }) => ({
-    '& .MuiSwitch-switchBase.Mui-checked': {
-      color: purple[200],
-      '&:hover': {
-        backgroundColor: alpha(purple[200], theme.palette.action.hoverOpacity),
-      },
-    },
-    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
-      backgroundColor: purple[200],
-    },
-  }));
-  
-  const label = { inputProps: { 'aria-label': 'Switch demo' } };
+ 
 
 
 
@@ -55,25 +51,21 @@ function Profile() {
    
       <div className='center'>
 
-     <div className='Content'>
+<div id="HomeContent">
         
-        
-        <div className='set'>
-        <h1>Settings </h1>
+<h2 id='settingsHeading'>Settings</h2>
+     
+         
+      
         <div id='settings'>
             
-        <AccountCircleRoundedIcon sx={{ fontSize: 70 ,padding:5}}/>
-        <p1><strong> </strong>{currentUser?.email}</p1>
-         <br></br>
+        <AccountCircleRoundedIcon sx={{ fontSize: 70 ,padding:2}}/><br></br><br></br>
+        <p1><strong> </strong>{currentUser?.email}</p1><br></br><br></br>
         <button id="changepass" type='button'  onClick={SendEmail}>Change password</button> <br></br>
-        <br></br>
-        <p4>Push notifications </p4>  <Switch {...label} defaultChecked color="secondary" />
-
-
-
+       
         </div>
 
-         </div>
+        
 
 
         
@@ -82,44 +74,7 @@ function Profile() {
      
 
          
-        <div className='profile'>
-
-        <img src={require('./logo.png')} width="235px%" height="115px%" alt="Logo"/>
-               
-          <h1>    </h1>
-          
-          <br/><br/>
-          <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
-          {/* <img id='pp'  src={require('./j.png')} width="27%" height="12%" alt="profile"/> */}
-          <br/>
-          <p1><strong> </strong>{currentUser?.email}</p1>
-          <br/>
-          <hr/>
-          <br/>
-          {/* <p1>
-            <strong>Email verified: </strong>
-            {`${currentUser?.emailVerified}`}
-          </p1> */}
-          <div>
-          <a id='pagelinks' href="\"><button type='button' id='home'><HomeRoundedIcon id='icon'/><p3>Home</p3></button></a>
-           
-           <a id='pagelinks' href="/analytics"><button type='button' id='home'><AnalyticsRoundedIcon id='icon'/><p3>Analytics</p3></button></a>
-           <a id='pagelinks' href="/settings"><button type='button' id='home'><SettingsRoundedIcon id='icon'/><p3>Settings</p3></button></a>
-           </div>
-           
-           <br/>
-          <hr/>
-
-
-          
-          
-          <a href = "/login"><button type = "button" className='logout' onClick={() => signOut(auth)}  ><LogoutRoundedIcon/  >Logout</button></a>
-         
-          
-        <div className='sub_div'> <img id='ABlogo'  src={require('./AB.png')} width="50%" height="50%" alt="Logo"/></div> 
-
-        </div>
-
+     <SideBar/>
 
 
 

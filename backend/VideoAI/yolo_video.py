@@ -5,6 +5,8 @@ import time
 from scipy import spatial
 import cv2
 from input_retrieval import *
+from azure.storage.blob import BlobClient
+
 
 
 	
@@ -18,6 +20,7 @@ from input_retrieval import *
 
 
 
+Connection_String = "DefaultEndpointsProtocol=https;AccountName=choppercharlie;AccountKey=Bcrvc/ix8TmB/hoEE2fmp44iHAqEWeiZ1fr7Fml9Z0+Q7RI8NvX2kbqzeufPKHRY54hk+wFgE/+a+AStzl2qTw==;EndpointSuffix=core.windows.net"
 
 
 # Setting the threshold for the number of frames to search a vehicle for
@@ -26,8 +29,9 @@ inputWidth, inputHeight = 416, 416
 
 #Parse command line arguments and extract the values required
 LABELS, weightsPath, configPath, inputVideoPath, outputVideoPath,\
-	preDefinedConfidence, preDefinedThreshold, list_of_vehicles, yn, a, USE_GPU= parseCommandLineArguments()
+	preDefinedConfidence, preDefinedThreshold, list_of_vehicles, yn, a, tc, ct, USE_GPU= parseCommandLineArguments()
 
+	 
 # Initialize a list of colors to represent each possible class label
 np.random.seed(42)
 COLORS = np.random.randint(0, 255, size=(len(LABELS), 3),
@@ -49,6 +53,10 @@ def displayVehicleCount(frame, vehicle_count):
 
 			)
 		print("vehicles counted:"+ str(vehicle_count))
+		file = open("../count.txt", "w")
+		file.write(str(vehicle_count))
+		file.close
+
 
 # PURPOSE: Determining if the box-mid point cross the line or are within the range of 5 units
 # from the line
@@ -299,14 +307,18 @@ while True:
 
 	# write the output frame to disk
 	writer.write(frame)
+	path = os.path.abspath(os.getcwd())
+	
+        
+		
 
-	cv2.imshow('Frame', frame)
-	if (inputVideoPath.endswith(".mp4")):
-		if cv2.waitKey(1) & 0xFF == ord('q'):
-			break	
-	else:
-		if cv2.waitKey(0) & 0xFF == ord('q'):
-			break	
+	#cv2.imshow('Frame', frame)
+	#if (inputVideoPath.endswith(".mp4")):
+		#if cv2.waitKey(1) & 0xFF == ord('q'):
+			#break	
+	#else:
+		#if cv2.waitKey(0) & 0xFF == ord('q'):
+			#break	
 
 	
 	# Updating with the current frame detections
@@ -314,8 +326,15 @@ while True:
 	# previous_frame_detections.append(spatial.KDTree(current_detections))
 	previous_frame_detections.append(current_detections)
 
+
 # release the file pointers
 print("[INFO] cleaning up...")
 writer.release()
 videoStream.release()
 os.remove(inputVideoPath)
+blob = BlobClient.from_connection_string(conn_str= Connection_String, container_name= tc, blob_name= ct) 
+print(outputVideoPath)
+with open(outputVideoPath, "rb") as data:
+	blob.upload_blob(data)
+os.remove(outputVideoPath)
+
