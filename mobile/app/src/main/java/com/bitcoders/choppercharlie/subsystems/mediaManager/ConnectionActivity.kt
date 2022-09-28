@@ -10,9 +10,11 @@ import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import com.bitcoders.choppercharlie.R
+import com.bitcoders.choppercharlie.subsystems.LoginActivity
 import com.bitcoders.choppercharlie.subsystems.Upload
 import com.bitcoders.choppercharlie.subsystems.main.MainActivity
 import com.bitcoders.choppercharlie.subsystems.mediaManager.ConnectionViewModel
+import com.google.firebase.auth.FirebaseAuth
 import dji.sdk.sdkmanager.DJISDKManager
 
 class ConnectionActivity : AppCompatActivity() {
@@ -25,9 +27,10 @@ class ConnectionActivity : AppCompatActivity() {
     private val model: ConnectionViewModel by viewModels()
 
 
-///////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////
     private lateinit var GoFly: Button
     private lateinit var up: Button
+    private lateinit var logout: Button
 //////////////////////////////////////////////////////////
 
 
@@ -39,14 +42,19 @@ class ConnectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_connection)
 //////////////////////////////////////////////////////////////////////////////////////////
-        GoFly = findViewById(R.id.Gofly)
+        GoFly = findViewById(R.id.gofly)
         GoFly.isEnabled = false
         GoFly.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
-        up = findViewById(R.id.up)
+        up = findViewById(R.id.blobmedia)
         up.setOnClickListener {
             startActivity(Intent(this, Upload::class.java))
+        }
+        logout = findViewById(R.id.logout)
+        logout.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            FirebaseAuth.getInstance().signOut()
         }
 /////////////////////////////////////////////////////////////////////////////////////////
         ActivityCompat.requestPermissions(this,
