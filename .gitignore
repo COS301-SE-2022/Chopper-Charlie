@@ -10,3 +10,6 @@ node_modules
 frontend/reactapp/firebase.json
 *.cache
 frontend/reactapp/.firebaserc
+*.pyc
+backend/VideoAI/__pycache__/runDetections.cpython-310.pyc
+backend/VideoAI/inputVideos/__pycache__/downdel.cpython-310.pyc

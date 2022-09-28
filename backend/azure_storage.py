@@ -1,5 +1,5 @@
 
-from azure.storage.blob import ContainerClient
+from azure.storage.blob import ContainerClient, BlobServiceClient, BlobClient
 from datetime import datetime, timedelta
 import os
 from dotenv import load_dotenv
