@@ -1,7 +1,4 @@
 # Import flask and datetime module for showing date and time
-
-
-
 from flask import jsonify, request
 from io import BytesIO
 from flask import Flask, request
@@ -13,11 +10,6 @@ currentdir = os.path.dirname(os.path.abspath(
     inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir)
-from AzureContainerCreate.azurecreatecontainer import create_container
-from AzureBlobRetrieve.azureblobretrieve import blob_retrieve
-from AzureContainerRetrieve.azurecontainerretrieve import list_blobs_in_container
-from AzureBlobDelete.azureblobdelete import delete_blob
-from AzureBlobUpload.azureblobupload import blob_upload
 from VideoAI.inputVideos.downdel import blob_retrieveee
 # from ImageAI.vehicle_counting import blob_retrievee
 # from ImageAI.vehicle_detector import VehicleDetector
@@ -195,4 +187,4 @@ def get_account_type(email):
 
 # Running app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
