@@ -57,7 +57,6 @@ def displayVehicleCount(frame, vehicle_count):
 		file.write(str(vehicle_count))
 		file.close
 
-
 # PURPOSE: Determining if the box-mid point cross the line or are within the range of 5 units
 # from the line
 # PARAMETERS: X Mid-Point of the box, Y mid-point of the box, Coordinates of the line 
@@ -78,7 +77,7 @@ def boxAndLineOverlap(x_mid_point, y_mid_point, line_coordinates):
 def displayFPS(start_time, num_frames):
 	current_time = int(time.time())
 	if(current_time > start_time):
-		os.system('clear') # Equivalent of CTRL+L on the terminal
+		#os.system('clear') # Equivalent of CTRL+L on the terminal
 		print("FPS:", num_frames)
 		num_frames = 0
 		start_time = current_time
@@ -308,17 +307,18 @@ while True:
 	# write the output frame to disk
 	writer.write(frame)
 	path = os.path.abspath(os.getcwd())
+
 	
         
 		
 
-	#cv2.imshow('Frame', frame)
-	#if (inputVideoPath.endswith(".mp4")):
-		#if cv2.waitKey(1) & 0xFF == ord('q'):
-			#break	
-	#else:
-		#if cv2.waitKey(0) & 0xFF == ord('q'):
-			#break	
+	# cv2.imshow('Frame', frame)
+	# if (inputVideoPath.endswith(".mp4")):
+	# 	if cv2.waitKey(1) & 0xFF == ord('q'):
+	# 		break	
+	# else:
+	# 	if cv2.waitKey(0) & 0xFF == ord('q'):
+	# 		break	
 
 	
 	# Updating with the current frame detections
@@ -326,15 +326,14 @@ while True:
 	# previous_frame_detections.append(spatial.KDTree(current_detections))
 	previous_frame_detections.append(current_detections)
 
-
 # release the file pointers
 print("[INFO] cleaning up...")
 writer.release()
 videoStream.release()
-os.remove(inputVideoPath)
-blob = BlobClient.from_connection_string(conn_str= Connection_String, container_name= tc, blob_name= ct) 
-print(outputVideoPath)
-with open(outputVideoPath, "rb") as data:
-	blob.upload_blob(data)
-os.remove(outputVideoPath)
 
+
+blob = BlobClient.from_connection_string(conn_str= Connection_String, container_name= tc, blob_name= ct) 
+with open(outputVideoPath, "rb") as data:
+	blob.upload_blob(data,overwrite = True)
+	os.remove(inputVideoPath)
+	os.remove(outputVideoPath)
