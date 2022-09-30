@@ -56,7 +56,7 @@ Chopper Charlie is a real-time image analysis platform for images taken by a dro
  
  <li><a href="https://drive.google.com/file/d/1iGNFdbyapBQlSV1P92EO-Iu7CVUE6m2E/view?usp=sharing">Technical Installation Guide Demo 4 </a></li>
  
- <li><a href="https://docs.google.com/document/d/1a5Htid8q5q3pBW5qBY8nBce2UTrgYyrnpgL84DiloLM/edit">Testing Policy </a></li>
+ <li><a href="https://drive.google.com/file/d/1hnPBbufcfIK79bZPE-BvVvXBNw36hSaT/view?usp=sharing">Testing Policy </a></li>
  
  
  
