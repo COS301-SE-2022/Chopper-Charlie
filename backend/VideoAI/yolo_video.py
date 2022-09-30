@@ -336,4 +336,4 @@ blob = BlobClient.from_connection_string(conn_str= Connection_String, container_
 with open(outputVideoPath, "rb") as data:
 	blob.upload_blob(data,overwrite = True)
 	os.remove(inputVideoPath)
-	os.remove(outputVideoPath)
+os.remove(outputVideoPath)
