@@ -45,6 +45,8 @@ Chopper Charlie is a real-time image analysis platform for images taken by a dro
  <li><a href="https://drive.google.com/file/d/1Nbh4ZV_pz4J2zOLdfnDYOYWljKHSsP4s/view?usp=sharing">Architectural Diagram </a></li>
  <li><a href="https://drive.google.com/file/d/1WuY-iCNzSnFCN0Czp1eqNVIh366qkEeI/view?usp=sharing">Architectural Requirements Document Demo 2 </a></li>
  <li><a href="https://drive.google.com/file/d/1r7Ettiz5Zl6hicZJKhmllbHbYrSC3qxC/view?usp=sharing">Architectural Requirements Document Demo 3 </a></li>
+ <li><a href="https://drive.google.com/file/d/1GzS3tigK4IP5xf32JUFxkJ1hJg3c6a2M/view?usp=sharing">Architectural Requirements Document Demo 3 </a></li>
+ 
  <li><a href="https://drive.google.com/file/d/1ZpCEof5IUNmCRqjSDXorDEF3iq0u70Eo/view?usp=sharing">Coding Standards Document Demo 2 </a></li>
  <li><a href="https://drive.google.com/file/d/1JsSjYIfLNwrfJL_yFpabyu1rwihgHzLG/view?usp=sharing">Coding Standards Document Demo 3 </a></li>
  <li><a href="https://drive.google.com/file/d/1yLjjkPAGxydItUIjZzUVEDh8rOARVrAV/view?usp=sharing">Coding Standards Document Demo 4 </a></li>
