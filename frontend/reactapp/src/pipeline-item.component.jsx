@@ -67,6 +67,8 @@ const PipelineItem = ({ pipelineItem }) => {
 					sx={{
 						width: '6em',
 						// backgroundColor: 'white',
+						textTransform: 'capitalize'
+						///added by mumi
 					}}
 				/>
 
