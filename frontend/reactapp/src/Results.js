@@ -323,6 +323,17 @@ function Profile() {
 
 	const [query, setQuery] = useState("");
 
+	
+
+	function removeFileType(fileName){
+		let text = fileName;
+		var resultName = text.replace(".jpg", " ");
+		resultName = resultName.replace(".jpeg", " ");
+		resultName = resultName.replace(".mp4", " ");
+		resultName = resultName.replace("Analysed", "");
+		return resultName
+
+	}
 
 
 
@@ -445,7 +456,7 @@ function Profile() {
 											event.onerror = null;
 										}}
 									/>
-									&nbsp;{thedata}  
+									&nbsp;{removeFileType(thedata)}
 									{/* <h5>dd/mm/yyyy</h5> */}
 									<br></br><button id='ResultButton' onClick={()=>getFileResultfunction(thedata)} ><AssignmentIcon sx={{ fontSize: 14 }} />&nbsp;&nbsp;Results</button>
 									<br></br>

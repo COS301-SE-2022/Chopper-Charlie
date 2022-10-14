@@ -320,6 +320,16 @@ const Account = () => {
 
 	const [query, setQuery] = useState("");
 
+	function removeFileType(fileName){
+		let text = fileName;
+		var resultName = text.replace(".jpg", " ");
+		resultName = resultName.replace(".jpeg", " ");
+		resultName = resultName.replace(".mp4", " ");
+		resultName = resultName.replace("Analysed", "");
+		return resultName
+
+	}
+
 
 	return (
 		<div>
@@ -448,7 +458,7 @@ const Account = () => {
 											event.onerror = null;
 										}}
 									/>
-									&nbsp;{thedata}
+									&nbsp;{removeFileType(thedata)}
 									{/* <h5>dd/mm/yyyy</h5> */}
 									
 									<br></br>

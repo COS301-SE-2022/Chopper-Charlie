@@ -773,7 +773,27 @@ width: 75%;
   /* word-break: break-all;
     white-space: normal; */
 
+    
+
   }
+
+
+  #MediaBlockResults p{
+    margin-top: -20px;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:normal;
+    text-transform: capitalize; 
+    /* word-break: break-all;
+      white-space: normal; */
+  
+      
+  
+    }
 
 
 
@@ -811,17 +831,7 @@ width: 75%;
 
 
 
-#MediaBlockResults p{
-  margin-top: -20px;
-  padding-top: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  font-family:Arial, Helvetica, sans-serif;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space:normal;
 
-  }
 
 
 #MediaBlockResults h5{
@@ -1185,6 +1195,7 @@ color: #51B9D4;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space:normal;
+  text-transform: capitalize; 
 }
 
 #nameDiv{
