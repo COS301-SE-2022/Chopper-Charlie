@@ -41,6 +41,7 @@ const PipelineItem = ({ pipelineItem }) => {
 				borderRadius: '35px',
 				height: '3em',
 				alignItems: 'center',
+				textTransform: 'capitalize',
 				// justifyContent='space-between',
 				'&:after': {
 					position: 'absolute',
