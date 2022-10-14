@@ -769,6 +769,7 @@ width: 75%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space:normal;
+  text-transform: capitalize; 
   /* word-break: break-all;
     white-space: normal; */
 

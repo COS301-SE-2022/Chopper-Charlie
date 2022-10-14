@@ -288,6 +288,15 @@ function Profile() {
 
 	const [query, setQuery] = useState("");
 
+	function removeFileType(fileName){
+		let text = fileName;
+		var resultName = text.replace(".jpg", " ");
+		resultName = resultName.replace(".jpeg", " ");
+		resultName = resultName.replace(".mp4", " ");
+	
+		return resultName
+
+	}
 
 
 
@@ -407,7 +416,7 @@ function Profile() {
 											event.onerror = null;
 										}}
 									/>
-									&nbsp;{thedata}
+									&nbsp;{removeFileType(thedata)}
 									{/* <h5>dd/mm/yyyy</h5> */}
 									<br></br>
 									<hr></hr>
