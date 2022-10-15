@@ -810,6 +810,9 @@ width: 75%;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   margin-top: -10px;
+  object-fit: cover;
+  width: 240px;
+  height: 220px;
  
  
  }
@@ -817,6 +820,9 @@ width: 75%;
  #preview{
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  object-fit: cover;
+  width: 240px;
+  height: 220px;
  
  
  }
@@ -1190,7 +1196,7 @@ color: #51B9D4;
   margin-left: 100px;
   font-weight: bold;
   color: #f9f9f9;
-  width: 55%;
+  width: 45%;
   flex-wrap: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1214,6 +1220,7 @@ color: #51B9D4;
 #previewList{
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  object-fit: cover;
  
  
  }
