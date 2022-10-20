@@ -335,5 +335,6 @@ videoStream.release()
 blob = BlobClient.from_connection_string(conn_str= Connection_String, container_name= tc, blob_name= ct) 
 with open(outputVideoPath, "rb") as data:
 	blob.upload_blob(data,overwrite = True)
-	os.remove(inputVideoPath)
-os.remove(outputVideoPath)
+	
+# os.remove(outputVideoPath)
+# os.remove(inputVideoPath)
