@@ -337,6 +337,8 @@ function Profile() {
 
 
 
+
+
 	return (
 		
 		<div>
@@ -411,6 +413,10 @@ function Profile() {
 						style={{ opacity: '0', width: '0', height: '0' }}></input>
 				</div>
 			</Stack>
+
+<button id="compare">Compare</button>
+
+			
 
 
 			{typeof data.mydata === 'undefined' ? (
