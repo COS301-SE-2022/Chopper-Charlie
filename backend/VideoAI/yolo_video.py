@@ -57,6 +57,7 @@ def displayVehicleCount(frame, vehicle_count):
 		file = open("../count.txt", "w")
 		file.write(str(vehicle_count))
 		file.close
+		return
 
 # PURPOSE: Determining if the box-mid point cross the line or are within the range of 5 units
 # from the line
@@ -114,7 +115,7 @@ def initializeVideoWriter(video_width, video_height, videoStream):
 	# Getting the fps of the source video
 	sourceVideofps = videoStream.get(cv2.CAP_PROP_FPS)
 	# initialize our video writer
-	fourcc = cv2.VideoWriter_fourcc(*"mjpg")
+	fourcc = cv2.VideoWriter_fourcc(*"MJPG")
 	return cv2.VideoWriter(outputVideoPath, fourcc, sourceVideofps,
 		(video_width, video_height), True)
 
@@ -333,8 +334,3 @@ writer.release()
 videoStream.release()
 
 
-
-
-	
-
-sys.exit()
