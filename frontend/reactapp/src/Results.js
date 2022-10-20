@@ -39,7 +39,12 @@ import { Link } from 'react-router-dom';
 import SideBar from './components/sidebar/sidebar.component';
 //change
 
+
+
+
 // ################### Search Bar ###################
+
+
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -89,6 +94,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 function Profile() {
 
+
+	
 
 	// i allowed merges
 
@@ -221,6 +228,7 @@ function Profile() {
 	};
 
 	const pipelines = useSelector(selectPipelines);
+	const filess = useSelector(selectFiles);
 
 	function openForm(thedata) {
 		document.getElementById('myForm').style.display = 'block';
@@ -336,6 +344,14 @@ function Profile() {
 	}
 
 
+function chooseMedia(){
+	document.getElementById('ComparemyForm').style.display = 'block';
+	document.getElementById('Comparecancel').style.display = 'block';
+}
+function closeCompareForm() {
+	document.getElementById('ComparemyForm').style.display = 'none';
+}	
+
 
 
 
@@ -414,8 +430,46 @@ function Profile() {
 				</div>
 			</Stack>
 
-<button id="compare">Compare</button>
+{/* /////////////////////////form////////////////////////// */}
+<div className='Compareform-popup' id='ComparemyForm'>
+				<div className='Compareform-container'>
+					
 
+
+							{/* {filess.map((filesitem) => {
+											return (
+												<div key1={filesitem.file}>
+													<button>
+														{filesitem.file}
+													</button>
+												</div>
+											);
+										})} */}
+
+
+					 <button
+						id='Comparecancel'
+						type='button'
+						onClick={() => closeCompareForm()}
+						className='cancel'>
+						Close
+					</button>
+
+				</div>
+			</div>
+{/* /////////////////////////form////////////////////////// */}
+
+
+
+
+			<div id='compare'>
+				<h1>Compare Media:</h1>
+				<button onClick={()=>chooseMedia()} >Select Media</button>
+
+
+				
+
+			</div>
 			
 
 
