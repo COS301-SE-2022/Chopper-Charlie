@@ -26,7 +26,6 @@ import { setFiles } from './store/files/files.action';
 import { selectFiles } from './store/files/files.selector';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
-
 import { useRef } from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -39,13 +38,7 @@ import { Link } from 'react-router-dom';
 import SideBar from './components/sidebar/sidebar.component';
 //change
 
-
-
-
 // ################### Search Bar ###################
-
-
-
 
 const Search = styled('div')(({ theme }) => ({
 	position: 'relative',
@@ -89,29 +82,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 // ##################################################
 
-
-
-
 function Profile() {
-
-
-	
-
 	// i allowed merges
 
-	const [color, changeColor] = useState("#242424");
+	const [color, changeColor] = useState('#242424');
 
 	document.body.style.backgroundColor = color;
 	const fileUpload = useRef(null);
 
-
-	
-	const currentUser = useSelector(selectCurrentUser)
+	const currentUser = useSelector(selectCurrentUser);
 	// const { currentUser } = useAuthValue();
 	// object for storing and using data
 	const [data, setdata] = useState({});
+	const [resultNames, setResultNames] = useState([]);
 	const [isAdmin, setIsAdmin] = useState(false);
-	const [role, setRole] = useState('user')
+	const [role, setRole] = useState('user');
 
 	useEffect(() => {
 		try {
@@ -122,7 +107,7 @@ function Profile() {
 					if (!!idTokenResult.claims.admin) {
 						// Show admin UI.
 						setIsAdmin(true);
-						setRole('Admin')
+						setRole('Admin');
 						console.log('This is an admin user');
 					}
 				})
@@ -162,6 +147,7 @@ function Profile() {
 		res.json().then((data) => {
 			// Setting a data from api
 			setdata(data);
+			setResultNames(data.mydata);
 			//  console.log(data);
 		})
 	);
@@ -178,7 +164,7 @@ function Profile() {
 			);
 			deleteFileResult(currentUser, str).catch((err) => {
 				console.log(err);
-			});	
+			});
 		}
 	}
 
@@ -202,8 +188,8 @@ function Profile() {
 			const data = new FormData();
 			data.append('file_from_react', file);
 			document.getElementById('UploadmyForm').style.display = 'block';
-			document.getElementById('uploader').style.display='block';
-			document.getElementById('textUpload').innerHTML= "Uploading..";
+			document.getElementById('uploader').style.display = 'block';
+			document.getElementById('textUpload').innerHTML = 'Uploading..';
 			fetch('/ur/' + currentUser?.email, {
 				method: 'post',
 				body: data,
@@ -213,11 +199,10 @@ function Profile() {
 					setdata(data);
 					console.log(JSON.stringify(data.Message));
 					//   alert(JSON.stringify(data.Message));
-					document.getElementById('uploader').style.display='none';
+					document.getElementById('uploader').style.display = 'none';
 					uploadingPopup(JSON.stringify(data.Message));
-					
+
 					document.getElementById('Uploadcancel').style.display = 'block';
-					
 				})
 			);
 			//   let res = await response.json();
@@ -245,7 +230,7 @@ function Profile() {
 		var outline = p.outline ? 'y' : 'n';
 		document.getElementById('myForm').style.display = 'none';
 		document.getElementById('ResultmyForm').style.display = 'block';
-		document.getElementById('loader').style.display='block';
+		document.getElementById('loader').style.display = 'block';
 		document.getElementById('textResults').innerHTML = 'Analysing...';
 
 		fetch(
@@ -272,7 +257,7 @@ function Profile() {
 				// document.getElementById("textResults").innerHTML=window.countt;
 				// document.getElementById("ResultmyForm").style.display = "block";
 				resultsDiv(countt, mes, link);
-				document.getElementById('loader').style.display="none";
+				document.getElementById('loader').style.display = 'none';
 				document.getElementById('resultcancel').style.display = 'block';
 			})
 		);
@@ -290,7 +275,6 @@ function Profile() {
 
 	function closeResultFormResult() {
 		document.getElementById('ResultmyFormResult').style.display = 'none';
-		
 	}
 
 	function closeUploadForm() {
@@ -303,64 +287,55 @@ function Profile() {
 			'<a href=' +
 			linkk +
 			"><br></br><button id= 'analysedMed'><CloudDownloadRoundedIcon sx={{ fontSize: 12 }} />Download</button></a><br></br>";
-			document.getElementById('textResults').innerHTML = a + '<br/>' + b + "<br/> Download results below and view them on the results page <br/>"+h;
+		document.getElementById('textResults').innerHTML =
+			a +
+			'<br/>' +
+			b +
+			'<br/> Download results below and view them on the results page <br/>' +
+			h;
 	}
-
 
 	const dispatch = useDispatch();
 	const files = useSelector(selectFiles);
 
-
 	const getFileResultfunction = (filename) => {
 		getFileResult(currentUser).then((data) => {
-			console.log('this is the results data: ',data);
+			console.log('this is the results data: ', data);
 			dispatch(setFiles(data));
-			const results = files[filename]
-			document.getElementById('textResultsResult').innerHTML = "";
-			
+			const results = files[filename];
+			document.getElementById('textResultsResult').innerHTML = '';
+
 			document.getElementById('ResultmyFormResult').style.display = 'block';
 			Object.entries(results).forEach(([key, value]) => {
 				//console.log("Object Type: "+key+"Object Count: "+value)
-				document.getElementById('textResultsResult').innerHTML += "Type: "+key+"     Count: " + value +"<br>";
+				document.getElementById('textResultsResult').innerHTML +=
+					'Type: ' + key + '     Count: ' + value + '<br>';
 			});
-			
-			
-		})
-	}
+		});
+	};
 
+	const [query, setQuery] = useState('');
 
-	const [query, setQuery] = useState("");
-
-	
-
-	function removeFileType(fileName){
+	function removeFileType(fileName) {
 		let text = fileName;
-		var resultName = text.replace(".jpg", " ");
-		resultName = resultName.replace(".jpeg", " ");
-		resultName = resultName.replace(".mp4", " ");
-		resultName = resultName.replace("Analysed", "");
-		return resultName
-
+		var resultName = text.replace('.jpg', ' ');
+		resultName = resultName.replace('.jpeg', ' ');
+		resultName = resultName.replace('.mp4', ' ');
+		resultName = resultName.replace('Analysed', '');
+		return resultName;
 	}
 
-
-function chooseMedia(){
-	document.getElementById('ComparemyForm').style.display = 'block';
-	document.getElementById('Comparecancel').style.display = 'block';
-}
-function closeCompareForm() {
-	document.getElementById('ComparemyForm').style.display = 'none';
-}	
-
-
-
+	function chooseMedia() {
+		document.getElementById('ComparemyForm').style.display = 'block';
+		document.getElementById('Comparecancel').style.display = 'block';
+	}
+	function closeCompareForm() {
+		document.getElementById('ComparemyForm').style.display = 'none';
+	}
 
 	return (
-		
 		<div>
-
-
-<Stack
+			<Stack
 				justifyContent='space-between'
 				alignItems='center'
 				direction={'row'}
@@ -383,7 +358,7 @@ function closeCompareForm() {
 					<StyledInputBase
 						placeholder='Search…'
 						inputProps={{ 'aria-label': 'search' }}
-						onChange={event => setQuery(event.target.value)} 
+						onChange={(event) => setQuery(event.target.value)}
 					/>
 				</Search>
 				<Box
@@ -430,13 +405,10 @@ function closeCompareForm() {
 				</div>
 			</Stack>
 
-{/* /////////////////////////form////////////////////////// */}
-<div className='Compareform-popup' id='ComparemyForm'>
+			{/* /////////////////////////form////////////////////////// */}
+			<div className='Compareform-popup' id='ComparemyForm'>
 				<div className='Compareform-container'>
-					
-
-
-							{/* {filess.map((filesitem) => {
+					{/* {filess.map((filesitem) => {
 											return (
 												<div key1={filesitem.file}>
 													<button>
@@ -445,33 +417,38 @@ function closeCompareForm() {
 												</div>
 											);
 										})} */}
+					hello
+					{/* {data?.mydata.map((thedata, i) => (
+						<div key={i}>
+							<button>{thedata}</button>
+						</div>
+					))} */}
 
+					{
+						resultNames.map((resultName) => {
+							return (
+								<div key={resultName}>
+									<button>{resultName}</button>
+								</div>
+							);
+						})
+					}
 
-					 <button
+					<button
 						id='Comparecancel'
 						type='button'
 						onClick={() => closeCompareForm()}
 						className='cancel'>
 						Close
 					</button>
-
 				</div>
 			</div>
-{/* /////////////////////////form////////////////////////// */}
-
-
-
+			{/* /////////////////////////form////////////////////////// */}
 
 			<div id='compare'>
 				<h1>Compare Media:</h1>
-				<button onClick={()=>chooseMedia()} >Select Media</button>
-
-
-				
-
+				<button onClick={() => chooseMedia()}>Select Media</button>
 			</div>
-			
-
 
 			{typeof data.mydata === 'undefined' ? (
 				<div className='lds-ring'>
@@ -481,110 +458,112 @@ function closeCompareForm() {
 					<div></div>
 				</div>
 			) : (
-				data.mydata.filter(post => {
-					if (query === '') {
-					  return post;
-					} else if (post.toLowerCase().includes(query.toLowerCase())) {
-					  return post;
-					}
-				  })
-				
-				
-				.map((thedata, i) => (
-				
+				data.mydata
+					.filter((post) => {
+						if (query === '') {
+							return post;
+						} else if (post.toLowerCase().includes(query.toLowerCase())) {
+							return post;
+						}
+					})
 
-
-
-
-					<div className='center'>
-						<div id='HomeContent'>
-							<div id='MediaBlockResults'>
-								<p>
-									<img
-										id='previewResults'
-										src={
-											'https://choppercharlie.blob.core.windows.net/' +
-											replace() +
-											'/' +
-											thedata
-										}
-										width='240px'
-										height='220px'
-										alt='img'
-										onError={(event) => {
-											event.target.src = require('./vidImg.png');
-											event.onerror = null;
-										}}
-									/>
-									&nbsp;{removeFileType(thedata)}
-									{/* <h5>dd/mm/yyyy</h5> */}
-									<br></br><button id='ResultButton' onClick={()=>getFileResultfunction(thedata)} ><AssignmentIcon sx={{ fontSize: 14 }} />&nbsp;&nbsp;Results</button>
-									<br></br>
-									<hr></hr>
-									&nbsp;
-									<div id='ButtonDiv'>
-										<a
-											href={
+					.map((thedata, i) => (
+						<div className='center'>
+							<div id='HomeContent'>
+								<div id='MediaBlockResults'>
+									<p>
+										<img
+											id='previewResults'
+											src={
 												'https://choppercharlie.blob.core.windows.net/' +
 												replace() +
 												'/' +
 												thedata
-											}>
-												
-											<button id='DownloadButton'>
-												<CloudDownloadRoundedIcon sx={{ fontSize: 20 }} />
-												<br></br>Download
+											}
+											width='240px'
+											height='220px'
+											alt='img'
+											onError={(event) => {
+												event.target.src = require('./vidImg.png');
+												event.onerror = null;
+											}}
+										/>
+										&nbsp;{removeFileType(thedata)}
+										{/* <h5>dd/mm/yyyy</h5> */}
+										<br></br>
+										<button
+											id='ResultButton'
+											onClick={() => getFileResultfunction(thedata)}>
+											<AssignmentIcon sx={{ fontSize: 14 }} />
+											&nbsp;&nbsp;Results
+										</button>
+										<br></br>
+										<hr></hr>
+										&nbsp;
+										<div id='ButtonDiv'>
+											<a
+												href={
+													'https://choppercharlie.blob.core.windows.net/' +
+													replace() +
+													'/' +
+													thedata
+												}>
+												<button id='DownloadButton'>
+													<CloudDownloadRoundedIcon sx={{ fontSize: 20 }} />
+													<br></br>Download
+												</button>
+											</a>
+											&nbsp;
+											<button
+												id='AnalyseButton'
+												onClick={() => openForm(thedata)}>
+												<AnalyticsIcon sx={{ fontSize: 20 }} />
+												<br></br>Analyse
 											</button>
-										</a>
-										&nbsp;
-										<button
-											id='AnalyseButton'
-											onClick={() => openForm(thedata)}>
-											<AnalyticsIcon sx={{ fontSize: 20 }} />
-											<br></br>Analyse
-										</button>
-										&nbsp;
-										<button id='DeleteButton' onClick={() => delData(thedata)}>
-											<DeleteIcon sx={{ fontSize: 20 }} />
-											<br></br>Delete
-										</button>
-									</div>
-								</p>
+											&nbsp;
+											<button
+												id='DeleteButton'
+												onClick={() => delData(thedata)}>
+												<DeleteIcon sx={{ fontSize: 20 }} />
+												<br></br>Delete
+											</button>
+										</div>
+									</p>
 
-								<div className='form-popup' id='myForm'>
-									<div className='form-container'>
-										<h1>Select Pipeline</h1>
+									<div className='form-popup' id='myForm'>
+										<div className='form-container'>
+											<h1>Select Pipeline</h1>
 
-										{/* <label className="pipelinee"><p>Choose you pipeline for analysis:</p></label><br /> */}
+											{/* <label className="pipelinee"><p>Choose you pipeline for analysis:</p></label><br /> */}
 
-										{pipelines.map((pipelineItem) => {
-											return (
-												<div key1={pipelineItem.title}>
-													<button
-														type='button'
-														id='pipelineChosen'
-														className='pipelineChosen'
-														name='pipelineChosen'
-														onClick={() => analyse(pipelineItem)}>
-														{pipelineItem.title}
-													</button>
-												</div>
-											);
-										})}
+											{pipelines.map((pipelineItem) => {
+												return (
+													<div key1={pipelineItem.title}>
+														<button
+															type='button'
+															id='pipelineChosen'
+															className='pipelineChosen'
+															name='pipelineChosen'
+															onClick={() => analyse(pipelineItem)}>
+															{pipelineItem.title}
+														</button>
+													</div>
+												);
+											})}
 
-										{/* <button type="button" className="done" onSubmit={() => analyse()}>Done</button> */}
-										<button
-											type='button'
-											onClick={() => closeForm()}
-											className='cancel'>
-											Cancel
-										</button>
+											{/* <button type="button" className="done" onSubmit={() => analyse()}>Done</button> */}
+											<button
+												type='button'
+												onClick={() => closeForm()}
+												className='cancel'>
+												Cancel
+											</button>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				))
+					))
 			)}
 
 			{/* <button class="open-button" onclick="openForm()">Open Form</button> */}
@@ -593,7 +572,7 @@ function closeCompareForm() {
 				<div className='Resultform-container'>
 					<h1>Results</h1>
 					<div id='textResults'></div>
-					<div id= "loader"  className="loader"></div>
+					<div id='loader' className='loader'></div>
 					<button
 						id='resultcancel'
 						type='button'
@@ -604,16 +583,11 @@ function closeCompareForm() {
 				</div>
 			</div>
 
-
-
-
-
-
 			<div className='ResultformResult-popup' id='ResultmyFormResult'>
 				<div className='ResultformResult-container'>
 					<h1>Results</h1>
 					<div id='textResultsResult'></div>
-					<div id= "loader"  className="loader"></div>
+					<div id='loader' className='loader'></div>
 					<button
 						id='resultcancelResult'
 						type='button'
@@ -624,15 +598,10 @@ function closeCompareForm() {
 				</div>
 			</div>
 
-
-
-
-
-
 			<div className='Uploadform-popup' id='UploadmyForm'>
 				<div className='Uploadform-container'>
 					<div id='textUpload'>Uploading...</div>
-					<div id= "uploader"  className="uploader"></div>
+					<div id='uploader' className='uploader'></div>
 					<button
 						id='Uploadcancel'
 						type='button'
@@ -643,9 +612,8 @@ function closeCompareForm() {
 				</div>
 			</div>
 
-			<SideBar/>
+			<SideBar />
 		</div>
-		
 	);
 }
 
