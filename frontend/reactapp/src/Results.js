@@ -38,6 +38,7 @@ import { Link } from 'react-router-dom';
 import SideBar from './components/sidebar/sidebar.component';
 //change
 
+
 // ################### Search Bar ###################
 
 const Search = styled('div')(({ theme }) => ({
@@ -235,15 +236,15 @@ function Profile() {
 
 		fetch(
 			'/ai/video/' +
-				media +
-				'/' +
-				currentUser?.email +
-				'/' +
-				typeAnalysis +
-				'/' +
-				outline +
-				'/' +
-				count
+			media +
+			'/' +
+			currentUser?.email +
+			'/' +
+			typeAnalysis +
+			'/' +
+			outline +
+			'/' +
+			count
 		).then((res) =>
 			res.json().then((data) => {
 				// Setting a data from api
@@ -333,6 +334,19 @@ function Profile() {
 		document.getElementById('ComparemyForm').style.display = 'none';
 	}
 
+
+	
+	function graph() {
+		// console.log("told you so");
+
+
+		// const data = [{ argument: 'Monday', value: 30 },
+		// 			  { argument: 'Tuesday', value: 20 },];
+		// document.getElementById('graph').innerHTML="<Paper><Chart data="+{data}+"><ArgumentAxis /><ValueAxis /><BarSeries valueField='value' argumentField='argument' /></Chart></Paper>"
+
+
+	}
+
 	return (
 		<div>
 			<Stack
@@ -406,29 +420,15 @@ function Profile() {
 			</Stack>
 
 			{/* /////////////////////////form////////////////////////// */}
-			<div className='Compareform-popup' id='ComparemyForm'>
+			{/* <div className='Compareform-popup' id='ComparemyForm'>
 				<div className='Compareform-container'>
-					{/* {filess.map((filesitem) => {
-											return (
-												<div key1={filesitem.file}>
-													<button>
-														{filesitem.file}
-													</button>
-												</div>
-											);
-										})} */}
-					hello
-					{/* {data?.mydata.map((thedata, i) => (
-						<div key={i}>
-							<button>{thedata}</button>
-						</div>
-					))} */}
+					Select media to compare results:
 
 					{
 						resultNames.map((resultName) => {
 							return (
 								<div key={resultName}>
-									<button>{resultName}</button>
+									<input type="checkbox" id="compareMedia" name={resultName} value={resultName}></input><label for={resultName}> {removeFileType(resultName)}</label><br></br>
 								</div>
 							);
 						})
@@ -442,13 +442,63 @@ function Profile() {
 						Close
 					</button>
 				</div>
-			</div>
+			</div> */}
 			{/* /////////////////////////form////////////////////////// */}
 
 			<div id='compare'>
 				<h1>Compare Media:</h1>
-				<button onClick={() => chooseMedia()}>Select Media</button>
+				<div id="graph">
+					
+				</div>
+
+				<label for="compareObject">Object to compare:</label>
+
+				<select name="compareObject" id="compareObject">
+					<option value="car">Car</option>
+					<option value="bus">Bus</option>
+					<option value="truck">Truck</option>
+					<option value="motorbike">Motorbike</option>
+					<option value="Train">train</option>
+					<option value="Boat">boat</option>
+					<option value="aeroplane">Aeroplane</option>
+					<option value="person">People</option>
+					<option value="bird">Bird</option>
+					<option value="sheep">Sheep</option>
+					<option value="cow">Cow</option>
+					<option value="elephant">Elephant</option>
+					<option value="zebra">Zebra</option>
+					<option value="giraffe">Giraffe</option>
+				</select>
+				<br></br>
+
+
+				Select media to compare results:
+
+				{
+					resultNames.map((resultName) => {
+						return (
+							<div key={resultName}>
+								<input type="checkbox" id="compareMedia" name={resultName} value={resultName} onClick={() => graph()}></input><label for={resultName}> {removeFileType(resultName)}</label><br></br>
+							</div>
+						);
+					})
+				}
+
+
+
+
+
+
+
+
+
+
+
 			</div>
+
+
+
+
 
 			{typeof data.mydata === 'undefined' ? (
 				<div className='lds-ring'>
