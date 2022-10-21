@@ -336,16 +336,7 @@ function Profile() {
 
 
 	
-	function graph() {
-		// console.log("told you so");
 
-
-		// const data = [{ argument: 'Monday', value: 30 },
-		// 			  { argument: 'Tuesday', value: 20 },];
-		// document.getElementById('graph').innerHTML="<Paper><Chart data="+{data}+"><ArgumentAxis /><ValueAxis /><BarSeries valueField='value' argumentField='argument' /></Chart></Paper>"
-
-
-	}
 
 	return (
 		<div>
@@ -418,84 +409,6 @@ function Profile() {
 						style={{ opacity: '0', width: '0', height: '0' }}></input>
 				</div>
 			</Stack>
-
-			{/* /////////////////////////form////////////////////////// */}
-			{/* <div className='Compareform-popup' id='ComparemyForm'>
-				<div className='Compareform-container'>
-					Select media to compare results:
-
-					{
-						resultNames.map((resultName) => {
-							return (
-								<div key={resultName}>
-									<input type="checkbox" id="compareMedia" name={resultName} value={resultName}></input><label for={resultName}> {removeFileType(resultName)}</label><br></br>
-								</div>
-							);
-						})
-					}
-
-					<button
-						id='Comparecancel'
-						type='button'
-						onClick={() => closeCompareForm()}
-						className='cancel'>
-						Close
-					</button>
-				</div>
-			</div> */}
-			{/* /////////////////////////form////////////////////////// */}
-
-			<div id='compare'>
-				<h1>Compare Media:</h1>
-				<div id="graph">
-					
-				</div>
-
-				<label for="compareObject">Object to compare:</label>
-
-				<select name="compareObject" id="compareObject">
-					<option value="car">Car</option>
-					<option value="bus">Bus</option>
-					<option value="truck">Truck</option>
-					<option value="motorbike">Motorbike</option>
-					<option value="Train">train</option>
-					<option value="Boat">boat</option>
-					<option value="aeroplane">Aeroplane</option>
-					<option value="person">People</option>
-					<option value="bird">Bird</option>
-					<option value="sheep">Sheep</option>
-					<option value="cow">Cow</option>
-					<option value="elephant">Elephant</option>
-					<option value="zebra">Zebra</option>
-					<option value="giraffe">Giraffe</option>
-				</select>
-				<br></br>
-
-
-				Select media to compare results:
-
-				{
-					resultNames.map((resultName) => {
-						return (
-							<div key={resultName}>
-								<input type="checkbox" id="compareMedia" name={resultName} value={resultName} onClick={() => graph()}></input><label for={resultName}> {removeFileType(resultName)}</label><br></br>
-							</div>
-						);
-					})
-				}
-
-
-
-
-
-
-
-
-
-
-
-			</div>
-
 
 
 
