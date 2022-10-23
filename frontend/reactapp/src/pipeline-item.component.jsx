@@ -41,6 +41,7 @@ const PipelineItem = ({ pipelineItem }) => {
 				borderRadius: '35px',
 				height: '3em',
 				alignItems: 'center',
+				textTransform: 'capitalize',
 				// justifyContent='space-between',
 				'&:after': {
 					position: 'absolute',
@@ -67,6 +68,8 @@ const PipelineItem = ({ pipelineItem }) => {
 					sx={{
 						width: '6em',
 						// backgroundColor: 'white',
+						textTransform: 'capitalize'
+						///added by mumi
 					}}
 				/>
 

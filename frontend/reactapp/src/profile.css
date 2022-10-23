@@ -769,10 +769,31 @@ width: 75%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space:normal;
+  text-transform: capitalize; 
   /* word-break: break-all;
     white-space: normal; */
 
+    
+
   }
+
+
+  #MediaBlockResults p{
+    margin-top: -20px;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:normal;
+    text-transform: capitalize; 
+    /* word-break: break-all;
+      white-space: normal; */
+  
+      
+  
+    }
 
 
 
@@ -789,6 +810,9 @@ width: 75%;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   margin-top: -10px;
+  object-fit: cover;
+  width: 240px;
+  height: 220px;
  
  
  }
@@ -796,6 +820,9 @@ width: 75%;
  #preview{
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  object-fit: cover;
+  width: 240px;
+  height: 220px;
  
  
  }
@@ -810,17 +837,7 @@ width: 75%;
 
 
 
-#MediaBlockResults p{
-  margin-top: -20px;
-  padding-top: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  font-family:Arial, Helvetica, sans-serif;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space:normal;
 
-  }
 
 
 #MediaBlockResults h5{
@@ -1179,11 +1196,12 @@ color: #51B9D4;
   margin-left: 100px;
   font-weight: bold;
   color: #f9f9f9;
-  width: 55%;
+  width: 45%;
   flex-wrap: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space:normal;
+  text-transform: capitalize; 
 }
 
 #nameDiv{
@@ -1202,6 +1220,7 @@ color: #51B9D4;
 #previewList{
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  object-fit: cover;
  
  
  }
@@ -1315,7 +1334,7 @@ color: #51B9D4;
   display: none;
   position: fixed;
   margin-left:35%;
-  margin-top:-20%;
+  margin-top:-30%;
   border-radius: 5px;
   z-index: 9;
 }
@@ -1988,3 +2007,100 @@ color: #51B9D4;
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////// */
+#compare{
+  width: 70%;
+  background-color:#000000;
+  max-height: 200px;
+  overflow-y: scroll;
+  margin-left: 30px;
+  margin-top: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+ 
+}
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+
+.Compareform-popup {
+  display: none;
+  position: fixed;
+  margin-left:35%;
+  margin-top: -30px;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.Compareform-container {
+  width: 250px;
+  max-height: 300px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #0F0F0F;
+  border-radius: 5px;
+  text-align: left;
+  overflow-y: auto ;
+  word-wrap: break-word;
+
+
+}
+
+
+
+
+
+/* Add a red background color to the cancel button */
+.Compareform-container #analysedMed{
+  background-color: #58aee7;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  height: 25px;
+  margin: auto;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+
+.Compareform-container .cancel{
+  background-color: #cc6259;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  height: 25px;
+  margin: auto;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Add some hover effects to buttons */
+.Compareform-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#ComparemyForm p{
+  color: #ffffff;
+}
+
+#ComparemyForm h1{
+  color: #ffffff;
+}
+
+#ComparemyForm label{
+  color: #ffffff;
+}
+
+
+#textResults{
+  color: #ffffff;
+  font: 40px;
+}
+
+
+#Comparecancel{
+  display: none;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */

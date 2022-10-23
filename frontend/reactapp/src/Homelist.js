@@ -280,6 +280,15 @@ document.body.style.backgroundColor = color;
 
 
 	const [query, setQuery] = useState("");
+	function removeFileType(fileName){
+		let text = fileName;
+		var resultName = text.replace(".jpg", " ");
+		resultName = resultName.replace(".jpeg", " ");
+		resultName = resultName.replace(".mp4", " ");
+	
+		return resultName
+
+	}
 
 
 	return (
@@ -433,7 +442,7 @@ document.body.style.backgroundColor = color;
 <img id="previewList" src={('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}  width="80px" height="80px" alt="img"  onError={event => {
           event.target.src = require('./vidImg.png')
           event.onerror = null
-        }}    /><h2>{thedata}</h2>
+        }}    /><h2>{removeFileType(thedata)}</h2>
 		<a href= {('https://choppercharlie.blob.core.windows.net/'+replace()+'/'+thedata)}><button id="DownloadButtonList"  ><CloudDownloadRoundedIcon sx={{ fontSize: 20 }}/>Download</button></a>
 		<button id="AnalyseButtonList" onClick={() => openForm(thedata)} ><AnalyticsIcon sx={{ fontSize: 20 }}/><br></br>Analyse</button>&nbsp;
 		<button id="DeleteButtonList" onClick={()=>delData(thedata)}    ><DeleteIcon sx={{ fontSize: 20 }}/><br></br>Delete</button>

@@ -1,4 +1,5 @@
 # import the necessary packages
+import sys
 import numpy as np
 import imutils
 import time
@@ -56,6 +57,7 @@ def displayVehicleCount(frame, vehicle_count):
 		file = open("../count.txt", "w")
 		file.write(str(vehicle_count))
 		file.close
+		return
 
 # PURPOSE: Determining if the box-mid point cross the line or are within the range of 5 units
 # from the line
@@ -190,9 +192,9 @@ print("[INFO] loading YOLO from disk...")
 net = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
 
 #Using GPU if flag is passed
-if USE_GPU:
-	net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
-	net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA)
+# if USE_GPU:
+# 	net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
+# 	net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA)
 
 # ln = net.getLayerNames()
 # ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
@@ -332,8 +334,3 @@ writer.release()
 videoStream.release()
 
 
-blob = BlobClient.from_connection_string(conn_str= Connection_String, container_name= tc, blob_name= ct) 
-with open(outputVideoPath, "rb") as data:
-	blob.upload_blob(data,overwrite = True)
-	os.remove(inputVideoPath)
-	os.remove(outputVideoPath)
