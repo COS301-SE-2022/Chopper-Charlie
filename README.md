@@ -55,16 +55,16 @@ Chopper Charlie is a real-time image analysis platform for images taken by a dro
 <br />
 
 <a name="RecordedDemos"/><h1>Recorded Demo Videos 📹</h1></a>
- -[Full Video Demo](https://drive.google.com/drive/folders/15mXft9jYFc4FZzs6ioRFTYbyalTzqI-0?usp=sharing)</br>
+ - [Full Video Demo](https://drive.google.com/drive/folders/15mXft9jYFc4FZzs6ioRFTYbyalTzqI-0?usp=sharing)</br>
 
 <br />
 
 <a name="PMT"/><h1>Project Management Tool</h1></a>
-- ![GitHub Project Board](https://github.com/COS301-SE-2022/Chopper-Charlie/projects/1) <br>
+- [GitHub Project Board](https://github.com/COS301-SE-2022/Chopper-Charlie/projects/1) <br>
 <br/>
 
 <a name="A"/><h1>Android</h1></a>
-[Android APK](https://drive.google.com/file/d/1_IMCw-h-b0dgq0252wH2eLLMHMKs_lqr/view?usp=sharing) <br>
+- [Android APK](https://drive.google.com/file/d/1_IMCw-h-b0dgq0252wH2eLLMHMKs_lqr/view?usp=sharing) <br>
 <br/>
 
 
