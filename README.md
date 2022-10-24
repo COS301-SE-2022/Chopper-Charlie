@@ -23,7 +23,6 @@
      <a href="#PMT">Project Management Tool</a><br>
      <a href="#Team">Team</a><br>
      <a href="#GitStructure">Git Structure</a><br>
-     
    </li>
   </ol>
 </details>
@@ -78,7 +77,6 @@ Chopper Charlie is a real-time image analysis platform for images taken by a dro
 <br/> Hamza Allimia <br/><img src= "">  | [LinkedIn](https://www.linkedin.com/in/hamza-allimia-18b934239/?original_referer=)<br/> [GitHub](https://github.com/hamza-torres) <br/>|<p/> I am a computer science student who is in their third year who is always up for new experiences.<p>
  
 
- 
  <a  name="GitStructure"/><h1> Git Structure </h1></a>
   
   - master
