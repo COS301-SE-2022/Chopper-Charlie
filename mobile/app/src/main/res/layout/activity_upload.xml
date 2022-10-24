@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,29 +13,47 @@
         android:layout_height="match_parent"
         android:background="@color/black"
         android:gravity="center">
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="150dp"
-            android:layout_height="55dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/round_btn"
-            android:text="Upload"
-            android:textColor="@color/colorWhite"
-            android:textSize="20dp" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="300dp"
-            android:layout_height="55dp"
-
+            android:layout_height="60dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="-52dp"
+            android:layout_marginTop="70dp"
             android:background="@drawable/round_btn"
             android:onClick="openFileDialog"
-            android:text="Select a media file"
+            android:text="Select media"
             android:textColor="@color/colorWhite"
-            android:textSize="20dp" />
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#007ade"
+            android:text="Upload"
+            android:textColor="@color/colorWhite"
+            android:textSize="25dp" />
+
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/agilelogo"
+        android:layout_width="219dp"
+        android:layout_height="111dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="520dp"
+        android:src="@drawable/agilebridge" />
+
+    <ImageView
+        android:id="@+id/choppercharlie"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/choppercharlielogo" />
 
 </RelativeLayout>

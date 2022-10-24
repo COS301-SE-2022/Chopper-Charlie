@@ -20,12 +20,12 @@ import okio.IOException
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
+   // val currentUser = auth.currentUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         auth = FirebaseAuth.getInstance()
 
@@ -48,9 +48,6 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "Empty fields are not allowed!", Toast.LENGTH_LONG).show()
             }
         }
-
-
-
     }
 
     public override fun onStart() {
@@ -63,6 +60,8 @@ class LoginActivity : AppCompatActivity() {
     fun updateUI(currentUser : FirebaseUser?){
 
     }
+
+
 
 
 }

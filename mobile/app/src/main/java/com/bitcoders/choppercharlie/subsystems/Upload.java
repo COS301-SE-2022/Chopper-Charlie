@@ -88,7 +88,7 @@ public class Upload extends AppCompatActivity {
 
 
                         //Get the blob container, specify the container as a string
-                        CloudBlobContainer container = blobClient.getContainerReference("yaasirbarmaniagmailcom");
+                        CloudBlobContainer container = blobClient.getContainerReference("tariqcarrimgmailcom");
 
 
 

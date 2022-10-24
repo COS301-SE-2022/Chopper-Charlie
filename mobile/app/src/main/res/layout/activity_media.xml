@@ -4,43 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".subsystems.mediaManager.MediaMain">
+    tools:context=".subsystems.mediaManager.MediaMain"
+    android:background="@color/black">
 
     <Button
         android:id="@+id/back_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="Back"
-        android:textSize="11sp" />
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="#007ade"
+        android:text="B"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/delete_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/back_btn"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="#007ade"
         android:text="Delete"
-        android:textSize="11sp" />
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/reload_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="149dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="23dp"
         android:layout_toEndOf="@+id/delete_btn"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="#007ade"
         android:text="Reload"
-        android:textSize="11sp" />
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/download_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="149dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="23dp"
         android:layout_toEndOf="@+id/reload_btn"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="#007ade"
         android:text="Download"
-        android:textSize="11sp" />
+        android:textSize="20sp" android:textColor="@color/colorWhite" />
 
     <Button
         android:id="@+id/status_btn"
@@ -49,25 +70,27 @@
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/download_btn"
         android:text="Status"
-        android:textSize="11sp" />
+
+        android:textSize="11sp"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/play_btn"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/back_btn"
+        android:layout_alignParentStart="true"
         android:text="Play"
-        android:textSize="11sp" />
+        android:textSize="11sp"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/resume_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_below="@+id/back_btn"
-        android:layout_toEndOf="@+id/play_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="Resume"
-        android:textSize="11sp" />
+        android:textSize="0sp"
+        tools:visibility="gone" />
 
     <Button
         android:id="@+id/pause_btn"
@@ -76,7 +99,8 @@
         android:layout_below="@+id/reload_btn"
         android:layout_toEndOf="@+id/resume_btn"
         android:text="Pause"
-        android:textSize="11sp" />
+        android:textSize="11sp"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/stop_btn"
@@ -85,7 +109,8 @@
         android:layout_below="@+id/reload_btn"
         android:layout_toEndOf="@+id/pause_btn"
         android:text="Stop"
-        android:textSize="11sp" />
+        android:textSize="11sp"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/moveTo_btn"
@@ -94,7 +119,8 @@
         android:layout_below="@+id/reload_btn"
         android:layout_toEndOf="@+id/stop_btn"
         android:text="MoveTo"
-        android:textSize="11sp" />
+        android:textSize="11sp"
+        android:visibility="gone" />
 
     <!-- Widget to see first person view (FPV) -->
     <dji.ux.widget.FPVWidget
@@ -160,7 +186,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:scrollbars="vertical"
-                    android:text="@string/push_info" />
+                    android:text="@string/push_info"
+                    android:textColor="@color/black" />
             </ScrollView>
         </RelativeLayout>
 

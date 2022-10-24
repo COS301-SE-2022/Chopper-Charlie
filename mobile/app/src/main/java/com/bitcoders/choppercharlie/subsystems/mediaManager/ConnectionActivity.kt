@@ -26,7 +26,6 @@ class ConnectionActivity : AppCompatActivity() {
 
     private val model: ConnectionViewModel by viewModels()
 
-
     ///////////////////////////////////////////////////////////
     private lateinit var GoFly: Button
     private lateinit var up: Button
