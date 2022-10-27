@@ -47,6 +47,7 @@ public class Upload extends AppCompatActivity {
     private static Uri uri = null;
     public Intent data;
     File file;
+    LoginActivity LoginAct = new LoginActivity();
 
 
     @Override
@@ -76,20 +77,37 @@ public class Upload extends AppCompatActivity {
                     Toaster.toast("The selected media is: " + file.getName());
                     try {
 
-
+                        Log.d("1111111111111", file.getPath());
 
                         //Start connecting to Azure Storage Account
                         CloudStorageAccount storageAccount = CloudStorageAccount.parse(storageConnectionString);
 
-
+                        Log.d("22222222222222222222", file.getPath());
 
                         //Get a client to connect to a blob in your Azure Storage Account
                         CloudBlobClient blobClient = storageAccount.createCloudBlobClient();
 
+                        Log.d("333333333333333", LoginActivity.getEmail);
+
+
+
+                        String emailStr = LoginActivity.getEmail;
+
+                        Log.d("444444444444444444", file.getPath());
+
+                        Log.d("5555555555555555555", file.getPath());
+
+                        emailStr = emailStr.replace("@", "");
+                        emailStr = emailStr.replace(".", "");
+
+                        Log.d("66666666666666666666", emailStr);
+
+                        System.out.println(emailStr);
+
+                        Log.d("777777777777777777", file.getPath());
 
                         //Get the blob container, specify the container as a string
-                        CloudBlobContainer container = blobClient.getContainerReference("tariqcarrimgmailcom");
-
+                        CloudBlobContainer container = blobClient.getContainerReference(emailStr);
 
 
                         //The character string passed in the argument of getBlockBlobReference becomes the file name saved in Blob.
